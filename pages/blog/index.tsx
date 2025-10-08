@@ -15,7 +15,6 @@ const BlogHome: NextPage<{
   return (
     <>
       <Meta />
-      <Header />
 
       <LayoutContainer>
         <div
