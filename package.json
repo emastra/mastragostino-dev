@@ -1,5 +1,5 @@
 {
-  "name": "mk-next-blog-kit",
+  "name": "mastragostino-dev",
   "version": "0.1.1",
   "private": true,
   "scripts": {
@@ -14,8 +14,8 @@
     "rss": "npx tsx './lib/blog/rss-feed.ts'"
   },
   "author": {
-    "email": "info@makerkit.dev",
-    "name": "Giancarlo Buomprisco"
+    "email": "emiliano.mastra@gmail.com",
+    "name": "Emiliano Mastragostino"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.1.3",
