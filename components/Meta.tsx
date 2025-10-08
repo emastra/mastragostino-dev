@@ -13,7 +13,7 @@ const Meta = () => {
     url: configuration.site.siteUrl,
     logo: `${configuration.site.siteUrl}/assets/images/favicon/favicon-150x150.png`,
     '@context': 'https://schema.org',
-    '@type': 'Organization', // change to person for Personal websites
+    '@type': 'Personal', // change to person for Personal websites // Or Organization for company websites
   };
 
   return (
