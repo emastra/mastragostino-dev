@@ -1,19 +1,37 @@
 import Head from 'next/head';
 import configuration from '~/configuration';
 
-const Meta = () => {
+interface MetaProps {
+  title?: string;
+  description?: string;
+  structuredDataType?: string; // e.g., "AboutPage", "ContactPage"
+  url?: string;
+}
+
+const Meta = ({
+  title,
+  description,
+  structuredDataType = 'WebPage',
+  url,
+}: MetaProps) => {
   const siteUrl = configuration.site.siteUrl;
 
   if (!siteUrl) {
     throw new Error(`Please add the property siteUrl in the configuration`);
   }
 
+  const pageTitle = title
+    ? `${title} - ${configuration.site.name}`
+    : configuration.site.name;
+  const pageDescription = description || configuration.site.description;
+  const pageUrl = url || siteUrl;
+
   const structuredData = {
     name: configuration.site.name,
-    url: configuration.site.siteUrl,
-    logo: `${configuration.site.siteUrl}/assets/images/favicon/favicon-150x150.png`,
+    url: pageUrl,
+    logo: `${siteUrl}/assets/images/favicon/favicon-150x150.png`,
     '@context': 'https://schema.org',
-    '@type': 'Personal', // change to person for Personal websites // Or Organization for company websites
+    '@type': structuredDataType,
   };
 
   return (
@@ -70,37 +88,29 @@ const Meta = () => {
       <meta
         key="meta:description"
         name="description"
-        content={configuration.site.description}
+        content={pageDescription}
       />
 
-      <title>{configuration.site.name}</title>
+      <title key="title">{pageTitle}</title>
 
-      <meta
-        key="og:title"
-        property="og:title"
-        content={configuration.site.name}
-      />
+      <meta key="og:title" property="og:title" content={pageTitle} />
 
       <meta property="og:site_name" content={configuration.site.name} />
 
       <meta
         key="og:description"
         property="og:description"
-        content={configuration.site.description}
+        content={pageDescription}
       />
 
-      <meta
-        key="twitter:title"
-        property="twitter:title"
-        content={configuration.site.siteName}
-      />
+      <meta key="twitter:title" property="twitter:title" content={pageTitle} />
 
       <meta property="twitter:card" content="summary_large_image" />
 
       <meta
         key="twitter:description"
         property="twitter:description"
-        content={configuration.site.description}
+        content={pageDescription}
       />
 
       <meta
