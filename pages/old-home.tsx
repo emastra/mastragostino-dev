@@ -19,7 +19,7 @@ const Home: NextPage<{
 
       <LayoutContainer>
         <div
-          className={'align-center flex h-full flex-col justify-center pb-32'}
+          className={'flex flex-col h-full justify-center align-center pb-32'}
         >
           <div className={'my-8'}>
             <h1 className={'text-6xl font-extrabold'}>
