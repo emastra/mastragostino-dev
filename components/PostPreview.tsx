@@ -6,8 +6,8 @@ import PostMetadata from '~/components/PostMetadata';
 const PostPreview: React.FCC<{
   post: BlogPost;
 }> = ({ post }) => {
-  const hrefAs = `/${post.collection.slug}/${post.slug}`;
-  const href = `/[collection]/[slug]`;
+  const hrefAs = `/blog/${post.collection.slug}/${post.slug}`;
+  const href = `/blog/[collection]/[slug]`;
 
   return (
     <div
