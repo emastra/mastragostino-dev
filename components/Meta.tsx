@@ -44,90 +44,81 @@ const Meta = ({
 
   return (
     <Head>
+      {/* Favicon and Icons */}
       <link
         rel="apple-touch-icon"
         sizes="144x144"
         href="/assets/images/favicon/apple-touch-icon.png"
       />
-
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
         href="/assets/images/favicon/favicon-16x16.png"
       />
-
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
         href="/assets/images/favicon/favicon-32x32.png"
       />
-
       <link
         rel="icon"
         type="image/png"
         sizes="150x150"
         href="/assets/images/favicon/favicon-150x150.png"
       />
-
       <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
-
       <link
         rel="mask-icon"
         href="/assets/images/favicon/safari-pinned-tab.svg"
         color="#000000"
       />
+      <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
 
+      {/* Preload and Prefetch Links */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-
       <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
-        crossOrigin={'true'}
+        crossOrigin="true"
       />
 
-      <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
-
+      {/* Theme and Browser-Specific Metadata */}
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content={configuration.site.themeColor} />
 
+      {/* SEO Metadata */}
       <meta
         key="meta:description"
         name="description"
         content={pageDescription}
       />
-
-      <title key="title">{pageTitle}</title>
-
       <meta key="og:title" property="og:title" content={pageTitle} />
-
       <meta property="og:site_name" content={configuration.site.name} />
-
       <meta
         key="og:description"
         property="og:description"
         content={pageDescription}
       />
-
+      <meta key="og:url" property="og:url" content={pageUrl} />
       <meta key="twitter:title" property="twitter:title" content={pageTitle} />
-
       <meta property="twitter:card" content="summary_large_image" />
-
       <meta
         key="twitter:description"
         property="twitter:description"
         content={pageDescription}
       />
-
       <meta
         property="twitter:creator"
         content={configuration.site.twitterHandle}
       />
 
-      <meta property="og:url" content={pageUrl} />
+      {/* Title */}
+      <title key="title">{pageTitle}</title>
 
+      {/* Structured Data */}
       <script
         key="ld:json"
         type="application/ld+json"
