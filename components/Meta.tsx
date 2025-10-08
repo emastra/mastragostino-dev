@@ -27,11 +27,17 @@ const Meta = ({
   const pageUrl = url || siteUrl;
 
   const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': structuredDataType, // Page-specific type
     name: configuration.site.name,
     url: pageUrl,
+    description: pageDescription,
     logo: `${siteUrl}/assets/images/favicon/favicon-150x150.png`,
-    '@context': 'https://schema.org',
-    '@type': structuredDataType,
+    author: {
+      '@type': 'Person', // Entity-specific type
+      name: 'Your Name',
+      url: siteUrl,
+    },
   };
 
   return (
@@ -117,6 +123,8 @@ const Meta = ({
         property="twitter:creator"
         content={configuration.site.twitterHandle}
       />
+
+      <meta property="og:url" content={pageUrl} />
 
       <script
         key="ld:json"
