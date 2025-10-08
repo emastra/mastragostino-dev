@@ -37,7 +37,8 @@ const Meta = ({
     logo: `${siteUrl}/assets/images/favicon/favicon-150x150.png`,
     author: {
       '@type': 'Person', // Entity-specific type
-      name: 'Your Name',
+      name: 'Emiliano Mastragostino',
+      jobTitle: 'Automation Consultant',
       url: siteUrl,
     },
   };

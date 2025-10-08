@@ -1,15 +1,14 @@
 const configuration = {
   site: {
-    name: 'MakerKit - Next.js Blog Starter',
+    name: 'Emiliano Mastragostino',
     description:
-      'MakerKit is the SaaS starter built with Next.js, Firebase and' +
-      ' Tailwind that lets you launch your next idea in minutes.',
-    themeColor: '#efee00',
-    siteUrl: 'https://makerkit.dev',
-    siteName: 'MakerKit Next.js Blog Starter',
-    twitterHandle: 'makerkit_dev',
-    githubHandle: 'makerkit',
-    language: 'en',
+      'Emiliano Mastragostino is an Automation Consultant specializing in optimizing workflows, building scalable solutions, and delivering efficient automation strategies.',
+    themeColor: '#007acc', // TODO: Updated to a professional blue color
+    siteUrl: 'https://mastragostino.dev',
+    siteName: 'Emiliano Mastragostino Portfolio',
+    twitterHandle: '', // TODO: Replace with your actual Twitter handle
+    githubHandle: 'emastra',
+    language: 'en', // TODO: Choose default language!
   },
   blog: {
     maxReadMorePosts: 6,
