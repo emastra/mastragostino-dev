@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import configuration from '~/configuration';
 
 interface MetaProps {
@@ -14,17 +15,18 @@ const Meta = ({
   structuredDataType = 'WebPage',
   url,
 }: MetaProps) => {
+  const router = useRouter();
   const siteUrl = configuration.site.siteUrl;
 
   if (!siteUrl) {
     throw new Error(`Please add the property siteUrl in the configuration`);
   }
 
+  const pageUrl = url || `${siteUrl}${router.asPath}`;
   const pageTitle = title
     ? `${title} - ${configuration.site.name}`
     : configuration.site.name;
   const pageDescription = description || configuration.site.description;
-  const pageUrl = url || siteUrl;
 
   const structuredData = {
     '@context': 'https://schema.org',
