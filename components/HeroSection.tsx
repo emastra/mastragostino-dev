@@ -30,6 +30,8 @@ const getGridStyle = () => {
 };
 
 // Sub-components
+
+// TODO: try SeraUI animated badge?
 function TopBadge() {
   return (
     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-400 backdrop-blur-sm">
@@ -51,11 +53,11 @@ function StatCard({ value, label }: { value: string; label: string }) {
 function CTAButtons() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row">
-      <button className="group flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-medium text-white transition-all hover:bg-blue-700">
+      <button className="group flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl">
         Get Started Free
         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
       </button>
-      <button className="rounded-lg border border-white/10 bg-white/5 px-8 py-4 font-medium backdrop-blur-sm transition-all hover:bg-white/10">
+      <button className="rounded-lg border border-slate-200 bg-slate-50 px-8 py-3 font-medium text-slate-900 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-slate-100 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-800">
         Watch Demo
       </button>
     </div>
@@ -84,7 +86,7 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <p className="mb-8 max-w-2xl text-lg text-slate-400 md:text-xl">
+        <p className="mb-8 max-w-2xl text-lg text-slate-500 dark:text-slate-400 md:text-xl">
           Transform your ideas into stunning reality with our cutting-edge
           platform. Fast, intuitive, and designed for creators.
         </p>
