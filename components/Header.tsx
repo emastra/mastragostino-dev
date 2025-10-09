@@ -12,9 +12,9 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { href: '#', text: 'Home' },
-    { href: '#', text: 'Features' },
-    { href: '#', text: 'Pricing' },
+    { href: '#', text: 'Services' },
     { href: '#', text: 'About' },
+    { href: '/blog', text: 'Blog' },
     { href: '#', text: 'Contact' },
   ];
 

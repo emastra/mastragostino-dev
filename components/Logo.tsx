@@ -4,7 +4,7 @@ const Logo: React.FCC = () => {
   return (
     <div>
       <Link href={'/'} passHref>
-        <a>Your Name</a>
+        <a className="font-bold">Emiliano Mastragostino</a>
       </Link>
     </div>
   );

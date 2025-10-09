@@ -36,8 +36,8 @@ const Home: NextPage = () => {
       <HeroSection />
       <LayoutContainer>
         <BenefitSection />
-        <AboutMeSection />
         <BentoGridCom />
+        <AboutMeSection />
       </LayoutContainer>
       <Footer />
     </>

@@ -33,16 +33,15 @@ const PostPage = ({ post, morePosts, content }: Props) => {
   return (
     <>
       <Meta />
-      <Header />
 
       <LayoutContainer>
         <PostHead post={post} />
 
         <Post content={content} post={post} />
 
-        <div className={'max-w-2xl mx-auto flex flex-col space-y-8 pb-32'}>
+        <div className={'mx-auto flex max-w-2xl flex-col space-y-8 pb-32'}>
           <div>
-            <h4 className={'text-xl font-medium flex justify-center'}>
+            <h4 className={'flex justify-center text-xl font-medium'}>
               Learn more about {post.collection.name}
             </h4>
           </div>

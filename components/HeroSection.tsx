@@ -53,11 +53,11 @@ function StatCard({ value, label }: { value: string; label: string }) {
 function CTAButtons() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row">
-      <button className="group flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl">
+      <button className="group flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-blue-700 hover:shadow-xl">
         Get Started Free
         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
       </button>
-      <button className="rounded-lg border border-slate-200 bg-slate-50 px-8 py-3 font-medium text-slate-900 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-slate-100 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-800">
+      <button className="rounded-lg border border-slate-200 bg-slate-50 px-8 py-3 font-medium text-slate-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-slate-100 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-800">
         Watch Demo
       </button>
     </div>
@@ -93,11 +93,11 @@ export default function HeroSection() {
 
         <CTAButtons />
 
-        <div className="mt-16 flex flex-wrap gap-8 text-center">
+        {/* <div className="mt-16 flex flex-wrap gap-8 text-center">
           {STATS_DATA.map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} />
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom Fade */}
