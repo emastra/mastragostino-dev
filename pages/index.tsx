@@ -7,6 +7,7 @@ import Header from '~/components/Header';
 import Meta from '~/components/Meta';
 import HeroSection from '~/components/HeroSection';
 import SpotlightCard from '~/components/SpotlightCard';
+import AboutMeSection from '~/components/AboutMeSection';
 import Footer from '~/components/Footer';
 
 import {
@@ -34,6 +35,7 @@ const Home: NextPage = () => {
       <HeroSection />
       <LayoutContainer>
         <BenefitSection />
+        <AboutMeSection />
       </LayoutContainer>
       <Footer />
     </>
