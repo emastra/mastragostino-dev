@@ -65,14 +65,14 @@ function CTAButtons() {
 // Main component
 export default function HeroSection() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       {/* Grid Background */}
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
       {/* Glow Effect */}
       <div className="absolute top-1/2 left-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-blue-500/20 blur-[120px]"></div>
 
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
