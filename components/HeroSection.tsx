@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 const GRID_CONFIG = {
   cellSize: '32px',
   lineColor: '#4f4f4f22',
-  fadeRadius: '80%',
+  fadeRadius: '90%',
 };
 
 const STATS_DATA = [
@@ -65,12 +65,13 @@ function CTAButtons() {
 // Main component
 export default function HeroSection() {
   return (
-    <div className="relative w-full overflow-hidden">
+    // ADDING: `flex items-center justify-center` instead of margin-top to go down the header TODO: why?? // Non è proprio vero! il comp rimane sotto header anche senza margin o quelle cose da aggiungere
+    <div className="relative w-full overflow-hidden px-4 py-16 sm:py-20 md:py-24">
       {/* Grid Background */}
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
       {/* Glow Effect */}
-      <div className="absolute top-1/2 left-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-blue-500/20 blur-[120px]"></div>
+      <div className="absolute top-1/3 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-blue-500/20 blur-[120px]"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
         <TopBadge />

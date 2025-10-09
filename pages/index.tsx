@@ -11,9 +11,9 @@ const Home: NextPage = () => {
   return (
     <>
       <Meta title="Home" description="Welcome to the homepage" />
-
+      <HeroSection />
       <LayoutContainer>
-        <HeroSection />
+        <div>test content</div>
       </LayoutContainer>
     </>
   );
