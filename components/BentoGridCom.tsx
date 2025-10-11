@@ -68,7 +68,7 @@ export const BentoCard: FC<BentoCardProps> = ({
   <div
     key={name}
     className={cn(
-      'group relative flex flex-col justify-between overflow-hidden rounded-xl',
+      'group relative flex overflow-hidden rounded-xl',
 
       'bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
 
@@ -78,9 +78,9 @@ export const BentoCard: FC<BentoCardProps> = ({
     {...props}
   >
     <div>{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300">
       {Icon && (
-        <Icon className="mb-2 h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75 dark:text-neutral-300" />
+        <Icon className="mb-2 h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out dark:text-neutral-300" />
       )}
 
       <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -95,7 +95,7 @@ export const BentoCard: FC<BentoCardProps> = ({
     {href && (
       <div
         className={cn(
-          'pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100'
+          'pointer-events-none absolute bottom-0 flex w-full transform-gpu flex-row items-center p-4 transition-all duration-300'
         )}
       >
         <a
@@ -208,7 +208,7 @@ const features: Feature[] = [
     cta: 'Learn More',
     className: 'lg:col-span-1',
     background: (
-      <div className="dark:bg-amber-950/20 absolute inset-0 bg-amber-50" />
+      <div className="absolute inset-0 bg-amber-200 dark:bg-amber-900/90" />
     ),
   },
   {
@@ -219,7 +219,7 @@ const features: Feature[] = [
     cta: 'View Integrations',
     className: 'lg:col-span-2',
     background: (
-      <div className="dark:bg-purple-950/20 absolute inset-0 bg-purple-50" />
+      <div className="absolute inset-0 bg-purple-200 dark:bg-purple-900/90" />
     ),
   },
   {
@@ -230,7 +230,7 @@ const features: Feature[] = [
     cta: 'Try It Now',
     className: 'lg:col-span-2',
     background: (
-      <div className="dark:bg-blue-950/20 absolute inset-0 bg-blue-50" />
+      <div className="absolute inset-0 bg-blue-200 dark:bg-blue-900/90" />
     ),
   },
   {
@@ -242,7 +242,7 @@ const features: Feature[] = [
     cta: 'Explore Regions',
     className: 'lg:col-span-1',
     background: (
-      <div className="dark:bg-green-950/20 absolute inset-0 bg-green-50" />
+      <div className="absolute inset-0 bg-green-200 dark:bg-green-900/90" />
     ),
   },
 ];

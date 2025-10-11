@@ -35,7 +35,7 @@ const Home: NextPage = () => {
       <Meta title="Home" description="Welcome to the homepage" />
       <HeroSection />
       <LayoutContainer>
-        <BenefitSection />
+        {/* <BenefitSection /> */}
         <BentoGridCom />
         <AboutMeSection />
       </LayoutContainer>

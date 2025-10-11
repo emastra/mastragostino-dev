@@ -93,11 +93,11 @@ export default function HeroSection() {
 
         <CTAButtons />
 
-        {/* <div className="mt-16 flex flex-wrap gap-8 text-center">
+        <div className="mt-16 flex flex-wrap gap-8 text-center">
           {STATS_DATA.map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} />
           ))}
-        </div> */}
+        </div>
       </div>
 
       {/* Bottom Fade */}
