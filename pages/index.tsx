@@ -9,6 +9,7 @@ import HeroSection from '~/components/HeroSection';
 import SpotlightCard from '~/components/SpotlightCard';
 import AboutMeSection from '~/components/AboutMeSection';
 import BentoGridCom from '~/components/BentoGridCom';
+import ServicesSection from '~/components/ServicesSection';
 import NewsletterSection from '~/components/NewsletterSection';
 import Footer from '~/components/Footer';
 
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
       <LayoutContainer>
         {/* <BenefitSection /> */}
         <BentoGridCom />
+        <ServicesSection />
         <AboutMeSection />
         <NewsletterSection />
       </LayoutContainer>
