@@ -21,7 +21,7 @@ const SocialLink: React.FC<{
 // Main Hero Component
 const AboutMeMain: React.FC = () => {
   return (
-    <section className="relative overflow-hidden font-sans">
+    <section className="relative my-16 overflow-hidden font-sans">
       <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center p-8 text-center">
         {/* Avatar Section */}
         <div className="relative mb-8">
@@ -32,9 +32,9 @@ const AboutMeMain: React.FC = () => {
               className="h-full w-full rounded-full object-cover"
             />
           </div>
-          <div className="animate-wave absolute bottom-2 -right-2 text-4xl">
+          {/* <div className="animate-wave absolute bottom-2 -right-2 text-4xl">
             <span>👋</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Text Content */}
