@@ -144,9 +144,9 @@ const ProcessSection: React.FC = () => {
         {/* Timeline Container */}
         <div className="relative">
           {/* Connecting Line - Desktop */}
-          <div className="absolute top-24 left-0 right-0 hidden h-1 bg-primary/30 lg:block" />
+          <div className="absolute top-16 left-0 right-0 hidden h-1 bg-primary/30 lg:block" />
 
-          <div className="grid gap-8 lg:grid-cols-5 lg:gap-6">
+          <div className="grid gap-6 lg:grid-cols-5 lg:gap-4">
             {process.map((step, index) => (
               <div
                 key={step.title}
@@ -160,8 +160,8 @@ const ProcessSection: React.FC = () => {
                     <div className="gradient-text absolute -top-8 left-1/2 -translate-x-1/2 select-none text-8xl font-bold opacity-10">
                       {/* {step.number} */}
                     </div>
-                    <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-primary shadow-lg transition-all duration-500 group-hover:rotate-3 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-primary/20">
-                      <step.icon className="h-10 w-10 text-white" />
+                    <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-primary shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/20">
+                      <step.icon className="h-5 w-5 text-white" />
                     </div>
                     {/* Connecting Dot */}
                     <div className="absolute -bottom-6 left-1/2 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-background bg-primary shadow-lg lg:block" />
@@ -169,7 +169,7 @@ const ProcessSection: React.FC = () => {
                 </div>
 
                 {/* Content Card */}
-                <Card className="relative overflow-hidden border-2 border-transparent bg-card/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl">
+                <Card className="relative overflow-hidden border-2 border-transparent bg-card/50 backdrop-blur-sm transition-all duration-500 hover:shadow-xl">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <CardContent className="relative z-10 pt-6">
                     <h3 className="mb-3 text-xl font-bold transition-colors duration-300 group-hover:text-primary">
