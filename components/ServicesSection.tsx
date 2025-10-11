@@ -68,7 +68,7 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
@@ -160,15 +160,16 @@ const ServicesSection: React.FC = () => {
         ))}
       </div>
 
-      {/* <div className="mt-12 text-center">
+      <div className="mt-16 text-center">
         <p className="mb-4 text-muted-foreground">
           Ogni progetto è unico. Posso creare soluzioni completamente
           personalizzate.
         </p>
-        <Button variant="outline" size="lg">
+
+        <button className="rounded-lg border border-slate-200 bg-slate-50 px-8 py-3 font-medium text-slate-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-slate-100 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-800">
           Richiedi Preventivo Personalizzato
-        </Button>
-      </div> */}
+        </button>
+      </div>
     </section>
   );
 };
