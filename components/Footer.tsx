@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 200 200"
@@ -173,9 +173,9 @@ const Footer = () => {
                   ></feBlend>
                 </filter>
               </defs>
-            </svg>
-            <h3 className="text-3xl font-extrabold text-blue-600 dark:text-teal-400">
-              Emiliano Dev
+            </svg> */}
+            <h3 className="text-xl font-extrabold text-blue-600 dark:text-teal-400">
+              Mastragostino.dev
             </h3>
           </div>
           <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
