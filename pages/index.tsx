@@ -40,9 +40,9 @@ const Home: NextPage = () => {
       <LayoutContainer>
         {/* <BenefitSection /> */}
         <BentoGridCom />
-        <ServicesSection />
         <ProcessSection />
         <AboutMeSection />
+        <ServicesSection />
         <NewsletterSection />
       </LayoutContainer>
       <Footer />
