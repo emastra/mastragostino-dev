@@ -36,7 +36,7 @@ function TopBadge() {
   return (
     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-400 backdrop-blur-sm">
       <Sparkles className="h-4 w-4" />
-      <span>Introducing the future of design</span>
+      <span>Consulente automazione | PMI & Professionisti</span>
     </div>
   );
 }
@@ -54,11 +54,11 @@ function CTAButtons() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row">
       <button className="group flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-blue-700 hover:shadow-xl">
-        Get Started Free
+        Prenota una consulenza gratuita
         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
       </button>
       <button className="rounded-lg border border-slate-200 bg-slate-50 px-8 py-3 font-medium text-slate-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-slate-100 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-800">
-        Watch Demo
+        Scopri di più
       </button>
     </div>
   );
@@ -68,7 +68,7 @@ function CTAButtons() {
 export default function HeroSection() {
   return (
     // ADDING: `flex items-center justify-center` instead of margin-top to go down the header TODO: why?? // Non è proprio vero! il comp rimane sotto header anche senza margin o quelle cose da aggiungere
-    <div className="relative w-full overflow-hidden px-4 py-16 sm:py-20 md:py-24">
+    <section className="relative w-full overflow-hidden px-4 py-16 sm:py-20 md:py-24">
       {/* Grid Background */}
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
@@ -79,29 +79,30 @@ export default function HeroSection() {
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
-          Build Amazing
+          Automizza il tuo business e
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             {' '}
-            Digital Experiences
+            libera il tuo tempo
           </span>
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-slate-500 dark:text-slate-400 md:text-xl">
-          Transform your ideas into stunning reality with our cutting-edge
-          platform. Fast, intuitive, and designed for creators.
+          Ti aiuto a ottimizzare i processi aziendali con workflow su misura:
+          meno attività ripetitive, meno errori, più focus sul far crescere il
+          tuo business.
         </p>
 
         <CTAButtons />
 
-        <div className="mt-16 flex flex-wrap gap-8 text-center">
+        {/* <div className="mt-16 flex flex-wrap gap-8 text-center">
           {STATS_DATA.map((stat) => (
             <StatCard key={stat.label} value={stat.value} label={stat.label} />
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom Fade */}
       {/* <div className="from-slate-950 absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t to-transparent"></div> */}
-    </div>
+    </section>
   );
 }
