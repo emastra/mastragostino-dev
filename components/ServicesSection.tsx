@@ -4,6 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  Card,
 } from './GradientCard';
 
 import {
@@ -28,40 +29,43 @@ const services = [
   {
     name: 'Pacchetto Base',
     icon: Sparkles,
-    price: 'Entry Level',
-    description: "Perfetto per iniziare con l'automazione",
+    price: 'da €299',
+    description:
+      "L'ideale per sbarazzarsi immediatamente delle attività ripetitive con poco valore. Inizia a recuperare tempo da subito.",
     features: [
-      '1-2 workflow automatizzati',
-      'Setup e configurazione',
-      'Documentazione completa',
-      '2 settimane supporto',
+      '2-3 Automazioni Semplici',
+      'Risparmio Tempo Immediato',
+      'Focus su Task Operativi',
+      'Briefing di Avvio Rapido',
     ],
     color: 'from-blue-500/20 to-cyan-500/20',
   },
   {
     name: 'Pacchetto Growth',
     icon: Rocket,
-    price: 'Per Crescere',
-    description: 'Soluzione completa per aziende in espansione',
+    price: 'da €499',
+    description:
+      "Per chi ha bisogno di automatizzare processi complessi con logiche condizionali, riducendo drasticamente l'errore umano.",
     features: [
-      '3-5 workflow complessi',
-      'Integrazioni avanzate',
-      'Dashboard personalizzata',
-      'Training + 1 mese supporto',
+      'Workflow Multi-Step e Logiche Complesse',
+      'Integrazioni Multiple e Sincronizzate',
+      'Monitoraggio Errori e Affidabilità',
+      'AI Opzionale per Task Intelligenti',
     ],
     color: 'from-purple-500/20 to-pink-500/20',
-    featured: true,
+    featured: false,
   },
   {
     name: 'Pacchetto Premium',
     icon: Crown,
-    price: 'Enterprise',
-    description: 'Tutto ciò di cui hai bisogno e molto di più',
+    price: 'Personalizzato',
+    description:
+      'Per le PMI che cercano integrazione completa, automazioni predittive e monitoraggio proattivo',
     features: [
-      'Automazione illimitata',
-      'AI Integration',
-      'Supporto 24/7',
-      'Consulenza strategica',
+      'Workflow Complessi e Strategici',
+      'Monitoraggio e Sicurezza Avanzata',
+      'AI Come Agente Strategico/Decisore',
+      'Affiancamento e Ottimizzazione Continua',
     ],
     color: 'from-orange-500/20 to-red-500/20',
   },
@@ -73,14 +77,15 @@ const ServicesSection: React.FC = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            I Miei <span className="gradient-text">Servizi</span>
+            Automazioni <span className="gradient-text">Scalabili</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Soluzioni su misura per ogni fase della tua crescita
+            Dal sollievo immediato alla strategia automatizzata. Ogni pacchetto
+            è scalabile e concentrato sul tuo risultato.
           </p>
         </div>
       </div>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 py-6 md:grid-cols-3">
         {services.map((service, index) => (
           // <Card
           //   key={service.name}
@@ -117,12 +122,7 @@ const ServicesSection: React.FC = () => {
           //         </li>
           //       ))}
           //     </ul>
-          //     <Button
-          //       variant={service.featured ? 'hero' : 'outline'}
-          //       className="w-full"
-          //     >
-          //       Scopri di Più
-          //     </Button>
+          //     <button className="w-full">Scopri di Più</button>
           //   </CardContent>
           // </Card>
           <GradientCard>
@@ -133,12 +133,12 @@ const ServicesSection: React.FC = () => {
                 <service.icon className="h-8 w-8 text-primary" />
               </div>
               <CardTitle className="text-2xl">{service.name}</CardTitle>
-              <CardDescription className="text-lg font-semibold text-primary">
+              <p className="text-lg font-semibold text-primary">
                 {service.price}
-              </CardDescription>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {service.description}
               </p>
+              <CardDescription className="mt-2 text-sm">
+                {service.description}
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="mb-6 space-y-3">

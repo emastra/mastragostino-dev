@@ -39,9 +39,9 @@ const Home: NextPage = () => {
       <HeroSection />
       <LayoutContainer>
         <BenefitSection />
+        <ServicesSection />
         <ProcessSection />
         <AboutMeSection />
-        <ServicesSection />
         <NewsletterSection />
       </LayoutContainer>
       <Footer />
