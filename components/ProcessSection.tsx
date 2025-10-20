@@ -30,14 +30,16 @@ import {
 const process = [
   {
     icon: Search,
-    title: 'Diagnosi',
-    description: 'Analizziamo i tuoi processi attuali',
+    title: 'Analisi Strategica',
+    description:
+      'Ascoltiamo le tue sfide e identifichiamo i processi che ti costano più tempo e denaro.',
     number: '01',
   },
   {
     icon: FileText,
-    title: 'Progetto',
-    description: 'Definiamo la roadmap di automazione',
+    title: 'Progettazione (Il Blueprint)',
+    description:
+      'Definiamo il flusso di lavoro ideale, lo strumento (n8n) e il ruolo di eventuali integrazioni AI.',
     number: '02',
   },
   {
@@ -133,11 +135,10 @@ const ProcessSection: React.FC = () => {
             Il Metodo
           </Badge> */}
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Come <span className="gradient-text">Lavoro</span>
+            Il metodo <span className="gradient-text">di lavoro</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Un processo trasparente e collaudato, dal primo contatto al successo
-            finale
+            Dalla teoria all'automazione operativa in 5 semplici passaggi
           </p>
         </div>
 
@@ -146,7 +147,7 @@ const ProcessSection: React.FC = () => {
           {/* Connecting Line - Desktop */}
           <div className="absolute top-16 left-0 right-0 hidden h-1 bg-primary/30 lg:block" />
 
-          <div className="grid gap-6 lg:grid-cols-5 lg:gap-4">
+          <div className="grid gap-6 text-center lg:grid-cols-5 lg:gap-4">
             {process.map((step, index) => (
               <div
                 key={step.title}
@@ -172,7 +173,7 @@ const ProcessSection: React.FC = () => {
                 <Card className="relative overflow-hidden border-2 border-transparent bg-card/50 backdrop-blur-sm transition-all duration-500 hover:shadow-xl">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <CardContent className="relative z-10 pt-6">
-                    <h3 className="mb-3 text-xl font-bold transition-colors duration-300 group-hover:text-primary">
+                    <h3 className="mb-3 text-lg font-bold transition-colors duration-300 group-hover:text-primary">
                       {step.title}
                     </h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">
