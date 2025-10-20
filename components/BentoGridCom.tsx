@@ -6,6 +6,7 @@ import React, {
   ReactNode,
   SVGProps,
 } from 'react';
+import { TimerReset, TicketCheck, Blocks, Sprout, Scaling } from 'lucide-react';
 
 const ArrowRightIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
   <svg
@@ -190,7 +191,7 @@ const GlobeIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
 );
 
 type Feature = {
-  Icon: FC<SVGProps<SVGSVGElement>>;
+  Icon: any;
   name: string;
   description: string;
   href: string;
@@ -201,45 +202,48 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    Icon: FileTextIcon,
-    name: 'Automated Reporting',
-    description: 'Generate and export detailed reports with a single click.',
+    Icon: TimerReset,
+    name: 'Recupera Ore Preziose',
+    description:
+      'Dimentica il tempo perso in data entry, copia-incolla e gestione manuale. Automatizziamo i processi più esosi di tempo, regalandoti ore da reinvestire in strategia e vendita.',
     href: '#',
-    cta: 'Learn More',
+    cta: 'Calcola il tuo ROI',
     className: 'lg:col-span-1',
     background: (
       <div className="absolute inset-0 bg-amber-200 dark:bg-amber-900/90" />
     ),
   },
   {
-    Icon: IntegrationIcon,
-    name: 'Seamless Integration',
-    description: 'Connect with your favorite tools and services effortlessly.',
+    Icon: TicketCheck,
+    name: 'Workflow Zero Errori',
+    description:
+      'Ogni automazione è progettata per eseguire compiti ripetitivi con precisione assoluta. Elimina gli errori umani che costano tempo, clienti e credibilità.',
     href: '#',
-    cta: 'View Integrations',
+    cta: "Scopri l'Affidabilità",
     className: 'lg:col-span-2',
     background: (
       <div className="absolute inset-0 bg-purple-200 dark:bg-purple-900/90" />
     ),
   },
   {
-    Icon: ShareIcon,
-    name: 'Real-Time Collaboration',
-    description: 'Work together with your team in real-time on any project.',
+    Icon: Blocks,
+    name: 'Integrazione Senza Sforzo',
+    description:
+      'Colleghiamo in modo fluido tutti i tuoi software (CRM, Email, Fogli di calcolo, ERP) usando n8n. Non servono sviluppatori, solo logiche efficaci.',
     href: '#',
-    cta: 'Try It Now',
+    cta: 'Vedi le Piattaforme incluse',
     className: 'lg:col-span-2',
     background: (
       <div className="absolute inset-0 bg-blue-200 dark:bg-blue-900/90" />
     ),
   },
   {
-    Icon: GlobeIcon,
-    name: 'Global Reach',
+    Icon: Scaling,
+    name: 'Scalabilità Immediata',
     description:
-      'Deploy your applications anywhere in the world with our robust infrastructure.',
+      "Le automazioni non hanno picchi di stanchezza. Il tuo business può crescere in volume e complessità senza richiedere l'assunzione di nuovo personale per i compiti operativi.",
     href: '#',
-    cta: 'Explore Regions',
+    cta: 'Inizia a Scalare',
     className: 'lg:col-span-1',
     background: (
       <div className="absolute inset-0 bg-green-200 dark:bg-green-900/90" />

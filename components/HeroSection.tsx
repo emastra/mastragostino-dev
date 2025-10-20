@@ -36,7 +36,7 @@ function TopBadge() {
   return (
     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-400 backdrop-blur-sm">
       <Sparkles className="h-4 w-4" />
-      <span>Consulente automazione | PMI & Professionisti</span>
+      <span>Consulente automazione per PMI & Professionisti</span>
     </div>
   );
 }
@@ -79,17 +79,16 @@ export default function HeroSection() {
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
-          Automizza il tuo business e
+          Libera il tuo tempo e
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             {' '}
-            libera il tuo tempo
+            fai crescere il tuo business
           </span>
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-slate-500 dark:text-slate-400 md:text-xl">
-          Ti aiuto a ottimizzare i processi aziendali con workflow su misura:
-          meno attività ripetitive, meno errori, più focus sul far crescere il
-          tuo business.
+          Trasformo i tuoi processi aziendali in flussi di lavoro rapidi e senza
+          errori. Tu ti focalizzi sul fatturato, io penso all'efficienza.
         </p>
 
         <CTAButtons />

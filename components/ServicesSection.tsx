@@ -69,7 +69,7 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-20 px-4">
+    <section className="py-16 px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">

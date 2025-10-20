@@ -120,7 +120,7 @@ const ProcessSection: React.FC = () => {
     //   </div>
     // </section>
 
-    <section className="relative overflow-hidden py-32 px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
       {/* Background Decorations */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
       <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl" />
