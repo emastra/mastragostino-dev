@@ -1,12 +1,14 @@
 import { ReactNode } from 'react';
-import GradientCard from './GradientCard';
-import {
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Card,
-} from './GradientCard';
+// import GradientCard from './GradientCard';
+// import {
+//   CardContent,
+//   CardDescription,
+//   CardHeader,
+//   CardTitle,
+//   Card,
+// } from './GradientCard';
+import Card from './BasicCard';
+import Button from './Button';
 
 import {
   Zap,
@@ -67,40 +69,31 @@ const ServicesSection: React.FC = () => {
             Automazioni <span className="gradient-text">Scalabili</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Dal sollievo immediato alla strategia automatizzata. Ogni pacchetto
-            è scalabile e concentrato sul tuo risultato.
+            Dal sollievo immediato alla strategia automatizzata con IA
+            integrata. Ogni pacchetto è scalabile e incentrato sul tuo
+            risultato.
           </p>
         </div>
       </div>
       <div className="grid gap-8 py-6 md:grid-cols-2">
         {services.map((service, index) => (
-          <Card
-            key={service.name}
-            className={`animate-fade-in-up relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-              service.featured ? 'border-2 border-primary shadow-xl' : ''
-            }`}
-            style={{ animationDelay: `${index * 150}ms` }}
-          >
-            {service.featured && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-secondary px-4 py-1 text-sm font-semibold text-white">
-                Consigliato
-              </div>
-            )}
-            <CardHeader>
-              <div
-                className={`h-16 w-16 rounded-xl bg-gradient-to-br ${service.color} mb-4 flex items-center justify-center`}
-              >
+          <Card key={service.name}>
+            <div className="flex flex-col">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20">
                 <service.icon className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-2xl">{service.name}</CardTitle>
-              <CardDescription className="text-lg font-semibold text-primary">
+              <h3 className="text-2xl font-semibold tracking-tight">
+                {service.name}
+              </h3>
+              <p className="text-lg font-semibold text-primary">
                 {service.price}
-              </CardDescription>
-              <p className="mt-2 text-sm text-muted-foreground">
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground">
                 {service.description}
               </p>
-            </CardHeader>
-            <CardContent>
+            </div>
+
+            <div className="mt-6">
               <ul className="mb-6 space-y-3">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-start space-x-2">
@@ -109,9 +102,49 @@ const ServicesSection: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button className="w-full">Scopri di Più</button>
-            </CardContent>
+              <Button variant="outline" className="w-full">
+                Scopri di Più
+              </Button>
+            </div>
           </Card>
+          // <Card
+          //   key={service.name}
+          //   className={`animate-fade-in-up relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+          //     service.featured ? 'border-2 border-primary shadow-xl' : ''
+          //   }`}
+          //   style={{ animationDelay: `${index * 150}ms` }}
+          // >
+          //   {service.featured && (
+          //     <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-secondary px-4 py-1 text-sm font-semibold text-white">
+          //       Consigliato
+          //     </div>
+          //   )}
+          //   <CardHeader>
+          //     <div
+          //       className={`h-16 w-16 rounded-xl bg-gradient-to-br ${service.color} mb-4 flex items-center justify-center`}
+          //     >
+          //       <service.icon className="h-8 w-8 text-primary" />
+          //     </div>
+          //     <CardTitle className="text-2xl">{service.name}</CardTitle>
+          //     <CardDescription className="text-lg font-semibold text-primary">
+          //       {service.price}
+          //     </CardDescription>
+          //     <p className="mt-2 text-sm text-muted-foreground">
+          //       {service.description}
+          //     </p>
+          //   </CardHeader>
+          //   <CardContent>
+          //     <ul className="mb-6 space-y-3">
+          //       {service.features.map((feature) => (
+          //         <li key={feature} className="flex items-start space-x-2">
+          //           <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+          //           <span className="text-sm">{feature}</span>
+          //         </li>
+          //       ))}
+          //     </ul>
+          //     <button className="w-full">Scopri di Più</button>
+          //   </CardContent>
+          // </Card>
           // <GradientCard>
           //   <CardHeader>
           //     <div
@@ -148,11 +181,11 @@ const ServicesSection: React.FC = () => {
         ))}
       </div>
 
-      {/* AI Integration Sub-section */}
-      <AICard />
-
       {/* Custom Solutions Sub-section */}
       <CustSolCard />
+
+      {/* AI Integration Sub-section */}
+      <AICard />
     </section>
   );
 };
@@ -234,14 +267,14 @@ function CustSolCard() {
       className="animate-fade-in-up relative mt-12"
       style={{ animationDelay: '600ms' }}
     >
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6">
         <div className="group relative overflow-hidden rounded-2xl border-2 border-border bg-gradient-to-br from-secondary/20 to-accent/20 p-8 transition-all duration-500 hover:border-secondary/50 hover:shadow-2xl md:col-span-2">
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           <div className="absolute top-4 right-4 h-32 w-32 rounded-full bg-gradient-to-br from-secondary/30 to-transparent blur-2xl transition-transform duration-700 group-hover:scale-150" />
 
           <div className="relative z-10">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-2 backdrop-blur-sm">
-              <Crown className="h-4 w-4 text-secondary" />
+              <Crown className="h-4 w-4 text-primary" />
               <span className="text-sm font-semibold">
                 Soluzione Personalizzata
               </span>
@@ -269,7 +302,7 @@ function CustSolCard() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between rounded-2xl border-2 border-border bg-card p-6 transition-shadow duration-300 hover:shadow-lg">
+        {/* <div className="flex flex-col justify-between rounded-2xl border-2 border-border bg-card p-6 transition-shadow duration-300 hover:shadow-lg">
           <div>
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20">
               <CheckCircle2 className="h-6 w-6 text-primary" />
@@ -290,7 +323,7 @@ function CustSolCard() {
               <span className="gradient-text text-2xl font-bold">50+</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
