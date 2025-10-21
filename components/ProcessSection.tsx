@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ChevronRight, ChevronLeft, Check } from 'lucide-react';
+import BasicCard from './BasicCard';
 
 // TODO: extract that cards components that are in GradientCard.tsx? check!
 import {
@@ -64,162 +66,305 @@ const process = [
 
 const ProcessSection: React.FC = () => {
   return (
-    // <section className="bg-transparent from-muted/30 py-20 px-4 sm:px-6 lg:px-8">
-    //   <div className="container mx-auto max-w-7xl">
-    //     <div className="animate-fade-in mb-12 text-center">
-    //       <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-    //         Come <span className="gradient-text">Lavoro</span>
-    //       </h2>
-    //       <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-    //         Un processo trasparente e collaudato, dal primo contatto al successo
-    //         finale
-    //       </p>
-    //     </div>
-
-    //     <div className="relative grid gap-6 md:grid-cols-5">
-    //       {process.map((step, index) => (
-    //         <div
-    //           key={step.title}
-    //           className="animate-fade-in-up relative"
-    //           style={{ animationDelay: `${index * 100}ms` }}
-    //         >
-    //           <Card className="h-full text-center transition-all duration-300 hover:shadow-lg">
-    //             <CardContent className="pt-6">
-    //               <div className="relative mb-6">
-    //                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-6xl font-bold text-muted/20">
-    //                   {step.number}
-    //                 </div>
-    //                 <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
-    //                   <step.icon className="h-8 w-8 text-primary" />
-    //                 </div>
-    //               </div>
-    //               <h3 className="mb-2 font-bold">{step.title}</h3>
-    //               <p className="text-sm text-muted-foreground">
-    //                 {step.description}
-    //               </p>
-    //             </CardContent>
-    //           </Card>
-    //           {index < process.length - 1 && (
-    //             <div className="absolute top-1/3 -right-3 z-10 hidden md:block">
-    //               <ArrowRight className="h-6 w-6 text-primary" />
-    //             </div>
-    //           )}
-    //         </div>
-    //       ))}
-    //     </div>
-
-    //     <div className="mt-12 text-center">
-    //       <Card className="inline-block border-primary/20">
-    //         <CardContent className="pt-6">
-    //           <p className="text-sm text-muted-foreground">
-    //             <Clock className="mr-2 inline h-4 w-4 text-primary" />
-    //             Tempistiche medie: 2-8 settimane • Trasparenza totale su ogni
-    //             fase
-    //           </p>
-    //         </CardContent>
-    //       </Card>
-    //     </div>
-    //   </div>
-    // </section>
-
-    <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
-      {/* Background Decorations */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
-      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl" />
-      <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-tl from-secondary/10 to-transparent blur-3xl" /> */}
-
-      <div className="container relative z-10 mx-auto max-w-7xl">
-        <div className="animate-fade-in mb-20 text-center">
-          {/* <Badge variant="secondary" className="mb-4">
-            <Settings className="mr-1 h-3 w-3" />
-            Il Metodo
-          </Badge> */}
+    <section className="bg-transparent from-muted/30 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
+        <div className="animate-fade-in mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Il metodo <span className="gradient-text">di lavoro</span>
+            Come <span className="gradient-text">Lavoro</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Dalla teoria all'automazione operativa in 5 semplici passaggi
+            Un processo trasparente e collaudato, dal primo contatto al successo
+            finale
           </p>
         </div>
 
-        {/* Timeline Container */}
-        <div className="relative">
-          {/* Connecting Line - Desktop */}
-          <div className="absolute top-16 left-0 right-0 hidden h-1 bg-primary/30 lg:block" />
+        <CircularNumbers />
 
-          <div className="grid gap-6 text-center lg:grid-cols-5 lg:gap-4">
-            {process.map((step, index) => (
-              <div
-                key={step.title}
-                className="animate-fade-in-up group relative"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {/* Step Number - Large and Styled */}
-                <div className="mb-6 flex justify-center">
-                  <div className="relative">
-                    {/* oltre al numero, visualizza la linea che connette i dots */}
-                    <div className="gradient-text absolute -top-8 left-1/2 -translate-x-1/2 select-none text-8xl font-bold opacity-10">
-                      {/* {step.number} */}
-                    </div>
-                    <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-primary shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/20">
-                      <step.icon className="h-5 w-5 text-white" />
-                    </div>
-                    {/* Connecting Dot */}
-                    <div className="absolute -bottom-6 left-1/2 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-background bg-primary shadow-lg lg:block" />
-                  </div>
-                </div>
-
-                {/* Content Card */}
-                <Card className="relative overflow-hidden border-2 border-transparent bg-card/50 backdrop-blur-sm transition-all duration-500 hover:shadow-xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <CardContent className="relative z-10 pt-6">
-                    <h3 className="mb-3 text-lg font-bold transition-colors duration-300 group-hover:text-primary">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {step.description}
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* Arrow for Mobile */}
-                {index < process.length - 1 && (
-                  <div className="my-4 flex justify-center lg:hidden">
-                    <div className="h-8 w-px bg-gradient-to-b from-primary/50 to-secondary/50" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Timeline Info Card */}
-        <div className="animate-fade-in mt-20 text-center">
-          <div className="inline-block">
-            <Card className="border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5 shadow-xl">
-              <CardContent className="px-8 pt-6">
-                <div className="flex flex-col items-center justify-center gap-6 text-sm sm:flex-row">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <span className="font-semibold">
-                      Tempistiche: 2-8 settimane
-                    </span>
-                  </div>
-                  <div className="hidden h-6 w-px bg-border sm:block" />
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
-                    <span className="font-semibold">
-                      Trasparenza totale su ogni fase
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="mt-12 text-center">
+          <Card className="inline-block border-primary/20">
+            <CardContent className="pt-6">
+              <p className="text-sm text-muted-foreground">
+                <Clock className="mr-2 inline h-4 w-4 text-primary" />
+                Tempistiche medie: 2-8 settimane • Trasparenza totale su ogni
+                fase
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
+
+    //
   );
 };
 
 export default ProcessSection;
+
+const CircularNumbers = () => (
+  <div className="mx-auto max-w-6xl">
+    <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">
+      {process.map((benefit, i) => {
+        const Icon = benefit.icon;
+
+        return (
+          <div key={i} className="group flex gap-6">
+            <div className="flex-shrink-0">
+              <div className="relative h-20 w-20">
+                {/* Outer ring */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-200 transition-colors group-hover:border-blue-400" />
+                {/* Inner circle with number */}
+                <div className="absolute inset-2 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-2xl font-bold text-white transition-transform group-hover:scale-110">
+                  {i + 1}
+                </div>
+                {/* Icon overlay */}
+                <div className="absolute -top-2 -right-2 rounded-full bg-white p-2 shadow-lg">
+                  <Icon className="h-5 w-5 text-blue-600" />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 pt-2">
+              <h3 className="mb-3 text-2xl font-bold text-gray-900 transition-colors group-hover:text-blue-600">
+                {benefit.title}
+              </h3>
+              <p className="leading-relaxed text-gray-600">
+                {benefit.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+
+// Example 1: Card Stack Stepper
+const CardStackStepper: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [
+    {
+      icon: Search,
+      title: 'Analisi Strategica',
+      description:
+        'Ascoltiamo le tue sfide e identifichiamo i processi che ti costano più tempo e denaro.',
+      number: '01',
+    },
+    {
+      icon: FileText,
+      title: 'Progettazione (Il Blueprint)',
+      description:
+        'Definiamo il flusso di lavoro ideale, lo strumento (n8n) e il ruolo di eventuali integrazioni AI.',
+      number: '02',
+    },
+    {
+      icon: Settings,
+      title: 'Implementazione',
+      description: 'Costruiamo le soluzioni su misura',
+      number: '03',
+    },
+    {
+      icon: TestTube,
+      title: 'Test',
+      description: 'Verifichiamo qualità e performance',
+      number: '04',
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Supporto',
+      description: 'Ti accompagniamo nel lungo periodo',
+      number: '05',
+    },
+  ];
+
+  return (
+    <div className="mx-auto w-full max-w-3xl">
+      <div className="relative flex h-96 items-center justify-center">
+        {steps.map((step, idx) => {
+          const offset = idx - currentStep;
+          const isVisible = Math.abs(offset) <= 2;
+
+          return isVisible ? (
+            <div
+              key={idx}
+              className={`absolute w-full max-w-md rounded-2xl bg-white p-8 shadow-xl transition-all duration-500 ${
+                offset === 0
+                  ? 'z-30 scale-100 opacity-100'
+                  : offset === 1
+                  ? 'z-20 translate-x-8 translate-y-4 scale-95 opacity-60'
+                  : offset === -1
+                  ? 'z-20 -translate-x-8 translate-y-4 scale-95 opacity-60'
+                  : offset === 2
+                  ? 'z-10 translate-x-16 translate-y-8 scale-90 opacity-30'
+                  : 'z-10 -translate-x-16 translate-y-8 scale-90 opacity-30'
+              }`}
+              style={{
+                pointerEvents: offset === 0 ? 'auto' : 'none',
+              }}
+            >
+              {/* <div className="mb-4 text-center text-6xl">{step.icon}</div> */}
+              <step.icon className="mb-4 text-center text-6xl" />
+              <h3 className="mb-2 text-center text-3xl font-bold">
+                {step.title}
+              </h3>
+              <p className="mb-6 text-center text-gray-600">
+                {step.description}
+              </p>
+
+              <div className="mb-6 flex justify-center gap-2">
+                {steps.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-2 rounded-full transition-all ${
+                      i === currentStep
+                        ? 'w-8 bg-blue-500'
+                        : i < currentStep
+                        ? 'w-2 bg-green-500'
+                        : 'w-2 bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {offset === 0 && (
+                <div className="flex gap-3">
+                  {currentStep > 0 && (
+                    <button
+                      onClick={() => setCurrentStep(currentStep - 1)}
+                      className="flex-1 rounded-lg bg-gray-200 px-6 py-3 font-semibold"
+                    >
+                      Back
+                    </button>
+                  )}
+                  <button
+                    onClick={() =>
+                      setCurrentStep(
+                        Math.min(steps.length - 1, currentStep + 1)
+                      )
+                    }
+                    className="flex-1 rounded-lg bg-blue-500 px-6 py-3 font-semibold text-white"
+                  >
+                    {currentStep === steps.length - 1 ? 'Finish' : 'Continue'}
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : null;
+        })}
+      </div>
+    </div>
+  );
+};
+
+// Example 1: Horizontal Stepper with Progress Bar
+const HorizontalStepper: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [
+    {
+      icon: Search,
+      title: 'Analisi Strategica',
+      description:
+        'Ascoltiamo le tue sfide e identifichiamo i processi che ti costano più tempo e denaro.',
+      number: '01',
+    },
+    {
+      icon: FileText,
+      title: 'Progettazione (Il Blueprint)',
+      description:
+        'Definiamo il flusso di lavoro ideale, lo strumento (n8n) e il ruolo di eventuali integrazioni AI.',
+      number: '02',
+    },
+    {
+      icon: Settings,
+      title: 'Implementazione',
+      description: 'Costruiamo le soluzioni su misura',
+      number: '03',
+    },
+    {
+      icon: TestTube,
+      title: 'Test',
+      description: 'Verifichiamo qualità e performance',
+      number: '04',
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Supporto',
+      description: 'Ti accompagniamo nel lungo periodo',
+      number: '05',
+    },
+  ];
+
+  const nextStep = () =>
+    setCurrentStep(Math.min(currentStep + 1, steps.length - 1));
+  const prevStep = () => setCurrentStep(Math.max(currentStep - 1, 0));
+
+  return (
+    <div className="mx-auto w-full bg-background py-6">
+      {/* Progress Bar */}
+      <div className="relative mb-16">
+        <div className="mb-2 flex justify-between">
+          {steps.map((step, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center"
+              style={{ width: `${100 / steps.length}%` }}
+            >
+              <div
+                className={`z-10 flex h-10 w-10 items-center justify-center rounded-full font-semibold ${
+                  idx < currentStep
+                    ? 'bg-green-500 text-white'
+                    : idx === currentStep
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-gray-300 text-gray-600'
+                }`}
+              >
+                {idx < currentStep ? <Check size={20} /> : idx + 1}
+              </div>
+              <div className="mt-2 text-center text-xs">
+                <div className="font-semibold">{step.title}</div>
+                {/* <div className="text-gray-500">{step.description}</div> */}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="absolute top-5 left-0 right-0 h-1 bg-gray-300"
+          style={{ zIndex: 0 }}
+        >
+          <div
+            className="h-full bg-blue-500 transition-all duration-300"
+            style={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div className="min-h-32 mx-auto mb-8 max-w-2xl rounded-lg bg-secondary p-6 md:p-8">
+        <h3 className="mb-2 text-xl font-semibold">
+          {steps[currentStep].title}
+        </h3>
+        <p className="text-gray-600">{steps[currentStep].description}</p>
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-around">
+        <button
+          onClick={prevStep}
+          disabled={currentStep === 0}
+          className="flex items-center gap-2 rounded-lg bg-gray-200 px-4 py-2 disabled:opacity-50"
+        >
+          <ChevronLeft size={20} /> Previous
+        </button>
+        <button
+          onClick={nextStep}
+          disabled={currentStep === steps.length - 1}
+          className="flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white disabled:opacity-50"
+        >
+          Next <ChevronRight size={20} />
+        </button>
+      </div>
+    </div>
+  );
+};
