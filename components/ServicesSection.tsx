@@ -9,6 +9,7 @@ import { ReactNode } from 'react';
 // } from './GradientCard';
 import Card from './BasicCard';
 import Button from './Button';
+import Gradient from './Gradient';
 
 import {
   Zap,
@@ -94,7 +95,7 @@ const ServicesSection: React.FC = () => {
             </div>
 
             <div className="mt-6">
-              <ul className="mb-6 space-y-3">
+              <ul className="mb-8 space-y-3">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-start space-x-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
@@ -102,82 +103,11 @@ const ServicesSection: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full">
-                Scopri di Più
+              <Button variant="default" className="w-full">
+                Prenota senza impegno
               </Button>
             </div>
           </Card>
-          // <Card
-          //   key={service.name}
-          //   className={`animate-fade-in-up relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-          //     service.featured ? 'border-2 border-primary shadow-xl' : ''
-          //   }`}
-          //   style={{ animationDelay: `${index * 150}ms` }}
-          // >
-          //   {service.featured && (
-          //     <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-secondary px-4 py-1 text-sm font-semibold text-white">
-          //       Consigliato
-          //     </div>
-          //   )}
-          //   <CardHeader>
-          //     <div
-          //       className={`h-16 w-16 rounded-xl bg-gradient-to-br ${service.color} mb-4 flex items-center justify-center`}
-          //     >
-          //       <service.icon className="h-8 w-8 text-primary" />
-          //     </div>
-          //     <CardTitle className="text-2xl">{service.name}</CardTitle>
-          //     <CardDescription className="text-lg font-semibold text-primary">
-          //       {service.price}
-          //     </CardDescription>
-          //     <p className="mt-2 text-sm text-muted-foreground">
-          //       {service.description}
-          //     </p>
-          //   </CardHeader>
-          //   <CardContent>
-          //     <ul className="mb-6 space-y-3">
-          //       {service.features.map((feature) => (
-          //         <li key={feature} className="flex items-start space-x-2">
-          //           <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-          //           <span className="text-sm">{feature}</span>
-          //         </li>
-          //       ))}
-          //     </ul>
-          //     <button className="w-full">Scopri di Più</button>
-          //   </CardContent>
-          // </Card>
-          // <GradientCard>
-          //   <CardHeader>
-          //     <div
-          //       className={`h-16 w-16 rounded-xl bg-gradient-to-br ${service.color} mb-4 flex items-center justify-center`}
-          //     >
-          //       <service.icon className="h-8 w-8 text-primary" />
-          //     </div>
-          //     <CardTitle className="text-2xl">{service.name}</CardTitle>
-          //     <p className="text-lg font-semibold text-primary">
-          //       {service.price}
-          //     </p>
-          //     <CardDescription className="mt-2 text-sm">
-          //       {service.description}
-          //     </CardDescription>
-          //   </CardHeader>
-          //   <CardContent>
-          //     <ul className="mb-6 space-y-3">
-          //       {service.features.map((feature) => (
-          //         <li key={feature} className="flex items-start space-x-2">
-          //           <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-          //           <span className="text-sm">{feature}</span>
-          //         </li>
-          //       ))}
-          //     </ul>
-          //     {/* <Button
-          //       variant={service.featured ? 'hero' : 'outline'}
-          //       className="w-full"
-          //     >
-          //       Scopri di Più
-          //     </Button> */}
-          //     <button className="w-full">Scopri di Più</button>
-          //   </CardContent>
-          // </GradientCard>
         ))}
       </div>
 
@@ -185,7 +115,7 @@ const ServicesSection: React.FC = () => {
       <CustSolCard />
 
       {/* AI Integration Sub-section */}
-      <AICard />
+      <AICard className="mt-12" />
     </section>
   );
 };
@@ -200,7 +130,7 @@ function Badge({ children }: { children: ReactNode }) {
   );
 }
 
-function AICard() {
+function AICard({ className = '' }: { className?: string }) {
   const gridEls = [
     { icon: Zap, label: 'Automazione Intelligente' },
     { icon: TrendingUp, label: 'Analisi Predittiva' },
@@ -210,7 +140,7 @@ function AICard() {
 
   return (
     <div
-      className="animate-fade-in-up relative mt-16 overflow-hidden rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10"
+      className={`relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 ${className}`}
       style={{ animationDelay: '450ms' }}
     >
       <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-gradient-to-br from-primary/20 to-transparent blur-3xl" />

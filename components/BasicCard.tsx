@@ -8,8 +8,9 @@ interface BasicCardProps {
 const BasicCard: React.FC<BasicCardProps> = ({ children }) => {
   return (
     <div className="font-sans">
-      {/* rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 shadow-lg  */}
-      <div className="text-black w-full rounded-xl border border-zinc-200 bg-white p-6 shadow-lg dark:border-zinc-700 dark:bg-[#202020] dark:text-white md:px-12 md:py-8">
+      {/* rounded-xl border border-zinc-200 bg-white p-6 shadow-lg dark:border-zinc-700 dark:bg-[#202020] dark:text-white p-6 */}
+      {/* rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 shadow-lg md:px-12 md:py-8 */}
+      <div className="rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 shadow-lg md:px-12 md:py-8">
         {children}
       </div>
     </div>
