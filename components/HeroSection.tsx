@@ -33,7 +33,7 @@ const getGridStyle = () => {
 
 function TopBadge() {
   return (
-    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-4 py-2 text-sm text-accent-400 backdrop-blur-sm dark:text-accent-300">
+    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-4 py-2 text-sm text-accent-500 backdrop-blur-sm dark:text-accent-200">
       <Sparkles className="h-4 w-4" />
       <span>Consulente automazione per PMI & Professionisti</span>
     </div>
@@ -78,7 +78,7 @@ export default function HeroSection() {
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
           Libera il tuo tempo e
-          <span className="bg-gradient-to-r from-primary-500 via-accent-500 to-indigo-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary-500 via-accent-500 to-pink-500 bg-clip-text text-transparent">
             {' '}
             fai crescere il tuo business
           </span>
