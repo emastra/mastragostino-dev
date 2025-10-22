@@ -1,4 +1,29 @@
 const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
+
+// ============================================================================
+// BRAND COLORS - Change these to swap entire theme easily
+// ============================================================================
+const brandColors = {
+  // PRIMARY: Main CTAs, links, key brand actions
+  primary: colors.blue,
+
+  // ACCENT: Badges, highlights, secondary interactive elements
+  accent: colors.purple,
+
+  // NEUTRAL: Text, borders, backgrounds (gray scale)
+  neutral: colors.slate,
+};
+
+// ============================================================================
+// SEMANTIC COLORS - For UI states and feedback
+// ============================================================================
+const semanticColors = {
+  success: colors.green,
+  warning: colors.amber,
+  error: colors.red,
+  info: colors.sky,
+};
 
 module.exports = {
   content: ['./**/*.tsx'],
@@ -9,30 +34,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          '50': '#fffff9',
-          '100': '#ffffad',
-          '200': '#fffe75',
-          '300': '#fffe2d',
-          '400': '#fffe0f',
-          '500': '#efee00',
-          '600': '#d0d000',
-          '700': '#b2b100',
-          '800': '#939300',
-          '900': '#757400',
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        black: {
-          '50': '#707070',
-          '100': '#424242',
-          '200': '#323232',
-          '300': '#242424',
-          '400': '#181818',
-          '500': '#0a0a0a',
-          '600': '#040404',
-          '700': '#000',
-        },
+        // Brand colors with full scale (50-950)
+        primary: brandColors.primary,
+        accent: brandColors.accent,
+        neutral: brandColors.neutral,
+
+        // Semantic colors with full scale
+        success: semanticColors.success,
+        warning: semanticColors.warning,
+        error: semanticColors.error,
+        info: semanticColors.info,
+
+        // shadcn/ui compatibility - HSL-based tokens
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -50,10 +63,6 @@ module.exports = {
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -75,6 +84,12 @@ module.exports = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      // Gradient presets for easy customization
+      backgroundImage: {
+        'gradient-hero': 'linear-gradient(to right, var(--tw-gradient-stops))',
+        'gradient-radial':
+          'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+      },
     },
     container: {
       center: true,
@@ -94,17 +109,22 @@ module.exports = {
         'Roboto',
         'Ubuntu',
       ],
-      monospace: ['`SF Mono`', '`ui-monospace`', '`Monaco`', 'Monospace'],
+      monospace: ['SF Mono', 'ui-monospace', 'Monaco', 'Monospace'],
     },
   },
   plugins: [
     customContainerPlugin,
-    plugin(ellipisfyPlugin),
+    plugin(ellipsifyPlugin),
+    plugin(gradientPlugin),
     require('tailwindcss-animate'),
   ],
 };
 
-function ellipisfyPlugin({ addUtilities }) {
+// ============================================================================
+// CUSTOM PLUGINS
+// ============================================================================
+
+function ellipsifyPlugin({ addUtilities }) {
   const styles = {
     '.ellipsify': {
       overflow: 'hidden',
@@ -112,7 +132,6 @@ function ellipisfyPlugin({ addUtilities }) {
       'white-space': 'pre',
     },
   };
-
   addUtilities(styles);
 }
 
@@ -127,4 +146,25 @@ function customContainerPlugin({ addComponents }) {
       },
     },
   });
+}
+
+// Gradient utilities for easy theme changes
+function gradientPlugin({ addUtilities }) {
+  const gradients = {
+    '.gradient-hero': {
+      '@apply bg-gradient-to-r from-primary-500 via-accent-500 to-indigo-500':
+        {},
+    },
+    '.gradient-hero-text': {
+      '@apply bg-gradient-to-r from-primary-500 via-accent-500 to-indigo-500 bg-clip-text text-transparent':
+        {},
+    },
+    '.glow-primary': {
+      boxShadow: '0 0 120px rgba(59, 130, 246, 0.3)',
+    },
+    '.glow-accent': {
+      boxShadow: '0 0 120px rgba(168, 85, 247, 0.3)',
+    },
+  };
+  addUtilities(gradients);
 }
