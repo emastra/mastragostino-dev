@@ -55,8 +55,8 @@ a {
     --muted: 210 40% 96%;                 /* neutral-50 */
     --muted-foreground: 215 16% 47%;      /* neutral-600 */
     
-    /* Accent (Purple) */
-    --accent: 258 90% 66%;                /* accent-500 / purple-500 */
+    /* Accent (Amber) */
+    --accent: 38 92% 50%;                 /* accent-500 / amber-500 */
     --accent-foreground: 0 0% 100%;       /* white */
     
     /* Destructive (Error) */
@@ -69,11 +69,11 @@ a {
     --ring: 217 91% 60%;                  /* primary-500 */
     
     /* Charts */
-    --chart-1: 217 91% 60%;               /* primary-500 */
-    --chart-2: 258 90% 66%;               /* accent-500 */
-    --chart-3: 142 76% 36%;               /* success-600 */
-    --chart-4: 38 92% 50%;                /* warning-500 */
-    --chart-5: 0 84% 60%;                 /* error-500 */
+    --chart-1: 217 91% 60%;               /* primary-500 / blue-500 */
+    --chart-2: 38 92% 50%;                /* accent-500 / amber-500 */
+    --chart-3: 142 76% 36%;               /* success-600 / green-600 */
+    --chart-4: 258 90% 66%;               /* purple-500 */
+    --chart-5: 0 84% 60%;                 /* error-500 / red-500 */
     
     /* Border Radius */
     --radius: 0.5rem;
@@ -104,8 +104,8 @@ a {
     --muted: 215 28% 17%;                 /* neutral-800 */
     --muted-foreground: 218 11% 65%;      /* neutral-400 */
     
-    /* Accent (Purple) */
-    --accent: 258 90% 66%;                /* accent-500 / purple-500 */
+    /* Accent (Amber) */
+    --accent: 38 92% 50%;                 /* accent-500 / amber-500 */
     --accent-foreground: 0 0% 100%;       /* white */
     
     /* Destructive (Error) */
@@ -118,11 +118,11 @@ a {
     --ring: 217 91% 60%;                  /* primary-500 */
     
     /* Charts */
-    --chart-1: 217 91% 60%;               /* primary-500 */
-    --chart-2: 258 90% 66%;               /* accent-500 */
-    --chart-3: 142 71% 45%;               /* success-500 */
-    --chart-4: 38 92% 50%;                /* warning-500 */
-    --chart-5: 0 84% 60%;                 /* error-500 */
+    --chart-1: 217 91% 60%;               /* primary-500 / blue-500 */
+    --chart-2: 38 92% 50%;                /* accent-500 / amber-500 */
+    --chart-3: 142 71% 45%;               /* success-500 / green-500 */
+    --chart-4: 258 90% 66%;               /* purple-500 */
+    --chart-5: 0 84% 60%;                 /* error-500 / red-500 */
   }
 }
 
