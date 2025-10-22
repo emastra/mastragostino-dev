@@ -7,10 +7,8 @@ const colors = require('tailwindcss/colors');
 const brandColors = {
   // PRIMARY: Main CTAs, links, key brand actions
   primary: colors.blue,
-
   // ACCENT: Badges, highlights, secondary interactive elements
-  accent: colors.purple,
-
+  accent: colors.amber,
   // NEUTRAL: Text, borders, backgrounds (gray scale)
   neutral: colors.slate,
 };
