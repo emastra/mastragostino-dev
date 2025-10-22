@@ -7,11 +7,11 @@ const GRID_CONFIG = {
   fadeRadius: '90%',
 };
 
-const STATS_DATA = [
-  { value: '10K+', label: 'Active Users' },
-  { value: '99.9%', label: 'Uptime' },
-  { value: '4.9/5', label: 'User Rating' },
-];
+// const STATS_DATA = [
+//   { value: '10K+', label: 'Active Users' },
+//   { value: '99.9%', label: 'Uptime' },
+//   { value: '4.9/5', label: 'User Rating' },
+// ];
 
 // Helper function for mask gradient
 const createRadialMask = (radius: string) =>
@@ -31,33 +31,32 @@ const getGridStyle = () => {
 
 // Sub-components
 
-// TODO: try SeraUI animated badge?
 function TopBadge() {
   return (
-    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-400 backdrop-blur-sm">
+    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-4 py-2 text-sm text-accent-400 backdrop-blur-sm dark:text-accent-300">
       <Sparkles className="h-4 w-4" />
       <span>Consulente automazione per PMI & Professionisti</span>
     </div>
   );
 }
 
-function StatCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div>
-      <div className="text-3xl font-bold">{value}</div>
-      <div className="text-sm text-slate-400">{label}</div>
-    </div>
-  );
-}
+// function StatCard({ value, label }: { value: string; label: string }) {
+//   return (
+//     <div>
+//       <div className="text-3xl font-bold">{value}</div>
+//       <div className="text-sm text-slate-400">{label}</div>
+//     </div>
+//   );
+// }
 
 function CTAButtons() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row">
-      <button className="group flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-blue-700 hover:shadow-xl">
+      <button className="group flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
         Prenota una consulenza gratuita
         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
       </button>
-      <button className="rounded-lg border border-slate-200 bg-slate-50 px-8 py-3 font-medium text-slate-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-slate-100 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-800">
+      <button className="rounded-lg border border-neutral-200 bg-neutral-50 px-8 py-3 font-medium text-neutral-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-neutral-100 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800">
         Scopri di più
       </button>
     </div>
@@ -67,26 +66,25 @@ function CTAButtons() {
 // Main component
 export default function HeroSection() {
   return (
-    // ADDING: `flex items-center justify-center` instead of margin-top to go down the header TODO: why?? // Non è proprio vero! il comp rimane sotto header anche senza margin o quelle cose da aggiungere
     <section className="relative w-full overflow-hidden px-4 py-16 sm:py-20 md:py-24">
       {/* Grid Background */}
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
       {/* Glow Effect */}
-      <div className="absolute top-1/3 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-blue-500/20 blur-[120px]"></div>
+      <div className="absolute top-1/3 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
           Libera il tuo tempo e
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary-500 via-accent-500 to-indigo-500 bg-clip-text text-transparent">
             {' '}
             fai crescere il tuo business
           </span>
         </h1>
 
-        <p className="mb-8 max-w-2xl text-lg text-slate-500 dark:text-slate-400 md:text-xl">
+        <p className="mb-8 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
           Trasformo i tuoi processi aziendali in flussi di lavoro rapidi e senza
           errori. Tu ti focalizzi sul fatturato, io penso all'efficienza.
         </p>
