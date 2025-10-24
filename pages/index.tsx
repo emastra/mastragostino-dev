@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <LayoutContainer>
         <BenefitSection />
         <ServicesSection />
-        <ProcessSection />
+        {/* <ProcessSection /> */}
         <AboutMeSection />
         <NewsletterSection />
       </LayoutContainer>
