@@ -20,14 +20,14 @@ const BookConsultationPage: React.FC = () => {
       {/* Hero Section */}
       {/* <HeroSection /> */}
 
+      {/* Calendar Booking Section */}
+      <CalendarSection />
+
       {/* What's Included Section */}
       <WhatsIncludedSection />
 
       {/* Trust Section */}
       {/* <TrustSection /> */}
-
-      {/* Calendar Booking Section */}
-      <CalendarSection />
 
       {/* FAQ / Reassurance */}
       <ReassuranceSection />
@@ -277,7 +277,7 @@ function Badge({ children }: { children: React.ReactNode }) {
    ============================================================================ */
 function CalendarSection() {
   return (
-    <section className="px-4 py-20">
+    <section className="px-4 py-16">
       <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="mb-12 text-center">
