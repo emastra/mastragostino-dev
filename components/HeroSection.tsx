@@ -52,10 +52,14 @@ function TopBadge() {
 function CTAButtons() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row">
-      <button className="group flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
+      {/* TODO: use Button here and everywhere there's a button */}
+      <a
+        href="/booking"
+        className="pointer group flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600"
+      >
         Prenota una consulenza gratuita
         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-      </button>
+      </a>
       <button className="rounded-lg border border-neutral-200 bg-neutral-50 px-8 py-3 font-medium text-neutral-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-neutral-100 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800">
         Scopri di più
       </button>
