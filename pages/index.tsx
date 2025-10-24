@@ -8,6 +8,7 @@ import AboutMeSection from '~/components/AboutMeSection';
 import ServicesSection from '~/components/ServicesSection';
 import ProcessSection from '~/components/ProcessSection';
 import NewsletterSection from '~/components/NewsletterSection';
+import ContactSection from '~/components/ContactSection';
 import Footer from '~/components/Footer';
 
 const Home: NextPage = () => {
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
         <ServicesSection />
         {/* <ProcessSection /> */}
         <AboutMeSection />
-        <NewsletterSection />
+        <ContactSection />
       </LayoutContainer>
       <Footer />
     </>
