@@ -1,259 +1,436 @@
-import { ReactNode } from 'react';
-// import GradientCard from './GradientCard';
-// import {
-//   CardContent,
-//   CardDescription,
-//   CardHeader,
-//   CardTitle,
-//   Card,
-// } from './GradientCard';
-import Card from './BasicCard';
-import Button from './Button';
-import Gradient from './Gradient';
-
+import React from 'react';
 import {
-  Zap,
-  Clock,
-  TrendingUp,
+  Search,
+  Rocket,
+  Sparkles,
+  Settings,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
-  Rocket,
+  Zap,
+  Shield,
+  TrendingUp,
+  Clock,
+  Server,
   Crown,
-  Search,
-  FileText,
-  Settings,
-  TestTube,
-  HeadphonesIcon,
-  Quote,
-  Star,
 } from 'lucide-react';
-
-const services = [
-  {
-    name: 'Pacchetto Base',
-    icon: Zap,
-    price: 'da €299',
-    description:
-      "L'ideale per sbarazzarsi immediatamente delle attività ripetitive con poco valore. Inizia a recuperare tempo da subito.",
-    features: [
-      '2-3 Automazioni Semplici',
-      'Risparmio Tempo Immediato',
-      'Focus su Task Operativi',
-      'Briefing di Avvio Rapido',
-    ],
-    color: 'from-blue-500/20 to-cyan-500/20',
-  },
-  {
-    name: 'Pacchetto Growth',
-    icon: Rocket,
-    price: 'da €499',
-    description:
-      "Per chi ha bisogno di automatizzare processi complessi con logiche condizionali, riducendo drasticamente l'errore umano.",
-    features: [
-      'Workflow Multi-Step e Logiche Complesse',
-      'Integrazioni Multiple e Sincronizzate',
-      'Monitoraggio Errori e Affidabilità',
-      'AI Opzionale per Task Intelligenti',
-    ],
-    color: 'from-purple-500/20 to-pink-500/20',
-    featured: false,
-  },
-];
 
 const ServicesSection: React.FC = () => {
   return (
     <section className="py-16 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="animate-fade-in mb-12 text-center">
+        {/* Section Header */}
+        <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Automazioni <span className="gradient-text">Scalabili</span>
+            Come{' '}
+            <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
+              Lavoriamo Insieme
+            </span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Dal sollievo immediato alla strategia automatizzata con IA
-            integrata. Ogni pacchetto è scalabile e incentrato sul tuo
-            risultato.
+          <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
+            Un percorso chiaro dalla scoperta alla crescita automatizzata
           </p>
         </div>
+
+        {/* Step 1: Free Audit */}
+        <div className="mb-8">
+          <AuditCard />
+        </div>
+
+        {/* Step 2 & 3: Starter + Growth Packages */}
+        <div className="mb-8 grid gap-6 md:grid-cols-2">
+          <StarterCard />
+          <GrowthCard />
+        </div>
+
+        {/* Step 4: Maintenance Plans */}
+        <div className="mb-8">
+          <MaintenanceSection />
+        </div>
+
+        {/* Optional: AI Add-on Banner */}
+        <AIEnhancementBanner />
       </div>
-      <div className="grid gap-8 py-6 md:grid-cols-2">
-        {services.map((service, index) => (
-          <Card key={service.name}>
-            <div className="flex flex-col">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20">
-                <service.icon className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold tracking-tight">
-                {service.name}
-              </h3>
-              <p className="text-lg font-semibold text-primary">
-                {service.price}
-              </p>
-              <p className="mt-4 text-sm text-muted-foreground">
-                {service.description}
-              </p>
-            </div>
-
-            <div className="mt-6">
-              <ul className="mb-8 space-y-3">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-start space-x-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button variant="default" className="w-full">
-                Prenota senza impegno
-              </Button>
-            </div>
-          </Card>
-        ))}
-      </div>
-
-      {/* Custom Solutions Sub-section */}
-      <CustSolCard />
-
-      {/* AI Integration Sub-section */}
-      <AICard className="mt-12" />
     </section>
   );
 };
 
 export default ServicesSection;
 
-function Badge({ children }: { children: ReactNode }) {
+/* ============================================================================
+   AUDIT CARD (Step 1 - Lead Generation)
+   ============================================================================ */
+function AuditCard() {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-400 backdrop-blur-sm">
-      {children}
-    </div>
-  );
-}
+    <div className="dark:to-accent-950/20 group relative overflow-hidden rounded-2xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-8 transition-all duration-300 hover:border-accent-300 hover:shadow-xl dark:border-accent-900/50 dark:from-neutral-900">
+      {/* Decorative glow */}
+      <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-500/20 blur-3xl" />
 
-function AICard({ className = '' }: { className?: string }) {
-  const gridEls = [
-    { icon: Zap, label: 'Automazione Intelligente' },
-    { icon: TrendingUp, label: 'Analisi Predittiva' },
-    { icon: Rocket, label: 'Ottimizzazione Real-Time' },
-    { icon: Sparkles, label: 'Insights Avanzati' },
-  ];
+      <div className="relative z-10 flex flex-col items-center text-center md:flex-row md:text-left">
+        {/* Icon */}
+        <div className="mb-6 flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-lg md:mb-0 md:mr-8">
+          <Search className="h-10 w-10 text-white" />
+        </div>
 
-  return (
-    <div
-      className={`relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 ${className}`}
-      style={{ animationDelay: '450ms' }}
-    >
-      <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-gradient-to-br from-primary/20 to-transparent blur-3xl" />
-      <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-gradient-to-tl from-secondary/20 to-transparent blur-3xl" />
-
-      <div className="relative z-10 p-8 md:p-12">
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div>
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-lg">
-                <Sparkles className="h-7 w-7 text-white" />
-              </div>
-              <Badge>Powered by ChatGPT, Gemini o Claude</Badge>
-            </div>
-            <h3 className="gradient-text mb-4 text-3xl font-bold">
-              Intelligenza Artificiale Integrata
-            </h3>
-            <p className="mb-6 leading-relaxed text-muted-foreground">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <button>
-              Scopri le Potenzialità AI
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+        {/* Content */}
+        <div className="flex-1">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+            <Sparkles className="h-3 w-3" />
+            FASE 1 · GRATUITO
           </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {gridEls.map((item, idx) => (
-              <div
-                key={item.label}
-                className="group rounded-2xl border border-border bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl"
-              >
-                <item.icon className="mb-3 h-8 w-8 text-primary transition-transform duration-300 group-hover:scale-110" />
-                <p className="text-sm font-semibold">{item.label}</p>
-              </div>
-            ))}
-          </div>
+          <h3 className="mb-3 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+            Audit Gratuito
+          </h3>
+          <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+            Analizziamo insieme i tuoi processi e identifichiamo 2-3 aree ad
+            alto impatto dove l'automazione può generare risultati immediati.
+            Nessun impegno richiesto.
+          </p>
+          <button className="group/btn inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 font-semibold text-white transition-all hover:bg-accent-700 hover:shadow-lg dark:bg-accent-500 dark:hover:bg-accent-600">
+            Prenota il Tuo Audit
+            <ArrowRight className="group-hover/btn:translate-x-1 h-4 w-4 transition-transform" />
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-function CustSolCard() {
-  const badgeTags = [
-    'Analisi Completa',
-    'Roadmap Dedicata',
-    'Supporto Prioritario',
+/* ============================================================================
+   STARTER PACKAGE CARD (Step 2 - Entry Product)
+   ============================================================================ */
+function StarterCard() {
+  const features = [
+    'Una automazione semplice end-to-end',
+    'Setup completo e deployment',
+    '3 mesi di hosting gestito inclusi',
+    'Supporto durante il lancio',
   ];
 
   return (
-    <div
-      className="animate-fade-in-up relative mt-12"
-      style={{ animationDelay: '600ms' }}
-    >
-      <div className="grid gap-6">
-        <div className="group relative overflow-hidden rounded-2xl border-2 border-border bg-gradient-to-br from-secondary/20 to-accent/20 p-8 transition-all duration-500 hover:border-secondary/50 hover:shadow-2xl md:col-span-2">
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <div className="absolute top-4 right-4 h-32 w-32 rounded-full bg-gradient-to-br from-secondary/30 to-transparent blur-2xl transition-transform duration-700 group-hover:scale-150" />
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
+      {/* Background gradient */}
+      <div className="dark:to-primary-950/20 absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-neutral-900" />
 
-          <div className="relative z-10">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-2 backdrop-blur-sm">
-              <Crown className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold">
-                Soluzione Personalizzata
-              </span>
-            </div>
-
-            <h3 className="mb-4 text-3xl font-bold">
-              Progetto <span className="gradient-text">Su Misura</span>
-            </h3>
-            <p className="mb-6 max-w-xl leading-relaxed text-muted-foreground">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-
-            <div className="mb-6 flex flex-wrap gap-3">
-              {badgeTags.map((tag) => (
-                <Badge>{tag}</Badge>
-              ))}
-            </div>
-
-            <button>
-              Richiedi Preventivo
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 flex flex-1 flex-col p-8">
+        {/* Badge */}
+        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-600/20 bg-primary-600/10 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
+          <Rocket className="h-3 w-3" />
+          FASE 2 · INGRESSO
         </div>
 
-        {/* <div className="flex flex-col justify-between rounded-2xl border-2 border-border bg-card p-6 transition-shadow duration-300 hover:shadow-lg">
-          <div>
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20">
-              <CheckCircle2 className="h-6 w-6 text-primary" />
-            </div>
-            <h4 className="mb-2 text-lg font-bold">Progetti Unici</h4>
-            <p className="mb-6 text-sm text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit.
-            </p>
-          </div>
+        {/* Icon */}
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-md">
+          <Zap className="h-8 w-8 text-white" />
+        </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Successo</span>
-              <span className="gradient-text text-2xl font-bold">98%</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Progetti</span>
-              <span className="gradient-text text-2xl font-bold">50+</span>
-            </div>
+        {/* Title & Price */}
+        <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          Pacchetto Starter
+        </h3>
+        <div className="mb-4">
+          <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">
+            €499
+          </span>
+          <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
+            una tantum
+          </span>
+        </div>
+
+        {/* Description */}
+        <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+          Implementazione rapida di una singola automazione per dimostrare
+          valore immediato. Perfetto per iniziare.
+        </p>
+
+        {/* Features */}
+        <ul className="mb-8 space-y-3">
+          {features.map((feature) => (
+            <li key={feature} className="flex items-start gap-2">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
+              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                {feature}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* CTA */}
+        <button className="w-full rounded-lg border-2 border-primary-600 bg-primary-600 px-6 py-3 font-semibold text-white transition-all hover:border-primary-700 hover:bg-primary-700 dark:border-primary-500 dark:bg-primary-500 dark:hover:border-primary-600 dark:hover:bg-primary-600">
+          Inizia Ora
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================================
+   GROWTH PACKAGE CARD (Step 3 - Custom Projects)
+   ============================================================================ */
+function GrowthCard() {
+  const features = [
+    'Automazioni complesse multi-step',
+    'Integrazioni multiple e sincronizzate',
+    'Logiche condizionali avanzate',
+    'Integrazione IA opzionale',
+  ];
+
+  return (
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-accent-300 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-accent-900/50 dark:bg-neutral-900">
+      {/* Popular badge */}
+      <div className="absolute -right-12 top-6 rotate-45 bg-accent-500 px-12 py-1 text-xs font-bold text-white shadow-lg">
+        POPOLARE
+      </div>
+
+      {/* Background gradient */}
+      <div className="dark:to-violet-950/20 absolute inset-0 bg-gradient-to-br from-violet-50 to-accent-100 dark:from-neutral-900" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-1 flex-col p-8">
+        {/* Badge */}
+        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+          <TrendingUp className="h-3 w-3" />
+          FASE 3 · CRESCITA
+        </div>
+
+        {/* Icon */}
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md">
+          <Sparkles className="h-8 w-8 text-white" />
+        </div>
+
+        {/* Title & Price */}
+        <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          Piani Growth
+        </h3>
+        <div className="mb-4">
+          <span className="text-4xl font-bold text-accent-600 dark:text-accent-400">
+            Custom
+          </span>
+          <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
+            su preventivo
+          </span>
+        </div>
+
+        {/* Description */}
+        <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+          Progetti su misura per automazioni complesse, integrazioni strategiche
+          e implementazioni con intelligenza artificiale.
+        </p>
+
+        {/* Features */}
+        <ul className="mb-8 space-y-3">
+          {features.map((feature) => (
+            <li key={feature} className="flex items-start gap-2">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-600 dark:text-accent-400" />
+              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                {feature}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* CTA */}
+        <button className="w-full rounded-lg border-2 border-accent-600 bg-white px-6 py-3 font-semibold text-accent-700 transition-all hover:bg-accent-50 dark:border-accent-500 dark:bg-neutral-800 dark:text-accent-300 dark:hover:bg-neutral-700">
+          Richiedi Preventivo
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================================
+   MAINTENANCE SECTION (Step 4 - Recurring Revenue)
+   ============================================================================ */
+function MaintenanceSection() {
+  const basePlan = {
+    name: 'Piano Base',
+    price: '€79',
+    period: '/mese',
+    icon: Settings,
+    features: [
+      'Server condiviso ottimizzato',
+      'Monitoraggio automazioni 24/7',
+      'Supporto via email (48h)',
+      'Backup settimanali',
+      'Aggiornamenti di sicurezza',
+    ],
+  };
+
+  const premiumPlan = {
+    name: 'Piano Premium',
+    price: '€149',
+    period: '/mese',
+    icon: Crown,
+    features: [
+      'VPS dedicato con risorse garantite',
+      'Monitoraggio avanzato + alert real-time',
+      'Supporto prioritario (12h)',
+      'Backup giornalieri',
+      'Ottimizzazioni performance mensili',
+    ],
+  };
+
+  return (
+    <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-neutral-50 to-neutral-100 p-8 dark:border-neutral-800 dark:from-neutral-900 dark:to-neutral-800">
+      {/* Header */}
+      <div className="mb-8 text-center">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-success-600/20 bg-success-600/10 px-3 py-1 text-xs font-semibold text-success-700 dark:border-success-400/20 dark:bg-success-400/10 dark:text-success-300">
+          <Shield className="h-3 w-3" />
+          FASE 4 · GESTIONE CONTINUA
+        </div>
+        <h3 className="mb-3 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+          Hosting & Manutenzione
+        </h3>
+        <p className="mx-auto max-w-2xl text-neutral-600 dark:text-neutral-400">
+          Dopo i primi 3 mesi inclusi nello Starter, scegli il piano di gestione
+          per garantire stabilità e prestazioni ottimali.
+        </p>
+      </div>
+
+      {/* Plans Grid */}
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* Base Plan */}
+        <MaintenancePlanCard {...basePlan} />
+
+        {/* Premium Plan */}
+        <MaintenancePlanCard {...premiumPlan} featured />
+      </div>
+
+      {/* Note */}
+      <div className="mt-6 rounded-lg border border-neutral-300 bg-white p-4 text-center dark:border-neutral-700 dark:bg-neutral-900">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          <Clock className="mb-1 inline h-4 w-4" /> <strong>Nota:</strong> Il
+          piano di gestione diventa obbligatorio dopo i 3 mesi di hosting
+          inclusi nel Pacchetto Starter.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================================
+   MAINTENANCE PLAN CARD (Reusable)
+   ============================================================================ */
+interface MaintenancePlanProps {
+  name: string;
+  price: string;
+  period: string;
+  icon: React.ElementType;
+  features: string[];
+  featured?: boolean;
+}
+
+function MaintenancePlanCard({
+  name,
+  price,
+  period,
+  icon: Icon,
+  features,
+  featured = false,
+}: MaintenancePlanProps) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-xl border bg-white p-6 transition-all duration-300 hover:shadow-lg dark:bg-neutral-900 ${
+        featured
+          ? 'border-2 border-success-400 shadow-md dark:border-success-600/50'
+          : 'border-neutral-200 dark:border-neutral-800'
+      }`}
+    >
+      {featured && (
+        <div className="absolute -right-10 top-4 rotate-45 bg-success-500 px-10 py-1 text-xs font-bold text-white">
+          CONSIGLIATO
+        </div>
+      )}
+
+      {/* Icon */}
+      <div
+        className={`mb-4 flex h-12 w-12 items-center justify-center rounded-lg ${
+          featured
+            ? 'bg-gradient-to-br from-success-500 to-success-600'
+            : 'bg-gradient-to-br from-neutral-400 to-neutral-500'
+        }`}
+      >
+        <Icon className="h-6 w-6 text-white" />
+      </div>
+
+      {/* Title & Price */}
+      <h4 className="mb-1 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+        {name}
+      </h4>
+      <div className="mb-4 flex items-baseline">
+        <span
+          className={`text-3xl font-bold ${
+            featured
+              ? 'text-success-600 dark:text-success-400'
+              : 'text-neutral-900 dark:text-neutral-50'
+          }`}
+        >
+          {price}
+        </span>
+        <span className="ml-1 text-sm text-neutral-500">{period}</span>
+      </div>
+
+      {/* Features */}
+      <ul className="space-y-2">
+        {features.map((feature) => (
+          <li key={feature} className="flex items-start gap-2">
+            <CheckCircle2
+              className={`mt-0.5 h-4 w-4 flex-shrink-0 ${
+                featured
+                  ? 'text-success-600 dark:text-success-400'
+                  : 'text-neutral-500'
+              }`}
+            />
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">
+              {feature}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* ============================================================================
+   AI ENHANCEMENT BANNER (Optional Add-on)
+   ============================================================================ */
+function AIEnhancementBanner() {
+  return (
+    <div className="dark:to-violet-950/20 relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-purple-50 to-primary-50 p-8 dark:border-violet-900/50 dark:from-neutral-900">
+      {/* Decorative elements */}
+      <div className="absolute -left-20 top-0 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
+      <div className="absolute -right-20 bottom-0 h-40 w-40 rounded-full bg-primary-500/20 blur-3xl" />
+
+      <div className="relative z-10 flex flex-col items-center gap-6 md:flex-row">
+        {/* Icon */}
+        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-primary-600 shadow-lg">
+          <Sparkles className="h-8 w-8 text-white" />
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 text-center md:text-left">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-violet-600/20 bg-violet-600/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
+            POTENZIAMENTO AI
           </div>
-        </div> */}
+          <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+            Aggiungi Intelligenza Artificiale
+          </h3>
+          <p className="text-neutral-600 dark:text-neutral-400">
+            Integra ChatGPT, Claude o Gemini in qualsiasi automazione per
+            analisi intelligenti, decisioni automatiche e risposte naturali.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <button className="flex-shrink-0 rounded-lg border-2 border-violet-600 bg-violet-600 px-6 py-3 font-semibold text-white transition-all hover:border-violet-700 hover:bg-violet-700 dark:border-violet-500 dark:bg-violet-500 dark:hover:bg-violet-600">
+          Scopri di Più
+        </button>
       </div>
     </div>
   );
