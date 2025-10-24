@@ -19,7 +19,7 @@ const ServicesSection: React.FC = () => {
     <section className="py-16 px-4">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        {/* <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
             Come{' '}
             <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
@@ -28,6 +28,18 @@ const ServicesSection: React.FC = () => {
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
             Un percorso chiaro dalla scoperta alla crescita automatizzata
+          </p>
+        </div> */}
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
+            Soluzioni di Automazione
+            {/* <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
+              
+            </span> */}
+          </h2>
+          <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
+            Dal lancio rapido alla soluzione su misura, con hosting e
+            manutenzione professionale
           </p>
         </div>
 
@@ -116,7 +128,7 @@ function StarterCard() {
         {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-600/20 bg-primary-600/10 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
           <Rocket className="h-3 w-3" />
-          FASE 2 · INGRESSO
+          INGRESSO
         </div>
 
         {/* Icon */}
@@ -193,7 +205,7 @@ function GrowthCard() {
         {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
           <TrendingUp className="h-3 w-3" />
-          FASE 3 · CRESCITA
+          CRESCITA
         </div>
 
         {/* Icon */}
@@ -282,7 +294,7 @@ function MaintenanceSection() {
       <div className="mb-8 text-center">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-success-600/20 bg-success-600/10 px-3 py-1 text-xs font-semibold text-success-700 dark:border-success-400/20 dark:bg-success-400/10 dark:text-success-300">
           <Shield className="h-3 w-3" />
-          FASE 4 · GESTIONE CONTINUA
+          GESTIONE CONTINUA
         </div>
         <h3 className="mb-3 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
           Hosting & Manutenzione
@@ -343,7 +355,7 @@ function MaintenancePlanCard({
       }`}
     >
       {featured && (
-        <div className="absolute -right-10 top-4 rotate-45 bg-success-500 px-10 py-1 text-xs font-bold text-white">
+        <div className="absolute -right-10 top-8 rotate-45 bg-success-500 px-10 py-1 text-xs font-bold text-white">
           CONSIGLIATO
         </div>
       )}
