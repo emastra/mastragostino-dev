@@ -11,11 +11,11 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '#', text: 'Home' },
+    { href: '/', text: 'Home' },
     { href: '#', text: 'Services' },
     { href: '#', text: 'About' },
     { href: '/blog', text: 'Blog' },
-    { href: '#', text: 'Contact' },
+    { href: '/contact', text: 'Contact' },
   ];
 
   useEffect(() => {
