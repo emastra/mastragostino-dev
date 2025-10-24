@@ -32,9 +32,9 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Step 1: Free Audit */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <AuditCard />
-        </div>
+        </div> */}
 
         {/* Step 2 & 3: Starter + Growth Packages */}
         <div className="mb-8 grid gap-6 md:grid-cols-2">
@@ -48,7 +48,7 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Optional: AI Add-on Banner */}
-        <AIEnhancementBanner />
+        {/* <AIEnhancementBanner /> */}
       </div>
     </section>
   );
@@ -435,3 +435,503 @@ function AIEnhancementBanner() {
     </div>
   );
 }
+
+/* ============================================================================ */
+
+// 'use client';
+// import React from 'react';
+// import {
+//   Zap,
+//   Sparkles,
+//   CheckCircle2,
+//   ArrowRight,
+//   Settings,
+//   Crown,
+//   Clock,
+//   Shield,
+//   TrendingUp,
+//   Server,
+//   Activity,
+//   HeadphonesIcon,
+//   Database,
+//   AlertCircle,
+// } from 'lucide-react';
+
+// const ServicesSection: React.FC = () => {
+//   return (
+//     <section className="py-16 px-4">
+//       <div className="container mx-auto max-w-7xl">
+//         {/* Section Header */}
+//         <div className="mb-16 text-center">
+//           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
+//             Soluzioni di{' '}
+//             <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
+//               Automazione
+//             </span>
+//           </h2>
+//           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
+//             Dal lancio rapido alla soluzione su misura, con hosting e
+//             manutenzione professionale
+//           </p>
+//         </div>
+
+//         {/* Main Service Packages */}
+//         <div className="mb-12 grid gap-8 md:grid-cols-2">
+//           <StarterPackage />
+//           <CustomPackage />
+//         </div>
+
+//         {/* Transition Message */}
+//         <TransitionMessage />
+
+//         {/* Maintenance Plans Section */}
+//         <MaintenancePlans />
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ServicesSection;
+
+// /* ============================================================================
+//    STARTER PACKAGE
+//    ============================================================================ */
+// function StarterPackage() {
+//   const features = [
+//     { text: '1 automazione workflow lineare', bold: false },
+//     { text: 'Max 5 step', bold: false },
+//     { text: 'Setup in 5-7 giorni', bold: true },
+//     { text: '3 mesi Hosting & Manutenzione BASE inclusi', bold: true },
+//     { text: 'AI opzionale', bold: false },
+//   ];
+
+//   return (
+//     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
+//       {/* Background gradient */}
+//       <div className="dark:to-primary-950/20 absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-neutral-900" />
+
+//       {/* Content */}
+//       <div className="relative z-10 flex flex-1 flex-col p-8">
+//         {/* Header */}
+//         <div className="mb-6">
+//           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-600/20 bg-primary-600/10 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
+//             <Zap className="h-3 w-3" />
+//             QUICK LAUNCH
+//           </div>
+
+//           {/* Icon */}
+//           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-md">
+//             <Zap className="h-8 w-8 text-white" />
+//           </div>
+
+//           {/* Title */}
+//           <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+//             Starter
+//           </h3>
+
+//           {/* Price */}
+//           <div className="mb-4">
+//             <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">
+//               €XXX
+//             </span>
+//             <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
+//               una tantum
+//             </span>
+//           </div>
+
+//           {/* Description */}
+//           <p className="text-neutral-600 dark:text-neutral-400">
+//             Automazione singola implementata velocemente per iniziare a vedere
+//             risultati concreti.
+//           </p>
+//         </div>
+
+//         {/* Features */}
+//         <ul className="mb-8 space-y-3">
+//           {features.map((feature, i) => (
+//             <li key={i} className="flex items-start gap-2">
+//               <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
+//               <span
+//                 className={`text-sm ${
+//                   feature.bold
+//                     ? 'font-semibold text-neutral-900 dark:text-neutral-50'
+//                     : 'text-neutral-700 dark:text-neutral-300'
+//                 }`}
+//               >
+//                 {feature.text}
+//               </span>
+//             </li>
+//           ))}
+//         </ul>
+
+//         {/* Spacer */}
+//         <div className="flex-1" />
+
+//         {/* CTA */}
+//         <button className="w-full rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-all hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600">
+//           Prenota Audit Gratuito
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// /* ============================================================================
+//    CUSTOM PACKAGE
+//    ============================================================================ */
+// function CustomPackage() {
+//   const features = [
+//     { text: 'Progettazione workflow completa', bold: false },
+//     { text: 'Ogni dimensione e complessità', bold: false },
+//     { text: 'Logiche avanzate + integrazioni multiple', bold: true },
+//     { text: '3 mesi Hosting & Manutenzione BASE inclusi', bold: true },
+//     { text: 'AI disponibile su richiesta', bold: false },
+//   ];
+
+//   return (
+//     <div className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-accent-300 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-accent-900/50 dark:bg-neutral-900">
+//       {/* Popular badge */}
+//       <div className="absolute -right-12 top-6 rotate-45 bg-accent-500 px-12 py-1 text-xs font-bold text-white shadow-lg">
+//         FLESSIBILE
+//       </div>
+
+//       {/* Background gradient */}
+//       <div className="dark:to-violet-950/20 absolute inset-0 bg-gradient-to-br from-violet-50 to-accent-100 dark:from-neutral-900" />
+
+//       {/* Content */}
+//       <div className="relative z-10 flex flex-1 flex-col p-8">
+//         {/* Header */}
+//         <div className="mb-6">
+//           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+//             <Sparkles className="h-3 w-3" />
+//             SU MISURA
+//           </div>
+
+//           {/* Icon */}
+//           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md">
+//             <Sparkles className="h-8 w-8 text-white" />
+//           </div>
+
+//           {/* Title */}
+//           <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+//             Custom
+//           </h3>
+
+//           {/* Price */}
+//           <div className="mb-4">
+//             <span className="text-4xl font-bold text-accent-600 dark:text-accent-400">
+//               Custom
+//             </span>
+//             <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
+//               su preventivo
+//             </span>
+//           </div>
+
+//           {/* Description */}
+//           <p className="text-neutral-600 dark:text-neutral-400">
+//             Soluzione completamente personalizzata per processi complessi e
+//             integrations multi-sistema.
+//           </p>
+//         </div>
+
+//         {/* Features */}
+//         <ul className="mb-8 space-y-3">
+//           {features.map((feature, i) => (
+//             <li key={i} className="flex items-start gap-2">
+//               <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-600 dark:text-accent-400" />
+//               <span
+//                 className={`text-sm ${
+//                   feature.bold
+//                     ? 'font-semibold text-neutral-900 dark:text-neutral-50'
+//                     : 'text-neutral-700 dark:text-neutral-300'
+//                 }`}
+//               >
+//                 {feature.text}
+//               </span>
+//             </li>
+//           ))}
+//         </ul>
+
+//         {/* Spacer */}
+//         <div className="flex-1" />
+
+//         {/* CTA */}
+//         <button className="w-full rounded-lg border-2 border-accent-600 bg-white px-6 py-3 font-semibold text-accent-700 transition-all hover:bg-accent-50 dark:border-accent-500 dark:bg-neutral-800 dark:text-accent-300 dark:hover:bg-neutral-700">
+//           Richiedi Preventivo Gratuito
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// /* ============================================================================
+//    TRANSITION MESSAGE
+//    ============================================================================ */
+// function TransitionMessage() {
+//   return (
+//     <div className="my-16">
+//       <div className="dark:via-accent-950/20 relative overflow-hidden rounded-2xl border border-primary-200 bg-gradient-to-r from-primary-50 via-accent-50 to-primary-50 p-8 dark:border-primary-900/50 dark:from-neutral-900 dark:to-neutral-900">
+//         {/* Decorative element */}
+//         <div className="absolute -right-10 -bottom-10 h-40 w-40 rounded-full bg-primary-500/10 blur-2xl" />
+
+//         <div className="relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
+//           {/* Icon */}
+//           <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg">
+//             <Clock className="h-8 w-8 text-white" />
+//           </div>
+
+//           {/* Content */}
+//           <div className="flex-1">
+//             <h3 className="mb-2 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+//               Dopo i 3 Mesi Inclusi
+//             </h3>
+//             <p className="text-neutral-600 dark:text-neutral-400">
+//               Per continuare a garantire stabilità e prestazioni ottimali,
+//               dovrai scegliere uno dei piani di{' '}
+//               <strong>Hosting & Manutenzione</strong>. Seleziona il piano più
+//               adatto al tuo utilizzo.
+//             </p>
+//           </div>
+
+//           {/* Arrow indicator */}
+//           <div className="dark:bg-primary-950/30 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-100">
+//             <ArrowRight className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// /* ============================================================================
+//    MAINTENANCE PLANS SECTION
+//    ============================================================================ */
+// function MaintenancePlans() {
+//   return (
+//     <div>
+//       {/* Section Header */}
+//       <div className="mb-8 text-center">
+//         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-success-600/20 bg-success-600/10 px-3 py-1 text-xs font-semibold text-success-700 dark:border-success-400/20 dark:bg-success-400/10 dark:text-success-300">
+//           <Shield className="h-3 w-3" />
+//           HOSTING & MANUTENZIONE CONTINUA
+//         </div>
+//         <h3 className="mb-3 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+//           Scegli il Tuo Piano
+//         </h3>
+//         <p className="mx-auto max-w-2xl text-neutral-600 dark:text-neutral-400">
+//           Dopo i primi 3 mesi inclusi, garantisci stabilità e performance con un
+//           piano di manutenzione professionale
+//         </p>
+//       </div>
+
+//       {/* Plans Grid */}
+//       <div className="grid gap-8 md:grid-cols-2">
+//         <BasePlan />
+//         <PremiumPlan />
+//       </div>
+
+//       {/* Fair Use Note */}
+//       <FairUseNote />
+//     </div>
+//   );
+// }
+
+// /* ============================================================================
+//    BASE MAINTENANCE PLAN
+//    ============================================================================ */
+// function BasePlan() {
+//   const features = [
+//     { icon: Server, text: 'Hosting condiviso ottimizzato' },
+//     { icon: Activity, text: 'Fair use: fino a 500 esecuzioni/giorno' },
+//     { icon: Shield, text: 'Monitoring + backup settimanali' },
+//     { icon: Clock, text: 'Risoluzione bug entro 72h lavorative' },
+//     { icon: HeadphonesIcon, text: 'Supporto email' },
+//     { icon: Settings, text: '1 piccola modifica/trimestre' },
+//   ];
+
+//   return (
+//     <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+//       {/* Background */}
+//       <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-900/50" />
+
+//       <div className="relative z-10">
+//         {/* Header */}
+//         <div className="mb-6">
+//           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+//             <Settings className="h-3 w-3" />
+//             USO MODERATO
+//           </div>
+
+//           {/* Icon */}
+//           <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-neutral-400 to-neutral-500 shadow-md">
+//             <Settings className="h-7 w-7 text-white" />
+//           </div>
+
+//           {/* Title */}
+//           <h4 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+//             BASE
+//           </h4>
+
+//           {/* Price */}
+//           <div className="mb-4 flex items-baseline">
+//             <span className="text-4xl font-bold text-neutral-900 dark:text-neutral-50">
+//               €XX
+//             </span>
+//             <span className="ml-2 text-neutral-500 dark:text-neutral-500">
+//               /mese
+//             </span>
+//           </div>
+
+//           {/* Description */}
+//           <p className="text-sm text-neutral-600 dark:text-neutral-400">
+//             Ideale per <strong>Starter</strong> e automazioni non-critiche
+//           </p>
+//         </div>
+
+//         {/* Features */}
+//         <ul className="mb-8 space-y-3">
+//           {features.map((feature, i) => (
+//             <li key={i} className="flex items-start gap-3">
+//               <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800">
+//                 <feature.icon className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
+//               </div>
+//               <span className="text-sm text-neutral-700 dark:text-neutral-300">
+//                 {feature.text}
+//               </span>
+//             </li>
+//           ))}
+//         </ul>
+
+//         {/* CTA */}
+//         <button className="w-full rounded-lg border-2 border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-900 transition-all hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:border-neutral-600 dark:hover:bg-neutral-700">
+//           Scegli BASE
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// /* ============================================================================
+//    PREMIUM MAINTENANCE PLAN
+//    ============================================================================ */
+// function PremiumPlan() {
+//   const features = [
+//     { icon: Crown, text: 'Hosting isolato con risorse garantite' },
+//     { icon: TrendingUp, text: 'Fair use: fino a 2.000 esecuzioni/giorno' },
+//     { icon: Shield, text: 'Monitoring 24/7 + backup giornalieri' },
+//     { icon: Zap, text: 'Intervento entro 24h lavorative' },
+//     { icon: HeadphonesIcon, text: 'Supporto prioritario' },
+//     { icon: Settings, text: '1h ottimizzazione/mese inclusa' },
+//     { icon: Database, text: 'Report utilizzi mensile' },
+//   ];
+
+//   return (
+//     <div className="relative overflow-hidden rounded-2xl border-2 border-success-400 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:border-success-600/50 dark:bg-neutral-900">
+//       {/* Recommended badge */}
+//       <div className="absolute -right-10 top-6 rotate-45 bg-success-500 px-10 py-1 text-xs font-bold text-white shadow-lg">
+//         CONSIGLIATO
+//       </div>
+
+//       {/* Background */}
+//       <div className="dark:to-success-950/20 absolute inset-0 bg-gradient-to-br from-success-50 to-success-100 dark:from-neutral-900" />
+
+//       <div className="relative z-10">
+//         {/* Header */}
+//         <div className="mb-6">
+//           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-success-600/20 bg-success-600/10 px-3 py-1 text-xs font-semibold text-success-700 dark:border-success-400/20 dark:bg-success-400/10 dark:text-success-300">
+//             <Crown className="h-3 w-3" />
+//             USO INTENSIVO
+//           </div>
+
+//           {/* Icon */}
+//           <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-success-500 to-success-600 shadow-md">
+//             <Crown className="h-7 w-7 text-white" />
+//           </div>
+
+//           {/* Title */}
+//           <h4 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+//             PREMIUM
+//           </h4>
+
+//           {/* Price */}
+//           <div className="mb-4 flex items-baseline">
+//             <span className="text-4xl font-bold text-success-600 dark:text-success-400">
+//               €XX
+//             </span>
+//             <span className="ml-2 text-neutral-500 dark:text-neutral-500">
+//               /mese
+//             </span>
+//           </div>
+
+//           {/* Description */}
+//           <p className="text-sm text-neutral-600 dark:text-neutral-400">
+//             Consigliato per processi <strong>business-critical</strong>
+//           </p>
+//         </div>
+
+//         {/* Features */}
+//         <ul className="mb-8 space-y-3">
+//           {features.map((feature, i) => (
+//             <li key={i} className="flex items-start gap-3">
+//               <div className="dark:bg-success-950/30 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-success-100">
+//                 <feature.icon className="h-4 w-4 text-success-600 dark:text-success-400" />
+//               </div>
+//               <span className="text-sm text-neutral-700 dark:text-neutral-300">
+//                 {feature.text}
+//               </span>
+//             </li>
+//           ))}
+//         </ul>
+
+//         {/* CTA */}
+//         <button className="w-full rounded-lg bg-success-600 px-6 py-3 font-semibold text-white transition-all hover:bg-success-700 dark:bg-success-500 dark:hover:bg-success-600">
+//           Scegli PREMIUM
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// /* ============================================================================
+//    FAIR USE NOTE
+//    ============================================================================ */
+// function FairUseNote() {
+//   return (
+//     <div className="mt-8 rounded-xl border border-neutral-200 bg-neutral-50 p-6 dark:border-neutral-800 dark:bg-neutral-900/50">
+//       <div className="flex items-start gap-4">
+//         <div className="dark:bg-primary-950/30 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary-100">
+//           <AlertCircle className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+//         </div>
+//         <div>
+//           <h4 className="mb-2 font-bold text-neutral-900 dark:text-neutral-50">
+//             Note Operative
+//           </h4>
+//           <ul className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+//             <li className="flex items-start gap-2">
+//               <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-400" />
+//               <span>
+//                 Un piano di manutenzione è{' '}
+//                 <strong>obbligatorio dal 4° mese</strong> per continuare il
+//                 servizio
+//               </span>
+//             </li>
+//             <li className="flex items-start gap-2">
+//               <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-400" />
+//               <span>
+//                 Fair use policy applicata con <strong>trasparenza</strong>{' '}
+//                 (monitoring + alert proattivi)
+//               </span>
+//             </li>
+//             <li className="flex items-start gap-2">
+//               <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-400" />
+//               <span>
+//                 <strong>Upgrade/downgrade flessibili</strong> tra piani in
+//                 qualsiasi momento
+//               </span>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
