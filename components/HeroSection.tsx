@@ -1,4 +1,5 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
+import Button from './Button';
 
 // Configuration
 const GRID_CONFIG = {
