@@ -7,12 +7,6 @@ const GRID_CONFIG = {
   fadeRadius: '90%',
 };
 
-// const STATS_DATA = [
-//   { value: '10K+', label: 'Active Users' },
-//   { value: '99.9%', label: 'Uptime' },
-//   { value: '4.9/5', label: 'User Rating' },
-// ];
-
 // Helper function for mask gradient
 const createRadialMask = (radius: string) =>
   `radial-gradient(ellipse ${radius} ${radius} at 50% 50%, #000 0%, transparent 80%)`;
@@ -39,15 +33,6 @@ function TopBadge() {
     </div>
   );
 }
-
-// function StatCard({ value, label }: { value: string; label: string }) {
-//   return (
-//     <div>
-//       <div className="text-3xl font-bold">{value}</div>
-//       <div className="text-sm text-slate-400">{label}</div>
-//     </div>
-//   );
-// }
 
 function CTAButtons() {
   return (
@@ -94,16 +79,7 @@ export default function HeroSection() {
         </p>
 
         <CTAButtons />
-
-        {/* <div className="mt-16 flex flex-wrap gap-8 text-center">
-          {STATS_DATA.map((stat) => (
-            <StatCard key={stat.label} value={stat.value} label={stat.label} />
-          ))}
-        </div> */}
       </div>
-
-      {/* Bottom Fade */}
-      {/* <div className="from-slate-950 absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t to-transparent"></div> */}
     </section>
   );
 }
