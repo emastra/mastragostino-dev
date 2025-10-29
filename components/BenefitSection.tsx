@@ -12,20 +12,19 @@ const BenefitSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Esempi pratici
+            Benefici
           </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Cosa sono le automazioni
+            Risultati che Contano Davvero
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Un’automazione è un flusso che collega i tuoi strumenti digitali e
-            fa in automatico ciò che oggi richiede tempo, attenzione e passaggi
-            manuali.
+            Ogni automazione che creo non è teoria: è progettata per liberare
+            tempo, ridurre errori e permetterti di concentrarti su ciò che fa
+            davvero crescere la tua attività.
           </p>
         </div>
       </div>
-      <Carousel />
-      {/* <BentoGridCom /> */}
+      <BentoGridCom />
     </section>
   );
 };
