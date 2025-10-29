@@ -1,5 +1,6 @@
 import React from 'react';
 import BentoGridCom from './BentoGridCom';
+import Carousel from './Carousel';
 
 const BenefitSection: React.FC = () => {
   return (
@@ -23,7 +24,8 @@ const BenefitSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <BentoGridCom />
+      <Carousel />
+      {/* <BentoGridCom /> */}
     </section>
   );
 };
