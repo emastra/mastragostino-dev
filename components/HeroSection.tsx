@@ -86,8 +86,8 @@ export default function HeroSection() {
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
-          Trasformo i tuoi processi aziendali in flussi di lavoro rapidi e senza
-          errori. Tu ti focalizzi sul fatturato, io penso all'efficienza.
+          Progetto automazioni su misura che semplificano il tuo lavoro
+          quotidiano e ti permettono di concentrarti su ciò che conta davvero.
         </p>
 
         <CTAButtons />
