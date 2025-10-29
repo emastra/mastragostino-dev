@@ -9,6 +9,7 @@ import AboutMeSection from '~/components/AboutMeSection';
 import ServicesSection from '~/components/ServicesSection';
 import ProcessSection from '~/components/ProcessSection';
 import NewsletterSection from '~/components/NewsletterSection';
+import ContactSection from '~/components/ContactSection';
 import Footer from '~/components/Footer';
 
 const Home: NextPage = () => {
@@ -17,11 +18,11 @@ const Home: NextPage = () => {
       <Meta title="Home" description="Welcome to the homepage" />
       <HeroSection />
       <LayoutContainer>
-        <WhatSection />
+        {/* <WhatSection /> */}
         <BenefitSection />
         <ServicesSection />
         <AboutMeSection />
-        <NewsletterSection />
+        <ContactSection />
       </LayoutContainer>
       <Footer />
     </>
