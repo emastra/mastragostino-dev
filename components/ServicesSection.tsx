@@ -20,21 +20,27 @@ const ServicesSection: React.FC = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
+          {/* <span
+            className="mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider text-foreground"
+            aria-hidden="false"
+            role="status"
+          >
+            Il metodo
+          </span> */}
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Come{' '}
-            <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
-              Lavoriamo Insieme
-            </span>
+            Un metodo semplice
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
-            Un percorso chiaro dalla scoperta alla crescita automatizzata
+            Niente pacchetti standard o tecnicismi inutili: ogni progetto nasce
+            da un’analisi chiara e da un’implementazione su misura, con costi
+            trasparenti e risultati misurabili.
           </p>
         </div>
 
         {/* Step 1: Free Audit */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <AuditCard />
-        </div>
+        </div> */}
 
         {/* Step 2 & 3: Starter + Growth Packages */}
         <div className="mb-8 grid gap-6 md:grid-cols-2">
@@ -43,9 +49,9 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Step 4: Maintenance Plans */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <MaintenanceSection />
-        </div>
+        </div> */}
 
         {/* Optional: AI Add-on Banner */}
         <AIEnhancementBanner />
