@@ -6,12 +6,20 @@ const BenefitSection: React.FC = () => {
     <section className="py-16">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
+          <span
+            className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider"
+            aria-hidden="false"
+            role="status"
+          >
+            Esempi pratici
+          </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            I <span className="gradient-text">Benefici</span>
+            Cosa sono le automazioni
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Smetti di sprecare risorse in attività ripetitive. Investi il tuo
-            tempo dove conta davvero.
+            Un’automazione è un flusso che collega i tuoi strumenti digitali e
+            fa in automatico ciò che oggi richiede tempo, attenzione e passaggi
+            manuali.
           </p>
         </div>
       </div>
