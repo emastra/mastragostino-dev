@@ -4,166 +4,202 @@ import {
   Mail,
   Linkedin,
   Github,
-  MapPin,
-  Briefcase,
-  Target,
   ArrowRight,
+  Sparkles,
+  Target,
+  Zap,
+  Heart,
 } from 'lucide-react';
 
 const AboutMeSection: React.FC = () => {
   return (
     <section className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24">
-      {/* Decorative background elements - matching HeroSection style */}
-      <div className="absolute right-10 top-20 h-[400px] w-[400px] animate-pulse rounded-full bg-primary-500/10 blur-[100px]" />
-      <div className="absolute bottom-20 left-10 h-[400px] w-[400px] animate-pulse rounded-full bg-accent-500/10 blur-[100px]" />
+      {/* Grid Background - matching HeroSection */}
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, #4f4f4f22 1px, transparent 1px), linear-gradient(to bottom, #4f4f4f22 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+          maskImage:
+            'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
+        }}
+      />
 
-      <div className="container relative z-10 mx-auto max-w-6xl">
+      {/* Glow Effect */}
+      <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/10 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-16 text-center">
           <span
-            className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100"
             aria-hidden="false"
             role="status"
           >
+            <Sparkles className="h-4 w-4" />
             Chi Sono
           </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Il consulente che trasforma{' '}
+            Ciao, sono{' '}
             <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
-              processi manuali in automazioni intelligenti
+              Emiliano
             </span>
           </h2>
         </div>
 
-        {/* Main Content Card */}
-        <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-primary-500/5">
-          {/* Background gradient layer */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-violet-50/30 dark:from-neutral-900 dark:via-primary-950/10 dark:to-violet-950/10" />
+        {/* Main Content - Two Column Layout */}
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Left Column - Image & Quick Facts */}
+          <div className="flex flex-col gap-6">
+            {/* Avatar Card */}
+            <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-violet-50 dark:from-neutral-900 dark:to-primary-950/20" />
 
-          <div className="relative z-10 grid gap-8 p-8 md:grid-cols-[280px_1fr] md:gap-12 md:p-12">
-            {/* Left Column - Avatar & Quick Info */}
-            <div className="flex flex-col items-center md:items-start">
-              {/* Avatar */}
-              <div className="relative mb-6">
-                {/* Glow effect behind avatar */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-violet-500 opacity-40 blur-xl" />
-                <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800">
-                  <img
-                    src="/images/avatar.jpg"
-                    alt="Emiliano Mastragostino"
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+              <div className="relative z-10 flex flex-col items-center">
+                {/* Avatar with glow */}
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-violet-500 opacity-30 blur-2xl" />
+                  <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-xl dark:border-neutral-800">
+                    <img
+                      src="/images/avatar.jpg"
+                      alt="Emiliano Mastragostino"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  {/* Status Indicator */}
+                  <div className="absolute bottom-0 right-0 flex h-10 w-10 items-center justify-center rounded-full border-4 border-white bg-success-500 dark:border-neutral-900">
+                    <span className="relative flex h-3 w-3">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+                      <span className="relative inline-flex h-3 w-3 rounded-full bg-white"></span>
+                    </span>
+                  </div>
                 </div>
-                {/* Status badge - matching design system */}
-                <div className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full border-2 border-white bg-success-500 px-3 py-1.5 text-xs font-semibold text-white shadow-md dark:border-neutral-900">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
-                  </span>
-                  Disponibile
-                </div>
-              </div>
 
-              {/* Quick Info Tags */}
-              <div className="flex w-full flex-col gap-3">
-                <InfoTag icon={MapPin} text="Roma, Italia" />
-                <InfoTag icon={Briefcase} text="Automation Consultant" />
-                <InfoTag icon={Target} text="Specialist in n8n" />
-              </div>
-            </div>
-
-            {/* Right Column - Bio & CTA */}
-            <div className="flex flex-col">
-              {/* Name & Title */}
-              <div className="mb-6">
-                <h3 className="mb-2 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+                <h3 className="mb-1 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
                   Emiliano Mastragostino
                 </h3>
-                <p className="text-lg font-medium text-primary-600 dark:text-primary-400">
+                <p className="mb-6 text-sm font-medium text-primary-600 dark:text-primary-400">
                   Automation Consultant & n8n Expert
                 </p>
-              </div>
 
-              {/* Bio Text */}
-              <div className="mb-8 space-y-4 text-base text-neutral-600 dark:text-neutral-400">
-                <p className="leading-relaxed">
-                  Ciao! Sono un consulente specializzato nell'automazione di
-                  processi aziendali usando{' '}
-                  <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
-                    n8n
-                  </strong>{' '}
-                  e intelligenza artificiale.
-                </p>
-                <p className="leading-relaxed">
-                  Aiuto PMI e professionisti a{' '}
-                  <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
-                    liberare tempo prezioso
-                  </strong>{' '}
-                  automatizzando task ripetitivi, integrando sistemi esistenti e
-                  costruendo workflow intelligenti che lavorano 24/7.
-                </p>
-                <p className="leading-relaxed">
-                  Il mio approccio è pratico e orientato ai risultati: analizzo
-                  i tuoi processi, identifico le opportunità ad alto impatto, e
-                  implemento soluzioni che generano{' '}
-                  <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
-                    ROI immediato
-                  </strong>
-                  .
-                </p>
-              </div>
-
-              {/* Skills/Specialties */}
-              <div className="mb-8">
-                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-                  Specializzazioni
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  <SkillBadge>n8n Workflows</SkillBadge>
-                  <SkillBadge>API Integration</SkillBadge>
-                  <SkillBadge>AI Automation</SkillBadge>
-                  <SkillBadge>Process Optimization</SkillBadge>
-                  <SkillBadge>CRM Integration</SkillBadge>
-                  <SkillBadge>Data Sync</SkillBadge>
-                </div>
-              </div>
-
-              {/* Spacer */}
-              <div className="flex-1" />
-
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
-                <a
-                  href="mailto:contact@example.com"
-                  className="group/btn inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600"
-                >
-                  <Mail className="h-5 w-5" />
-                  Contattami
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
-                </a>
-
-                <div className="flex items-center gap-3">
-                  <SocialLink
+                {/* Social Links */}
+                <div className="flex gap-3">
+                  <SocialButton
                     href="https://linkedin.com"
-                    ariaLabel="LinkedIn Profile"
                     icon={Linkedin}
+                    label="LinkedIn"
                   />
-                  <SocialLink
+                  <SocialButton
                     href="https://github.com"
-                    ariaLabel="GitHub Profile"
                     icon={Github}
+                    label="GitHub"
+                  />
+                  <SocialButton
+                    href="mailto:contact@example.com"
+                    icon={Mail}
+                    label="Email"
                   />
                 </div>
               </div>
+
+              {/* Hover overlay */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
+            </div>
+
+            {/* Quick Facts Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <QuickFactCard
+                icon={Target}
+                title="Specialità"
+                value="n8n & AI"
+                color="primary"
+              />
+              <QuickFactCard
+                icon={Zap}
+                title="Focus"
+                value="Automazione"
+                color="violet"
+              />
             </div>
           </div>
 
-          {/* Hover overlay - matching BenefitSection pattern */}
-          <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
-        </div>
+          {/* Right Column - Bio & CTA */}
+          <div className="flex flex-col">
+            {/* Bio Card */}
+            <div className="group relative mb-8 flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white via-violet-50/30 to-amber-50/30 dark:from-neutral-900 dark:via-violet-950/10 dark:to-amber-950/10" />
 
-        {/* Value Proposition Cards */}
-        <ValuePropositionCards />
+              <div className="relative z-10">
+                {/* Intro */}
+                <div className="mb-6">
+                  <h4 className="mb-3 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+                    Trasformo processi manuali in workflow automatici
+                  </h4>
+                  <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    Aiuto PMI e professionisti a{' '}
+                    <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
+                      recuperare tempo prezioso
+                    </strong>{' '}
+                    automatizzando attività ripetitive e integrando i loro
+                    sistemi esistenti.
+                  </p>
+                </div>
+
+                {/* Approach */}
+                <div className="mb-6">
+                  <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                    <Heart className="h-4 w-4" />
+                    Il mio approccio
+                  </h4>
+                  <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    Pratico e orientato ai risultati. Analizzo, identifico le
+                    opportunità ad alto impatto e implemento soluzioni che
+                    generano{' '}
+                    <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
+                      ROI immediato
+                    </strong>
+                    .
+                  </p>
+                </div>
+
+                {/* Skills */}
+                <div>
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                    Specializzazioni
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    <SkillBadge color="primary">n8n Workflows</SkillBadge>
+                    <SkillBadge color="violet">API Integration</SkillBadge>
+                    <SkillBadge color="amber">AI Automation</SkillBadge>
+                    <SkillBadge color="primary">CRM Integration</SkillBadge>
+                    <SkillBadge color="violet">Process Optimization</SkillBadge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hover overlay */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
+            </div>
+
+            {/* CTA Card */}
+            <div className="group relative overflow-hidden rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 to-violet-50 p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-primary-900/50 dark:from-primary-950/20 dark:to-violet-950/20">
+              <div className="relative z-10">
+                <p className="mb-4 text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                  Pronto a liberare tempo per ciò che conta davvero?
+                </p>
+                <button className="group/btn flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
+                  Prenota una consulenza gratuita
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -175,96 +211,98 @@ export default AboutMeSection;
    HELPER COMPONENTS
    ============================================================================ */
 
-interface InfoTagProps {
-  icon: React.ElementType;
-  text: string;
-}
-
-function InfoTag({ icon: Icon, text }: InfoTagProps) {
-  return (
-    <div className="flex items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm font-medium text-neutral-700 backdrop-blur-sm transition-colors hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800/50 dark:text-neutral-300 dark:hover:border-neutral-700">
-      <Icon className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
-      <span>{text}</span>
-    </div>
-  );
-}
-
-function SkillBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="rounded-full border border-primary-200 bg-primary-50 px-3 py-1.5 text-xs font-medium text-primary-700 transition-colors hover:border-primary-300 hover:bg-primary-100 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300 dark:hover:border-primary-800 dark:hover:bg-primary-950/50">
-      {children}
-    </span>
-  );
-}
-
-interface SocialLinkProps {
+interface SocialButtonProps {
   href: string;
-  ariaLabel: string;
   icon: React.ElementType;
+  label: string;
 }
 
-function SocialLink({ href, ariaLabel, icon: Icon }: SocialLinkProps) {
+function SocialButton({ href, icon: Icon, label }: SocialButtonProps) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={ariaLabel}
-      className="flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 shadow-sm transition-all duration-100 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-600 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-primary-500 dark:hover:bg-primary-950/30 dark:hover:text-primary-400"
+      aria-label={label}
+      className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 shadow-sm transition-all duration-100 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-600 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:border-primary-500 dark:hover:bg-primary-950/30 dark:hover:text-primary-400"
     >
-      <Icon className="h-5 w-5" />
+      <Icon className="h-4 w-4" />
     </a>
   );
 }
 
-/* ============================================================================
-   VALUE PROPOSITION CARDS - Replaces stats with meaningful info
-   ============================================================================ */
-function ValuePropositionCards() {
-  const values = [
-    {
-      title: 'Approccio Pratico',
-      description: 'Soluzioni concrete che puoi usare da subito, non teoria.',
-      gradient: 'from-primary-500 to-primary-600',
-    },
-    {
-      title: 'ROI Misurabile',
-      description: 'Ogni automazione è progettata per generare valore reale.',
-      gradient: 'from-violet-500 to-purple-600',
-    },
-    {
-      title: 'Supporto Continuo',
-      description: "Non ti lascio solo: ti seguo anche dopo l'implementazione.",
-      gradient: 'from-amber-500 to-orange-600',
-    },
-  ];
+interface SkillBadgeProps {
+  children: React.ReactNode;
+  color: 'primary' | 'violet' | 'amber';
+}
+
+function SkillBadge({ children, color }: SkillBadgeProps) {
+  const colorClasses = {
+    primary:
+      'border-primary-200 bg-primary-50 text-primary-700 hover:border-primary-300 hover:bg-primary-100 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300',
+    violet:
+      'border-violet-200 bg-violet-50 text-violet-700 hover:border-violet-300 hover:bg-violet-100 dark:border-violet-900/50 dark:bg-violet-950/30 dark:text-violet-300',
+    amber:
+      'border-amber-200 bg-amber-50 text-amber-700 hover:border-amber-300 hover:bg-amber-100 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-300',
+  };
 
   return (
-    <div className="mt-12 grid gap-6 sm:grid-cols-3">
-      {values.map((value, index) => (
+    <span
+      className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${colorClasses[color]}`}
+    >
+      {children}
+    </span>
+  );
+}
+
+interface QuickFactCardProps {
+  icon: React.ElementType;
+  title: string;
+  value: string;
+  color: 'primary' | 'violet';
+}
+
+function QuickFactCard({
+  icon: Icon,
+  title,
+  value,
+  color,
+}: QuickFactCardProps) {
+  const gradientClasses = {
+    primary: 'from-primary-500 to-primary-600',
+    violet: 'from-violet-500 to-purple-600',
+  };
+
+  const bgClasses = {
+    primary:
+      'from-primary-50 to-primary-100/70 dark:from-neutral-900 dark:to-primary-950/30',
+    violet:
+      'from-violet-50 to-violet-100/70 dark:from-neutral-900 dark:to-violet-950/30',
+  };
+
+  return (
+    <div className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+      {/* Background gradient */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-br ${bgClasses[color]}`}
+      />
+
+      <div className="relative z-10">
         <div
-          key={index}
-          className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+          className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${gradientClasses[color]} shadow-md transition-transform duration-300 group-hover:scale-105`}
         >
-          {/* Gradient background */}
-          <div
-            className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-5 transition-opacity duration-300 group-hover:opacity-10`}
-          />
-
-          {/* Content */}
-          <div className="relative z-10">
-            <h4 className="mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-50">
-              {value.title}
-            </h4>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {value.description}
-            </p>
-          </div>
-
-          {/* Hover overlay */}
-          <div className="pointer-events-none absolute inset-0 rounded-xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
+          <Icon className="h-5 w-5 text-white" />
         </div>
-      ))}
+        <div className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
+          {title}
+        </div>
+        <div className="text-lg font-bold text-neutral-900 dark:text-neutral-50">
+          {value}
+        </div>
+      </div>
+
+      {/* Hover overlay */}
+      <div className="pointer-events-none absolute inset-0 rounded-xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
     </div>
   );
 }
