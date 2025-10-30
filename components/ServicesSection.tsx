@@ -32,10 +32,9 @@ const ServicesSection: React.FC = () => {
             Un metodo semplice
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
-            Il percorso è pensato per essere lineare e trasparente: prima
-            analizziamo il tuo processo e definiamo la soluzione, poi passo
-            all'implementazione reale. Due fasi, un unico obiettivo — renderti
-            operativo e libero dal lavoro manuale.
+            Un percorso lineare e trasparente: prima analizziamo e definiamo la
+            soluzione, poi la realizzo. Due fasi per un unico obiettivo —
+            liberarti dal lavoro manuale.
           </p>
         </div>
 
