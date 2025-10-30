@@ -16,17 +16,17 @@ import {
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-16 px-4">
+    <section className="px-4 py-16">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          {/* <span
+          <span
             className="mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider text-foreground"
             aria-hidden="false"
             role="status"
           >
             Il metodo
-          </span> */}
+          </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
             Un metodo semplice
           </h2>
@@ -54,7 +54,7 @@ const ServicesSection: React.FC = () => {
         </div> */}
 
         {/* Optional: AI Add-on Banner */}
-        <AIEnhancementBanner />
+        {/* <AIEnhancementBanner /> */}
       </div>
     </section>
   );
@@ -67,7 +67,7 @@ export default ServicesSection;
    ============================================================================ */
 function AuditCard() {
   return (
-    <div className="dark:to-accent-950/20 group relative overflow-hidden rounded-2xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-8 transition-all duration-300 hover:border-accent-300 hover:shadow-xl dark:border-accent-900/50 dark:from-neutral-900">
+    <div className="group relative overflow-hidden rounded-2xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-8 transition-all duration-300 hover:border-accent-300 hover:shadow-xl dark:border-accent-900/50 dark:from-neutral-900 dark:to-accent-950/20">
       {/* Decorative glow */}
       <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-500/20 blur-3xl" />
 
@@ -93,7 +93,7 @@ function AuditCard() {
           </p>
           <button className="group/btn inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 font-semibold text-white transition-all hover:bg-accent-700 hover:shadow-lg dark:bg-accent-500 dark:hover:bg-accent-600">
             Prenota il Tuo Audit
-            <ArrowRight className="group-hover/btn:translate-x-1 h-4 w-4 transition-transform" />
+            <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
           </button>
         </div>
       </div>
@@ -115,7 +115,7 @@ function StarterCard() {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
       {/* Background gradient */}
-      <div className="dark:to-primary-950/20 absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-neutral-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-primary-100/70 dark:from-neutral-900 dark:to-primary-950/20" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
@@ -187,12 +187,12 @@ function GrowthCard() {
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-accent-300 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-accent-900/50 dark:bg-neutral-900">
       {/* Popular badge */}
-      <div className="absolute -right-12 top-6 rotate-45 bg-accent-500 px-12 py-1 text-xs font-bold text-white shadow-lg">
+      {/* <div className="absolute -right-12 top-6 rotate-45 bg-accent-500 px-12 py-1 text-xs font-bold text-white shadow-lg">
         POPOLARE
-      </div>
+      </div> */}
 
       {/* Background gradient */}
-      <div className="dark:to-violet-950/20 absolute inset-0 bg-gradient-to-br from-violet-50 to-accent-100 dark:from-neutral-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-accent-100/70 dark:from-neutral-900 dark:to-violet-950/20" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
@@ -408,7 +408,7 @@ function MaintenancePlanCard({
    ============================================================================ */
 function AIEnhancementBanner() {
   return (
-    <div className="dark:to-violet-950/20 relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-purple-50 to-primary-50 p-8 dark:border-violet-900/50 dark:from-neutral-900">
+    <div className="relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-purple-50 to-primary-50 p-8 dark:border-violet-900/50 dark:from-neutral-900 dark:to-violet-950/20">
       {/* Decorative elements */}
       <div className="absolute -left-20 top-0 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
       <div className="absolute -right-20 bottom-0 h-40 w-40 rounded-full bg-primary-500/20 blur-3xl" />
