@@ -48,13 +48,13 @@ export default BenefitSection;
 //
 
 type Feature = {
-  Icon: React.ElementType;
+  Icon?: React.ElementType;
   name: string;
   description: string;
-  href: string;
-  cta: string;
-  className: string;
-  background: ReactNode;
+  href?: string;
+  cta?: string;
+  className?: string;
+  bgColor: string;
 };
 const features: Feature[] = [
   {
@@ -64,10 +64,7 @@ const features: Feature[] = [
       'Dimentica il tempo perso in data entry, copia-incolla e gestione manuale. Automatizziamo i processi più esosi di tempo, regalandoti ore da reinvestire in strategia e vendita.',
     href: '#',
     cta: 'Calcola il tuo ROI',
-    className: 'md:col-span-1',
-    background: (
-      <div className="dark:to-amber-950/30 absolute inset-0 bg-gradient-to-br from-amber-50 to-amber-100 dark:from-neutral-900" />
-    ),
+    bgColor: 'amber',
   },
   {
     Icon: TicketCheck,
@@ -77,9 +74,7 @@ const features: Feature[] = [
     href: '#',
     cta: "Scopri l'Affidabilità",
     className: 'md:col-span-1',
-    background: (
-      <div className="dark:to-primary-950/30 absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-neutral-900" />
-    ),
+    bgColor: 'primary',
   },
   {
     Icon: Blocks,
@@ -89,9 +84,7 @@ const features: Feature[] = [
     href: '#',
     cta: 'Vedi le Piattaforme incluse',
     className: 'md:col-span-1',
-    background: (
-      <div className="dark:to-violet-950/30 absolute inset-0 bg-gradient-to-br from-violet-50 to-violet-100 dark:from-neutral-900" />
-    ),
+    bgColor: 'violet',
   },
   {
     Icon: Scaling,
@@ -101,9 +94,7 @@ const features: Feature[] = [
     href: '#',
     cta: 'Inizia a Scalare',
     className: 'md:col-span-1',
-    background: (
-      <div className="dark:to-success-950/30 absolute inset-0 bg-gradient-to-br from-success-50 to-success-100 dark:from-neutral-900" />
-    ),
+    bgColor: 'success',
   },
 ];
 
@@ -111,26 +102,30 @@ function BenefitsGrid() {
   return (
     <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid w-full auto-rows-[22rem] grid-cols-1 gap-4 md:grid-cols-2"></div>
+        <div className="grid w-full auto-rows-[22rem] grid-cols-1 gap-4 md:grid-cols-2">
+          {features.map((feature, idx) => (
+            <BenefitCard key={idx} {...feature} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-export interface BentoCardProps extends ComponentPropsWithoutRef<'div'> {
+export interface BenefitCardProps extends ComponentPropsWithoutRef<'div'> {
   name: string;
-  className: string;
-  background: ReactNode;
+  className?: string;
+  bgColor: ReactNode;
   Icon?: React.ElementType;
   description: string;
   href?: string;
   cta?: string;
 }
 
-export const BentoCard: FC<BentoCardProps> = ({
+const BenefitCard: FC<BenefitCardProps> = ({
   name,
-  className,
-  background,
+  className = '',
+  bgColor = 'amber',
   Icon,
   description,
   href,
@@ -154,22 +149,26 @@ export const BentoCard: FC<BentoCardProps> = ({
     )}
     {...props}
   >
-    {/* Background */}
-    <div className="absolute inset-0">{background}</div>
+    {/* Background layer, renders behind everything (absolute inset-0) */}
+    <div
+      className={cn(
+        'absolute inset-0 bg-gradient-to-br dark:from-neutral-900',
+        `from-${String(bgColor)}-50`,
+        `to-${String(bgColor)}-100`,
+        `dark:to-${String(bgColor)}-950/30`
+      )}
+    />
 
-    {/* Content */}
+    {/* Content layer. `relative z-10` - Sits above the background, `flex flex-1 flex-col` - Vertical flex that expands to fill card */}
     <div className="relative z-10 flex flex-1 flex-col gap-1 p-6 transition-all duration-300">
-      {/* Icon */}
       {Icon && (
         <Icon className="mb-2 h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-200 ease-out group-hover:scale-105 dark:text-neutral-300" />
       )}
 
-      {/* Title */}
       <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
         {name}
       </h3>
 
-      {/* Description */}
       <p className="max-w-lg text-neutral-600 dark:text-neutral-400">
         {description}
       </p>
@@ -177,21 +176,20 @@ export const BentoCard: FC<BentoCardProps> = ({
       {/* Spacer to push CTA to bottom */}
       <div className="flex-1" />
 
-      {/* CTA Link */}
       {href && cta && (
         <div className="mt-4">
           <a
             href={href}
-            className="group/link dark:focus:ring-offset-neutral-950 inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300"
+            className="dark:focus:ring-offset-neutral-950 inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300"
           >
             {cta}
-            <ArrowRightIcon className="group-hover/link:translate-x-1 ml-2 h-4 w-4 transition-transform" />
+            <ArrowRightIcon className="ml-2 h-4 w-4" />
           </a>
         </div>
       )}
     </div>
 
-    {/* Hover overlay - subtle interaction feedback */}
+    {/* Hover overlay */}
     <div className="pointer-events-none absolute inset-0 rounded-xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
   </div>
 );
