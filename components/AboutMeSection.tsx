@@ -6,48 +6,56 @@ import {
   Github,
   MapPin,
   Briefcase,
-  GraduationCap,
+  Target,
+  ArrowRight,
 } from 'lucide-react';
 
 const AboutMeSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden py-24">
-      {/* Decorative background elements */}
-      <div className="absolute top-20 right-10 h-72 w-72 rounded-full bg-primary-500/10 blur-3xl" />
-      <div className="absolute bottom-20 left-10 h-72 w-72 rounded-full bg-accent-500/10 blur-3xl" />
+    <section className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24">
+      {/* Decorative background elements - matching HeroSection style */}
+      <div className="absolute right-10 top-20 h-[400px] w-[400px] animate-pulse rounded-full bg-primary-500/10 blur-[100px]" />
+      <div className="absolute bottom-20 left-10 h-[400px] w-[400px] animate-pulse rounded-full bg-accent-500/10 blur-[100px]" />
 
-      <div className="container relative z-10 mx-auto max-w-5xl px-4">
+      <div className="container relative z-10 mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
+          <span
+            className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider"
+            aria-hidden="false"
+            role="status"
+          >
+            Chi Sono
+          </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Chi{' '}
-            <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
-              Sono
+            Il consulente che trasforma{' '}
+            <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
+              processi manuali in automazioni intelligenti
             </span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
-            Il consulente che trasforma processi manuali in automazioni
-            intelligenti
-          </p>
         </div>
 
         {/* Main Content Card */}
-        <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900">
-          <div className="grid gap-8 p-8 md:grid-cols-[300px_1fr] md:gap-12 md:p-12">
+        <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-primary-500/5">
+          {/* Background gradient layer */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-violet-50/30 dark:from-neutral-900 dark:via-primary-950/10 dark:to-violet-950/10" />
+
+          <div className="relative z-10 grid gap-8 p-8 md:grid-cols-[280px_1fr] md:gap-12 md:p-12">
             {/* Left Column - Avatar & Quick Info */}
             <div className="flex flex-col items-center md:items-start">
               {/* Avatar */}
               <div className="relative mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 opacity-50 blur-md" />
+                {/* Glow effect behind avatar */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-violet-500 opacity-40 blur-xl" />
                 <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800">
                   <img
                     src="/images/avatar.jpg"
                     alt="Emiliano Mastragostino"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                {/* Status badge */}
-                <div className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full border-2 border-white bg-success-500 px-3 py-1.5 text-xs font-semibold text-white shadow-lg dark:border-neutral-900">
+                {/* Status badge - matching design system */}
+                <div className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full border-2 border-white bg-success-500 px-3 py-1.5 text-xs font-semibold text-white shadow-md dark:border-neutral-900">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
@@ -60,7 +68,7 @@ const AboutMeSection: React.FC = () => {
               <div className="flex w-full flex-col gap-3">
                 <InfoTag icon={MapPin} text="Roma, Italia" />
                 <InfoTag icon={Briefcase} text="Automation Consultant" />
-                <InfoTag icon={GraduationCap} text="Specialist in n8n" />
+                <InfoTag icon={Target} text="Specialist in n8n" />
               </div>
             </div>
 
@@ -71,24 +79,24 @@ const AboutMeSection: React.FC = () => {
                 <h3 className="mb-2 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
                   Emiliano Mastragostino
                 </h3>
-                <p className="text-lg text-primary-600 dark:text-primary-400">
+                <p className="text-lg font-medium text-primary-600 dark:text-primary-400">
                   Automation Consultant & n8n Expert
                 </p>
               </div>
 
               {/* Bio Text */}
-              <div className="mb-8 space-y-4 text-neutral-700 dark:text-neutral-300">
+              <div className="mb-8 space-y-4 text-base text-neutral-600 dark:text-neutral-400">
                 <p className="leading-relaxed">
                   Ciao! Sono un consulente specializzato nell'automazione di
                   processi aziendali usando{' '}
-                  <strong className="text-neutral-900 dark:text-neutral-50">
+                  <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                     n8n
                   </strong>{' '}
                   e intelligenza artificiale.
                 </p>
                 <p className="leading-relaxed">
                   Aiuto PMI e professionisti a{' '}
-                  <strong className="text-neutral-900 dark:text-neutral-50">
+                  <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                     liberare tempo prezioso
                   </strong>{' '}
                   automatizzando task ripetitivi, integrando sistemi esistenti e
@@ -98,7 +106,7 @@ const AboutMeSection: React.FC = () => {
                   Il mio approccio è pratico e orientato ai risultati: analizzo
                   i tuoi processi, identifico le opportunità ad alto impatto, e
                   implemento soluzioni che generano{' '}
-                  <strong className="text-neutral-900 dark:text-neutral-50">
+                  <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                     ROI immediato
                   </strong>
                   .
@@ -107,7 +115,7 @@ const AboutMeSection: React.FC = () => {
 
               {/* Skills/Specialties */}
               <div className="mb-8">
-                <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
                   Specializzazioni
                 </h4>
                 <div className="flex flex-wrap gap-2">
@@ -116,6 +124,7 @@ const AboutMeSection: React.FC = () => {
                   <SkillBadge>AI Automation</SkillBadge>
                   <SkillBadge>Process Optimization</SkillBadge>
                   <SkillBadge>CRM Integration</SkillBadge>
+                  <SkillBadge>Data Sync</SkillBadge>
                 </div>
               </div>
 
@@ -126,29 +135,35 @@ const AboutMeSection: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="mailto:contact@example.com"
-                  className="group inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-primary-700 hover:shadow-lg dark:bg-primary-500 dark:hover:bg-primary-600"
+                  className="group/btn inline-flex items-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600"
                 >
                   <Mail className="h-5 w-5" />
                   Contattami
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
                 </a>
 
-                <SocialLink
-                  href="https://linkedin.com"
-                  ariaLabel="LinkedIn Profile"
-                  icon={Linkedin}
-                />
-                <SocialLink
-                  href="https://github.com"
-                  ariaLabel="GitHub Profile"
-                  icon={Github}
-                />
+                <div className="flex items-center gap-3">
+                  <SocialLink
+                    href="https://linkedin.com"
+                    ariaLabel="LinkedIn Profile"
+                    icon={Linkedin}
+                  />
+                  <SocialLink
+                    href="https://github.com"
+                    ariaLabel="GitHub Profile"
+                    icon={Github}
+                  />
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Hover overlay - matching BenefitSection pattern */}
+          <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
         </div>
 
-        {/* Stats or Additional Info (Optional) */}
-        <StatsSection />
+        {/* Value Proposition Cards */}
+        <ValuePropositionCards />
       </div>
     </section>
   );
@@ -167,7 +182,7 @@ interface InfoTagProps {
 
 function InfoTag({ icon: Icon, text }: InfoTagProps) {
   return (
-    <div className="flex items-center gap-2 rounded-lg bg-neutral-100 px-3 py-2 text-sm text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+    <div className="flex items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm font-medium text-neutral-700 backdrop-blur-sm transition-colors hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800/50 dark:text-neutral-300 dark:hover:border-neutral-700">
       <Icon className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
       <span>{text}</span>
     </div>
@@ -176,7 +191,7 @@ function InfoTag({ icon: Icon, text }: InfoTagProps) {
 
 function SkillBadge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="dark:bg-primary-950/30 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 dark:border-primary-900/50 dark:text-primary-300">
+    <span className="rounded-full border border-primary-200 bg-primary-50 px-3 py-1.5 text-xs font-medium text-primary-700 transition-colors hover:border-primary-300 hover:bg-primary-100 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300 dark:hover:border-primary-800 dark:hover:bg-primary-950/50">
       {children}
     </span>
   );
@@ -195,7 +210,7 @@ function SocialLink({ href, ariaLabel, icon: Icon }: SocialLinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
-      className="dark:hover:bg-primary-950/30 flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 bg-neutral-100 text-neutral-700 transition-all hover:border-primary-500 hover:bg-primary-50 hover:text-primary-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-primary-500 dark:hover:text-primary-400"
+      className="flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 shadow-sm transition-all duration-100 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-600 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-primary-500 dark:hover:bg-primary-950/30 dark:hover:text-primary-400"
     >
       <Icon className="h-5 w-5" />
     </a>
@@ -203,28 +218,51 @@ function SocialLink({ href, ariaLabel, icon: Icon }: SocialLinkProps) {
 }
 
 /* ============================================================================
-   STATS SECTION (Optional - shows credibility)
+   VALUE PROPOSITION CARDS - Replaces stats with meaningful info
    ============================================================================ */
-function StatsSection() {
-  const stats = [
-    { value: '50+', label: 'Automazioni Create' },
-    { value: '30+', label: 'Clienti Soddisfatti' },
-    { value: '1000+', label: 'Ore Risparmiate' },
+function ValuePropositionCards() {
+  const values = [
+    {
+      title: 'Approccio Pratico',
+      description: 'Soluzioni concrete che puoi usare da subito, non teoria.',
+      gradient: 'from-primary-500 to-primary-600',
+    },
+    {
+      title: 'ROI Misurabile',
+      description: 'Ogni automazione è progettata per generare valore reale.',
+      gradient: 'from-violet-500 to-purple-600',
+    },
+    {
+      title: 'Supporto Continuo',
+      description: "Non ti lascio solo: ti seguo anche dopo l'implementazione.",
+      gradient: 'from-amber-500 to-orange-600',
+    },
   ];
 
   return (
     <div className="mt-12 grid gap-6 sm:grid-cols-3">
-      {stats.map((stat) => (
+      {values.map((value, index) => (
         <div
-          key={stat.label}
-          className="rounded-xl border border-neutral-200 bg-gradient-to-br from-neutral-50 to-white p-6 text-center transition-all hover:shadow-md dark:border-neutral-800 dark:from-neutral-900 dark:to-neutral-900/50"
+          key={index}
+          className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
         >
-          <div className="mb-2 text-4xl font-bold text-primary-600 dark:text-primary-400">
-            {stat.value}
+          {/* Gradient background */}
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-5 transition-opacity duration-300 group-hover:opacity-10`}
+          />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <h4 className="mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-50">
+              {value.title}
+            </h4>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              {value.description}
+            </p>
           </div>
-          <div className="text-sm text-neutral-600 dark:text-neutral-400">
-            {stat.label}
-          </div>
+
+          {/* Hover overlay */}
+          <div className="pointer-events-none absolute inset-0 rounded-xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
         </div>
       ))}
     </div>
