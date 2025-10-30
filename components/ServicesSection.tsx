@@ -126,7 +126,7 @@ function StarterCard() {
         {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-600/20 bg-primary-600/10 px-3 py-1 text-xs font-semibold uppercase text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
           <Rocket className="h-3 w-3" />
-          Primo Passo
+          Fase 1
         </div>
 
         {/* Icon */}
