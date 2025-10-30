@@ -7,6 +7,12 @@ import {
   TrendingUp,
   Wrench,
   HelpCircle,
+  Search,
+  ArrowRight,
+  Clock,
+  Shield,
+  Crown,
+  Settings,
 } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
@@ -266,6 +272,200 @@ function AIEnhancementBanner() {
           }}
         />
       </div>
+    </div>
+  );
+}
+
+//
+
+/* ============================================================================
+   AUDIT CARD (Step 1 - Lead Generation)
+   ============================================================================ */
+function AuditCard() {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-8 transition-all duration-300 hover:border-accent-300 hover:shadow-xl dark:border-accent-900/50 dark:from-neutral-900 dark:to-accent-950/20">
+      {/* Decorative glow */}
+      <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-500/20 blur-3xl" />
+
+      <div className="relative z-10 flex flex-col items-center text-center md:flex-row md:text-left">
+        {/* Icon */}
+        <div className="mb-6 flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-lg md:mb-0 md:mr-8">
+          <Search className="h-10 w-10 text-white" />
+        </div>
+
+        {/* Content */}
+        <div className="flex-1">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+            <Sparkles className="h-3 w-3" />
+            FASE 1 · GRATUITO
+          </div>
+          <h3 className="mb-3 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+            Audit Gratuito
+          </h3>
+          <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+            Analizziamo insieme i tuoi processi e identifichiamo 2-3 aree ad
+            alto impatto dove l'automazione può generare risultati immediati.
+            Nessun impegno richiesto.
+          </p>
+          <button className="group/btn inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 font-semibold text-white transition-all hover:bg-accent-700 hover:shadow-lg dark:bg-accent-500 dark:hover:bg-accent-600">
+            Prenota il Tuo Audit
+            <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================================
+   MAINTENANCE SECTION (Step 4 - Recurring Revenue)
+   ============================================================================ */
+function MaintenanceSection() {
+  const basePlan = {
+    name: 'Piano Base',
+    price: '€79',
+    period: '/mese',
+    icon: Settings,
+    features: [
+      'Server condiviso ottimizzato',
+      'Monitoraggio automazioni 24/7',
+      'Supporto via email (48h)',
+      'Backup settimanali',
+      'Aggiornamenti di sicurezza',
+    ],
+  };
+
+  const premiumPlan = {
+    name: 'Piano Premium',
+    price: '€149',
+    period: '/mese',
+    icon: Crown,
+    features: [
+      'VPS dedicato con risorse garantite',
+      'Monitoraggio avanzato + alert real-time',
+      'Supporto prioritario (12h)',
+      'Backup giornalieri',
+      'Ottimizzazioni performance mensili',
+    ],
+  };
+
+  return (
+    <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-neutral-50 to-neutral-100 p-8 dark:border-neutral-800 dark:from-neutral-900 dark:to-neutral-800">
+      {/* Header */}
+      <div className="mb-8 text-center">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-success-600/20 bg-success-600/10 px-3 py-1 text-xs font-semibold text-success-700 dark:border-success-400/20 dark:bg-success-400/10 dark:text-success-300">
+          <Shield className="h-3 w-3" />
+          FASE 4 · GESTIONE CONTINUA
+        </div>
+        <h3 className="mb-3 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+          Hosting & Manutenzione
+        </h3>
+        <p className="mx-auto max-w-2xl text-neutral-600 dark:text-neutral-400">
+          Dopo i primi 3 mesi inclusi nello Starter, scegli il piano di gestione
+          per garantire stabilità e prestazioni ottimali.
+        </p>
+      </div>
+
+      {/* Plans Grid */}
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* Base Plan */}
+        <MaintenancePlanCard {...basePlan} />
+
+        {/* Premium Plan */}
+        <MaintenancePlanCard {...premiumPlan} featured />
+      </div>
+
+      {/* Note */}
+      <div className="mt-6 rounded-lg border border-neutral-300 bg-white p-4 text-center dark:border-neutral-700 dark:bg-neutral-900">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          <Clock className="mb-1 inline h-4 w-4" /> <strong>Nota:</strong> Il
+          piano di gestione diventa obbligatorio dopo i 3 mesi di hosting
+          inclusi nel Pacchetto Starter.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================================
+   MAINTENANCE PLAN CARD (Reusable)
+   ============================================================================ */
+interface MaintenancePlanProps {
+  name: string;
+  price: string;
+  period: string;
+  icon: React.ElementType;
+  features: string[];
+  featured?: boolean;
+}
+
+function MaintenancePlanCard({
+  name,
+  price,
+  period,
+  icon: Icon,
+  features,
+  featured = false,
+}: MaintenancePlanProps) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-xl border bg-white p-6 transition-all duration-300 hover:shadow-lg dark:bg-neutral-900 ${
+        featured
+          ? 'border-2 border-success-400 shadow-md dark:border-success-600/50'
+          : 'border-neutral-200 dark:border-neutral-800'
+      }`}
+    >
+      {featured && (
+        <div className="absolute -right-10 top-4 rotate-45 bg-success-500 px-10 py-1 text-xs font-bold text-white">
+          CONSIGLIATO
+        </div>
+      )}
+
+      {/* Icon */}
+      <div
+        className={`mb-4 flex h-12 w-12 items-center justify-center rounded-lg ${
+          featured
+            ? 'bg-gradient-to-br from-success-500 to-success-600'
+            : 'bg-gradient-to-br from-neutral-400 to-neutral-500'
+        }`}
+      >
+        <Icon className="h-6 w-6 text-white" />
+      </div>
+
+      {/* Title & Price */}
+      <h4 className="mb-1 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+        {name}
+      </h4>
+      <div className="mb-4 flex items-baseline">
+        <span
+          className={`text-3xl font-bold ${
+            featured
+              ? 'text-success-600 dark:text-success-400'
+              : 'text-neutral-900 dark:text-neutral-50'
+          }`}
+        >
+          {price}
+        </span>
+        <span className="ml-1 text-sm text-neutral-500">{period}</span>
+      </div>
+
+      {/* Features */}
+      <ul className="space-y-2">
+        {features.map((feature) => (
+          <li key={feature} className="flex items-start gap-2">
+            <CheckCircle2
+              className={`mt-0.5 h-4 w-4 flex-shrink-0 ${
+                featured
+                  ? 'text-success-600 dark:text-success-400'
+                  : 'text-neutral-500'
+              }`}
+            />
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">
+              {feature}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
