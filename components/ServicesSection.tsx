@@ -12,6 +12,9 @@ import {
   Clock,
   Server,
   Crown,
+  Wrench,
+  FileChartLine,
+  CircleQuestionMark,
 } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
@@ -25,15 +28,16 @@ const ServicesSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Il metodo
+            Come funziona
           </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
             Un metodo semplice
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
-            Niente pacchetti standard o tecnicismi inutili: ogni progetto nasce
-            da un’analisi chiara e da un’implementazione su misura, con costi
-            trasparenti e risultati misurabili.
+            Il percorso è pensato per essere lineare e trasparente: prima
+            analizziamo il tuo processo e definiamo la soluzione, poi passo
+            all’implementazione reale. Due fasi, un unico obiettivo — renderti
+            operativo e libero dal lavoro manuale.
           </p>
         </div>
 
@@ -54,7 +58,7 @@ const ServicesSection: React.FC = () => {
         </div> */}
 
         {/* Optional: AI Add-on Banner */}
-        {/* <AIEnhancementBanner /> */}
+        <AIEnhancementBanner />
       </div>
     </section>
   );
@@ -106,23 +110,23 @@ function AuditCard() {
    ============================================================================ */
 function StarterCard() {
   const features = [
-    'Una automazione semplice end-to-end',
-    'Setup completo e deployment',
-    '3 mesi di hosting gestito inclusi',
-    'Supporto durante il lancio',
+    'Sessione di analisi (60-90 min)',
+    'Identificazione dei punti critici e ripetitivi',
+    'Definizione del flusso automatico ideale',
+    'Preventivo chiaro e senza impegno per la fase successiva',
   ];
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white to-primary-100/70 dark:from-neutral-900 dark:to-primary-950/20" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
         {/* Badge */}
-        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-600/20 bg-primary-600/10 px-3 py-1 text-xs font-semibold text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
+        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-600/20 bg-primary-600/10 px-3 py-1 text-xs font-semibold uppercase text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
           <Rocket className="h-3 w-3" />
-          FASE 2 · INGRESSO
+          Primo Passo
         </div>
 
         {/* Icon */}
@@ -132,11 +136,11 @@ function StarterCard() {
 
         {/* Title & Price */}
         <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-          Pacchetto Starter
+          Analisi Strategica
         </h3>
         <div className="mb-4">
           <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">
-            €499
+            €190
           </span>
           <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
             una tantum
@@ -145,8 +149,8 @@ function StarterCard() {
 
         {/* Description */}
         <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-          Implementazione rapida di una singola automazione per dimostrare
-          valore immediato. Perfetto per iniziare.
+          Analizziamo insieme i tuoi flussi di lavoro per capire dove
+          l'automazione può darti il massimo valore.
         </p>
 
         {/* Features */}
@@ -165,8 +169,8 @@ function StarterCard() {
         <div className="flex-1" />
 
         {/* CTA */}
-        <button className="w-full rounded-lg border-2 border-primary-600 bg-primary-600 px-6 py-3 font-semibold text-white transition-all hover:border-primary-700 hover:bg-primary-700 dark:border-primary-500 dark:bg-primary-500 dark:hover:border-primary-600 dark:hover:bg-primary-600">
-          Inizia Ora
+        <button className="w-full rounded-lg border-2 border-primary-600 bg-primary-600 px-6 py-3 font-semibold text-white transition-all hover:border-primary-700 hover:bg-primary-700 dark:border-neutral-800 dark:bg-primary-500 dark:hover:border-primary-600 dark:hover:bg-primary-600">
+          Prenota Consulenza
         </button>
       </div>
     </div>
@@ -178,14 +182,29 @@ function StarterCard() {
    ============================================================================ */
 function GrowthCard() {
   const features = [
-    'Automazioni complesse multi-step',
-    'Integrazioni multiple e sincronizzate',
-    'Logiche condizionali avanzate',
-    'Integrazione IA opzionale',
+    'Sviluppo, test e validazione dell’automazione',
+    'Implementazione nel tuo ambiente di lavoro',
+    'Sessione di formazione operativa',
+    'Ottimizzazione finale su feedback reali',
+    'Supporto post-avvio per i primi giorni di utilizzo',
   ];
 
+  const onMouseEnterTooltip = (e: React.MouseEvent<SVGElement>) => {
+    const tooltip = e.currentTarget.nextElementSibling;
+    if (tooltip) {
+      tooltip.classList.remove('invisible', 'opacity-0');
+    }
+  };
+
+  const onMouseLeaveTooltip = (e: React.MouseEvent<SVGElement>) => {
+    const tooltip = e.currentTarget.nextElementSibling;
+    if (tooltip) {
+      tooltip.classList.add('invisible', 'opacity-0');
+    }
+  };
+
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-accent-300 bg-white shadow-md transition-all duration-300 hover:shadow-xl dark:border-accent-900/50 dark:bg-neutral-900">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-accent-900/50 dark:bg-neutral-900">
       {/* Popular badge */}
       {/* <div className="absolute -right-12 top-6 rotate-45 bg-accent-500 px-12 py-1 text-xs font-bold text-white shadow-lg">
         POPOLARE
@@ -197,23 +216,34 @@ function GrowthCard() {
       {/* Content */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
         {/* Badge */}
-        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold uppercase text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
           <TrendingUp className="h-3 w-3" />
-          FASE 3 · CRESCITA
+          Fase 2
         </div>
 
         {/* Icon */}
         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md">
-          <Sparkles className="h-8 w-8 text-white" />
+          <Wrench className="h-8 w-8 text-white" />
         </div>
 
         {/* Title & Price */}
         <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-          Piani Growth
+          Sviluppo dell'Automazione
         </h3>
         <div className="mb-4">
           <span className="text-4xl font-bold text-accent-600 dark:text-accent-400">
             Custom
+          </span>
+          <span className="relative bottom-2 ml-1 inline-block">
+            <CircleQuestionMark
+              className="inline h-4 w-4 cursor-help text-neutral-400 hover:text-neutral-500"
+              onMouseEnter={onMouseEnterTooltip}
+              onMouseLeave={onMouseLeaveTooltip}
+            />
+            <span className="invisible absolute bottom-full left-2 z-10 mb-2 w-64 rounded bg-neutral-900 p-2 text-xs text-white opacity-0 transition-all dark:bg-neutral-800">
+              Il prezzo varia in base alla complessità.
+              <div>Automazioni semplici partono da €300.</div>
+            </span>
           </span>
           <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
             su preventivo
@@ -222,8 +252,7 @@ function GrowthCard() {
 
         {/* Description */}
         <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-          Progetti su misura per automazioni complesse, integrazioni strategiche
-          e implementazioni con intelligenza artificiale.
+          Realizzo, collaudo e integro la soluzione definita nella prima fase.
         </p>
 
         {/* Features */}
@@ -408,7 +437,7 @@ function MaintenancePlanCard({
    ============================================================================ */
 function AIEnhancementBanner() {
   return (
-    <div className="relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-purple-50 to-primary-50 p-8 dark:border-violet-900/50 dark:from-neutral-900 dark:to-violet-950/20">
+    <div className="relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-purple-50 to-primary-50 px-8 py-6 dark:border-violet-900/50 dark:from-neutral-900 dark:to-violet-950/20">
       {/* Decorative elements */}
       <div className="absolute -left-20 top-0 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
       <div className="absolute -right-20 bottom-0 h-40 w-40 rounded-full bg-primary-500/20 blur-3xl" />
@@ -421,15 +450,17 @@ function AIEnhancementBanner() {
 
         {/* Content */}
         <div className="flex-1 text-center md:text-left">
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-violet-600/20 bg-violet-600/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
-            POTENZIAMENTO AI
+          <div className="relative -top-1 mb-2 inline-flex items-center gap-2 rounded-full border border-violet-600/20 bg-violet-600/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
+            AI opzionale
           </div>
           <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-            Aggiungi Intelligenza Artificiale
+            L'AI come acceleratore, non come sostituto
           </h3>
           <p className="text-neutral-600 dark:text-neutral-400">
-            Integra ChatGPT, Claude o Gemini in qualsiasi automazione per
-            analisi intelligenti, decisioni automatiche e risposte naturali.
+            L'intelligenza artificiale entra in gioco solo dove porta reale
+            valore: analisi di testo, estrazione di dati o assistenza
+            decisionale. È un'estensione naturale dell'automazione, mai una
+            complicazione.
           </p>
         </div>
 
