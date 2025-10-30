@@ -34,9 +34,9 @@ const getGridStyle = () => {
 
 function TopBadge() {
   return (
-    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm text-primary-500 backdrop-blur-sm dark:text-primary-200">
+    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm text-primary-600 backdrop-blur-sm dark:text-primary-100">
       <Sparkles className="h-4 w-4" />
-      <span>Consulente di automazione per PMI e Professionisti</span>
+      <span>Consulente in Automazione per PMI e Professionisti</span>
     </div>
   );
 }
@@ -72,16 +72,16 @@ export default function HeroSection() {
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
       {/* Glow Effect */}
-      <div className="absolute top-1/3 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]"></div>
+      <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
-          Libera il tuo tempo e
+          Automatizza e riconquista
           <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
             {' '}
-            fai crescere il tuo business
+            tempo, chiarezza e controllo
           </span>
         </h1>
 
