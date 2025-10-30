@@ -86,9 +86,9 @@ export default function HeroSection() {
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
-          Progetto e realizzo automazioni su misura che semplificano il tuo
-          lavoro e ti permettono di concentrarti su ciò che fa davvero crescere
-          la tua attività.
+          Creo automazioni che uniscono i tuoi software e riducono
+          l'operatività. Così puoi tornare a concentrarti su ciò che davvero
+          genera valore.
         </p>
 
         <CTAButtons />

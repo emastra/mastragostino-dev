@@ -14,6 +14,9 @@ import {
   Blocks,
   Scaling,
   ArrowRightIcon,
+  BanIcon,
+  SmileIcon,
+  BlocksIcon,
 } from 'lucide-react';
 
 const BenefitSection: React.FC = () => {
@@ -29,12 +32,12 @@ const BenefitSection: React.FC = () => {
             Benefici
           </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Risultati che Contano Davvero
+            Risultati concreti e duraturi
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Ogni automazione che creo non è teoria: è progettata per liberare
-            tempo, ridurre errori e permetterti di concentrarti su ciò che fa
-            davvero crescere la tua attività.
+            Connettere i tuoi strumenti e automatizzare le attività chiave
+            significa costruire basi solide per una crescita più sostenibile e
+            meno stressante.
           </p>
         </div>
       </div>
@@ -59,42 +62,42 @@ type Feature = {
 const features: Feature[] = [
   {
     Icon: TimerReset,
-    name: 'Recupera Ore Preziose',
+    name: 'Risparmia Ore Ogni Settimana',
     description:
-      'Dimentica il tempo perso in data entry, copia-incolla e gestione manuale. Automatizziamo i processi più esosi di tempo, regalandoti ore da reinvestire in strategia e vendita.',
+      'Le attività ripetitive diventano processi automatici: guadagni ore ogni settimana da dedicare ai clienti o alle strategie. Più tempo per ciò che conta davvero.',
     href: '#',
-    cta: 'Calcola il tuo ROI',
+    cta: 'Scopri come velocizzare i tuoi flussi di lavoro',
+    bgColor: 'success',
+  },
+  {
+    Icon: BanIcon,
+    name: 'Elimina Errori e Dimenticanze',
+    description:
+      'Automatizzando i passaggi critici, elimini gli errori manuali che ti fanno perdere tempo e credibilità. Le tue operazioni diventano fluide e affidabili.',
+    href: '#',
+    cta: 'Scopri come rendere i tuoi dati affidabili',
+    className: 'md:col-span-1',
     bgColor: 'amber',
   },
   {
-    Icon: TicketCheck,
-    name: 'Workflow Zero Errori',
+    Icon: BlocksIcon,
+    name: 'Tutti i Tuoi Software, Finalmente Connessi',
     description:
-      'Ogni automazione è progettata per eseguire compiti ripetitivi con precisione assoluta. Elimina gli errori umani che costano tempo, clienti e credibilità.',
+      'Niente più “ponti” manuali tra le app: i tuoi strumenti lavorano insieme, senza errori né perdite di tempo. Gestionali, email e fogli di calcolo iniziano a parlarsi.',
     href: '#',
-    cta: "Scopri l'Affidabilità",
-    className: 'md:col-span-1',
-    bgColor: 'primary',
-  },
-  {
-    Icon: Blocks,
-    name: 'Integrazione Senza Sforzo',
-    description:
-      'Colleghiamo in modo fluido tutti i tuoi software (CRM, Email, Fogli di calcolo, ERP) usando n8n. Non servono sviluppatori, solo logiche efficaci.',
-    href: '#',
-    cta: 'Vedi le Piattaforme incluse',
+    cta: 'Connetti i tuoi strumenti preferiti senza sforzo',
     className: 'md:col-span-1',
     bgColor: 'violet',
   },
   {
-    Icon: Scaling,
-    name: 'Scalabilità Immediata',
+    Icon: SmileIcon,
+    name: 'Più Professionalità, Meno Stress',
     description:
-      "Le automazioni non hanno picchi di stanchezza. Il tuo business può crescere in volume e complessità senza richiedere l'assunzione di nuovo personale per i compiti operativi.",
+      'Con processi automatizzati, trasmetti precisione, affidabilità e cura in ogni interazione con clienti e collaboratori. La tua reputazione cresce insieme al tuo business.',
     href: '#',
-    cta: 'Inizia a Scalare',
+    cta: 'Scopri come elevare la tua immagine professionale',
     className: 'md:col-span-1',
-    bgColor: 'success',
+    bgColor: 'primary',
   },
 ];
 
@@ -180,10 +183,10 @@ const BenefitCard: FC<BenefitCardProps> = ({
         <div className="group/link mt-4">
           <a
             href={href}
-            className="dark:focus:ring-offset-neutral-950 inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300"
+            className="inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300 dark:focus:ring-offset-neutral-950"
           >
             {cta}
-            <ArrowRightIcon className="group-hover/link:translate-x-2 ml-2 h-4 w-4 transition-transform" />
+            <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-2" />
           </a>
         </div>
       )}
