@@ -38,7 +38,7 @@ const BenefitSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <BentoGridCom />
+      <BenefitsGrid />
     </section>
   );
 };
@@ -177,13 +177,13 @@ const BenefitCard: FC<BenefitCardProps> = ({
       <div className="flex-1" />
 
       {href && cta && (
-        <div className="mt-4">
+        <div className="group/link mt-4">
           <a
             href={href}
             className="dark:focus:ring-offset-neutral-950 inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300"
           >
             {cta}
-            <ArrowRightIcon className="ml-2 h-4 w-4" />
+            <ArrowRightIcon className="group-hover/link:translate-x-2 ml-2 h-4 w-4 transition-transform" />
           </a>
         </div>
       )}
