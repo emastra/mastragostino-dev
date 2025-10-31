@@ -47,11 +47,11 @@ const AboutMeSection: React.FC = () => {
         </div>
 
         {/* Main Content - Two Column Layout */}
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Column - Image & Quick Facts */}
-          <div className="flex flex-col gap-6">
+          <div className="flex h-full min-h-0 flex-col gap-6">
             {/* Avatar Card */}
-            <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="group relative min-h-0 flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-violet-50 dark:from-neutral-900 dark:to-primary-950/20" />
 
@@ -124,9 +124,9 @@ const AboutMeSection: React.FC = () => {
           </div>
 
           {/* Right Column - Bio & CTA */}
-          <div className="flex flex-col">
+          <div className="flex h-full min-h-0 flex-col gap-6">
             {/* Bio Card */}
-            <div className="group relative mb-8 flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="group relative min-h-0 flex-1 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-white via-violet-50/30 to-amber-50/30 dark:from-neutral-900 dark:via-violet-950/10 dark:to-amber-950/10" />
 
