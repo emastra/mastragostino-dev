@@ -15,7 +15,7 @@ const AboutMeSection: React.FC = () => {
   return (
     <section className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24">
       {/* Grid Background - matching HeroSection */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-40"
         style={{
           backgroundImage:
@@ -26,27 +26,23 @@ const AboutMeSection: React.FC = () => {
           WebkitMaskImage:
             'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
         }}
-      />
+      /> */}
 
       {/* Glow Effect */}
-      <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/10 blur-[120px]" />
+      {/* <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/10 blur-[120px]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <span
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100"
+            className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider"
             aria-hidden="false"
             role="status"
           >
-            <Sparkles className="h-4 w-4" />
-            Chi Sono
+            Chi sono
           </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Ciao, sono{' '}
-            <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
-              Emiliano
-            </span>
+            Ciao, sono Emiliano
           </h2>
         </div>
 
@@ -67,7 +63,7 @@ const AboutMeSection: React.FC = () => {
                     <img
                       src="/images/avatar.jpg"
                       alt="Emiliano Mastragostino"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                   {/* Status Indicator */}
@@ -122,7 +118,7 @@ const AboutMeSection: React.FC = () => {
                 icon={Zap}
                 title="Focus"
                 value="Automazione"
-                color="violet"
+                color="primary"
               />
             </div>
           </div>
