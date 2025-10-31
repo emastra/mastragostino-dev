@@ -107,7 +107,7 @@ const AboutMeSection: React.FC = () => {
             </div>
 
             {/* Quick Facts Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 lg:mt-8">
               <QuickFactCard
                 icon={Target}
                 title="Specialità"
@@ -165,7 +165,7 @@ const AboutMeSection: React.FC = () => {
 
                 {/* Skills */}
                 <div>
-                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                  <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
                     Specializzazioni
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -277,7 +277,7 @@ function QuickFactCard({
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 lg:py-8">
       {/* Background gradient */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${bgClasses[color]}`}
