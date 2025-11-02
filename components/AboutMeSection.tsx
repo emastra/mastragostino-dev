@@ -107,7 +107,7 @@ const AboutMeSection: React.FC = () => {
             </div>
 
             {/* Quick Facts Grid */}
-            <div className="grid grid-cols-2 gap-4 lg:mt-8">
+            <div className="grid grid-cols-2 gap-4">
               <QuickFactCard
                 icon={Target}
                 title="Specialità"
@@ -132,7 +132,7 @@ const AboutMeSection: React.FC = () => {
 
               <div className="relative z-10">
                 {/* Intro */}
-                <div className="mb-6">
+                <div className="mb-8 md:mb-12">
                   <h4 className="mb-3 text-xl font-bold text-neutral-900 dark:text-neutral-50">
                     Trasformo processi manuali in workflow automatici
                   </h4>
@@ -147,7 +147,7 @@ const AboutMeSection: React.FC = () => {
                 </div>
 
                 {/* Approach */}
-                <div className="mb-6">
+                <div className="mb-8 md:mb-12">
                   <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
                     <Heart className="h-4 w-4" />
                     Il mio approccio
@@ -183,7 +183,7 @@ const AboutMeSection: React.FC = () => {
             </div>
 
             {/* CTA Card */}
-            <div className="group relative overflow-hidden rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 to-violet-50 p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-primary-900/50 dark:from-primary-950/20 dark:to-violet-950/20">
+            {/* <div className="group relative overflow-hidden rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50 to-violet-50 p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-primary-900/50 dark:from-primary-950/20 dark:to-violet-950/20">
               <div className="relative z-10">
                 <p className="mb-4 text-sm font-medium text-neutral-700 dark:text-neutral-300">
                   Pronto a liberare tempo per ciò che conta davvero?
@@ -193,7 +193,7 @@ const AboutMeSection: React.FC = () => {
                   <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -277,7 +277,7 @@ function QuickFactCard({
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 lg:py-8">
+    <div className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
       {/* Background gradient */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${bgClasses[color]}`}
