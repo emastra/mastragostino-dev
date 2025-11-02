@@ -133,14 +133,14 @@ function StarterCard() {
         </div>
 
         {/* Description */}
-        <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+        <p className="mb-8 text-neutral-600 dark:text-neutral-400">
           Una breve conversazione per capire il tuo modo di lavorare e
           individuare dove l'automazione può portare il maggior valore ai tuoi
           processi.
         </p>
 
         {/* Features */}
-        <ul className="mb-8 space-y-3">
+        <ul className="mb-6 space-y-3">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
@@ -152,7 +152,7 @@ function StarterCard() {
         </ul>
 
         {/* Spacer */}
-        <div className="flex-1" />
+        {/* <div className="flex-1" /> */}
 
         {/* CTA */}
         {/* <button className="group/btn flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
@@ -230,13 +230,13 @@ function GrowthCard() {
         </div>
 
         {/* Description */}
-        <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+        <p className="mb-8 text-neutral-600 dark:text-neutral-400">
           Se decidi di procedere, creo e implemento l'automazione definita
           insieme, testata e pronta all'uso nel tuo ambiente di lavoro.
         </p>
 
         {/* Features */}
-        <ul className="mb-8 space-y-3">
+        <ul className="mb-6 space-y-3">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
@@ -248,7 +248,7 @@ function GrowthCard() {
         </ul>
 
         {/* Spacer */}
-        <div className="flex-1" />
+        {/* <div className="flex-1" /> */}
 
         {/* CTA */}
         {/* <button className="w-full rounded-lg border-2 border-violet-600 bg-white px-6 py-3 font-semibold text-violet-700 shadow-lg transition-all duration-100 hover:bg-violet-50 hover:shadow-xl dark:border-violet-500 dark:bg-neutral-800 dark:text-violet-300 dark:hover:bg-neutral-700">
