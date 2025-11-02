@@ -57,10 +57,10 @@ export default ServicesSection;
    ============================================================================ */
 function StarterCard() {
   const features = [
-    'Sessione di analisi (60-90 min)',
+    'Analisi gratuita di 20-30 minuti',
     'Identificazione dei punti critici e ripetitivi',
-    'Definizione del flusso automatico ideale',
-    'Preventivo chiaro e senza impegno per la fase successiva',
+    'Prime idee di automazione personalizzate',
+    'Nessun impegno, solo valore',
   ];
 
   return (
@@ -73,7 +73,7 @@ function StarterCard() {
         {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
           <Rocket className="h-3 w-3" />
-          Fase 1
+          Step 1
         </div>
 
         {/* Icon */}
@@ -83,21 +83,22 @@ function StarterCard() {
 
         {/* Title & Price */}
         <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-          Analisi Strategica
+          Call di Analisi
         </h3>
         <div className="mb-4">
           <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">
-            €190
+            Gratis
           </span>
-          <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
+          {/* <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
             una tantum
-          </span>
+          </span> */}
         </div>
 
         {/* Description */}
         <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-          Analizziamo insieme i tuoi flussi di lavoro per capire dove
-          l'automazione può darti il massimo valore.
+          Una breve conversazione per capire il tuo modo di lavorare e
+          individuare dove l'automazione può portare il maggior valore ai tuoi
+          processi.
         </p>
 
         {/* Features */}
@@ -116,9 +117,9 @@ function StarterCard() {
         <div className="flex-1" />
 
         {/* CTA */}
-        <button className="group/btn flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
+        {/* <button className="group/btn flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
           Prenota Consulenza
-        </button>
+        </button> */}
       </div>
 
       {/* Hover overlay */}
@@ -132,11 +133,11 @@ function StarterCard() {
    ============================================================================ */
 function GrowthCard() {
   const features = [
-    "Sviluppo, test e validazione dell'automazione",
-    'Implementazione nel tuo ambiente di lavoro',
-    'Sessione di formazione operativa',
-    'Ottimizzazione finale su feedback reali',
-    'Supporto post-avvio per i primi giorni di utilizzo',
+    'Preventivo fisso, zero sorprese',
+    "Sviluppo e implementazione dell'automazione",
+    'Integrazione dei tuoi strumenti (Email, Fogli, CRM, Fatturazione, ecc.)',
+    'AI opzionale',
+    "Formazione rapida sull'uso & Supporto post-lancio",
   ];
 
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -151,7 +152,7 @@ function GrowthCard() {
         {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
           <TrendingUp className="h-3 w-3" />
-          Fase 2
+          Step 2
         </div>
 
         {/* Icon */}
@@ -161,7 +162,7 @@ function GrowthCard() {
 
         {/* Title & Price */}
         <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-          Sviluppo dell'Automazione
+          Sviluppo su misura
         </h3>
         <div className="mb-4 flex items-baseline gap-2">
           <span className="text-4xl font-bold text-violet-600 dark:text-violet-400">
@@ -192,7 +193,8 @@ function GrowthCard() {
 
         {/* Description */}
         <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-          Realizzo, collaudo e integro la soluzione definita nella prima fase.
+          Se decidi di procedere, creo e implemento l'automazione definita
+          insieme, testata e pronta all'uso nel tuo ambiente di lavoro.
         </p>
 
         {/* Features */}
@@ -211,9 +213,9 @@ function GrowthCard() {
         <div className="flex-1" />
 
         {/* CTA */}
-        <button className="w-full rounded-lg border-2 border-violet-600 bg-white px-6 py-3 font-semibold text-violet-700 shadow-lg transition-all duration-100 hover:bg-violet-50 hover:shadow-xl dark:border-violet-500 dark:bg-neutral-800 dark:text-violet-300 dark:hover:bg-neutral-700">
+        {/* <button className="w-full rounded-lg border-2 border-violet-600 bg-white px-6 py-3 font-semibold text-violet-700 shadow-lg transition-all duration-100 hover:bg-violet-50 hover:shadow-xl dark:border-violet-500 dark:bg-neutral-800 dark:text-violet-300 dark:hover:bg-neutral-700">
           Richiedi Preventivo
-        </button>
+        </button> */}
       </div>
 
       {/* Hover overlay */}
