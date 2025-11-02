@@ -26,15 +26,15 @@ const ServicesSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Come funziona
+            Come iniziamo
           </span>
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
-            Un metodo semplice
+            Dalla chiarezza all'automazione
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
-            Un percorso lineare e trasparente: prima analizziamo e definiamo la
-            soluzione, poi la realizzo. Due fasi per un unico obiettivo —
-            liberarti dal lavoro manuale.
+            Nessun percorso complicato, nessuna spinta alla vendita. Tutto parte
+            da una breve call gratuita per capire le tue esigenze e, solo se ha
+            senso, passiamo alla realizzazione dell’automazione su misura.
           </p>
         </div>
 
