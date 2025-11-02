@@ -13,6 +13,7 @@ import {
   Shield,
   Crown,
   Settings,
+  Calendar,
 } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
@@ -44,7 +45,40 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* AI Add-on Banner */}
-        <AIEnhancementBanner />
+        {/* <AIEnhancementBanner /> */}
+
+        <div className="mt-16 text-center">
+          <h3 className="mb-4 text-lg font-bold sm:text-3xl">
+            Inizia senza impegno
+          </h3>
+          <p className="text-md text-neutral-500 dark:text-neutral-400">
+            {/* Unisciti a oltre{' '}
+            <strong className="font-semibold text-neutral-700 dark:text-neutral-300">
+              30+ professionisti e PMI
+            </strong>{' '}
+            che hanno automatizzato i loro processi */}
+            Il modo migliore per iniziare è parlarne: ti mostro{' '}
+            <strong className="font-semibold text-neutral-700 dark:text-neutral-300">
+              il potenziale dell'automazione
+            </strong>{' '}
+            nel tuo caso specifico.
+          </p>
+          {/* <button className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700">
+            Prenota la tua call gratuita
+          </button> */}
+          <div className="mt-8 flex justify-center">
+            <button className="group/btn relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 px-10 py-5 text-lg font-bold text-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.4)] dark:shadow-primary-500/30 dark:hover:shadow-primary-500/50 sm:px-12 sm:py-6 sm:text-xl">
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full" />
+
+              <span className="relative flex items-center gap-3">
+                <Calendar className="h-6 w-6" />
+                Inizia prenotando la tua call gratuita
+                <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
