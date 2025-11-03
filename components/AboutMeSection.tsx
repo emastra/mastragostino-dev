@@ -10,6 +10,7 @@ import {
   Zap,
   Heart,
 } from 'lucide-react';
+import Link from 'next/link'; // TODO: usare next Link per tutto il sito?
 
 const AboutMeSection: React.FC = () => {
   return (
@@ -142,7 +143,12 @@ const AboutMeSection: React.FC = () => {
                       recuperare tempo prezioso
                     </strong>{' '}
                     automatizzando attività ripetitive e integrando i loro
-                    sistemi esistenti.
+                    sistemi esistenti. Lavoro con strumenti come n8n e, quando
+                    utile,{' '}
+                    <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
+                      Intelligenza Artificiale
+                    </span>
+                    .
                   </p>
                 </div>
 
