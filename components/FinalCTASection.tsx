@@ -66,13 +66,14 @@ const FinalCTASection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="mb-10 text-center text-lg text-neutral-600 dark:text-neutral-400 sm:text-xl md:text-2xl">
-              Scopri come l'automazione può trasformare il tuo business in una
-              consulenza gratuita di 60 minuti.
+              Nessuna vendita, solo valore concreto: ti aiuto a individuare i
+              punti critici del tuo processo e ti mostro cosa potresti
+              automatizzare già da subito.
             </p>
 
             {/* Key Benefits - Quick Highlights */}
             <div className="mb-10 flex flex-wrap justify-center gap-4 md:gap-6">
-              <BenefitPill icon={Clock} text="60 minuti gratuiti" />
+              <BenefitPill icon={Clock} text="Solo 20 minuti" />
               <BenefitPill icon={Zap} text="Analisi personalizzata" />
               <BenefitPill icon={CheckCircle2} text="Zero impegno" />
             </div>
@@ -85,7 +86,7 @@ const FinalCTASection: React.FC = () => {
 
                 <span className="relative flex items-center gap-3">
                   <Calendar className="h-6 w-6" />
-                  Prenota la Consulenza Gratuita
+                  Prenota ora la tua call gratuita
                   <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
                 </span>
               </button>
@@ -99,7 +100,7 @@ const FinalCTASection: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-success-500" />
-                <span>Risposta in 24h</span>
+                <span>Flessibilità sugli orari</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-success-500" />
