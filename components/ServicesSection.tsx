@@ -238,14 +238,7 @@ function GrowthCard() {
               <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
                 AI Opzionale
               </span>{' '}
-              per ottimizzare o ampliare le automazioni{' '}
-              <QMarkTooltip className="relative top-0.5">
-                <div className="mb-1 font-semibold">Prezzo personalizzato</div>
-                <div>Il prezzo varia in base alla complessità.</div>
-                <div className="mt-1 text-violet-600 dark:text-violet-400">
-                  Automazioni semplici partono da €300.
-                </div>
-              </QMarkTooltip>
+              per ottimizzare o ampliare le automazioni
             </span>
           </li>
         </ul>
