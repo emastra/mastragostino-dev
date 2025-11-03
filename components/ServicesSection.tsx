@@ -129,7 +129,7 @@ function StarterCard() {
       <div className="relative z-10 flex flex-1 flex-col p-8">
         {/* Step Badge */}
         <div className="mb-6 flex items-center justify-between">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
             <Rocket className="h-3.5 w-3.5" />
             Step 1
           </div>
@@ -218,7 +218,7 @@ function GrowthCard() {
       <div className="relative z-10 flex flex-1 flex-col p-8">
         {/* Step Badge */}
         <div className="mb-6 flex items-center justify-between">
-          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
+          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
             <TrendingUp className="h-3.5 w-3.5" />
             Step 2
           </div>
