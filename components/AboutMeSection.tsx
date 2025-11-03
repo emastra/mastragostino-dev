@@ -143,9 +143,12 @@ const AboutMeSection: React.FC = () => {
                       recuperare tempo prezioso
                     </strong>{' '}
                     automatizzando attività ripetitive e integrando i loro
-                    sistemi esistenti. Lavoro con strumenti come n8n e, quando
-                    utile,{' '}
-                    <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
+                    sistemi esistenti. Lavoro con strumenti come{' '}
+                    <span className="font-semibold text-primary-600 dark:text-primary-400">
+                      n8n
+                    </span>{' '}
+                    e, quando utile,{' '}
+                    <span className="font-semibold text-primary-600 dark:text-primary-400">
                       Intelligenza Artificiale
                     </span>
                     .
