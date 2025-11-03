@@ -15,6 +15,7 @@ import {
   Settings,
   Calendar,
 } from 'lucide-react';
+import { cn } from '~/lib/utils';
 
 const ServicesSection: React.FC = () => {
   return (
@@ -177,8 +178,6 @@ function GrowthCard() {
     "Formazione rapida sull'uso & Supporto post-lancio",
   ];
 
-  const [showTooltip, setShowTooltip] = React.useState(false);
-
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
       {/* Background gradient - Using violet/purple colors */}
@@ -205,25 +204,14 @@ function GrowthCard() {
           <span className="text-4xl font-bold text-violet-600 dark:text-violet-400">
             Custom
           </span>
-          <div className="relative inline-block">
-            <HelpCircle
-              className="h-4 w-4 cursor-help text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-300"
-              onMouseEnter={() => setShowTooltip(true)}
-              onMouseLeave={() => setShowTooltip(false)}
-            />
-            {showTooltip && (
-              <div className="absolute bottom-full left-1/2 z-20 mb-2 w-64 -translate-x-1/2 rounded-lg border border-neutral-200 bg-white p-3 text-xs text-neutral-700 shadow-lg dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
-                <div className="mb-1 font-semibold">Prezzo personalizzato</div>
-                <div>Il prezzo varia in base alla complessità.</div>
-                <div className="mt-1 text-violet-600 dark:text-violet-400">
-                  Automazioni semplici partono da €300.
-                </div>
-                {/* Arrow */}
-                <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-white dark:border-t-neutral-800" />
-              </div>
-            )}
-          </div>
-          <span className="text-sm text-neutral-500 dark:text-neutral-500">
+          <QMarkTooltip className="relative -top-0.5">
+            <div className="mb-1 font-semibold">Prezzo personalizzato</div>
+            <div>Il prezzo varia in base alla complessità del progetto.</div>
+            <div className="mt-1 text-violet-600 dark:text-violet-400">
+              Le automazioni semplici partono da €300.
+            </div>
+          </QMarkTooltip>
+          <span className="relative -top-0.5 text-sm text-neutral-500 dark:text-neutral-500">
             su preventivo
           </span>
         </div>
@@ -250,7 +238,14 @@ function GrowthCard() {
               <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
                 AI Opzionale
               </span>{' '}
-              per ottimizzare o ampliare le automazioni
+              per ottimizzare o ampliare le automazioni{' '}
+              <QMarkTooltip className="relative top-0.5">
+                <div className="mb-1 font-semibold">Prezzo personalizzato</div>
+                <div>Il prezzo varia in base alla complessità.</div>
+                <div className="mt-1 text-violet-600 dark:text-violet-400">
+                  Automazioni semplici partono da €300.
+                </div>
+              </QMarkTooltip>
             </span>
           </li>
         </ul>
@@ -319,6 +314,36 @@ function AIEnhancementBanner() {
           }}
         />
       </div>
+    </div>
+  );
+}
+
+/* ============================================================================
+   TOOL TIP COMPONENT
+   ============================================================================ */
+
+interface QMarkTooltipProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+function QMarkTooltip({ children, className }: QMarkTooltipProps) {
+  const [showTooltip, setShowTooltip] = React.useState(false);
+  console.log('className', className);
+
+  return (
+    <div className={cn('inline-block', className)}>
+      <HelpCircle
+        className="h-4 w-4 cursor-help text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-300"
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      />
+      {showTooltip && (
+        <div className="absolute bottom-full left-1/2 z-20 mb-2 w-64 -translate-x-1/2 rounded-lg border border-neutral-200 bg-white p-3 text-xs text-neutral-700 shadow-lg dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+          {children}
+          <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-white dark:border-t-neutral-800" />
+        </div>
+      )}
     </div>
   );
 }
