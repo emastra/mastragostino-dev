@@ -134,7 +134,7 @@ function StarterCard() {
             Step 1
           </div>
           {/* Free Badge */}
-          <div className="rounded-full bg-success-500 px-3 py-1 text-xs font-bold text-white shadow-sm">
+          <div className="rounded-full bg-success-500 px-3 py-1.5 text-xs font-bold text-white shadow-sm">
             GRATIS
           </div>
         </div>
@@ -163,7 +163,7 @@ function StarterCard() {
               key={index}
               className="flex items-start gap-3 rounded-lg bg-white/50 p-3 transition-colors hover:bg-primary-50/50 dark:bg-neutral-800/30 dark:hover:bg-primary-950/20"
             >
-              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
+              <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 {feature}
               </span>
@@ -177,8 +177,15 @@ function StarterCard() {
         {/* Bottom info */}
         <div className="mt-6 rounded-lg border border-primary-200 bg-primary-50/50 p-4 dark:border-primary-900/30 dark:bg-primary-950/20">
           <p className="text-xs font-medium text-primary-700 dark:text-primary-300">
-            💡 Alla fine della call avrai chiarezza su cosa è possibile
-            automatizzare e come procedere.
+            💡 Alla fine della call, saprai{' '}
+            <span className="font-semibold text-neutral-900 dark:text-neutral-50">
+              se
+            </span>{' '}
+            e{' '}
+            <span className="font-semibold text-neutral-900 dark:text-neutral-50">
+              cosa
+            </span>{' '}
+            automatizzare.
           </p>
         </div>
       </div>
@@ -196,7 +203,7 @@ function GrowthCard() {
   const features = [
     'Preventivo fisso, zero sorprese',
     "Sviluppo e implementazione dell'automazione",
-    'Integrazione dei tuoi strumenti (Email, Fogli, CRM, Fatturazione, ecc.)',
+    'Integrazione dei tuoi strumenti di lavoro esistenti',
     "Supporto post-lancio e alle prime settimane d'uso",
   ];
 
@@ -216,7 +223,7 @@ function GrowthCard() {
             Step 2
           </div>
           {/* Optional Badge */}
-          <div className="rounded-full border border-violet-300 bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
+          <div className="rounded-full border border-violet-300 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
             Solo se ha senso
           </div>
         </div>
@@ -262,7 +269,7 @@ function GrowthCard() {
               key={index}
               className="flex items-start gap-3 rounded-lg bg-white/50 p-3 transition-colors hover:bg-violet-50/50 dark:bg-neutral-800/30 dark:hover:bg-violet-950/20"
             >
-              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
+              <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 {feature}
               </span>
@@ -271,7 +278,7 @@ function GrowthCard() {
 
           {/* AI Feature - Special styling */}
           <div className="flex items-start gap-3 rounded-lg border border-violet-200 bg-gradient-to-br from-violet-50 to-fuchsia-50/50 p-3 dark:border-violet-900/30 dark:from-violet-950/30 dark:to-fuchsia-950/20">
-            <Sparkles className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
+            <Sparkles className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
             <div className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
               <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-bold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
                 AI Opzionale
