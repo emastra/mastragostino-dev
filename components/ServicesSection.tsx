@@ -174,7 +174,6 @@ function GrowthCard() {
     'Preventivo fisso, zero sorprese',
     "Sviluppo e implementazione dell'automazione",
     'Integrazione dei tuoi strumenti (Email, Fogli, CRM, Fatturazione, ecc.)',
-    'AI opzionale',
     "Formazione rapida sull'uso & Supporto post-lancio",
   ];
 
@@ -238,24 +237,22 @@ function GrowthCard() {
         {/* Features */}
         <ul className="mb-6 space-y-3">
           {features.map((feature) => (
-            <li key={feature} className="group flex items-start gap-2">
-              {feature.includes('AI') ? (
-                <Sparkles className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 transition-transform duration-300 hover:rotate-12 group-hover:scale-110 dark:text-violet-400" />
-              ) : (
-                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
-              )}
-
-              <span
-                className={`mt-0.5 text-sm ${
-                  feature.includes('AI')
-                    ? 'bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400'
-                    : 'text-neutral-700 dark:text-neutral-300'
-                }`}
-              >
+            <li key={feature} className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
+              <span className="text-sm text-neutral-700 dark:text-neutral-300">
                 {feature}
               </span>
             </li>
           ))}
+          <li className="flex items-start gap-2">
+            <Sparkles className="h-5 w-5 flex-shrink-0 text-violet-600 transition-transform duration-300 hover:rotate-12 group-hover:scale-110 dark:text-violet-400" />
+            <span className="text-sm text-neutral-700 dark:text-neutral-300">
+              <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
+                AI Opzionale
+              </span>{' '}
+              per ottimizzare o ampliare le automazioni
+            </span>
+          </li>
         </ul>
 
         {/* Spacer */}
