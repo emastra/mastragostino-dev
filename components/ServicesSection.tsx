@@ -96,10 +96,10 @@ export default ServicesSection;
    ============================================================================ */
 function StarterCard() {
   const features = [
-    'Analisi gratuita di 20-30 minuti',
+    'Analisi gratuita dei tuoi flussi attuali (20-30 minuti)',
     'Identificazione dei punti critici e ripetitivi',
     'Prime idee di automazione personalizzate',
-    'Nessun impegno, solo valore',
+    'Nessun impegno, solo chiarezza',
   ];
 
   return (
@@ -141,10 +141,10 @@ function StarterCard() {
         </p>
 
         {/* Features */}
-        <ul className="mb-6 space-y-3">
+        <ul className="mb-6 space-y-4">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
+              <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
               <span className="text-sm text-neutral-700 dark:text-neutral-300">
                 {feature}
               </span>
@@ -175,7 +175,7 @@ function GrowthCard() {
     'Preventivo fisso, zero sorprese',
     "Sviluppo e implementazione dell'automazione",
     'Integrazione dei tuoi strumenti (Email, Fogli, CRM, Fatturazione, ecc.)',
-    "Formazione rapida sull'uso & Supporto post-lancio",
+    "Supporto post-lancio e alle prime settimane d'uso",
   ];
 
   return (
@@ -219,11 +219,12 @@ function GrowthCard() {
         {/* Description */}
         <p className="mb-8 text-neutral-600 dark:text-neutral-400">
           Se decidi di procedere, creo e implemento l'automazione definita
-          insieme, testata e pronta all'uso nel tuo ambiente di lavoro.
+          insieme. Mi occupo dei test e dell'integrazione, per renderla subito
+          pronta all'uso nel tuo ambiente di lavoro.
         </p>
 
         {/* Features */}
-        <ul className="mb-6 space-y-3">
+        <ul className="mb-6 space-y-4">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
@@ -238,7 +239,7 @@ function GrowthCard() {
               <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
                 AI Opzionale
               </span>{' '}
-              per ottimizzare o ampliare le automazioni
+              per ottimizzare o potenziare le automazioni
             </span>
           </li>
         </ul>
