@@ -7,20 +7,26 @@ import {
   TrendingUp,
   Wrench,
   HelpCircle,
-  Search,
   ArrowRight,
-  Clock,
-  Shield,
+  Calendar,
+  MessageCircle,
+  Lightbulb,
+  Search,
   Crown,
   Settings,
-  Calendar,
+  Shield,
+  Clock,
 } from 'lucide-react';
 import { cn } from '~/lib/utils';
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="px-4 py-16">
-      <div className="container mx-auto max-w-7xl">
+    <section className="relative overflow-hidden px-4 py-16 sm:py-20">
+      {/* Subtle background decoration */}
+      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-500/5 blur-[100px]" />
+
+      <div className="container relative z-10 mx-auto max-w-7xl">
+        {/* Section Header */}
         <div className="mb-16 text-center">
           <span
             className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider"
@@ -35,45 +41,64 @@ const ServicesSection: React.FC = () => {
           <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
             Nessun percorso complicato, nessuna spinta alla vendita. Tutto parte
             da una breve call gratuita per capire le tue esigenze e, solo se ha
-            senso, passiamo alla realizzazione dell’automazione su misura.
+            senso, passiamo alla realizzazione dell'automazione su misura.
           </p>
         </div>
 
-        <div className="mb-8 grid gap-6 md:grid-cols-2">
+        {/* Process Steps - Connected Design */}
+        <div className="relative mb-12 grid gap-8 md:grid-cols-2">
+          {/* Connection Line (desktop only) */}
+          <div className="absolute left-1/2 top-1/2 hidden h-0.5 w-20 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary-400 to-violet-400 md:block" />
+          <div className="absolute left-1/2 top-1/2 hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500 md:block" />
+
           <StarterCard />
           <GrowthCard />
         </div>
 
-        {/* AI Add-on Banner */}
-        {/* <AIEnhancementBanner /> */}
+        {/* Closing CTA Section */}
+        <div className="mx-auto mt-20 max-w-3xl">
+          {/* Decorative top border */}
+          <div className="mb-8 flex items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+            <Lightbulb className="h-5 w-5 text-primary-500" />
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+          </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="mb-4 text-lg font-bold sm:text-3xl">
-            Inizia senza impegno
-          </h3>
-          <p className="text-md text-neutral-500 dark:text-neutral-400">
-            Il modo migliore per iniziare è parlarne: ti mostro{' '}
-            <strong className="font-semibold text-neutral-700 dark:text-neutral-300">
-              il potenziale dell'automazione
-            </strong>{' '}
-            nel tuo caso specifico.
-          </p>
-          <button className="group mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
-            <Calendar className="h-6 w-6" />
-            Prenota la tua call gratuita
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </button>
-          {/* <div className="mt-8 flex justify-center">
-            <button className="group/btn relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 px-10 py-5 text-lg font-bold text-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.4)] dark:shadow-primary-500/30 dark:hover:shadow-primary-500/50 sm:px-12 sm:py-6 sm:text-xl">
-              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full" />
+          <div className="text-center">
+            <h3 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-3xl">
+              Inizia senza impegno
+            </h3>
+            <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
+              Il modo migliore per iniziare è parlarne: ti mostro{' '}
+              <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
+                il potenziale dell'automazione
+              </strong>{' '}
+              nel tuo caso specifico.
+            </p>
 
-              <span className="relative flex items-center gap-3">
-                <Calendar className="h-6 w-6" />
-                Inizia prenotando la tua call gratuita
-                <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
-              </span>
+            {/* Primary CTA */}
+            <button className="group inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
+              <Calendar className="h-5 w-5" />
+              Prenota la tua call gratuita
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
-          </div> */}
+
+            {/* Trust indicators */}
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-success-500" />
+                <span>20-30 minuti</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-success-500" />
+                <span>Zero impegno</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-success-500" />
+                <span>100% gratuito</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -83,7 +108,7 @@ const ServicesSection: React.FC = () => {
 export default ServicesSection;
 
 /* ============================================================================
-   PHASE 1 CARD - Analysis Phase
+   STEP 1 CARD - Free Analysis Call
    ============================================================================ */
 function StarterCard() {
   const features = [
@@ -94,66 +119,78 @@ function StarterCard() {
   ];
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:shadow-primary-500/10">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100/70 dark:from-neutral-900 dark:to-primary-950/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-50/50 dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900" />
+
+      {/* Top accent bar */}
+      <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-primary-500 to-primary-600" />
 
       <div className="relative z-10 flex flex-1 flex-col p-8">
-        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
-          <Rocket className="h-3 w-3" />
-          Step 1
+        {/* Step Badge */}
+        <div className="mb-6 flex items-center justify-between">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
+            <Rocket className="h-3.5 w-3.5" />
+            Step 1
+          </div>
+          {/* Free Badge */}
+          <div className="rounded-full bg-success-500 px-3 py-1 text-xs font-bold text-white shadow-sm">
+            GRATIS
+          </div>
         </div>
 
-        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform duration-300 group-hover:scale-105">
-          <Zap className="h-8 w-8 text-white" />
+        {/* Icon */}
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-md transition-transform duration-300 group-hover:scale-105">
+          <MessageCircle className="h-8 w-8 text-white" />
         </div>
 
-        <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+        {/* Title */}
+        <h3 className="mb-3 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
           Call di Analisi
         </h3>
-        <div className="mb-4">
-          <span className="text-4xl font-bold text-primary-600 dark:text-primary-400">
-            Gratis
-          </span>
-          {/* <span className="ml-2 text-sm text-neutral-500 dark:text-neutral-500">
-            una tantum
-          </span> */}
-        </div>
 
-        <p className="mb-8 text-neutral-600 dark:text-neutral-400">
+        {/* Description */}
+        <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
           Una breve conversazione per capire il tuo modo di lavorare e
           individuare dove l'automazione può portare il maggior valore ai tuoi
           processi.
         </p>
 
-        <ul className="mb-6 space-y-4">
-          {features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+        {/* Features List */}
+        <div className="space-y-3">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-3 rounded-lg bg-white/50 p-3 transition-colors hover:bg-primary-50/50 dark:bg-neutral-800/30 dark:hover:bg-primary-950/20"
+            >
+              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 {feature}
               </span>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
 
         {/* Spacer */}
-        {/* <div className="flex-1" /> */}
+        <div className="flex-1" />
 
-        {/* CTA */}
-        {/* <button className="group/btn flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
-          Prenota Consulenza
-        </button> */}
+        {/* Bottom info */}
+        <div className="mt-6 rounded-lg border border-primary-200 bg-primary-50/50 p-4 dark:border-primary-900/30 dark:bg-primary-950/20">
+          <p className="text-xs font-medium text-primary-700 dark:text-primary-300">
+            💡 Alla fine della call avrai chiarezza su cosa è possibile
+            automatizzare e come procedere.
+          </p>
+        </div>
       </div>
 
       {/* Hover overlay */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
     </div>
   );
 }
 
 /* ============================================================================
-   PHASE 2 CARD - Development Phase
+   STEP 2 CARD - Custom Development
    ============================================================================ */
 function GrowthCard() {
   const features = [
@@ -164,153 +201,115 @@ function GrowthCard() {
   ];
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:shadow-violet-500/10">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-50 to-purple-100/70 dark:from-neutral-900 dark:to-violet-950/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-white to-purple-50/50 dark:from-neutral-900 dark:via-violet-950/10 dark:to-neutral-900" />
+
+      {/* Top accent bar */}
+      <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-violet-500 to-purple-600" />
 
       <div className="relative z-10 flex flex-1 flex-col p-8">
-        <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
-          <TrendingUp className="h-3 w-3" />
-          Step 2
+        {/* Step Badge */}
+        <div className="mb-6 flex items-center justify-between">
+          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
+            <TrendingUp className="h-3.5 w-3.5" />
+            Step 2
+          </div>
+          {/* Optional Badge */}
+          <div className="rounded-full border border-violet-300 bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-800 dark:bg-violet-950/50 dark:text-violet-300">
+            Solo se ha senso
+          </div>
         </div>
 
-        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 shadow-lg transition-transform duration-300 group-hover:scale-105">
+        {/* Icon */}
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 shadow-md transition-transform duration-300 group-hover:scale-105">
           <Wrench className="h-8 w-8 text-white" />
         </div>
 
-        <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-          Sviluppo su misura
-        </h3>
-        <div className="mb-4 flex items-baseline gap-2">
-          <span className="text-4xl font-bold text-violet-600 dark:text-violet-400">
-            Custom
-          </span>
-          <QMarkTooltip className="relative -top-0.5">
-            <div className="mb-1 font-semibold">Prezzo personalizzato</div>
-            <div>Il prezzo varia in base alla complessità del progetto.</div>
-            <div className="mt-1 text-violet-600 dark:text-violet-400">
-              Le automazioni semplici partono da €300.
-            </div>
-          </QMarkTooltip>
-          <span className="relative -top-0.5 text-sm text-neutral-500 dark:text-neutral-500">
-            su preventivo
-          </span>
+        {/* Title & Price */}
+        <div className="mb-3">
+          <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+            Sviluppo su misura
+          </h3>
+          <div className="flex items-baseline gap-2">
+            <span className="text-3xl font-bold text-violet-600 dark:text-violet-400">
+              Custom
+            </span>
+            <QMarkTooltip>
+              <div className="mb-1 font-semibold">Prezzo personalizzato</div>
+              <div>Il prezzo varia in base alla complessità del progetto.</div>
+              <div className="mt-1 text-violet-600 dark:text-violet-400">
+                Le automazioni semplici partono da €300.
+              </div>
+            </QMarkTooltip>
+            <span className="text-sm text-neutral-500 dark:text-neutral-500">
+              su preventivo
+            </span>
+          </div>
         </div>
 
-        <p className="mb-8 text-neutral-600 dark:text-neutral-400">
+        {/* Description */}
+        <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
           Se decidi di procedere, creo e implemento l'automazione definita
           insieme. Mi occupo dei test e dell'integrazione, per renderla subito
           pronta all'uso nel tuo ambiente di lavoro.
         </p>
 
-        <ul className="mb-6 space-y-4">
-          {features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">
+        {/* Features List */}
+        <div className="space-y-3">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-3 rounded-lg bg-white/50 p-3 transition-colors hover:bg-violet-50/50 dark:bg-neutral-800/30 dark:hover:bg-violet-950/20"
+            >
+              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 {feature}
               </span>
-            </li>
+            </div>
           ))}
-          <li className="flex items-start gap-2">
-            <Sparkles className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
+
+          {/* AI Feature - Special styling */}
+          <div className="flex items-start gap-3 rounded-lg border border-violet-200 bg-gradient-to-br from-violet-50 to-fuchsia-50/50 p-3 dark:border-violet-900/30 dark:from-violet-950/30 dark:to-fuchsia-950/20">
+            <Sparkles className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
+            <div className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+              <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-bold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
                 AI Opzionale
               </span>{' '}
               per ottimizzare o potenziare le automazioni
-            </span>
-          </li>
-        </ul>
-
-        {/* Spacer */}
-        {/* <div className="flex-1" /> */}
-
-        {/* CTA */}
-        {/* <button className="w-full rounded-lg border-2 border-violet-600 bg-white px-6 py-3 font-semibold text-violet-700 shadow-lg transition-all duration-100 hover:bg-violet-50 hover:shadow-xl dark:border-violet-500 dark:bg-neutral-800 dark:text-violet-300 dark:hover:bg-neutral-700">
-          Richiedi Preventivo
-        </button> */}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Hover overlay */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
     </div>
   );
 }
 
 /* ============================================================================
-   AI ENHANCEMENT BANNER
-   ============================================================================ */
-function AIEnhancementBanner() {
-  return (
-    <div className="relative mt-12 overflow-hidden rounded-xl border border-accent-200 bg-gradient-to-r from-accent-50 via-accent-100/50 to-accent-50 dark:border-accent-900/50 dark:from-accent-950/20 dark:via-accent-900/30 dark:to-accent-950/20">
-      {/* Decorative glow effects */}
-      <div className="absolute -left-24 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-accent-400/30 blur-3xl dark:bg-accent-500/20" />
-      <div className="absolute -right-24 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-primary-400/30 blur-3xl dark:bg-primary-500/20" />
-
-      <div className="relative z-10 flex flex-col items-center gap-6 px-6 py-8 md:flex-row md:px-8">
-        <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md">
-          <Sparkles className="h-7 w-7 text-white" />
-        </div>
-
-        <div className="flex-1 text-center md:text-left">
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700 backdrop-blur-sm dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
-            <Sparkles className="h-3 w-3" />
-            AI Opzionale
-          </div>
-          <h3 className="mb-2 text-xl font-bold text-neutral-900 dark:text-neutral-50 md:text-2xl">
-            L'AI come acceleratore, non come sostituto
-          </h3>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 md:text-base">
-            L'intelligenza artificiale entra in gioco solo dove porta reale
-            valore: analisi di testo, estrazione di dati o assistenza
-            decisionale. È un'estensione naturale dell'automazione, mai una
-            complicazione.
-          </p>
-        </div>
-
-        <button className="flex-shrink-0 rounded-lg border border-accent-600 bg-accent-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:border-accent-700 hover:bg-accent-700 hover:shadow-xl dark:border-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600">
-          Scopri di Più
-        </button>
-      </div>
-
-      {/* Subtle pattern overlay */}
-      <div className="pointer-events-none absolute inset-0 opacity-30 dark:opacity-10">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,0,0,0.05) 1px, transparent 0)`,
-            backgroundSize: '32px 32px',
-          }}
-        />
-      </div>
-    </div>
-  );
-}
-
-/* ============================================================================
-   TOOL TIP COMPONENT
+   TOOLTIP COMPONENT
    ============================================================================ */
 
 interface QMarkTooltipProps {
   children: React.ReactNode;
-  className?: string;
 }
 
-function QMarkTooltip({ children, className }: QMarkTooltipProps) {
+function QMarkTooltip({ children }: QMarkTooltipProps) {
   const [showTooltip, setShowTooltip] = React.useState(false);
-  console.log('className', className);
 
   return (
-    <div className={cn('inline-block', className)}>
+    <div className="relative inline-block">
       <HelpCircle
         className="h-4 w-4 cursor-help text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-300"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       />
       {showTooltip && (
-        <div className="absolute bottom-full left-1/2 z-20 mb-2 w-64 -translate-x-1/2 rounded-lg border border-neutral-200 bg-white p-3 text-xs text-neutral-700 shadow-lg dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+        <div className="absolute bottom-full left-1/2 z-20 mb-2 w-64 -translate-x-1/2 rounded-lg border border-neutral-200 bg-white p-3 text-xs text-neutral-700 shadow-xl dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
           {children}
+          {/* Tooltip arrow */}
           <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-white dark:border-t-neutral-800" />
         </div>
       )}
@@ -318,7 +317,7 @@ function QMarkTooltip({ children, className }: QMarkTooltipProps) {
   );
 }
 
-//
+// NOT USED
 
 /* ============================================================================
    AUDIT CARD
