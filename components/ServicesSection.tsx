@@ -87,7 +87,7 @@ const ServicesSection: React.FC = () => {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-success-500" />
-                <span>20-30 minuti</span>
+                <span>solo 20 minuti</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-success-500" />
@@ -135,7 +135,7 @@ function StarterCard() {
           </div>
           {/* Free Badge */}
           <div className="rounded-full bg-success-500 px-3 py-1.5 text-xs font-bold text-white shadow-sm">
-            GRATIS
+            GRATUITA
           </div>
         </div>
 
