@@ -21,7 +21,6 @@ const ServicesSection: React.FC = () => {
   return (
     <section className="px-4 py-16">
       <div className="container mx-auto max-w-7xl">
-        {/* Section Header */}
         <div className="mb-16 text-center">
           <span
             className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider"
@@ -53,20 +52,12 @@ const ServicesSection: React.FC = () => {
             Inizia senza impegno
           </h3>
           <p className="text-md text-neutral-500 dark:text-neutral-400">
-            {/* Unisciti a oltre{' '}
-            <strong className="font-semibold text-neutral-700 dark:text-neutral-300">
-              30+ professionisti e PMI
-            </strong>{' '}
-            che hanno automatizzato i loro processi */}
             Il modo migliore per iniziare è parlarne: ti mostro{' '}
             <strong className="font-semibold text-neutral-700 dark:text-neutral-300">
               il potenziale dell'automazione
             </strong>{' '}
             nel tuo caso specifico.
           </p>
-          {/* <button className="mt-8 inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700">
-            Prenota la tua call gratuita
-          </button> */}
           <button className="group mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
             <Calendar className="h-6 w-6" />
             Prenota la tua call gratuita
@@ -107,20 +98,16 @@ function StarterCard() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-100/70 dark:from-neutral-900 dark:to-primary-950/30" />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
-        {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
           <Rocket className="h-3 w-3" />
           Step 1
         </div>
 
-        {/* Icon */}
         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform duration-300 group-hover:scale-105">
           <Zap className="h-8 w-8 text-white" />
         </div>
 
-        {/* Title & Price */}
         <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
           Call di Analisi
         </h3>
@@ -133,14 +120,12 @@ function StarterCard() {
           </span> */}
         </div>
 
-        {/* Description */}
         <p className="mb-8 text-neutral-600 dark:text-neutral-400">
           Una breve conversazione per capire il tuo modo di lavorare e
           individuare dove l'automazione può portare il maggior valore ai tuoi
           processi.
         </p>
 
-        {/* Features */}
         <ul className="mb-6 space-y-4">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
@@ -168,7 +153,7 @@ function StarterCard() {
 }
 
 /* ============================================================================
-   PHASE 2 CARD - Development Phase (Using Violet/Purple theme)
+   PHASE 2 CARD - Development Phase
    ============================================================================ */
 function GrowthCard() {
   const features = [
@@ -180,23 +165,19 @@ function GrowthCard() {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
-      {/* Background gradient - Using violet/purple colors */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-50 to-purple-100/70 dark:from-neutral-900 dark:to-violet-950/30" />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
-        {/* Badge */}
         <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-700 dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
           <TrendingUp className="h-3 w-3" />
           Step 2
         </div>
 
-        {/* Icon */}
         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 shadow-lg transition-transform duration-300 group-hover:scale-105">
           <Wrench className="h-8 w-8 text-white" />
         </div>
 
-        {/* Title & Price */}
         <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
           Sviluppo su misura
         </h3>
@@ -216,14 +197,12 @@ function GrowthCard() {
           </span>
         </div>
 
-        {/* Description */}
         <p className="mb-8 text-neutral-600 dark:text-neutral-400">
           Se decidi di procedere, creo e implemento l'automazione definita
           insieme. Mi occupo dei test e dell'integrazione, per renderla subito
           pronta all'uso nel tuo ambiente di lavoro.
         </p>
 
-        {/* Features */}
         <ul className="mb-6 space-y-4">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
@@ -260,7 +239,7 @@ function GrowthCard() {
 }
 
 /* ============================================================================
-   AI ENHANCEMENT BANNER - Redesigned as a proper banner with accent colors
+   AI ENHANCEMENT BANNER
    ============================================================================ */
 function AIEnhancementBanner() {
   return (
@@ -270,12 +249,10 @@ function AIEnhancementBanner() {
       <div className="absolute -right-24 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-primary-400/30 blur-3xl dark:bg-primary-500/20" />
 
       <div className="relative z-10 flex flex-col items-center gap-6 px-6 py-8 md:flex-row md:px-8">
-        {/* Icon */}
         <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md">
           <Sparkles className="h-7 w-7 text-white" />
         </div>
 
-        {/* Content */}
         <div className="flex-1 text-center md:text-left">
           <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700 backdrop-blur-sm dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
             <Sparkles className="h-3 w-3" />
@@ -292,7 +269,6 @@ function AIEnhancementBanner() {
           </p>
         </div>
 
-        {/* CTA */}
         <button className="flex-shrink-0 rounded-lg border border-accent-600 bg-accent-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-100 hover:border-accent-700 hover:bg-accent-700 hover:shadow-xl dark:border-accent-500 dark:bg-accent-500 dark:hover:bg-accent-600">
           Scopri di Più
         </button>
@@ -345,7 +321,7 @@ function QMarkTooltip({ children, className }: QMarkTooltipProps) {
 //
 
 /* ============================================================================
-   AUDIT CARD (Step 1 - Lead Generation)
+   AUDIT CARD
    ============================================================================ */
 function AuditCard() {
   return (
@@ -384,7 +360,7 @@ function AuditCard() {
 }
 
 /* ============================================================================
-   MAINTENANCE SECTION (Step 4 - Recurring Revenue)
+   MAINTENANCE SECTION
    ============================================================================ */
 function MaintenanceSection() {
   const basePlan = {
@@ -454,7 +430,7 @@ function MaintenanceSection() {
 }
 
 /* ============================================================================
-   MAINTENANCE PLAN CARD (Reusable)
+   MAINTENANCE PLAN CARD
    ============================================================================ */
 interface MaintenancePlanProps {
   name: string;
