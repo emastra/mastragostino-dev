@@ -233,7 +233,7 @@ function GrowthCard() {
             </li>
           ))}
           <li className="flex items-start gap-2">
-            <Sparkles className="h-5 w-5 flex-shrink-0 text-violet-600 transition-transform duration-300 hover:rotate-12 group-hover:scale-110 dark:text-violet-400" />
+            <Sparkles className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
             <span className="text-sm text-neutral-700 dark:text-neutral-300">
               <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-semibold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
                 AI Opzionale
