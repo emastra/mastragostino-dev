@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import Meta from '~/components/Meta';
+import LayoutContainer from '~/components/LayoutContainer';
 import {
   Calendar,
   CheckCircle2,
@@ -15,23 +17,17 @@ import {
 } from 'lucide-react';
 
 const BookConsultationPage: React.FC = () => {
+  // TODO: potrei usare il LayoutContainer? Check. Qui usiamo padding orizzontali in ogni sezione della pagina (può esser prono a errori)
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950">
-      {/* Hero Section */}
-      {/* <HeroSection /> */}
-
-      {/* Calendar Booking Section */}
-      <CalendarSection />
-
-      {/* What's Included Section */}
-      <WhatsIncludedSection />
-
-      {/* Trust Section */}
-      {/* <TrustSection /> */}
-
-      {/* FAQ / Reassurance */}
-      <ReassuranceSection />
-    </div>
+    <>
+      <Meta title="Booking" description="" />
+      <LayoutContainer>
+        <CalendarSection />
+        <WhatsIncludedSection />
+        {/* <TrustSection /> */}
+        <ReassuranceSection />
+      </LayoutContainer>
+    </>
   );
 };
 
@@ -115,43 +111,41 @@ function WhatsIncludedSection() {
   ];
 
   return (
-    <section className="px-4 py-16">
-      <div className="container mx-auto max-w-5xl">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
-            Cosa Include la Chiamata
-          </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
-            30 minuti focalizzati sul tuo business e sui risultati concreti
-          </p>
-        </div>
+    <section className="py-16">
+      <div className="mb-12 text-center">
+        <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+          Cosa Include la Chiamata
+        </h2>
+        <p className="text-lg text-neutral-600 dark:text-neutral-400">
+          30 minuti focalizzati sul tuo business e sui risultati concreti
+        </p>
+      </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {includes.map((item, index) => (
-            <div
-              key={item.title}
-              className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-300 hover:border-primary-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-700"
-            >
-              {/* Number badge */}
-              <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-sm font-bold text-neutral-400 dark:bg-neutral-800 dark:text-neutral-600">
-                {index + 1}
-              </div>
-
-              {/* Icon */}
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-md transition-transform duration-300 group-hover:scale-110">
-                <item.icon className="h-7 w-7 text-white" />
-              </div>
-
-              {/* Content */}
-              <h3 className="mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-50">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-                {item.description}
-              </p>
+      <div className="grid gap-6 md:grid-cols-3">
+        {includes.map((item, index) => (
+          <div
+            key={item.title}
+            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-300 hover:border-primary-300 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-700"
+          >
+            {/* Number badge */}
+            <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-sm font-bold text-neutral-400 dark:bg-neutral-800 dark:text-neutral-600">
+              {index + 1}
             </div>
-          ))}
-        </div>
+
+            {/* Icon */}
+            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-md transition-transform duration-300 group-hover:scale-110">
+              <item.icon className="h-7 w-7 text-white" />
+            </div>
+
+            {/* Content */}
+            <h3 className="mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-50">
+              {item.title}
+            </h3>
+            <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+              {item.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -277,74 +271,72 @@ function Badge({ children }: { children: React.ReactNode }) {
    ============================================================================ */
 function CalendarSection() {
   return (
-    <section className="px-4 py-16">
-      <div className="container mx-auto max-w-4xl">
-        {/* Section Header */}
-        <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">
-            <Calendar className="h-4 w-4" />
-            Prenota il Tuo Slot
-          </div>
-          <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
-            Scegli l'Orario che Preferisci
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
-            Seleziona data e ora direttamente dal calendario. Riceverai subito
-            una conferma via email con il link per la videocall.
-          </p>
+    <section className="py-16">
+      {/* Section Header */}
+      <div className="mb-12 text-center">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">
+          <Calendar className="h-4 w-4" />
+          Prenota il Tuo Slot
         </div>
+        <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
+          Scegli l'Orario che Preferisci
+        </h2>
+        <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
+          Seleziona data e ora direttamente dal calendario. Riceverai subito una
+          conferma via email con il link per la videocall.
+        </p>
+      </div>
 
-        {/* Calendar Container */}
-        <div className="overflow-hidden rounded-3xl border-2 border-primary-200 bg-white shadow-xl dark:border-primary-800 dark:bg-neutral-900">
-          {/* Calendar Header */}
-          <div className="border-b border-neutral-200 bg-gradient-to-r from-primary-50 to-accent-50 px-6 py-4 dark:border-neutral-800 dark:from-primary-950/20 dark:to-accent-950/20">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600 dark:bg-primary-500">
-                  <Video className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <div className="font-semibold text-neutral-900 dark:text-neutral-50">
-                    Consulenza Gratuita
-                  </div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                    30 minuti · Google Meet
-                  </div>
-                </div>
+      {/* Calendar Container */}
+      <div className="overflow-hidden rounded-3xl border-2 border-primary-200 bg-white shadow-xl dark:border-primary-800 dark:bg-neutral-900">
+        {/* Calendar Header */}
+        <div className="border-b border-neutral-200 bg-gradient-to-r from-primary-50 to-accent-50 px-6 py-4 dark:border-neutral-800 dark:from-primary-950/20 dark:to-accent-950/20">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600 dark:bg-primary-500">
+                <Video className="h-5 w-5 text-white" />
               </div>
-              <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-                <Clock className="h-4 w-4" />
-                <span>30 min</span>
+              <div>
+                <div className="font-semibold text-neutral-900 dark:text-neutral-50">
+                  Consulenza Gratuita
+                </div>
+                <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                  30 minuti · Google Meet
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Calendar Placeholder */}
-          <CalendarPlaceholder />
-
-          {/* Calendar Footer */}
-          <div className="border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800/50">
-            <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
-              <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-success-600 dark:text-success-400" />
-                <span>Nessun pagamento richiesto</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MessageSquare className="h-4 w-4 text-primary-600 dark:text-primary-400" />
-                <span>Conferma immediata via email</span>
-              </div>
+            <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <Clock className="h-4 w-4" />
+              <span>30 min</span>
             </div>
           </div>
         </div>
 
-        {/* Below Calendar Info */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-neutral-500 dark:text-neutral-500">
-            Tutti gli orari sono in{' '}
-            <strong>fuso orario italiano (CET/CEST)</strong>. Puoi cancellare o
-            riprogrammare in qualsiasi momento.
-          </p>
+        {/* Calendar Placeholder */}
+        <CalendarPlaceholder />
+
+        {/* Calendar Footer */}
+        <div className="border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800/50">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+            <div className="flex items-center gap-2">
+              <Shield className="h-4 w-4 text-success-600 dark:text-success-400" />
+              <span>Nessun pagamento richiesto</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MessageSquare className="h-4 w-4 text-primary-600 dark:text-primary-400" />
+              <span>Conferma immediata via email</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* Below Calendar Info */}
+      <div className="mt-8 text-center">
+        <p className="text-sm text-neutral-500 dark:text-neutral-500">
+          Tutti gli orari sono in{' '}
+          <strong>fuso orario italiano (CET/CEST)</strong>. Puoi cancellare o
+          riprogrammare in qualsiasi momento.
+        </p>
       </div>
     </section>
   );
@@ -401,7 +393,7 @@ function ReassuranceSection() {
   ];
 
   return (
-    <section className="bg-neutral-50 px-4 py-16 dark:bg-neutral-900">
+    <section className="py-16">
       <div className="container mx-auto max-w-3xl">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
