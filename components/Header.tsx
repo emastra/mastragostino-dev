@@ -12,10 +12,10 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { href: '/', text: 'Home' },
-    { href: '#', text: 'Services' },
-    { href: '#', text: 'About' },
+    { href: '#how-we-start', text: 'Come Iniziamo' },
+    { href: '#', text: 'Chi Sono' },
     { href: '/blog', text: 'Blog' },
-    { href: '/contact', text: 'Contact' },
+    { href: '/contact', text: 'Contatti' },
   ];
 
   useEffect(() => {

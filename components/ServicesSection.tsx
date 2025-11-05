@@ -21,7 +21,10 @@ import { cn } from '~/lib/utils';
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-16 sm:py-20">
+    <section
+      id="how-we-start"
+      className="relative overflow-hidden px-4 py-16 sm:py-20"
+    >
       {/* Subtle background decoration */}
       <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-500/5 blur-[100px]" />
 
