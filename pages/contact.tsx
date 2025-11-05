@@ -269,7 +269,7 @@ function ContactInfo() {
       icon: Mail,
       label: 'Email',
       value: 'contact@example.com',
-      href: 'mailto:contact@example.com',
+      href: null, // No link. Alternativa: 'mailto:contact@example.com'
       description: 'Risposta entro 24 ore',
     },
     {
