@@ -296,12 +296,13 @@ function GrowthCard() {
 
           {/* AI Feature - Special styling */}
           <div className="flex items-start gap-3 rounded-lg bg-white/50 p-3 transition-colors hover:bg-violet-50/50 dark:bg-neutral-800/30 dark:hover:bg-violet-950/20">
-            <Sparkles className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
+            <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-violet-600 dark:text-violet-400" />
             <div className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-              <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-accent-600 bg-clip-text font-bold text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-accent-400">
+              <span className="bg-gradient-to-r from-accent-600 via-fuchsia-600 to-violet-600 bg-clip-text font-bold text-transparent dark:from-accent-400 dark:via-fuchsia-400 dark:to-violet-400">
                 AI Opzionale
-              </span>{' '}
-              per ottimizzare o potenziare le automazioni
+              </span>
+              <Sparkles className="relative -top-1 inline h-4 w-4 flex-shrink-0 text-violet-600 dark:text-violet-400" />{' '}
+              <span>per ottimizzare o potenziare le automazioni</span>
             </div>
           </div>
         </div>
