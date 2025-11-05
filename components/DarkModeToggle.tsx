@@ -1,4 +1,6 @@
-import { useCallback, useRef } from 'react';
+'use client';
+import { useCallback, useRef, useState } from 'react';
+import { SunMediumIcon } from 'lucide-react';
 
 import {
   loadThemeFromLocalStorage,
@@ -8,24 +10,33 @@ import {
 
 const DarkModeToggle = () => {
   const theme = useRef<string | null>(loadThemeFromLocalStorage());
+  const [isDark, setIsDark] = useState<boolean>(() => !!theme.current);
 
   const toggleMode = useCallback(() => {
     const themeClass = theme.current ? null : DARK_THEME_CLASSNAME;
 
     theme.current = themeClass;
     setTheme(themeClass);
+    setIsDark(themeClass !== null);
   }, []);
 
   return (
-    <button className={'bg-transparent'} onClick={toggleMode}>
-      <ThemeIcon />
+    <button
+      type="button"
+      className="bg-transparent p-1"
+      onClick={toggleMode}
+      aria-pressed={isDark}
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Light mode' : 'Dark mode'}
+    >
+      {isDark ? <SunMediumIcon /> : <MoonIcon />}
     </button>
   );
 };
 
 export default DarkModeToggle;
 
-function ThemeIcon() {
+function MoonIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
