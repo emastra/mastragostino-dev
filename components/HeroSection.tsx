@@ -83,7 +83,7 @@ export default function HeroSection() {
       {/* Glow Effect */}
       <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]"></div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center">
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">

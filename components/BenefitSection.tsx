@@ -103,7 +103,7 @@ const features: Feature[] = [
 
 function BenefitsGrid() {
   return (
-    <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
+    <div className="w-full py-8 md:px-6">
       <div className="mx-auto max-w-7xl">
         <div className="grid w-full auto-rows-[22rem] grid-cols-1 gap-4 md:grid-cols-2">
           {features.map((feature, idx) => (
