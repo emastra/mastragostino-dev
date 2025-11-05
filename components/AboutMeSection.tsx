@@ -80,7 +80,7 @@ const AboutMeSection: React.FC = () => {
                   Emiliano Mastragostino
                 </h3>
                 <p className="mb-6 text-sm font-medium text-primary-600 dark:text-primary-400">
-                  Automation Consultant & n8n Expert
+                  Consulente Automazioni & Esperto n8n
                 </p>
 
                 {/* Social Links */}
@@ -146,6 +146,10 @@ const AboutMeSection: React.FC = () => {
                     sistemi esistenti. Lavoro con strumenti come{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       n8n
+                    </span>
+                    ,{' '}
+                    <span className="font-semibold text-primary-600 dark:text-primary-400">
+                      Javascript
                     </span>{' '}
                     e, quando utile,{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
