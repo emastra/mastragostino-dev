@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import Meta from '~/components/Meta';
+import LayoutContainer from '~/components/LayoutContainer';
 import {
   Mail,
   Send,
@@ -17,19 +19,18 @@ import {
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950">
-      {/* Hero Section */}
-      <ContactHero />
-
-      {/* Main Contact Section */}
-      <MainContactSection />
-
-      {/* Free Consultation CTA Banner */}
-      <ConsultationBanner />
-
-      {/* Reassurance Section */}
-      <ReassuranceSection />
-    </div>
+    <>
+      <Meta
+        title="Contact"
+        description="Get in touch for automation solutions tailored to your business needs."
+      />
+      <LayoutContainer>
+        <ContactHero />
+        <MainContactSection />
+        <ConsultationBanner />
+        <ReassuranceSection />
+      </LayoutContainer>
+    </>
   );
 };
 
@@ -40,7 +41,7 @@ export default ContactPage;
    ============================================================================ */
 function ContactHero() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:py-24">
+    <section className="relative overflow-hidden py-12 md:py-24">
       {/* Grid Background - matching HeroSection style */}
       <div
         className="absolute inset-0 opacity-40"
@@ -56,7 +57,7 @@ function ContactHero() {
       />
 
       {/* Glow Effect */}
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]" />
+      {/* <div className="absolute left-1/2 top-1/3 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-4xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
@@ -83,11 +84,7 @@ function ContactHero() {
    ============================================================================ */
 function MainContactSection() {
   return (
-    <section className="relative px-4 py-16">
-      {/* Subtle decorative glow */}
-      <div className="absolute left-1/4 top-20 h-96 w-96 rounded-full bg-primary-500/5 blur-[120px]" />
-      <div className="absolute bottom-20 right-1/4 h-96 w-96 rounded-full bg-violet-500/5 blur-[120px]" />
-
+    <section className="relative py-12 md:py-24">
       <div className="container relative z-10 mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
           {/* Left: Contact Form */}
@@ -428,9 +425,9 @@ function StatCard({
    ============================================================================ */
 function ConsultationBanner() {
   return (
-    <section className="relative overflow-hidden px-4 py-16">
+    <section className="relative overflow-hidden py-12 md:py-24">
       {/* Background glow */}
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-[120px]" />
+      {/* <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-[120px]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-5xl">
         <div className="overflow-hidden rounded-2xl border-2 border-accent-200 bg-white shadow-lg dark:border-accent-900/50 dark:bg-neutral-900">
@@ -504,7 +501,7 @@ function ReassuranceSection() {
   ];
 
   return (
-    <section className="px-4 py-16">
+    <section className="py-12 md:py-24">
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12 text-center">
           <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">

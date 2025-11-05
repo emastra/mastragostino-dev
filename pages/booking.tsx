@@ -17,10 +17,12 @@ import {
 } from 'lucide-react';
 
 const BookConsultationPage: React.FC = () => {
-  // TODO: potrei usare il LayoutContainer? Check. Qui usiamo padding orizzontali in ogni sezione della pagina (può esser prono a errori)
   return (
     <>
-      <Meta title="Booking" description="" />
+      <Meta
+        title="Booking"
+        description="Prenota una call gratuita di 20 minuti per identificare automazioni ad alto impatto: analisi dei processi, opportunità pratiche e un piano d'azione concreto."
+      />
       <LayoutContainer>
         <CalendarSection />
         <WhatsIncludedSection />
@@ -38,7 +40,7 @@ export default BookConsultationPage;
    ============================================================================ */
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 md:py-28">
+    <section className="relative overflow-hidden px-4 py-12 md:py-24">
       {/* Decorative background elements */}
       <div className="absolute right-1/4 top-20 h-96 w-96 rounded-full bg-primary-500/10 blur-3xl" />
       <div className="absolute bottom-20 left-1/4 h-96 w-96 rounded-full bg-accent-500/10 blur-3xl" />
@@ -111,7 +113,7 @@ function WhatsIncludedSection() {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-12 md:py-24">
       <div className="mb-12 text-center">
         <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
           Cosa Include la Chiamata
@@ -156,7 +158,7 @@ function WhatsIncludedSection() {
    ============================================================================ */
 function TrustSection() {
   return (
-    <section className="px-4 py-16">
+    <section className="py-12 md:py-24">
       <div className="container mx-auto max-w-5xl">
         <div className="grid gap-8 md:grid-cols-[1fr_1.5fr]">
           {/* Consultant Bio */}
@@ -271,7 +273,7 @@ function Badge({ children }: { children: React.ReactNode }) {
    ============================================================================ */
 function CalendarSection() {
   return (
-    <section className="py-16">
+    <section className="py-12 md:py-24">
       {/* Section Header */}
       <div className="mb-12 text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">
@@ -393,7 +395,7 @@ function ReassuranceSection() {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-12 md:py-24">
       <div className="container mx-auto max-w-3xl">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
