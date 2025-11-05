@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   Zap,
   Calendar,
+  Rocket,
 } from 'lucide-react';
 
 const FinalCTASection: React.FC = () => {
@@ -50,7 +51,7 @@ const FinalCTASection: React.FC = () => {
             {/* Badge */}
             <div className="mb-6 flex justify-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
-                <Sparkles className="h-4 w-4" />
+                <Rocket className="h-4 w-4" />
                 <span>Inizia Oggi</span>
               </div>
             </div>

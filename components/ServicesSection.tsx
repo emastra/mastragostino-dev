@@ -63,7 +63,7 @@ const ServicesSection: React.FC = () => {
           {/* Decorative top border */}
           <div className="mb-8 flex items-center gap-4">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-            <Lightbulb className="h-5 w-5 text-primary-500" />
+            <Lightbulb className="h-6 w-6 text-primary-500" />
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
           </div>
 

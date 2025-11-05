@@ -37,7 +37,7 @@ function TopBadge() {
   return (
     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm text-primary-600 backdrop-blur-sm dark:text-primary-100">
       <Sparkles className="h-4 w-4" />
-      <span>Consulente in Automazione per PMI e Professionisti</span>
+      <span>Consulente Automazioni per PMI e Professionisti</span>
     </div>
   );
 }

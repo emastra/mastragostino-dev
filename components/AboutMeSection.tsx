@@ -9,6 +9,7 @@ import {
   Target,
   Zap,
   Heart,
+  Focus,
 } from 'lucide-react';
 import Link from 'next/link'; // TODO: usare next Link per tutto il sito?
 
@@ -113,13 +114,13 @@ const AboutMeSection: React.FC = () => {
             {/* Quick Facts Grid */}
             <div className="grid grid-cols-2 gap-4">
               <QuickFactCard
-                icon={Target}
+                icon={Zap}
                 title="Specialità"
                 value="n8n & AI"
                 color="primary"
               />
               <QuickFactCard
-                icon={Zap}
+                icon={Focus}
                 title="Focus"
                 value="Automazione"
                 color="primary"
