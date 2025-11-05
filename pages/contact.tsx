@@ -462,7 +462,7 @@ function ConsultationBanner() {
                 href="#consultation"
                 className="group flex-shrink-0 rounded-lg bg-accent-600 px-8 py-4 text-center font-semibold text-white shadow-lg transition-all duration-100 hover:bg-accent-700 hover:shadow-xl dark:bg-accent-500 dark:hover:bg-accent-600"
               >
-                <div className="flex items-center gap-2 whitespace-nowrap">
+                <div className="flex items-center justify-center gap-2 whitespace-nowrap">
                   Prenota Ora
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </div>
