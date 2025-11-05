@@ -10,11 +10,9 @@ import {
   Linkedin,
   CheckCircle2,
   ArrowRight,
-  Phone,
-  Globe,
-  Zap,
-  Shield,
   Sparkles,
+  Shield,
+  Zap,
 } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -24,21 +22,7 @@ const ContactPage: React.FC = () => {
       <ContactHero />
 
       {/* Main Contact Section */}
-      <section className="relative py-16">
-        {/* Decorative background */}
-        <div className="absolute left-1/4 top-20 h-96 w-96 rounded-full bg-primary-500/5 blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 h-96 w-96 rounded-full bg-accent-500/5 blur-3xl" />
-
-        <div className="container relative z-10 mx-auto max-w-7xl px-4">
-          <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-            {/* Left: Contact Form */}
-            <ContactForm />
-
-            {/* Right: Contact Information */}
-            <ContactInfo />
-          </div>
-        </div>
-      </section>
+      <MainContactSection />
 
       {/* Free Consultation CTA Banner */}
       <ConsultationBanner />
@@ -56,22 +40,32 @@ export default ContactPage;
    ============================================================================ */
 function ContactHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100 py-20 dark:from-neutral-900 dark:to-neutral-800">
-      {/* Decorative elements */}
-      <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary-500/10 blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-accent-500/10 blur-3xl" />
+    <section className="relative overflow-hidden px-4 py-20 sm:py-24">
+      {/* Grid Background - matching HeroSection style */}
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, #4f4f4f22 1px, transparent 1px), linear-gradient(to bottom, #4f4f4f22 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+          maskImage:
+            'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
+        }}
+      />
 
-      <div className="container relative z-10 mx-auto max-w-4xl px-4 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">
+      {/* Glow Effect */}
+      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto max-w-4xl text-center">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
           <MessageSquare className="h-4 w-4" />
           Siamo Qui per Te
         </div>
 
         <h1 className="mb-6 text-4xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-5xl md:text-6xl">
-          Parliamo del Tuo{' '}
-          <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-primary-500 bg-clip-text text-transparent">
-            Progetto
-          </span>
+          Parliamo del Tuo Progetto
         </h1>
 
         <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
@@ -79,6 +73,29 @@ function ContactHero() {
           Contattami in qualsiasi modo preferisci — rispondo sempre entro 24
           ore.
         </p>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================================
+   MAIN CONTACT SECTION
+   ============================================================================ */
+function MainContactSection() {
+  return (
+    <section className="relative px-4 py-16">
+      {/* Subtle decorative glow */}
+      <div className="absolute left-1/4 top-20 h-96 w-96 rounded-full bg-primary-500/5 blur-[120px]" />
+      <div className="absolute bottom-20 right-1/4 h-96 w-96 rounded-full bg-violet-500/5 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
+          {/* Left: Contact Form */}
+          <ContactForm />
+
+          {/* Right: Contact Information */}
+          <ContactInfo />
+        </div>
       </div>
     </section>
   );
@@ -105,142 +122,146 @@ function ContactForm() {
   };
 
   const topics = [
-    'Informazioni Generali',
-    'Pacchetto Starter',
-    'Piani Growth',
-    'Hosting & Manutenzione',
+    'Call di Analisi Gratuita',
+    'Preventivo Automazione',
     'Integrazione AI',
+    'Supporto Tecnico',
     'Altro',
   ];
 
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
-      {formState === 'success' ? (
-        <SuccessMessage />
-      ) : (
-        <>
-          <div className="mb-8">
-            <h2 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-              Invia un Messaggio
-            </h2>
-            <p className="text-neutral-600 dark:text-neutral-400">
-              Compila il form e ti risponderò al più presto. Tutti i campi sono
-              obbligatori tranne il topic.
-            </p>
-          </div>
+    <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-white dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900" />
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name Field */}
-            <div>
-              <label
-                htmlFor="name"
-                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-              >
-                Nome Completo *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Mario Rossi"
-                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-              />
-            </div>
-
-            {/* Email Field */}
-            <div>
-              <label
-                htmlFor="email"
-                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-              >
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="mario@example.com"
-                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-              />
-            </div>
-
-            {/* Topic Select (Optional) */}
-            <div>
-              <label
-                htmlFor="topic"
-                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-              >
-                Argomento{' '}
-                <span className="font-normal text-neutral-500">
-                  (Opzionale)
-                </span>
-              </label>
-              <select
-                id="topic"
-                name="topic"
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
-                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
-              >
-                <option value="">Seleziona un argomento...</option>
-                {topics.map((t) => (
-                  <option key={t} value={t}>
-                    {t}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Message Field */}
-            <div>
-              <label
-                htmlFor="message"
-                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-              >
-                Messaggio *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={6}
-                placeholder="Descrivi brevemente il tuo progetto, le tue esigenze, o le domande che hai..."
-                className="w-full resize-none rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-              />
-              <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-500">
-                Più dettagli fornisci, meglio posso aiutarti nella risposta.
+      <div className="relative z-10 p-8">
+        {formState === 'success' ? (
+          <SuccessMessage />
+        ) : (
+          <>
+            <div className="mb-8">
+              <h2 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+                Invia un Messaggio
+              </h2>
+              <p className="text-neutral-600 dark:text-neutral-400">
+                Compila il form e ti risponderò al più presto. Tutti i campi
+                sono obbligatori.
               </p>
             </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={formState === 'sending'}
-              className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-md transition-all hover:bg-primary-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-500 dark:hover:bg-primary-600"
-            >
-              {formState === 'sending' ? (
-                <>
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                  Invio in corso...
-                </>
-              ) : (
-                <>
-                  <Send className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-                  Invia Messaggio
-                </>
-              )}
-            </button>
-          </form>
-        </>
-      )}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Field */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                >
+                  Nome Completo *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Mario Rossi"
+                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
+                />
+              </div>
+
+              {/* Email Field */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                >
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="mario@example.com"
+                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
+                />
+              </div>
+
+              {/* Topic Select (Optional) */}
+              <div>
+                <label
+                  htmlFor="topic"
+                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                >
+                  Argomento{' '}
+                  <span className="font-normal text-neutral-500">
+                    (Opzionale)
+                  </span>
+                </label>
+                <select
+                  id="topic"
+                  name="topic"
+                  value={topic}
+                  onChange={(e) => setTopic(e.target.value)}
+                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+                >
+                  <option value="">Seleziona un argomento...</option>
+                  {topics.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                >
+                  Messaggio *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  placeholder="Descrivi brevemente il tuo progetto, le tue esigenze, o le domande che hai..."
+                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={formState === 'sending'}
+                className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-md transition-all hover:bg-primary-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-500 dark:hover:bg-primary-600"
+              >
+                {formState === 'sending' ? (
+                  <>
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    Invio in corso...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                    Invia Messaggio
+                  </>
+                )}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+
+      {/* Hover overlay */}
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
     </div>
   );
 }
 
 /* ============================================================================
-   CONTACT INFO SIDEBAR
+   CONTACT INFO
    ============================================================================ */
 function ContactInfo() {
   const contactMethods = [
@@ -326,6 +347,10 @@ function ContactInfo() {
   );
 }
 
+/* ============================================================================
+   HELPER COMPONENTS
+   ============================================================================ */
+
 interface ContactMethodProps {
   icon: React.ElementType;
   label: string;
@@ -366,14 +391,14 @@ function ContactMethod({
         href={href}
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-        className="block rounded-lg transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
+        className="block rounded-lg p-2 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
       >
         {content}
       </a>
     );
   }
 
-  return <div>{content}</div>;
+  return <div className="p-2">{content}</div>;
 }
 
 function StatCard({
@@ -386,7 +411,7 @@ function StatCard({
   label: string;
 }) {
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-4 text-center dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="rounded-xl border border-neutral-200 bg-white p-4 text-center shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
       <Icon className="mx-auto mb-2 h-6 w-6 text-primary-600 dark:text-primary-400" />
       <div className="mb-1 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
         {value}
@@ -403,14 +428,17 @@ function StatCard({
    ============================================================================ */
 function ConsultationBanner() {
   return (
-    <section className="bg-gradient-to-br from-accent-50 via-amber-50 to-primary-50 py-16 dark:from-neutral-900 dark:via-accent-950/20 dark:to-primary-950/20">
-      <div className="container mx-auto max-w-5xl px-4">
-        <div className="overflow-hidden rounded-3xl border-2 border-accent-200 bg-white shadow-xl dark:border-accent-900/50 dark:bg-neutral-900">
-          <div className="relative p-8 md:p-12">
-            {/* Decorative glow */}
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-500/20 blur-3xl" />
+    <section className="relative overflow-hidden px-4 py-16">
+      {/* Background glow */}
+      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-[120px]" />
 
-            <div className="relative z-10 grid gap-8 md:grid-cols-[auto_1fr_auto] md:items-center">
+      <div className="container relative z-10 mx-auto max-w-5xl">
+        <div className="overflow-hidden rounded-2xl border-2 border-accent-200 bg-white shadow-lg dark:border-accent-900/50 dark:bg-neutral-900">
+          {/* Top accent bar */}
+          <div className="h-1 bg-gradient-to-r from-accent-500 via-primary-500 to-violet-500" />
+
+          <div className="relative p-8 md:p-12">
+            <div className="grid gap-8 md:grid-cols-[auto_1fr_auto] md:items-center">
               {/* Icon */}
               <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-lg">
                 <Calendar className="h-10 w-10 text-white" />
@@ -418,7 +446,7 @@ function ConsultationBanner() {
 
               {/* Content */}
               <div>
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-600/10 px-3 py-1 text-xs font-semibold text-accent-700 dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700 backdrop-blur-sm dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
                   <Sparkles className="h-3 w-3" />
                   100% GRATUITO
                 </div>
@@ -435,7 +463,7 @@ function ConsultationBanner() {
               {/* CTA */}
               <a
                 href="#consultation"
-                className="group flex-shrink-0 rounded-lg bg-accent-600 px-8 py-4 text-center font-semibold text-white transition-all hover:bg-accent-700 hover:shadow-lg dark:bg-accent-500 dark:hover:bg-accent-600"
+                className="group flex-shrink-0 rounded-lg bg-accent-600 px-8 py-4 text-center font-semibold text-white shadow-lg transition-all duration-100 hover:bg-accent-700 hover:shadow-xl dark:bg-accent-500 dark:hover:bg-accent-600"
               >
                 <div className="flex items-center gap-2 whitespace-nowrap">
                   Prenota Ora
@@ -456,7 +484,7 @@ function ConsultationBanner() {
 function ReassuranceSection() {
   const faqs = [
     {
-      icon: MessageSquare,
+      icon: Clock,
       question: 'Quanto tempo ci vuole per ricevere una risposta?',
       answer:
         'Rispondo a tutti i messaggi entro 24 ore nei giorni lavorativi. Spesso anche prima!',
@@ -468,7 +496,7 @@ function ReassuranceSection() {
         'Assolutamente sì. Non condivido mai i dati dei clienti e rispetto la massima riservatezza.',
     },
     {
-      icon: Calendar,
+      icon: Zap,
       question: 'Devo prenotare una consulenza subito?',
       answer:
         'No, puoi prima scrivermi per fare domande. La consulenza è solo quando sei pronto.',
@@ -476,9 +504,12 @@ function ReassuranceSection() {
   ];
 
   return (
-    <section className="bg-neutral-50 py-16 dark:bg-neutral-900">
-      <div className="container mx-auto max-w-5xl px-4">
+    <section className="px-4 py-16">
+      <div className="container mx-auto max-w-5xl">
         <div className="mb-12 text-center">
+          <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
+            FAQ
+          </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
             Domande Frequenti
           </h2>
@@ -488,20 +519,28 @@ function ReassuranceSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {faqs.map((faq) => (
+          {faqs.map((faq, index) => (
             <div
-              key={faq.question}
-              className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+              key={index}
+              className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-950/30">
-                <faq.icon className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-primary-50/30 dark:from-neutral-900 dark:to-primary-950/10" />
+
+              <div className="relative z-10">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 transition-transform duration-300 group-hover:scale-105 dark:bg-primary-950/30">
+                  <faq.icon className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                </div>
+                <h3 className="mb-3 font-bold text-neutral-900 dark:text-neutral-50">
+                  {faq.question}
+                </h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  {faq.answer}
+                </p>
               </div>
-              <h3 className="mb-3 font-bold text-neutral-900 dark:text-neutral-50">
-                {faq.question}
-              </h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                {faq.answer}
-              </p>
+
+              {/* Hover overlay */}
+              <div className="pointer-events-none absolute inset-0 rounded-xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
             </div>
           ))}
         </div>
