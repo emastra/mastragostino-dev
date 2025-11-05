@@ -244,7 +244,7 @@ function ContactForm() {
                   </>
                 ) : (
                   <>
-                    <Send className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                    <Send className="h-5 w-5" />
                     Invia Messaggio
                   </>
                 )}
