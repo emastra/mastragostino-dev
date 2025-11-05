@@ -5,7 +5,7 @@ import Link from 'next/link'; // TODO: use Link here and app wide
 // Configuration
 const GRID_CONFIG = {
   cellSize: '32px',
-  lineColor: '#4f4f4f22',
+  lineColor: '#4f4f4f22', // 'hsl(var(--grid-bg-line))',
   fadeRadius: '90%',
 };
 
