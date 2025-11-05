@@ -11,7 +11,6 @@ import ProcessSection from '~/components/ProcessSection';
 import NewsletterSection from '~/components/NewsletterSection';
 import ContactSection from '~/components/ContactSection';
 import FinalCTASection from '~/components/FinalCTASection';
-import Footer from '~/components/Footer';
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +25,6 @@ const Home: NextPage = () => {
         <FinalCTASection />
         {/* <ContactSection /> */}
       </LayoutContainer>
-      <Footer />
     </>
   );
 };
