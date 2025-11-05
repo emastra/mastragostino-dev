@@ -137,9 +137,9 @@ function StarterCard() {
             Step 1
           </div>
           {/* Free Badge */}
-          <div className="rounded-full bg-success-500 px-3 py-1.5 text-xs font-bold text-white shadow-sm">
+          {/* <div className="rounded-full bg-success-500 px-3 py-1.5 text-xs font-bold text-white shadow-sm">
             GRATUITA
-          </div>
+          </div> */}
         </div>
 
         {/* Icon */}
@@ -148,9 +148,23 @@ function StarterCard() {
         </div>
 
         {/* Title */}
-        <h3 className="mb-3 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+        {/* <h3 className="mb-3 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
           Call di Analisi
-        </h3>
+        </h3> */}
+        {/* Title & Price */}
+        <div className="mb-3">
+          <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+            Call di Analisi
+          </h3>
+          <div className="flex items-baseline gap-2">
+            <span className="text-3xl font-bold text-success-600 dark:text-success-400">
+              Gratuita
+            </span>
+            {/* <span className="text-sm text-neutral-500 dark:text-neutral-500">
+              una tantum
+            </span> */}
+          </div>
+        </div>
 
         {/* Description */}
         <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -178,14 +192,14 @@ function StarterCard() {
         <div className="flex-1" />
 
         {/* Bottom info */}
-        <div className="mt-6 rounded-lg border border-primary-200 bg-primary-50/50 p-4 dark:border-primary-900/30 dark:bg-primary-950/20">
+        <div className="mt-4 rounded-lg border border-primary-200 bg-primary-50/50 p-3.5 dark:border-primary-900/30 dark:bg-primary-950/20">
           <p className="text-xs font-medium text-primary-700 dark:text-primary-300">
             💡 Alla fine della call, saprai{' '}
-            <span className="font-semibold text-neutral-900 dark:text-neutral-50">
+            <span className="font-semibold text-neutral-700 dark:text-neutral-200">
               se
             </span>{' '}
             e{' '}
-            <span className="font-semibold text-neutral-900 dark:text-neutral-50">
+            <span className="font-semibold text-neutral-700 dark:text-neutral-200">
               cosa
             </span>{' '}
             automatizzare.
@@ -208,6 +222,7 @@ function GrowthCard() {
     "Sviluppo e implementazione dell'automazione",
     'Integrazione dei tuoi strumenti di lavoro esistenti',
     "Supporto post-lancio e alle prime settimane d'uso",
+    'Lorem ipsum test test test',
   ];
 
   return (
