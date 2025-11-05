@@ -23,7 +23,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section
       id="how-we-start"
-      className="relative overflow-hidden px-4 py-16 sm:py-20"
+      className="relative overflow-hidden px-4 py-12 md:py-24"
     >
       {/* Subtle background decoration */}
       <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-500/5 blur-[100px]" />
@@ -38,10 +38,10 @@ const ServicesSection: React.FC = () => {
           >
             Come iniziamo
           </span>
-          <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
             Dalla chiarezza all'automazione
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
+          <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
             Nessun percorso complicato, nessuna spinta alla vendita. Tutto parte
             da una breve call gratuita per capire le tue esigenze e, solo se ha
             senso, passiamo alla realizzazione dell'automazione su misura.

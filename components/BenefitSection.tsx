@@ -21,7 +21,7 @@ import {
 
 const BenefitSection: React.FC = () => {
   return (
-    <section className="py-16">
+    <section className="py-12 md:py-24">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <span
@@ -31,10 +31,10 @@ const BenefitSection: React.FC = () => {
           >
             Benefici
           </span>
-          <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
             Risultati concreti e duraturi
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
             Connettere i tuoi strumenti e automatizzare le attività chiave
             significa costruire basi solide per una crescita più sostenibile e
             meno stressante.

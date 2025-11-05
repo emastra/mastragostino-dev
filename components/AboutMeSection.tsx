@@ -17,7 +17,7 @@ const AboutMeSection: React.FC = () => {
   return (
     <section
       id="about-me"
-      className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24"
+      className="relative overflow-hidden px-4 py-12 md:py-24"
     >
       {/* Grid Background - matching HeroSection */}
       {/* <div
@@ -46,7 +46,7 @@ const AboutMeSection: React.FC = () => {
           >
             Chi sono
           </span>
-          <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
             Ciao, sono Emiliano
           </h2>
         </div>
