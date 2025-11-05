@@ -6,6 +6,9 @@
    BASE STYLES
    ============================================================================ */
 
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   text-rendering: geometricPrecision;

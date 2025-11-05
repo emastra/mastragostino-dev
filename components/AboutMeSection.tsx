@@ -14,7 +14,10 @@ import Link from 'next/link'; // TODO: usare next Link per tutto il sito?
 
 const AboutMeSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24">
+    <section
+      id="about-me"
+      className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24"
+    >
       {/* Grid Background - matching HeroSection */}
       {/* <div
         className="absolute inset-0 opacity-40"
