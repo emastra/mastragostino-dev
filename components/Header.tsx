@@ -11,11 +11,11 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '#', text: 'Home' },
+    { href: '/', text: 'Home' },
     { href: '#', text: 'Services' },
     { href: '#', text: 'About' },
     { href: '/blog', text: 'Blog' },
-    { href: '#', text: 'Contact' },
+    { href: '/contact', text: 'Contact' },
   ];
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
                 }`}
               />
               <X
-                className={`absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+                className={`absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
                   isMenuOpen
                     ? 'rotate-0 scale-100 opacity-100'
                     : '-rotate-90 scale-0 opacity-0'
@@ -100,7 +100,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 z-[9999] h-full w-4/5 max-w-sm transform bg-white shadow-2xl transition-transform duration-300 ease-in-out dark:bg-neutral-900 md:hidden ${
+        className={`fixed left-0 top-0 z-[9999] h-full w-4/5 max-w-sm transform bg-white shadow-2xl transition-transform duration-300 ease-in-out dark:bg-neutral-900 md:hidden ${
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
