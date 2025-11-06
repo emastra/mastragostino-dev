@@ -65,7 +65,7 @@ function ContactHero() {
           Siamo Qui per Te
         </div>
 
-        <h1 className="mb-6 text-4xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-5xl md:text-6xl">
+        <h1 className="mb-6 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
           Parliamo del Tuo Progetto
         </h1>
 
@@ -84,7 +84,7 @@ function ContactHero() {
    ============================================================================ */
 function MainContactSection() {
   return (
-    <section className="relative py-12 md:py-24">
+    <section className="relative pb-12 md:pb-24">
       <div className="container relative z-10 mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
           {/* Left: Contact Form */}

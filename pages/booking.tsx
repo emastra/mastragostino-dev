@@ -115,10 +115,10 @@ function WhatsIncludedSection() {
   return (
     <section className="py-12 md:py-24">
       <div className="mb-12 text-center">
-        <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
+        <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
           Cosa Include la Chiamata
         </h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400">
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
           30 minuti focalizzati sul tuo business e sui risultati concreti
         </p>
       </div>
@@ -283,7 +283,7 @@ function CalendarSection() {
         <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
           Scegli l'Orario che Preferisci
         </h2>
-        <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
+        <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
           Seleziona data e ora direttamente dal calendario. Riceverai subito una
           conferma via email con il link per la videocall.
         </p>
@@ -398,10 +398,10 @@ function ReassuranceSection() {
     <section className="py-12 md:py-24">
       <div className="container mx-auto max-w-3xl">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
             Domande Frequenti
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
             Tutto quello che devi sapere prima di prenotare
           </p>
         </div>
