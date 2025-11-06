@@ -18,3 +18,13 @@ const configuration = {
 };
 
 export default configuration;
+
+/*
+REGADING INTERNATIONALIZATION (i18n)
+
+FROM copilot chat:
+Two simple approaches depending on complexity:
+- Quick/simple: keep a small translations map in configuration.ts and choose strings per page using router.locale or a helper. Good for small sites with a few strings.
+- Proper i18n: enable Next.js i18n routing (next.config.js) and use a library (next-intl, next-i18next) or localized JSON files for scalable translations.
+
+*/
