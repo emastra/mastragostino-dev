@@ -11,7 +11,6 @@ import {
 
 const FinalCTASection: React.FC = () => {
   return (
-    // TODO: check section y padding consistency across the site
     <section className="relative overflow-hidden py-12 md:py-24">
       {/* Animated Grid Background */}
       <div

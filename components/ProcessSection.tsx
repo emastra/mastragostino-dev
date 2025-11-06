@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check } from 'lucide-react';
 import BasicCard from './BasicCard';
 
-// TODO: extract that cards components that are in GradientCard.tsx? check!
+// Extract that cards components that are in GradientCard.tsx? check!
 import {
   Card,
   CardContent,
@@ -66,7 +66,7 @@ const process = [
 
 const ProcessSection: React.FC = () => {
   return (
-    <section className="bg-transparent from-muted/30 py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-transparent from-muted/30 px-4 py-20 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl">
@@ -81,10 +81,10 @@ const ProcessSection: React.FC = () => {
         <CircularNumbers />
 
         <div className="mt-12 text-center">
-          <Card className="inline-block border-primary/20">
+          <Card className="border-primary/20 inline-block">
             <CardContent className="pt-6">
               <p className="text-sm text-muted-foreground">
-                <Clock className="mr-2 inline h-4 w-4 text-primary" />
+                <Clock className="text-primary mr-2 inline h-4 w-4" />
                 Tempistiche medie: 2-8 settimane • Trasparenza totale su ogni
                 fase
               </p>
@@ -117,7 +117,7 @@ const CircularNumbers = () => (
                   {i + 1}
                 </div>
                 {/* Icon overlay */}
-                <div className="absolute -top-2 -right-2 rounded-full bg-white p-2 shadow-lg">
+                <div className="absolute -right-2 -top-2 rounded-full bg-white p-2 shadow-lg">
                   <Icon className="h-5 w-5 text-blue-600" />
                 </div>
               </div>
@@ -330,7 +330,7 @@ const HorizontalStepper: React.FC = () => {
         </div>
 
         <div
-          className="absolute top-5 left-0 right-0 h-1 bg-gray-300"
+          className="absolute left-0 right-0 top-5 h-1 bg-gray-300"
           style={{ zIndex: 0 }}
         >
           <div
@@ -341,7 +341,7 @@ const HorizontalStepper: React.FC = () => {
       </div>
 
       {/* Content Area */}
-      <div className="min-h-32 mx-auto mb-8 max-w-2xl rounded-lg bg-secondary p-6 md:p-8">
+      <div className="mx-auto mb-8 min-h-32 max-w-2xl rounded-lg bg-secondary p-6 md:p-8">
         <h3 className="mb-2 text-xl font-semibold">
           {steps[currentStep].title}
         </h3>

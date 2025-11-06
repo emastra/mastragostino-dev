@@ -1,14 +1,15 @@
 const configuration = {
   site: {
     name: 'Emiliano Mastragostino',
+    // TODO: Improve description for SEO, include AI
     description:
       'Emiliano Mastragostino is an Automation Consultant specializing in optimizing workflows, building scalable solutions, and delivering efficient automation strategies.',
-    themeColor: '#007acc', // TODO: Updated to a professional blue color
+    themeColor: '#3b82f6', // blue color
     siteUrl: 'https://mastragostino.dev',
     siteName: 'Emiliano Mastragostino Portfolio',
     twitterHandle: '', // TODO: Replace with your actual Twitter handle
     githubHandle: 'emastra',
-    language: 'en', // TODO: Choose default language!
+    language: 'it', // TODO: how to handle multiple languages?
   },
   blog: {
     maxReadMorePosts: 6,
