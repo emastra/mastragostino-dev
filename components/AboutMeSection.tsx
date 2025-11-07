@@ -87,17 +87,17 @@ const AboutMeSection: React.FC = () => {
                 {/* Social Links */}
                 <div className="flex gap-3">
                   <SocialButton
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/emiliano-mastragostino/"
                     icon={Linkedin}
                     label="LinkedIn"
                   />
                   <SocialButton
-                    href="https://github.com"
+                    href="https://github.com/emastra"
                     icon={Github}
                     label="GitHub"
                   />
                   <SocialButton
-                    href="mailto:contact@example.com"
+                    href="mailto:emiliano.mastragostino@gmail.com"
                     icon={Mail}
                     label="Email"
                   />

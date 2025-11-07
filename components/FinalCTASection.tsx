@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   ArrowRight,
   Sparkles,
@@ -84,11 +85,13 @@ const FinalCTASection: React.FC = () => {
                 {/* Animated shine effect */}
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full" />
 
-                <span className="relative flex items-center gap-3">
-                  <Calendar className="h-6 w-6" />
-                  Prenota ora la tua call gratuita
-                  <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
-                </span>
+                <Link href="/booking" passHref>
+                  <a className="relative flex items-center gap-3">
+                    <Calendar className="h-6 w-6" />
+                    Prenota ora la tua call gratuita
+                    <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
+                  </a>
+                </Link>
               </button>
             </div>
 
@@ -119,12 +122,17 @@ const FinalCTASection: React.FC = () => {
 
             {/* Secondary Actions */}
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <button className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
-                Scopri come funziona
-              </button>
-              <button className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
-                Guarda i casi studio
-              </button>
+              <Link href="#how-we-start" passHref>
+                <a className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
+                  Scopri come funziona
+                </a>
+              </Link>
+
+              <Link href="#benefits" passHref>
+                <a className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
+                  Guarda i casi studio
+                </a>
+              </Link>
             </div>
           </div>
 
