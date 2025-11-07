@@ -3,6 +3,7 @@ import Image from 'next/image';
 import configuration from '~/configuration';
 import PostsList from './PostsList';
 import ClientOnly from '~/components/ClientOnly';
+import Link from 'next/link';
 
 type ImageLayout = 'fixed' | 'fill' | 'intrinsic' | 'responsive' | undefined;
 type StringObject = Record<string, string>;
@@ -30,7 +31,12 @@ const ExternalLink: React.FCC<{ href: string }> = ({ href, children }) => {
   const isInternalLink = href.startsWith(siteUrl) || isRoot;
 
   if (isInternalLink) {
-    return <a href={href}>{children}</a>;
+    // TODO: check if I can use Link here. it's internal link but double check for MDX component specifically.
+    return (
+      <Link href={href} passHref>
+        <a>{children}</a>
+      </Link>
+    );
   }
 
   return (

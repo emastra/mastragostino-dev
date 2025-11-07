@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 import {
@@ -427,13 +428,12 @@ function ReassuranceSection() {
           <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
             Hai altre domande? Scrivimi direttamente
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-          >
-            {/* <Mail className="h-4 w-4" /> */}
-            <span className="font-semibold">Vai alla pagina contatti</span>
-          </a>
+          <Link href="/contact" passHref>
+            <a className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">
+              {/* <Mail className="h-4 w-4" /> */}
+              <span className="font-semibold">Vai alla pagina contatti</span>
+            </a>
+          </Link>
         </div>
       </div>
     </section>

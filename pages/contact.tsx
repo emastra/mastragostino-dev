@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 import {
@@ -383,11 +384,23 @@ function ContactMethod({
   );
 
   if (href) {
+    const isLinkInternal = !href.startsWith('http');
+
+    if (isLinkInternal) {
+      return (
+        <Link href={href} passHref>
+          <a className="block rounded-lg p-2 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/50">
+            {content}
+          </a>
+        </Link>
+      );
+    }
+
     return (
       <a
         href={href}
-        target={href.startsWith('http') ? '_blank' : undefined}
-        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        target="_blank"
+        rel="noopener noreferrer"
         className="block rounded-lg p-2 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
       >
         {content}

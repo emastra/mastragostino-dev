@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { Menu, X } from 'lucide-react';
 import Logo from '~/components/Logo';
+import Link from 'next/link';
 
 const DarkModeToggle = dynamic(() => import('~/components/DarkModeToggle'), {
   ssr: false,
@@ -41,25 +42,22 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden items-center space-x-8 md:flex">
             {navLinks.map((link) => (
-              <a
-                key={link.text}
-                href={link.href}
-                className="text-sm font-medium text-neutral-600 transition-colors duration-300 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
-              >
-                {link.text}
-              </a>
+              <Link href={link.href} key={link.text} passHref>
+                <a className="text-sm font-medium text-neutral-600 transition-colors duration-300 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
+                  {link.text}
+                </a>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden items-center space-x-3 md:flex">
             <DarkModeToggle />
-            <a
-              href="#"
-              className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600"
-            >
-              Inizia Gratis
-            </a>
+            <Link href="/booking" passHref>
+              <a className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600">
+                Inizia Gratis
+              </a>
+            </Link>
           </div>
 
           {/* Mobile Actions */}
@@ -121,14 +119,14 @@ const Header: React.FC = () => {
           <nav className="flex-grow p-4">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
-                <a
-                  key={link.text}
-                  href={link.href}
-                  className="rounded-lg px-3 py-3 text-base font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.text}
-                </a>
+                <Link href={link.href} key={link.text} passHref>
+                  <a
+                    className="rounded-lg px-3 py-3 text-base font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.text}
+                  </a>
+                </Link>
               ))}
             </div>
           </nav>
