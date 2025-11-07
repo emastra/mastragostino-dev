@@ -104,7 +104,7 @@ function BenefitsGrid() {
   return (
     <div className="w-full py-8 md:px-6">
       <div className="mx-auto max-w-7xl">
-        <div className="grid w-full auto-rows-[22rem] grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="grid w-full auto-rows-[20rem] grid-cols-1 gap-4 md:grid-cols-2">
           {features.map((feature, idx) => (
             <BenefitCard key={idx} {...feature} />
           ))}
@@ -176,9 +176,9 @@ const BenefitCard: FC<BenefitCardProps> = ({
       </p>
 
       {/* Spacer to push CTA to bottom */}
-      <div className="flex-1" />
+      {/* <div className="flex-1" /> */}
 
-      {href && cta && (
+      {/* {href && cta && (
         <div className="group/link mt-4">
           <Link href={href} passHref>
             <a className="inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300 dark:focus:ring-offset-neutral-950">
@@ -187,7 +187,7 @@ const BenefitCard: FC<BenefitCardProps> = ({
             </a>
           </Link>
         </div>
-      )}
+      )} */}
     </div>
 
     {/* Hover overlay */}
