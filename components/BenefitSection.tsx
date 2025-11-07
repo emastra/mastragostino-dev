@@ -20,7 +20,7 @@ import Link from 'next/link';
 
 const BenefitSection: React.FC = () => {
   return (
-    <section className="py-12 md:py-24">
+    <section id="benefits" className="py-12 md:py-24">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <span
@@ -64,7 +64,7 @@ const features: Feature[] = [
     name: 'Risparmia Ore Ogni Settimana',
     description:
       'Le attività ripetitive diventano processi automatici: guadagni ore ogni settimana da dedicare ai clienti o alle strategie. Più tempo per ciò che conta davvero.',
-    href: '#',
+    href: '#', // TODO: ce li devo avere questi link?
     cta: 'Scopri come velocizzare i tuoi flussi di lavoro',
     bgColor: 'success',
   },

@@ -17,7 +17,7 @@ import {
   Shield,
   Clock,
 } from 'lucide-react';
-import { cn } from '~/lib/utils';
+import Link from 'next/link';
 
 const ServicesSection: React.FC = () => {
   return (
@@ -80,11 +80,13 @@ const ServicesSection: React.FC = () => {
             </p>
 
             {/* Primary CTA */}
-            <button className="group inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
-              <Calendar className="h-5 w-5" />
-              Prenota la tua call gratuita
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            <Link href="/booking" passHref>
+              <a className="group inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
+                <Calendar className="h-5 w-5" />
+                Prenota la tua call gratuita
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Link>
 
             {/* Trust indicators */}
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">

@@ -66,9 +66,11 @@ function CTAButtons() {
         </a>
       </Link>
 
-      <button className="rounded-lg border border-neutral-200 bg-neutral-50 px-8 py-3 font-medium text-neutral-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-neutral-100 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800">
-        Scopri di più
-      </button>
+      <Link href="#benefits" passHref>
+        <a className="rounded-lg border border-neutral-200 bg-neutral-50 px-8 py-3 font-medium text-neutral-900 shadow-lg backdrop-blur-sm transition-all duration-100 hover:bg-neutral-100 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800">
+          Scopri di più
+        </a>
+      </Link>
     </div>
   );
 }
