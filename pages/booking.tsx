@@ -274,7 +274,7 @@ function Badge({ children }: { children: React.ReactNode }) {
    ============================================================================ */
 function CalendarSection() {
   return (
-    <section className="py-12 md:py-24">
+    <section className="pb-12 pt-8 md:pb-24 md:pt-16">
       {/* Section Header */}
       <div className="mb-12 text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">

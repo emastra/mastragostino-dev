@@ -42,7 +42,7 @@ export default ContactPage;
    ============================================================================ */
 function ContactHero() {
   return (
-    <section className="relative overflow-hidden py-12 md:py-24">
+    <section className="relative overflow-hidden pb-12 pt-8 md:pb-24 md:pt-16">
       {/* Grid Background - matching HeroSection style */}
       <div
         className="absolute inset-0 opacity-40"
