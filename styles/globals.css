@@ -6,9 +6,10 @@
    BASE STYLES
    ============================================================================ */
 
-html {
+/* va in conflitto con scroll restoration di next.js */
+/* html {
   scroll-behavior: smooth;
-}
+} */
 html,
 body {
   text-rendering: geometricPrecision;
