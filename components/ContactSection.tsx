@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Mail, Send, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState<
@@ -22,7 +23,7 @@ const ContactSection: React.FC = () => {
   return (
     <section className="relative overflow-hidden py-20">
       {/* Subtle background decoration */}
-      <div className="absolute top-10 left-1/4 h-64 w-64 rounded-full bg-primary-500/5 blur-3xl" />
+      <div className="absolute left-1/4 top-10 h-64 w-64 rounded-full bg-primary-500/5 blur-3xl" />
       <div className="absolute bottom-10 right-1/4 h-64 w-64 rounded-full bg-accent-500/5 blur-3xl" />
 
       <div className="container relative z-10 mx-auto max-w-4xl px-4">
@@ -124,7 +125,7 @@ const ContactSection: React.FC = () => {
           {/* Right: Quick Actions & Info */}
           <div className="space-y-6">
             {/* Primary CTA Card */}
-            <div className="dark:to-accent-950/20 rounded-2xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-6 dark:border-accent-900/50 dark:from-neutral-900">
+            <div className="rounded-2xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-6 dark:border-accent-900/50 dark:from-neutral-900 dark:to-accent-950/20">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent-500 shadow-md">
                 <Calendar className="h-6 w-6 text-white" />
               </div>
@@ -135,19 +136,18 @@ const ContactSection: React.FC = () => {
                 Prenota subito il tuo audit gratuito e scopri come automatizzare
                 il tuo business in 30 minuti.
               </p>
-              <a
-                href="#audit"
-                className="group inline-flex items-center gap-2 rounded-lg bg-accent-600 px-5 py-2.5 font-semibold text-white transition-all hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600"
-              >
-                Prenota Consulenza Gratuita
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              <Link href="#audit" passHref>
+                <a className="group inline-flex items-center gap-2 rounded-lg bg-accent-600 px-5 py-2.5 font-semibold text-white transition-all hover:bg-accent-700 dark:bg-accent-500 dark:hover:bg-accent-600">
+                  Prenota Consulenza Gratuita
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Link>
             </div>
 
             {/* Direct Email Card */}
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900">
               <div className="mb-3 flex items-center gap-3">
-                <div className="dark:bg-primary-950/30 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-950/30">
                   <Mail className="h-5 w-5 text-primary-600 dark:text-primary-400" />
                 </div>
                 <div>
@@ -192,7 +192,7 @@ export default ContactSection;
 function SuccessMessage() {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center">
-      <div className="dark:bg-success-950/30 mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-success-100">
+      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-success-100 dark:bg-success-950/30">
         <CheckCircle2 className="h-8 w-8 text-success-600 dark:text-success-400" />
       </div>
       <h3 className="mb-3 text-2xl font-bold text-neutral-900 dark:text-neutral-50">

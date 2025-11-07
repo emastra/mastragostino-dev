@@ -6,8 +6,6 @@ import React, {
   ComponentPropsWithoutRef,
   SVGProps,
 } from 'react';
-import BentoGridCom from './BentoGridCom';
-import Carousel from './Carousel';
 import {
   TimerReset,
   TicketCheck,

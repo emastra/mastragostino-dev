@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Linkedin, Github, Mail, MapPin, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -97,18 +98,16 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex gap-6">
-            <a
-              href="#privacy"
-              className="transition-colors hover:text-primary-600 dark:hover:text-primary-400"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#termini"
-              className="transition-colors hover:text-primary-600 dark:hover:text-primary-400"
-            >
-              Termini di Servizio
-            </a>
+            <Link href="#privacy" passHref>
+              <a className="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
+                Privacy Policy
+              </a>
+            </Link>
+            <Link href="#termini" passHref>
+              <a className="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
+                Termini di Servizio
+              </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -150,12 +149,11 @@ interface FooterLinkProps {
 function FooterLink({ href, children }: FooterLinkProps) {
   return (
     <li>
-      <a
-        href={href}
-        className="text-sm text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
-      >
-        {children}
-      </a>
+      <Link href={href} passHref>
+        <a className="text-sm text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400">
+          {children}
+        </a>
+      </Link>
     </li>
   );
 }
