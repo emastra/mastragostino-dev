@@ -18,6 +18,7 @@ import {
   SmileIcon,
   BlocksIcon,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const BenefitSection: React.FC = () => {
   return (
@@ -181,13 +182,12 @@ const BenefitCard: FC<BenefitCardProps> = ({
 
       {href && cta && (
         <div className="group/link mt-4">
-          <a
-            href={href}
-            className="inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300 dark:focus:ring-offset-neutral-950"
-          >
-            {cta}
-            <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-2" />
-          </a>
+          <Link href={href} passHref>
+            <a className="inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-primary-400 dark:hover:text-primary-300 dark:focus:ring-offset-neutral-950">
+              {cta}
+              <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-2" />
+            </a>
+          </Link>
         </div>
       )}
     </div>
