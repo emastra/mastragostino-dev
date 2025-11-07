@@ -34,17 +34,17 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
               <SocialLink
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/emiliano-mastragostinom"
                 icon={Linkedin}
                 label="LinkedIn"
               />
               <SocialLink
-                href="https://github.com"
+                href="https://github.com/emastra"
                 icon={Github}
                 label="GitHub"
               />
               <SocialLink
-                href="mailto:contact@example.com"
+                href="mailto:emiliano.mastragostino@gmail.com"
                 icon={Mail}
                 label="Email"
               />
@@ -57,10 +57,10 @@ const Footer = () => {
               Link Rapidi
             </h4>
             <ul className="space-y-3">
-              <FooterLink href="#servizi">Servizi</FooterLink>
-              <FooterLink href="#benefici">Benefici</FooterLink>
-              <FooterLink href="#chi-sono">Chi Sono</FooterLink>
-              <FooterLink href="#contatti">Contatti</FooterLink>
+              <FooterLink href="#how-we-start">Come Iniziamo</FooterLink>
+              <FooterLink href="#benefits">Benefici</FooterLink>
+              <FooterLink href="#about-me">Chi Sono</FooterLink>
+              <FooterLink href="/contact">Contatti</FooterLink>
             </ul>
           </div>
 
@@ -98,12 +98,12 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex gap-6">
-            <Link href="#privacy" passHref>
+            <Link href="/" passHref>
               <a className="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
                 Privacy Policy
               </a>
             </Link>
-            <Link href="#termini" passHref>
+            <Link href="/" passHref>
               <a className="transition-colors hover:text-primary-600 dark:hover:text-primary-400">
                 Termini di Servizio
               </a>
