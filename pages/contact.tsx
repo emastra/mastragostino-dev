@@ -152,7 +152,8 @@ function ContactForm() {
   };
 
   const topics = [
-    'Call di Analisi Gratuita',
+    'Informazioni Generali',
+    'Informazioni su Call di Analisi',
     'Preventivo Automazione',
     'Integrazione AI',
     'Supporto Tecnico',
