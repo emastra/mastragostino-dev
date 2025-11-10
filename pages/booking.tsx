@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
@@ -16,6 +16,7 @@ import {
   Target,
   TrendingUp,
 } from 'lucide-react';
+import Cal, { getCalApi } from '@calcom/embed-react';
 
 const BookConsultationPage: React.FC = () => {
   return (
@@ -279,21 +280,24 @@ function CalendarSection() {
       <div className="mb-12 text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">
           <Calendar className="h-4 w-4" />
-          Prenota il Tuo Slot
+          Scegli il Tuo Slot
         </div>
         <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
-          Scegli l'Orario che Preferisci
+          Prenota la Tua Consulenza{' '}
+          <span className="text-success-600 dark:text-success-400">
+            Gratuita
+          </span>
         </h2>
         <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
           Seleziona data e ora direttamente dal calendario. Riceverai subito una
-          conferma via email con il link per la videocall.
+          conferma via email con il link per la video-chiamata.
         </p>
       </div>
 
       {/* Calendar Container */}
-      <div className="overflow-hidden rounded-3xl border-2 border-primary-200 bg-white shadow-xl dark:border-primary-800 dark:bg-neutral-900">
-        {/* Calendar Header */}
-        <div className="border-b border-neutral-200 bg-gradient-to-r from-primary-50 to-accent-50 px-6 py-4 dark:border-neutral-800 dark:from-primary-950/20 dark:to-accent-950/20">
+      {/* <div className="overflow-hidden rounded-3xl border-2 border-primary-200 bg-white shadow-xl dark:border-primary-800 dark:bg-neutral-900"> */}
+      {/* Calendar Header */}
+      {/* <div className="border-b border-neutral-200 bg-gradient-to-r from-primary-50 to-accent-50 px-6 py-4 dark:border-neutral-800 dark:from-primary-950/20 dark:to-accent-950/20">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600 dark:bg-primary-500">
@@ -313,13 +317,13 @@ function CalendarSection() {
               <span>30 min</span>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* Calendar Placeholder */}
-        <CalendarPlaceholder />
+      {/* Calendar Placeholder */}
+      <CalComCalendar />
 
-        {/* Calendar Footer */}
-        <div className="border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800/50">
+      {/* Calendar Footer */}
+      {/* <div className="border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800/50">
           <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4 text-success-600 dark:text-success-400" />
@@ -330,11 +334,11 @@ function CalendarSection() {
               <span>Conferma immediata via email</span>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Below Calendar Info */}
-      <div className="mt-8 text-center">
+      <div className="text-center">
         <p className="text-sm text-neutral-500 dark:text-neutral-500">
           Tutti gli orari sono in{' '}
           <strong>fuso orario italiano (CET/CEST)</strong>. Puoi cancellare o
@@ -437,5 +441,23 @@ function ReassuranceSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function CalComCalendar() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: 'analisi-gratuita' });
+      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+    })();
+  }, []);
+
+  return (
+    <Cal
+      namespace="analisi-gratuita"
+      calLink="mastragostino/analisi-gratuita"
+      style={{ width: '100%', height: '100%', overflow: 'scroll' }}
+      config={{ layout: 'month_view' }}
+    />
   );
 }
