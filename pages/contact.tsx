@@ -108,15 +108,47 @@ function ContactForm() {
   >('idle');
   const [topic, setTopic] = useState('');
 
+  const prodN8nWebhookUrl =
+    'https://n8n.mastragostino.dev/webhook/51507377-ed96-43fd-a5bf-8e28a7249953';
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('sending');
 
-    // Simulate submission
-    setTimeout(() => {
+    try {
+      const form = e.currentTarget;
+      const fd = new FormData(form);
+      const payload = {
+        name: (fd.get('name') as string) || '',
+        email: (fd.get('email') as string) || '',
+        topic: (fd.get('topic') as string) || '',
+        message: (fd.get('message') as string) || '',
+      };
+
+      const res = await fetch(prodN8nWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        // optionally read server error message
+        const err = await res.text();
+        console.error('Contact submission failed:', err);
+        setFormState('error');
+        return;
+      }
+
       setFormState('success');
-      setTimeout(() => setFormState('idle'), 4000);
-    }, 1500);
+      form.reset();
+      // return to idle after a short delay if desired
+      // setTimeout(() => setFormState('idle'), 6000);
+    } catch (error) {
+      console.error('Contact submission error:', error);
+      setFormState('error');
+    }
   };
 
   const topics = [
@@ -577,15 +609,12 @@ function SuccessMessage() {
         Grazie per avermi contattato. Ho ricevuto il tuo messaggio e ti
         risponderò entro 24 ore.
       </p>
-      <p className="mb-6 text-sm text-neutral-500 dark:text-neutral-500">
-        Controlla la tua email (anche la cartella spam) per la mia risposta 📬
-      </p>
-      <button
-        onClick={() => window.location.reload()}
+      <a
+        href="/contact"
         className="text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
       >
         ← Invia un altro messaggio
-      </button>
+      </a>
     </div>
   );
 }
