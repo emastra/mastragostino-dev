@@ -166,7 +166,7 @@ function ContactForm() {
 
       <div className="relative z-10 p-8">
         {formState === 'success' ? (
-          <SuccessMessage />
+          <SuccessMessage goBack={() => setFormState('idle')} />
         ) : (
           <>
             <div className="mb-8">
@@ -596,7 +596,7 @@ function ReassuranceSection() {
 /* ============================================================================
    SUCCESS MESSAGE
    ============================================================================ */
-function SuccessMessage() {
+function SuccessMessage({ goBack }: { goBack: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center py-16 text-center">
       <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-success-100 dark:bg-success-950/30">
@@ -605,16 +605,17 @@ function SuccessMessage() {
       <h3 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
         Messaggio Inviato con Successo!
       </h3>
-      <p className="mb-2 max-w-md text-lg text-neutral-600 dark:text-neutral-400">
+      <p className="mb-8 max-w-md text-lg text-neutral-600 dark:text-neutral-400">
         Grazie per avermi contattato. Ho ricevuto il tuo messaggio e ti
         risponderò entro 24 ore.
       </p>
-      <a
-        href="/contact"
+
+      <button
+        onClick={goBack}
         className="text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
       >
         ← Invia un altro messaggio
-      </a>
+      </button>
     </div>
   );
 }
