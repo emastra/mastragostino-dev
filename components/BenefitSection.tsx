@@ -28,15 +28,15 @@ const BenefitSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Benefici
+            I vantaggi dell'automazione
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Risultati concreti e duraturi
+            Risultati concreti, ogni giorno
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Connettere i tuoi strumenti e automatizzare le attività chiave
-            significa costruire basi solide per una crescita più sostenibile e
-            meno stressante.
+            Automatizzare non è tecnologia fine a sé stessa — è un modo per
+            lavorare meglio, ridurre stress e crescere con più ordine e meno
+            fatica.
           </p>
         </div>
       </div>
@@ -61,18 +61,18 @@ type Feature = {
 const features: Feature[] = [
   {
     Icon: TimerReset,
-    name: 'Risparmia Ore Ogni Settimana',
+    name: 'Più tempo, meno routine',
     description:
-      'Le attività ripetitive diventano processi automatici: guadagni ore ogni settimana da dedicare ai clienti o alle strategie. Più tempo per ciò che conta davvero.',
-    href: '#', // TODO: ce li devo avere questi link?
+      'Le attività ripetitive vengono gestite in automatico. Recuperi ore ogni settimana e ti concentri su ciò che fa davvero la differenza.',
+    href: '#',
     cta: 'Scopri come velocizzare i tuoi flussi di lavoro',
     bgColor: 'success',
   },
   {
     Icon: BanIcon,
-    name: 'Elimina Errori e Dimenticanze',
+    name: 'Zero errori, zero dimenticanze',
     description:
-      'Automatizzando i passaggi critici, elimini gli errori manuali che ti fanno perdere tempo e credibilità. Le tue operazioni diventano fluide e affidabili.',
+      'CRM, email, gestionali, fogli di calcolo: tutto lavora in sincronia. Niente più copia-incolla o passaggi manuali.',
     href: '#',
     cta: 'Scopri come rendere i tuoi dati affidabili',
     className: 'md:col-span-1',
@@ -80,7 +80,7 @@ const features: Feature[] = [
   },
   {
     Icon: BlocksIcon,
-    name: 'Tutti i Tuoi Software, Finalmente Connessi',
+    name: 'Strumenti che si parlano',
     description:
       'Niente più “ponti” manuali tra le app: i tuoi strumenti lavorano insieme, senza errori né perdite di tempo. Gestionali, email e fogli di calcolo iniziano a parlarsi.',
     href: '#',
@@ -90,21 +90,30 @@ const features: Feature[] = [
   },
   {
     Icon: SmileIcon,
-    name: 'Più Professionalità, Meno Stress',
+    name: 'Più professionalità percepita',
     description:
-      'Con processi automatizzati, trasmetti precisione, affidabilità e cura in ogni interazione con clienti e collaboratori. La tua reputazione cresce insieme al tuo business.',
+      "Processi fluidi = esperienza migliore per clienti e collaboratori. L'organizzazione diventa un vantaggio competitivo.",
     href: '#',
     cta: 'Scopri come elevare la tua immagine professionale',
     className: 'md:col-span-1',
     bgColor: 'primary',
   },
+  /*
+    Un passo verso l’AI
+    Automatizzare i processi significa creare la base ideale per sfruttare in modo efficace l’Intelligenza Artificiale, quando serve.
+  
+    Controllo totale, zero caos
+    Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando.
+    Il tuo business funziona anche quando non sei davanti allo schermo.
+  */
 ];
 
 function BenefitsGrid() {
   return (
     <div className="w-full py-8 md:px-6">
       <div className="mx-auto max-w-7xl">
-        <div className="grid w-full auto-rows-[20rem] grid-cols-1 gap-4 md:grid-cols-2">
+        {/* era 22rem qunado c'era lo spacer + card cta */}
+        <div className="grid w-full auto-rows-[16rem] grid-cols-1 gap-4 md:grid-cols-2">
           {features.map((feature, idx) => (
             <BenefitCard key={idx} {...feature} />
           ))}

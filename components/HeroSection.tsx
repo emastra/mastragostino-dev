@@ -1,6 +1,6 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from './Button';
-import Link from 'next/link'; // TODO: use Link here and app wide
+import Link from 'next/link';
 
 // Configuration
 const GRID_CONFIG = {
@@ -38,7 +38,7 @@ function TopBadge() {
     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm text-primary-600 backdrop-blur-sm dark:text-primary-100">
       <Sparkles className="h-4 w-4" />
       <span className="hidden sm:inline">
-        Consulente Automazioni per PMI e Professionisti
+        Automazioni su misura per PMI e Professionisti
       </span>
       <span className="inline sm:hidden">
         Automazioni per PMI e Professionisti
@@ -61,7 +61,7 @@ function CTAButtons() {
     <div className="flex flex-col gap-4 sm:flex-row">
       <Link href="/booking" passHref>
         <a className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
-          Prenota una consulenza gratuita
+          Prenota un incontro gratuito
           <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </a>
       </Link>
@@ -89,17 +89,17 @@ export default function HeroSection() {
         <TopBadge />
 
         <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
-          Automatizza e riconquista
+          Libera il tuo tempo e
           <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
             {' '}
-            tempo, chiarezza e controllo
+            fai crescere il tuo business
           </span>
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
-          Creo automazioni che uniscono i tuoi software e riducono
-          l'operatività. Così puoi tornare a concentrarti su ciò che davvero
-          genera valore.
+          Creo automazioni che collegano i tuoi strumenti e gestiscono le
+          attività ripetitive al posto tuo. Così puoi concentrarti su ciò che
+          conta davvero: clienti, strategia, risultati.
         </p>
 
         <CTAButtons />
