@@ -128,16 +128,18 @@ function BenefitsGrid() {
           ))}
         </div>
 
-        <div className="mt-6 flex justify-center">
-          <button
-            type="button"
-            onClick={() => setShowMore((v) => !v)}
-            className="inline-flex items-center px-4 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground"
-            aria-expanded={showMore}
-          >
-            {showMore ? 'Mostra meno' : 'Mostra altri'}
-          </button>
-        </div>
+        {!showMore && (
+          <div className="mt-6 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowMore((v) => !v)}
+              className="inline-flex items-center px-4 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground"
+              aria-expanded={showMore}
+            >
+              Mostra altri
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

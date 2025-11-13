@@ -224,7 +224,7 @@ function GrowthCard() {
     'Preventivo trasparente e tempi certi',
     'Sviluppo, test e implementazione',
     'Integrazione dei tuoi strumenti di lavoro esistenti',
-    "Supporto post-lancio e alle prime settimane d'uso",
+    "Supporto dopo il lancio e alle prime settimane d'uso",
   ];
 
   return (
