@@ -5,16 +5,15 @@ import React, {
   FC,
   ComponentPropsWithoutRef,
   SVGProps,
+  useState,
 } from 'react';
 import {
   TimerReset,
-  TicketCheck,
-  Blocks,
-  Scaling,
-  ArrowRightIcon,
+  ShieldCheck,
   BanIcon,
   SmileIcon,
   BlocksIcon,
+  Sparkle,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -99,42 +98,45 @@ const features: Feature[] = [
     // className: 'md:col-span-1',
     bgColor: 'primary',
   },
-  /*
-    Un passo verso l’AI
-    Automatizzare i processi significa creare la base ideale per sfruttare in modo efficace l’Intelligenza Artificiale, quando serve.
-  
-    Controllo totale, zero caos
-    Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando.
-    Il tuo business funziona anche quando non sei davanti allo schermo.
-  */
-];
-
-const moreFeatures: Feature[] = [
   {
-    Icon: SmileIcon,
+    Icon: Sparkle,
     name: "Un passo verso l'AI",
     description:
       "Automatizzare i processi significa creare la base ideale per sfruttare in modo efficace l'Intelligenza Artificiale, quando serve.",
-    bgColor: 'primary',
+    bgColor: 'success',
   },
   {
-    Icon: SmileIcon,
+    Icon: ShieldCheck,
     name: 'Controllo totale, zero caos',
     description:
       'Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando. Il tuo business funziona anche quando non sei davanti allo schermo.',
-    bgColor: 'primary',
+    bgColor: 'amber',
   },
 ];
 
 function BenefitsGrid() {
+  const [showMore, setShowMore] = useState(false);
+  const items = showMore ? features : features.slice(0, 4);
+
   return (
     <div className="w-full py-8 md:px-6">
       <div className="mx-auto max-w-7xl">
         {/* era 22rem qunado c'era lo spacer + card cta */}
         <div className="grid w-full auto-rows-[16rem] grid-cols-1 gap-4 md:grid-cols-2">
-          {features.map((feature, idx) => (
-            <BenefitCard key={idx} {...feature} />
+          {items.map((feature, idx) => (
+            <BenefitCard key={`${feature.name}-${idx}`} {...feature} />
           ))}
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowMore((v) => !v)}
+            className="inline-flex items-center px-4 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground"
+            aria-expanded={showMore}
+          >
+            {showMore ? 'Mostra meno' : 'Mostra altri'}
+          </button>
         </div>
       </div>
     </div>
