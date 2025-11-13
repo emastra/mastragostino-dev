@@ -133,7 +133,7 @@ function BenefitsGrid() {
             <button
               type="button"
               onClick={() => setShowMore((v) => !v)}
-              className="inline-flex items-center px-4 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground"
+              className="inline-flex items-center rounded-md px-4 py-2 text-xs font-semibold text-muted-foreground hover:bg-neutral-100 hover:text-foreground hover:dark:bg-neutral-900"
               aria-expanded={showMore}
             >
               Mostra altri benefici

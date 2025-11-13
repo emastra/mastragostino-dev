@@ -149,7 +149,7 @@ const AboutMeSection: React.FC = () => {
                       recuperare tempo prezioso
                     </strong>
                     . Automatizzo attività ripetitive e integro sistemi isolati,
-                    utilizzando un mix strategico di strumenti no-code come{' '}
+                    utilizzando un mix strategico di strumenti low-code come{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       n8n
                     </span>
