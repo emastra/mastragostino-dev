@@ -72,7 +72,7 @@ const features: Feature[] = [
     Icon: BanIcon,
     name: 'Zero errori, zero dimenticanze',
     description:
-      'CRM, email, gestionali, fogli di calcolo: tutto lavora in sincronia. Niente più copia-incolla o passaggi manuali.',
+      'Le automazioni seguono le regole che definiamo insieme. Ogni passaggio è preciso, tracciabile e affidabile.',
     href: '#',
     cta: 'Scopri come rendere i tuoi dati affidabili',
     className: 'md:col-span-1',
@@ -82,7 +82,7 @@ const features: Feature[] = [
     Icon: BlocksIcon,
     name: 'Strumenti che si parlano',
     description:
-      'Niente più “ponti” manuali tra le app: i tuoi strumenti lavorano insieme, senza errori né perdite di tempo. Gestionali, email e fogli di calcolo iniziano a parlarsi.',
+      'CRM, email, gestionali, fogli di calcolo: tutto lavora in sincronia. Niente più copia-incolla o passaggi manuali.',
     href: '#',
     cta: 'Connetti i tuoi strumenti preferiti senza sforzo',
     className: 'md:col-span-1',
