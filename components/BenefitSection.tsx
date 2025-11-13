@@ -64,8 +64,9 @@ const features: Feature[] = [
     name: 'Più tempo, meno routine',
     description:
       'Le attività ripetitive vengono gestite in automatico. Recuperi ore ogni settimana e ti concentri su ciò che fa davvero la differenza.',
-    href: '#',
-    cta: 'Scopri come velocizzare i tuoi flussi di lavoro',
+    // href: '#',
+    // cta: 'Scopri come velocizzare i tuoi flussi di lavoro',
+    // className: 'md:col-span-1',
     bgColor: 'success',
   },
   {
@@ -73,9 +74,9 @@ const features: Feature[] = [
     name: 'Zero errori, zero dimenticanze',
     description:
       'Le automazioni seguono le regole che definiamo insieme. Ogni passaggio è preciso, tracciabile e affidabile.',
-    href: '#',
-    cta: 'Scopri come rendere i tuoi dati affidabili',
-    className: 'md:col-span-1',
+    // href: '#',
+    // cta: 'Scopri come rendere i tuoi dati affidabili',
+    // className: 'md:col-span-1',
     bgColor: 'amber',
   },
   {
@@ -83,9 +84,9 @@ const features: Feature[] = [
     name: 'Strumenti che si parlano',
     description:
       'CRM, email, gestionali, fogli di calcolo: tutto lavora in sincronia. Niente più copia-incolla o passaggi manuali.',
-    href: '#',
-    cta: 'Connetti i tuoi strumenti preferiti senza sforzo',
-    className: 'md:col-span-1',
+    // href: '#',
+    // cta: 'Connetti i tuoi strumenti preferiti senza sforzo',
+    // className: 'md:col-span-1',
     bgColor: 'violet',
   },
   {
@@ -93,9 +94,9 @@ const features: Feature[] = [
     name: 'Più professionalità percepita',
     description:
       "Processi fluidi = esperienza migliore per clienti e collaboratori. L'organizzazione diventa un vantaggio competitivo.",
-    href: '#',
-    cta: 'Scopri come elevare la tua immagine professionale',
-    className: 'md:col-span-1',
+    // href: '#',
+    // cta: 'Scopri come elevare la tua immagine professionale',
+    // className: 'md:col-span-1',
     bgColor: 'primary',
   },
   /*
@@ -106,6 +107,23 @@ const features: Feature[] = [
     Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando.
     Il tuo business funziona anche quando non sei davanti allo schermo.
   */
+];
+
+const moreFeatures: Feature[] = [
+  {
+    Icon: SmileIcon,
+    name: "Un passo verso l'AI",
+    description:
+      "Automatizzare i processi significa creare la base ideale per sfruttare in modo efficace l'Intelligenza Artificiale, quando serve.",
+    bgColor: 'primary',
+  },
+  {
+    Icon: SmileIcon,
+    name: 'Controllo totale, zero caos',
+    description:
+      'Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando. Il tuo business funziona anche quando non sei davanti allo schermo.',
+    bgColor: 'primary',
+  },
 ];
 
 function BenefitsGrid() {
