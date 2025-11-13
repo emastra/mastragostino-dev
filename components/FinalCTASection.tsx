@@ -123,7 +123,7 @@ const FinalCTASection: React.FC = () => {
             {/* Secondary Actions */}
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="#how-we-start" passHref>
-                <a className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
+                <a className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 text-center font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
                   Scopri come funziona
                 </a>
               </Link>
@@ -134,7 +134,7 @@ const FinalCTASection: React.FC = () => {
               >
                 <a
                   target="_blank"
-                  className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto"
+                  className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 text-center font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto"
                 >
                   Scopri di più su di me
                 </a>

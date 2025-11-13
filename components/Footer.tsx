@@ -18,11 +18,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-violet-500">
+              {/* <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-violet-500">
                 <Sparkles className="h-5 w-5 text-white" />
-              </div>
+              </div> */}
               <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
-                Mastragostino
+                Emiliano Mastragostino
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
