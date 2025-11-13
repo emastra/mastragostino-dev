@@ -283,9 +283,9 @@ function CalendarSection() {
           Scegli il Tuo Slot
         </div>
         <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
-          Prenota la Tua Consulenza{' '}
+          Prenota il Tuo Incontro{' '}
           <span className="text-success-600 dark:text-success-400">
-            Gratuita
+            Gratuito
           </span>
         </h2>
         <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
@@ -387,15 +387,15 @@ function ReassuranceSection() {
     },
     {
       q: 'Cosa devo preparare?',
-      a: "Niente di specifico. Basta avere un'idea generale dei processi che vorresti automatizzare.",
+      a: "Niente di specifico. Basta avere un'idea generale dei tuoi processi di lavoro.",
     },
     {
       q: 'Posso riprogrammare?',
-      a: "Certo! Puoi cancellare o spostare l'appuntamento in qualsiasi momento dal link nella conferma.",
+      a: "Certo! Puoi cancellare o spostare l'appuntamento in qualsiasi momento dal link nell'email di conferma.",
     },
     {
       q: 'Come si svolge la chiamata?',
-      a: 'Ci incontriamo su Google Meet. Riceverai il link nella conferma email subito dopo la prenotazione.',
+      a: "Ci incontriamo su Google Meet. Riceverai il link nell'email di conferma che riceverai subito dopo la prenotazione.",
     },
   ];
 

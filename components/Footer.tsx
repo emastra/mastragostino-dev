@@ -34,7 +34,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
               <SocialLink
-                href="https://www.linkedin.com/in/emiliano-mastragostinom"
+                href="https://www.linkedin.com/in/emiliano-mastragostino"
                 icon={Linkedin}
                 label="LinkedIn"
               />
@@ -44,7 +44,7 @@ const Footer = () => {
                 label="GitHub"
               />
               <SocialLink
-                href="mailto:emiliano.mastragostino@gmail.com"
+                href="mailto:emiliano@mastragostino.dev"
                 icon={Mail}
                 label="Email"
               />

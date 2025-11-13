@@ -497,9 +497,9 @@ function ConsultationBanner() {
                   Preferisci parlare direttamente?
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-400">
-                  Prenota una consulenza gratuita di 30 minuti. Analizziamo
-                  insieme i tuoi processi e identifichiamo le opportunità di
-                  automazione ad alto impatto.
+                  Prenota un incontro gratuito di 30 minuti. Analizziamo insieme
+                  i tuoi processi e identifichiamo le opportunità di automazione
+                  ad alto impatto.
                 </p>
               </div>
 
@@ -542,9 +542,9 @@ function ReassuranceSection() {
     },
     {
       icon: Zap,
-      question: 'Devo prenotare una consulenza subito?',
+      question: 'Devo prenotare un incontro subito?',
       answer:
-        'No, puoi prima scrivermi per fare domande. La consulenza è solo quando sei pronto.',
+        "No, puoi prima scrivermi per fare domande. L'incontro è solo per quando sei pronto.",
     },
   ];
 
