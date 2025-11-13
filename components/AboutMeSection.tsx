@@ -41,11 +41,15 @@ const AboutMeSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Chi sono
+            Chi c'è dietro
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Ciao, sono Emiliano
+            Piacere, sono Emiliano
           </h2>
+          <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
+            Aiuto professionisti e PMI a semplificare il lavoro e a liberare
+            tempo grazie all'automazione.
+          </p>
         </div>
 
         {/* Main Content - Two Column Layout */}
@@ -81,7 +85,7 @@ const AboutMeSection: React.FC = () => {
                   Emiliano Mastragostino
                 </h3>
                 <p className="mb-6 text-sm font-medium text-primary-600 dark:text-primary-400">
-                  Consulente Automazioni & Esperto n8n
+                  Sviluppatore & Esperto Automazioni
                 </p>
 
                 {/* Social Links */}
@@ -139,20 +143,20 @@ const AboutMeSection: React.FC = () => {
                     Trasformo processi manuali in workflow automatici
                   </h4>
                   <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    Aiuto PMI e professionisti a{' '}
+                    Aiuto a{' '}
                     <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                       recuperare tempo prezioso
                     </strong>{' '}
-                    automatizzando attività ripetitive e integrando i loro
-                    sistemi esistenti. Lavoro con strumenti come{' '}
+                    automatizzando attività ripetitive e integrando sistemi
+                    isolati. Lavoro con strumenti no-code come{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       n8n
                     </span>
-                    ,{' '}
+                    , linguaggi di programmazione come{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       Javascript
                     </span>{' '}
-                    e, quando utile,{' '}
+                    , e, quando serve, soluzioni di{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       Intelligenza Artificiale
                     </span>
@@ -167,7 +171,7 @@ const AboutMeSection: React.FC = () => {
                     Il mio approccio
                   </h4>
                   <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    Pratico e orientato ai risultati. Analizzo, identifico le
+                    Concreto, orientato al risultato. Analizzo, identifico le
                     opportunità ad alto impatto e implemento soluzioni che
                     generano{' '}
                     <strong className="font-semibold text-neutral-900 dark:text-neutral-50">

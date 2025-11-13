@@ -52,7 +52,7 @@ const FinalCTASection: React.FC = () => {
             <div className="mb-6 flex justify-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
                 <Rocket className="h-4 w-4" />
-                <span>Inizia Oggi</span>
+                <span>Fai il primo passo</span>
               </div>
             </div>
 
@@ -67,14 +67,14 @@ const FinalCTASection: React.FC = () => {
 
             {/* Subheadline */}
             <p className="mb-10 text-center text-lg text-neutral-600 dark:text-neutral-400 sm:text-xl md:text-2xl">
-              Nessuna vendita, solo valore concreto: ti aiuto a individuare i
-              punti critici del tuo processo e ti mostro cosa potresti
-              automatizzare già da subito.
+              Nessuna vendita, solo valore concreto. Un incontro gratuito in cui
+              analizziamo i tuoi processi e ti mostro cosa potresti
+              automatizzare fin da subito.
             </p>
 
             {/* Key Benefits - Quick Highlights */}
             <div className="mb-10 flex flex-wrap justify-center gap-4 md:gap-6">
-              <BenefitPill icon={Clock} text="Solo 20 minuti" />
+              <BenefitPill icon={Clock} text="30 minuti" />
               <BenefitPill icon={Zap} text="Analisi personalizzata" />
               <BenefitPill icon={CheckCircle2} text="Zero impegno" />
             </div>
@@ -88,7 +88,7 @@ const FinalCTASection: React.FC = () => {
                 <Link href="/booking" passHref>
                   <a className="relative flex items-center gap-3">
                     <Calendar className="h-6 w-6" />
-                    Prenota ora la tua call gratuita
+                    Prenota il tuo incontro gratuito
                     <ArrowRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-2" />
                   </a>
                 </Link>

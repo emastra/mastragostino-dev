@@ -36,15 +36,16 @@ const ServicesSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Come iniziamo
+            Come funziona
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Dalla chiarezza all'automazione
+            Dalla chiacchierata all'automazione
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-            Nessun percorso complicato, nessuna spinta alla vendita. Tutto parte
-            da una breve call gratuita per capire le tue esigenze e, solo se ha
-            senso, passiamo alla realizzazione dell'automazione su misura.
+            Tutto inizia con un breve incontro gratuito per capire come lavori
+            oggi e dove puoi risparmiare tempo. Poi passo all'azione: progetto e
+            realizzo automazioni su misura, pronte all'uso nel tuo ambiente di
+            lavoro.
           </p>
         </div>
 
@@ -72,18 +73,19 @@ const ServicesSection: React.FC = () => {
               Inizia senza impegno
             </h3>
             <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
-              Il modo migliore per iniziare è parlarne: ti mostro{' '}
-              <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
+              Il modo migliore per scoprire il potenziale dell'automazione nel
+              tuo caso specifico è parlarne.{' '}
+              {/* <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                 il potenziale dell'automazione
               </strong>{' '}
-              nel tuo caso specifico.
+              nel tuo caso specifico. */}
             </p>
 
             {/* Primary CTA */}
             <Link href="/booking" passHref>
               <a className="group inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
                 <Calendar className="h-5 w-5" />
-                Prenota la tua call gratuita
+                Richiedi la tua analisi gratuita
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Link>
@@ -92,7 +94,7 @@ const ServicesSection: React.FC = () => {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-success-500" />
-                <span>solo 20 minuti</span>
+                <span>30 minuti</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-success-500" />
@@ -117,7 +119,7 @@ export default ServicesSection;
    ============================================================================ */
 function StarterCard() {
   const features = [
-    'Analisi gratuita dei tuoi flussi attuali (20-30 minuti)',
+    'Analisi gratuita dei processi principali',
     'Identificazione dei punti critici e ripetitivi',
     'Prime idee di automazione personalizzate',
     'Nessun impegno, solo chiarezza',
@@ -156,11 +158,11 @@ function StarterCard() {
         {/* Title & Price */}
         <div className="mb-3">
           <h3 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-            Call di Analisi
+            Incontro di Analisi
           </h3>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-bold text-success-600 dark:text-success-400">
-              Gratuita
+              Gratuito
             </span>
             {/* <span className="text-sm text-neutral-500 dark:text-neutral-500">
               una tantum
@@ -170,9 +172,8 @@ function StarterCard() {
 
         {/* Description */}
         <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-          Una breve conversazione per capire il tuo modo di lavorare e
-          individuare dove l'automazione può portare il maggior valore ai tuoi
-          processi.
+          Una conversazione di 30 minuti per capire come funziona la tua
+          attività e dove l'automazione può portare il maggior beneficio.
         </p>
 
         {/* Features List */}
@@ -196,7 +197,7 @@ function StarterCard() {
         {/* Bottom info */}
         <div className="mt-4 rounded-lg border border-primary-200 bg-primary-50/50 p-3.5 dark:border-primary-900/30 dark:bg-primary-950/20">
           <p className="text-xs font-medium text-primary-700 dark:text-primary-300">
-            💡 Alla fine della call, saprai{' '}
+            💡 Alla fine dell'incontro, saprai{' '}
             <span className="font-semibold text-neutral-700 dark:text-neutral-200">
               se
             </span>{' '}
@@ -220,11 +221,10 @@ function StarterCard() {
    ============================================================================ */
 function GrowthCard() {
   const features = [
-    'Preventivo fisso, zero sorprese',
-    "Sviluppo e implementazione dell'automazione",
+    'Preventivo trasparente e tempi certi',
+    'Sviluppo, test e implementazione',
     'Integrazione dei tuoi strumenti di lavoro esistenti',
     "Supporto post-lancio e alle prime settimane d'uso",
-    'Lorem ipsum test test test',
   ];
 
   return (
@@ -260,7 +260,7 @@ function GrowthCard() {
           </h3>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-bold text-violet-600 dark:text-violet-400">
-              Custom
+              Personalizzato
             </span>
             <QMarkTooltip>
               <div className="mb-1 font-semibold">Prezzo personalizzato</div>
@@ -277,9 +277,9 @@ function GrowthCard() {
 
         {/* Description */}
         <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-          Se decidi di procedere, creo e implemento l'automazione definita
-          insieme. Mi occupo dei test e dell'integrazione, per renderla subito
-          pronta all'uso nel tuo ambiente di lavoro.
+          Se vuoi procedere, svilupperò l'automazione definita insieme. Mi
+          occuperò di tutto, dal test all'implementazione, per renderla pronta
+          all'uso nel tuo ambiente di lavoro.
         </p>
 
         {/* Features List */}
