@@ -47,7 +47,7 @@ const AboutMeSection: React.FC = () => {
             Piacere, sono Emiliano
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-            Aiuto professionisti e PMI a semplificare il lavoro e a liberare
+            Aiuto PMI e professionisti a semplificare il lavoro e a liberare
             tempo grazie all'automazione.
           </p>
         </div>
@@ -143,12 +143,13 @@ const AboutMeSection: React.FC = () => {
                     Trasformo processi manuali in workflow automatici
                   </h4>
                   <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    Aiuto a{' '}
+                    Esperto in automazione, offro a PMI e professionisti la
+                    possibilità di{' '}
                     <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                       recuperare tempo prezioso
-                    </strong>{' '}
-                    automatizzando attività ripetitive e integrando sistemi
-                    isolati. Lavoro con strumenti no-code come{' '}
+                    </strong>
+                    . Automatizzo attività ripetitive e integro sistemi isolati,
+                    utilizzando un mix strategico di strumenti no-code come{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       n8n
                     </span>
@@ -156,7 +157,7 @@ const AboutMeSection: React.FC = () => {
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       Javascript
                     </span>{' '}
-                    , e, quando serve, soluzioni di{' '}
+                    e soluzioni di{' '}
                     <span className="font-semibold text-primary-600 dark:text-primary-400">
                       Intelligenza Artificiale
                     </span>

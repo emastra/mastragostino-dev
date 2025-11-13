@@ -26,7 +26,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-              Consulente in automazione per PMI e professionisti. Trasformo
+              Esperto in automazione per PMI e professionisti. Trasformo
               processi manuali in workflow automatici che liberano tempo e
               riducono errori.
             </p>
@@ -57,7 +57,7 @@ const Footer = () => {
               Link Rapidi
             </h4>
             <ul className="space-y-3">
-              <FooterLink href="#how-we-start">Come Iniziamo</FooterLink>
+              <FooterLink href="#how-we-start">Come Funziona</FooterLink>
               <FooterLink href="#benefits">Benefici</FooterLink>
               <FooterLink href="#about-me">Chi Sono</FooterLink>
               <FooterLink href="/contact">Contatti</FooterLink>

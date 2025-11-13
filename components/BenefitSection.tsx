@@ -33,7 +33,7 @@ const BenefitSection: React.FC = () => {
             Risultati concreti, ogni giorno
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Automatizzare non è tecnologia fine a sé stessa — è un modo per
+            Automatizzare non è tecnologia fine a sé stessa. È un modo per
             lavorare meglio, ridurre stress e crescere con più ordine e meno
             fatica.
           </p>
@@ -100,14 +100,14 @@ const features: Feature[] = [
   },
   {
     Icon: Sparkle,
-    name: "Un passo verso l'AI",
+    name: "Pronto per l'AI",
     description:
-      "Automatizzare i processi significa creare la base ideale per sfruttare in modo efficace l'Intelligenza Artificiale, quando serve.",
+      "Digitalizzando e automatizzando i tuoi processi, crei le basi perfette per integrare l'Intelligenza Artificiale in modo utile e sostenibile.",
     bgColor: 'success',
   },
   {
     Icon: ShieldCheck,
-    name: 'Controllo totale, zero caos',
+    name: 'Controllo e chiarezza sui processi',
     description:
       'Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando. Il tuo business funziona anche quando non sei davanti allo schermo.',
     bgColor: 'amber',
@@ -136,7 +136,7 @@ function BenefitsGrid() {
               className="inline-flex items-center px-4 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground"
               aria-expanded={showMore}
             >
-              Mostra altri
+              Mostra altri benefici
             </button>
           </div>
         )}

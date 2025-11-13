@@ -128,9 +128,15 @@ const FinalCTASection: React.FC = () => {
                 </a>
               </Link>
 
-              <Link href="#benefits" passHref>
-                <a className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto">
-                  Guarda i casi studio
+              <Link
+                href="https://www.linkedin.com/in/emiliano-mastragostino/"
+                passHref
+              >
+                <a
+                  target="_blank"
+                  className="w-full rounded-lg border-2 border-neutral-200 bg-white px-6 py-3 font-semibold text-neutral-700 shadow-sm transition-all duration-100 hover:border-neutral-300 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700 sm:w-auto"
+                >
+                  Scopri di più su di me
                 </a>
               </Link>
             </div>
@@ -141,7 +147,7 @@ const FinalCTASection: React.FC = () => {
         </div>
 
         {/* Social Proof Footer */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             Unisciti a oltre{' '}
             <strong className="font-semibold text-neutral-700 dark:text-neutral-300">
@@ -149,7 +155,7 @@ const FinalCTASection: React.FC = () => {
             </strong>{' '}
             che hanno automatizzato i loro processi
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { href: '/', text: 'Home' },
-    { href: '/#how-we-start', text: 'Come Iniziamo' },
+    { href: '/#how-we-start', text: 'Come Funziona' },
     { href: '/#about-me', text: 'Chi Sono' },
     { href: '/blog', text: 'Blog' },
     { href: '/contact', text: 'Contatti' },
