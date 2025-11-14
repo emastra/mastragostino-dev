@@ -23,7 +23,7 @@ const BookConsultationPage: React.FC = () => {
     <>
       <Meta
         title="Booking"
-        description="Prenota una call gratuita di 20 minuti per identificare automazioni ad alto impatto: analisi dei processi, opportunità pratiche e un piano d'azione concreto."
+        description="Prenota un incontro gratuito di 30 minuti per identificare automazioni ad alto impatto: analisi dei processi, opportunità pratiche e un piano d'azione concreto."
       />
       <LayoutContainer>
         <CalendarSection />
@@ -51,7 +51,7 @@ function HeroSection() {
         {/* Badge */}
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-200 bg-accent-50 px-4 py-2 text-sm font-semibold text-accent-700 dark:border-accent-900/50 dark:bg-accent-950/30 dark:text-accent-300">
           <Sparkles className="h-4 w-4" />
-          Consulenza Gratuita · 30 Minuti · Nessun Impegno
+          Incontro Gratuito · 30 Minuti · Nessun Impegno
         </div>
 
         {/* Main Headline */}
@@ -121,7 +121,7 @@ function WhatsIncludedSection() {
           Cosa Include la Chiamata
         </h2>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-          30 minuti focalizzati sul tuo business e sui risultati concreti
+          30 minuti dedicati al tuo modo di lavorare e a come semplificarlo
         </p>
       </div>
 
@@ -280,17 +280,17 @@ function CalendarSection() {
       <div className="mb-12 text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-300">
           <Calendar className="h-4 w-4" />
-          Scegli il Tuo Slot
+          Prenotazione
         </div>
         <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
-          Prenota il Tuo Incontro{' '}
+          Prenota il tuo incontro{' '}
           <span className="text-success-600 dark:text-success-400">
-            Gratuito
+            gratuito
           </span>
         </h2>
         <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-          Seleziona data e ora direttamente dal calendario. Riceverai subito una
-          conferma via email con il link per la video-chiamata.
+          Scegli data e ora dal calendario. Riceverai subito una conferma via
+          email con il link alla video-chiamata.
         </p>
       </div>
 
@@ -407,7 +407,7 @@ function ReassuranceSection() {
             Domande Frequenti
           </h2>
           <p className="text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-            Tutto quello che devi sapere prima di prenotare
+            Le informazioni essenziali prima di prenotare
           </p>
         </div>
 

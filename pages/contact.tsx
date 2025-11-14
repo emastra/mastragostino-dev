@@ -11,7 +11,7 @@ import {
   Calendar,
   MapPin,
   Linkedin,
-  CheckCircle2,
+  CheckCircle,
   ArrowRight,
   Sparkles,
   Shield,
@@ -63,17 +63,17 @@ function ContactHero() {
       <div className="container relative z-10 mx-auto max-w-4xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
           <MessageSquare className="h-4 w-4" />
-          Siamo Qui per Te
+          Contatti
         </div>
 
         <h1 className="mb-6 text-3xl font-bold text-neutral-900 dark:text-neutral-50 md:text-4xl">
-          Parliamo del Tuo Progetto
+          Scrivimi quando vuoi
         </h1>
 
         <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-          Hai domande sull'automazione? Vuoi capire se posso aiutarti?
-          Contattami in qualsiasi modo preferisci — rispondo sempre entro 24
-          ore.
+          Hai dubbi, domande o vuoi capire se l'automazione può aiutare la tua
+          attività? Compila il form o invia un messaggio: rispondo sempre entro
+          24 ore.
         </p>
       </div>
     </section>
@@ -490,16 +490,16 @@ function ConsultationBanner() {
               {/* Content */}
               <div>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700 backdrop-blur-sm dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
-                  <Sparkles className="h-3 w-3" />
+                  <CheckCircle className="h-3 w-3" />
                   100% GRATUITO
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-neutral-900 dark:text-neutral-50 md:text-3xl">
-                  Preferisci parlare direttamente?
+                  Preferisci parlarne a voce?
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-400">
                   Prenota un incontro gratuito di 30 minuti. Analizziamo insieme
-                  i tuoi processi e identifichiamo le opportunità di automazione
-                  ad alto impatto.
+                  i tuoi processi e individuiamo le opportunità di automazione
+                  più utili per te.
                 </p>
               </div>
 
@@ -601,7 +601,7 @@ function SuccessMessage({ goBack }: { goBack: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center py-16 text-center">
       <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-success-100 dark:bg-success-950/30">
-        <CheckCircle2 className="h-10 w-10 text-success-600 dark:text-success-400" />
+        <CheckCircle className="h-10 w-10 text-success-600 dark:text-success-400" />
       </div>
       <h3 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
         Messaggio Inviato con Successo!
