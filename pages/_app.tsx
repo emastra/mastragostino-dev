@@ -5,11 +5,13 @@ import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const hideLayout = (Component as any).hideLayout || false;
+
   return (
     <ThemeProvider>
-      <Header />
+      {!hideLayout && <Header />}
       <Component {...pageProps} />
-      <Footer />
+      {!hideLayout && <Footer />}
     </ThemeProvider>
   );
 }

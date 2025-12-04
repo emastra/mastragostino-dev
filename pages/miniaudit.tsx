@@ -18,4 +18,6 @@ const MiniAuditPage: React.FC = () => {
   );
 };
 
+MiniAuditPage.hideLayout = true;
+
 export default MiniAuditPage;
