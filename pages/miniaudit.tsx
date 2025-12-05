@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 
-const MiniAuditPage: React.FC = () => {
+const MiniAuditPage: React.FC & { hideLayout?: boolean } = () => {
   return (
     <>
       <Meta
