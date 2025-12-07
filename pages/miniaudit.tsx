@@ -43,7 +43,7 @@ function HeroSection() {
   return (
     <section className="relative overflow-hidden px-4 py-16 sm:py-20 md:py-24">
       {/* Grid Background - matching HeroSection style */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-40"
         style={{
           backgroundImage:
@@ -54,10 +54,10 @@ function HeroSection() {
           WebkitMaskImage:
             'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
         }}
-      />
+      /> */}
 
       {/* Glow Effect */}
-      <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]" />
+      {/* <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-4xl text-center">
         {/* Top Badge */}
@@ -70,10 +70,16 @@ function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+        {/* <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
           Mini-Audit{' '}
           <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
             Gratuito
+          </span>
+        </h1> */}
+        <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+          Mini-Audit Gratuito per{' '}
+          <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
+            Agenzie Immobiliari
           </span>
         </h1>
 
@@ -134,8 +140,8 @@ function FormSection() {
   return (
     <section className="relative px-4 py-16">
       {/* Subtle background decoration */}
-      <div className="absolute left-1/4 top-20 h-96 w-96 rounded-full bg-primary-500/5 blur-[120px]" />
-      <div className="absolute bottom-20 right-1/4 h-96 w-96 rounded-full bg-violet-500/5 blur-[120px]" />
+      {/* <div className="absolute left-1/4 top-20 h-96 w-96 rounded-full bg-primary-500/5 blur-[120px]" />
+      <div className="absolute bottom-20 right-1/4 h-96 w-96 rounded-full bg-violet-500/5 blur-[120px]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-4xl">
         {/* Section Header */}
