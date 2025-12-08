@@ -68,7 +68,7 @@ function HeroSection() {
 
       <div className="container relative z-10 mx-auto max-w-4xl text-center">
         {/* Top Badge */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-1 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-1 text-xs font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100 md:py-2 md:text-sm">
           <Sparkles className="h-4 w-4" />
           <span className="hidden sm:inline">
             Offerta Speciale per PMI e Professionisti
@@ -672,11 +672,11 @@ interface ValuePillProps {
 
 function ValuePill({ icon: Icon, text }: ValuePillProps) {
   return (
-    <div className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-primary-300 hover:bg-primary-50/80 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800/80 dark:hover:border-primary-600 dark:hover:bg-primary-950/30">
+    <div className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-4 py-1 shadow-sm backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-primary-300 hover:bg-primary-50/80 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800/80 dark:hover:border-primary-600 dark:hover:bg-primary-950/30 md:py-2">
       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-950/50 dark:text-primary-400">
         <Icon className="h-3.5 w-3.5" />
       </div>
-      <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+      <span className="text-xs font-medium text-neutral-700 dark:text-neutral-200 md:text-sm">
         {text}
       </span>
     </div>
