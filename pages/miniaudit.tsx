@@ -14,6 +14,10 @@ import {
   Zap,
   Clock,
   Shield,
+  Target,
+  Phone,
+  FileText,
+  MessageSquare,
 } from 'lucide-react';
 
 const MiniAuditPage: React.FC & { hideLayout?: boolean } = () => {
@@ -27,7 +31,10 @@ const MiniAuditPage: React.FC & { hideLayout?: boolean } = () => {
       <LayoutContainer>
         <FormSection />
         <TrustSection />
+        <BenefitsSection />
       </LayoutContainer>
+      <ProcessSection />
+      <AlternativeContactsSection />
     </>
   );
 };
@@ -61,7 +68,7 @@ function HeroSection() {
 
       <div className="container relative z-10 mx-auto max-w-4xl text-center">
         {/* Top Badge */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-1 text-sm font-semibold text-primary-600 backdrop-blur-sm dark:text-primary-100">
           <Sparkles className="h-4 w-4" />
           <span className="hidden sm:inline">
             Offerta Speciale per PMI e Professionisti
@@ -380,6 +387,274 @@ function TrustSection() {
             title="Risposta Rapida"
             description="Feedback entro 24 ore"
           />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================================
+   BENEFITS SECTION
+   ============================================================================ */
+function BenefitsSection() {
+  const benefits = [
+    {
+      icon: Target,
+      title: 'Individuiamo i punti critici',
+      description:
+        'Analizziamo insieme i processi che generano inefficienze nel tuo lavoro quotidiano',
+    },
+    {
+      icon: CheckCircle2,
+      title: 'Interventi prioritari',
+      description:
+        'Identifichiamo le azioni concrete da intraprendere, in modo semplice e immediato',
+    },
+    {
+      icon: Shield,
+      title: 'Solo valore pratico',
+      description:
+        'Nessun tecnicismo, nessuna vendita: focus esclusivo su soluzioni utili per te',
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden px-4 py-16 sm:py-20">
+      {/* Subtle glow */}
+      <div className="absolute left-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary-500/5 blur-[120px]" />
+      <div className="absolute right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-violet-500/5 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto max-w-6xl">
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
+            Vantaggi
+          </span>
+          <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
+            Perché farlo ora
+          </h2>
+        </div>
+
+        {/* Benefits Grid */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-primary-50/30 dark:from-neutral-900 dark:to-primary-950/10" />
+
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <benefit.icon className="h-7 w-7 text-white" />
+                </div>
+
+                {/* Content */}
+                <h3 className="mb-3 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+                  {benefit.title}
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-400">
+                  {benefit.description}
+                </p>
+              </div>
+
+              {/* Hover overlay */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================================
+   PROCESS SECTION
+   ============================================================================ */
+function ProcessSection() {
+  const steps = [
+    {
+      number: '1',
+      title: 'Conferma via email',
+      description: 'Ricevi immediatamente una conferma della tua richiesta',
+      icon: Mail,
+    },
+    {
+      number: '2',
+      title: 'Ti ricontatto entro 24h',
+      description: 'Fissiamo insieme il momento migliore per il Mini-Audit',
+      icon: Clock,
+    },
+    {
+      number: '3',
+      title: '15 minuti di analisi',
+      description:
+        'Una breve chiamata per capire i tuoi processi e identificare opportunità',
+      icon: MessageSquare,
+    },
+    {
+      number: '4',
+      title: 'Riepilogo personalizzato',
+      description:
+        'Ricevi un documento con i punti chiave e i suggerimenti pratici',
+      icon: FileText,
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-neutral-50 px-4 py-16 dark:bg-neutral-900/50 sm:py-20">
+      <div className="container relative z-10 mx-auto max-w-6xl">
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
+            Il Processo
+          </span>
+          <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
+            Cosa succede dopo
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
+            Un processo semplice e veloce per ottenere il massimo valore
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-violet-50/30 dark:from-neutral-900 dark:to-violet-950/10" />
+
+              <div className="relative z-10">
+                {/* Number Badge */}
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-lg font-bold text-white shadow-md">
+                  {step.number}
+                </div>
+
+                {/* Icon */}
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-violet-100 transition-transform duration-300 group-hover:scale-105 dark:bg-violet-950/30">
+                  <step.icon className="h-6 w-6 text-violet-600 dark:text-violet-400" />
+                </div>
+
+                {/* Content */}
+                <h3 className="mb-2 font-bold text-neutral-900 dark:text-neutral-50">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  {step.description}
+                </p>
+              </div>
+
+              {/* Hover overlay */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
+            </div>
+          ))}
+        </div>
+
+        {/* Connection arrows for desktop */}
+        <div className="mt-8 hidden lg:block">
+          <div className="relative">
+            <div className="absolute left-[12.5%] top-0 flex w-[75%] items-center justify-between">
+              {[0, 1, 2].map((i) => (
+                <ArrowRight
+                  key={i}
+                  className="h-6 w-6 text-violet-300 dark:text-violet-700"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================================
+   ALTERNATIVE CONTACTS SECTION
+   ============================================================================ */
+function AlternativeContactsSection() {
+  return (
+    <section className="relative overflow-hidden px-4 py-16 sm:py-20">
+      {/* Glow effect */}
+      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto max-w-4xl">
+        <div className="overflow-hidden rounded-2xl border-2 border-accent-200 bg-white shadow-lg dark:border-accent-900/50 dark:bg-neutral-900">
+          {/* Top accent bar */}
+          <div className="h-1 bg-gradient-to-r from-accent-500 via-primary-500 to-violet-500" />
+
+          <div className="p-8 text-center sm:p-12">
+            {/* Badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-accent-700 backdrop-blur-sm dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+              <Phone className="h-4 w-4" />
+              Contatto Diretto
+            </div>
+
+            {/* Title */}
+            <h2 className="mb-6 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
+              Preferisci parlarmi direttamente?
+            </h2>
+
+            <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
+              Puoi contattarmi anche direttamente tramite telefono o email
+            </p>
+
+            {/* Contact Methods */}
+            <div className="grid gap-6 sm:grid-cols-2">
+              {/* Phone Card */}
+              <a
+                href="tel:+39XXXXXXXXX"
+                className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-all duration-300 hover:border-accent-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-accent-600"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-accent-50/30 dark:from-neutral-800 dark:to-accent-950/10" />
+
+                <div className="relative z-10 flex flex-col items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <Phone className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                      Telefono
+                    </div>
+                    <div className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
+                      +39 XXX XXX XXXX
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Email Card */}
+              <a
+                href="mailto:info@mastragostino.dev"
+                className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-all duration-300 hover:border-accent-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-accent-600"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-accent-50/30 dark:from-neutral-800 dark:to-accent-950/10" />
+
+                <div className="relative z-10 flex flex-col items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <Mail className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                      Email
+                    </div>
+                    <div className="break-all text-lg font-bold text-neutral-900 dark:text-neutral-50 sm:text-xl">
+                      info@mastragostino.dev
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {/* Info text */}
+            <p className="mt-8 text-sm text-neutral-500 dark:text-neutral-400">
+              Rispondo personalmente a tutti i messaggi entro 24 ore
+            </p>
+          </div>
         </div>
       </div>
     </section>
