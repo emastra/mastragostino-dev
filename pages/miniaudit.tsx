@@ -34,9 +34,8 @@ const MiniAuditPage: React.FC & { hideLayout?: boolean } = () => {
       <LayoutContainer>
         <FormSection />
         <TrustSection />
-        {/* <BenefitsSection /> */}
+        <ProcessSection />
       </LayoutContainer>
-      <ProcessSection />
       <FinalCTASection />
     </>
   );
@@ -53,7 +52,7 @@ function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative overflow-hidden px-4 py-8 sm:py-20 md:py-12"
+      className="relative overflow-hidden px-4 py-8 md:py-12"
     >
       {/* Grid Background - matching HeroSection style */}
       {/* <div
@@ -229,9 +228,9 @@ function FormSection() {
   }
 
   return (
-    <section id="form-section" className="relative px-2 pb-8">
+    <section id="form-section" className="relative px-2 pb-8 md:pb-12">
       <div className="container relative z-10 mx-auto max-w-4xl">
-        <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900">
+        <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-violet-50 dark:from-neutral-900 dark:via-primary-950/10 dark:to-violet-950/10" />
           {/* Top accent bar */}
@@ -581,28 +580,28 @@ function ProcessSection() {
   const colorClasses = {
     primary: {
       bg: 'from-primary-500 to-primary-600',
-      border: 'border-primary-200 dark:border-primary-900/50',
+      border: 'border-neutral-200 dark:border-primary-900/50',
       /* iconBg: 'bg-primary-100 dark:bg-primary-950/30',
       iconText: 'text-primary-600 dark:text-primary-400', */
       numberBg: 'bg-primary-600 dark:bg-primary-500',
     },
     violet: {
       bg: 'from-violet-500 to-purple-600',
-      border: 'border-violet-200 dark:border-violet-900/50',
+      border: 'border-neutral-200 dark:border-violet-900/50',
       /* iconBg: 'bg-violet-100 dark:bg-violet-950/30',
       iconText: 'text-violet-600 dark:text-violet-400', */
       numberBg: 'bg-violet-600 dark:bg-violet-500',
     },
     amber: {
       bg: 'from-amber-500 to-orange-600',
-      border: 'border-amber-200 dark:border-amber-900/50',
+      border: 'border-neutral-200 dark:border-amber-900/50',
       /* iconBg: 'bg-amber-100 dark:bg-amber-950/30',
       iconText: 'text-amber-600 dark:text-amber-400', */
       numberBg: 'bg-amber-500 dark:bg-amber-400',
     },
     success: {
       bg: 'from-success-500 to-success-600',
-      border: 'border-success-200 dark:border-success-900/50',
+      border: 'border-neutral-200 dark:border-success-900/50',
       /* iconBg: 'bg-success-100 dark:bg-success-950/30',
       iconText: 'text-success-600 dark:text-success-400', */
       numberBg: 'bg-success-600 dark:bg-success-500',
@@ -610,14 +609,14 @@ function ProcessSection() {
   };
 
   return (
-    <section className="relative overflow-hidden px-4 py-8 md:py-12">
+    <section className="relative overflow-hidden px-2 py-8 md:py-12">
       {/* Subtle glow effects */}
       {/* <div className="absolute left-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary-500/5 blur-[120px]" />
       <div className="absolute right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-violet-500/5 blur-[120px]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-5xl">
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
             Cosa aspettarsi
           </span>
@@ -637,7 +636,7 @@ function ProcessSection() {
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg dark:bg-neutral-900 ${colors.border}`}
+                className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-neutral-900 ${colors.border}`}
               >
                 {/* Background gradient - very subtle */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white to-neutral-50/50 dark:from-neutral-900 dark:to-neutral-800/50" />
@@ -668,7 +667,7 @@ function ProcessSection() {
                 </div>
 
                 {/* Hover overlay */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
+                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-700/0 transition-colors duration-300 group-hover:bg-neutral-700/[0.01] dark:group-hover:bg-white/[0.02]" />
               </div>
             );
           })}
@@ -711,7 +710,7 @@ function FinalCTASection() {
   };
 
   return (
-    <section className="relative overflow-hidden px-6 py-16 sm:py-20">
+    <section className="relative overflow-hidden px-6 py-16 md:py-24">
       {/* Subtle glow */}
       <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-500/5 blur-[120px]" />
 
@@ -746,7 +745,7 @@ function FinalCTASection() {
 
         {/* Direct Contacts - Discrete */}
         <div className="text-center">
-          <p className="mb-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+          <p className="mb-8 text-sm font-medium text-neutral-500 dark:text-neutral-400">
             Preferisci parlarmi direttamente?
           </p>
 
@@ -757,7 +756,7 @@ function FinalCTASection() {
               className="group inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
             >
               <Phone className="h-4 w-4" />
-              <span>+39 XXX XXX XXXX</span>
+              <span>392 3176429</span>
             </a>
 
             <span className="hidden text-neutral-300 dark:text-neutral-700 sm:inline">
@@ -770,13 +769,13 @@ function FinalCTASection() {
               className="group inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
             >
               <Mail className="h-4 w-4" />
-              <span>info@mastragostino.dev</span>
+              <span>emiliano@mastragostino.dev</span>
             </a>
           </div>
 
-          <p className="mt-4 text-xs text-neutral-400 dark:text-neutral-600">
+          {/* <p className="mt-4 text-xs text-neutral-400 dark:text-neutral-600">
             Rispondo personalmente a tutti i messaggi entro 24 ore
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
