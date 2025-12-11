@@ -551,12 +551,14 @@ function ProcessSection() {
       title: 'Conferma via email',
       description: 'Ricevi immediatamente una conferma della tua richiesta',
       icon: Mail,
+      color: 'primary',
     },
     {
       number: '2',
       title: 'Ti ricontatto entro 24h',
       description: 'Fissiamo insieme il momento migliore per il Mini-Audit',
       icon: Clock,
+      color: 'violet',
     },
     {
       number: '3',
@@ -564,6 +566,7 @@ function ProcessSection() {
       description:
         'Una breve chiamata per capire i tuoi processi e identificare opportunità',
       icon: MessageSquare,
+      color: 'amber',
     },
     {
       number: '4',
@@ -571,72 +574,121 @@ function ProcessSection() {
       description:
         'Ricevi un documento con i punti chiave e i suggerimenti pratici',
       icon: FileText,
+      color: 'success',
     },
   ];
 
+  const colorClasses = {
+    primary: {
+      bg: 'from-primary-500 to-primary-600',
+      border: 'border-primary-200 dark:border-primary-900/50',
+      /* iconBg: 'bg-primary-100 dark:bg-primary-950/30',
+      iconText: 'text-primary-600 dark:text-primary-400', */
+      numberBg: 'bg-primary-600 dark:bg-primary-500',
+    },
+    violet: {
+      bg: 'from-violet-500 to-purple-600',
+      border: 'border-violet-200 dark:border-violet-900/50',
+      /* iconBg: 'bg-violet-100 dark:bg-violet-950/30',
+      iconText: 'text-violet-600 dark:text-violet-400', */
+      numberBg: 'bg-violet-600 dark:bg-violet-500',
+    },
+    amber: {
+      bg: 'from-amber-500 to-orange-600',
+      border: 'border-amber-200 dark:border-amber-900/50',
+      /* iconBg: 'bg-amber-100 dark:bg-amber-950/30',
+      iconText: 'text-amber-600 dark:text-amber-400', */
+      numberBg: 'bg-amber-500 dark:bg-amber-400',
+    },
+    success: {
+      bg: 'from-success-500 to-success-600',
+      border: 'border-success-200 dark:border-success-900/50',
+      /* iconBg: 'bg-success-100 dark:bg-success-950/30',
+      iconText: 'text-success-600 dark:text-success-400', */
+      numberBg: 'bg-success-600 dark:bg-success-500',
+    },
+  };
+
   return (
-    <section className="relative overflow-hidden bg-neutral-50 px-4 py-8 dark:bg-neutral-900/50 md:py-12">
-      <div className="container relative z-10 mx-auto max-w-6xl">
+    <section className="relative overflow-hidden px-4 py-8 md:py-12">
+      {/* Subtle glow effects */}
+      {/* <div className="absolute left-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary-500/5 blur-[120px]" />
+      <div className="absolute right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-violet-500/5 blur-[120px]" /> */}
+
+      <div className="container relative z-10 mx-auto max-w-5xl">
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-16 text-center">
           <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
-            COSA ASPETTARSI
+            Cosa aspettarsi
           </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
             Dopo aver inviato la richiesta
           </h2>
           {/* <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
-            Un processo semplice e veloce per ottenere il massimo valore
+            Quattro semplici step per ottenere il tuo Mini-Audit personalizzato
           </p> */}
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
-            >
-              {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-violet-50/30 dark:from-neutral-900 dark:to-violet-950/10" />
+        {/* Steps Grid - 2x2 Layout */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {steps.map((step, index) => {
+            const colors =
+              colorClasses[step.color as keyof typeof colorClasses];
+            return (
+              <div
+                key={index}
+                className={`group relative overflow-hidden rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg dark:bg-neutral-900 ${colors.border}`}
+              >
+                {/* Background gradient - very subtle */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-neutral-50/50 dark:from-neutral-900 dark:to-neutral-800/50" />
 
-              <div className="relative z-10">
-                {/* Number Badge */}
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-lg font-bold text-white shadow-md">
-                  {step.number}
+                <div className="relative z-10">
+                  {/* Top Row: Number + Icon */}
+                  <div className="mb-4 flex items-center">
+                    <div
+                      className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white shadow-md ${colors.numberBg}`}
+                    >
+                      {step.number}
+                    </div>
+
+                    {/* <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 ${colors.iconBg}`}
+                    >
+                      <step.icon className={`h-6 w-6 ${colors.iconText}`} />
+                    </div> */}
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="mb-2 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+                    {step.title}
+                  </h3>
+                  <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    {step.description}
+                  </p>
                 </div>
 
-                {/* Icon */}
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-violet-100 transition-transform duration-300 group-hover:scale-105 dark:bg-violet-950/30">
-                  <step.icon className="h-6 w-6 text-violet-600 dark:text-violet-400" />
-                </div>
-
-                {/* Content */}
-                <h3 className="mb-2 font-bold text-neutral-900 dark:text-neutral-50">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  {step.description}
-                </p>
+                {/* Hover overlay */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.02] dark:group-hover:bg-white/[0.02]" />
               </div>
-
-              {/* Hover overlay */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-neutral-900/0 transition-colors duration-300 group-hover:bg-neutral-900/[0.01] dark:group-hover:bg-white/[0.01]" />
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Connection arrows for desktop */}
-        {/* <div className="mt-8 hidden lg:block">
-          <div className="relative">
-            <div className="absolute left-[12.5%] top-0 flex w-[75%] items-center justify-between">
-              {[0, 1, 2].map((i) => (
-                <ArrowRight
-                  key={i}
-                  className="h-6 w-6 text-violet-300 dark:text-violet-700"
-                />
-              ))}
-            </div>
+        {/* Flow Indicator - Shows progression */}
+        {/* <div className="mt-12 flex items-center justify-center gap-2">
+          <div className="flex items-center gap-2">
+            {steps.map((step, index) => {
+              const colors =
+                colorClasses[step.color as keyof typeof colorClasses];
+              return (
+                <React.Fragment key={index}>
+                  <div className={`h-2 w-2 rounded-full ${colors.numberBg}`} />
+                  {index < steps.length - 1 && (
+                    <div className="h-0.5 w-8 bg-gradient-to-r from-neutral-300 to-neutral-400 dark:from-neutral-700 dark:to-neutral-600" />
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         </div> */}
       </div>
