@@ -700,7 +700,7 @@ function ProcessSection() {
    ============================================================================ */
 function FinalCTASection() {
   const scrollToForm = () => {
-    const formSection = document.getElementById('scroll-back-point');
+    const formSection = document.getElementById('hero-section');
     if (formSection) {
       formSection.scrollIntoView({
         behavior: 'smooth',
@@ -894,14 +894,14 @@ function SuccessMessage() {
 
 function SimpleHeader() {
   return (
-    <header className="sticky top-0 z-[9998] w-full border-b border-neutral-200 bg-transparent backdrop-blur-lg dark:border-neutral-800">
-      <div className="mx-auto flex h-12 max-w-[1536px] items-center justify-between px-4 md:px-6">
+    <header className="w-full border-b border-neutral-200 dark:border-neutral-800">
+      <div className="mx-auto flex h-14 max-w-[1536px] items-center justify-between px-4 md:px-6">
         <Link href={'/'} passHref>
           <a className="text-foreground">
             <svg
               viewBox="0 0 337 64"
               fill="none"
-              className="h-8 w-auto md:h-[34px]"
+              className="h-[34px] w-auto md:h-[36px]"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
