@@ -451,6 +451,9 @@ function TrustSection() {
       <div className="container relative z-10 mx-auto max-w-3xl">
         {/* Section Header */}
         <div className="mb-12 text-center">
+          <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
+            Profilo
+          </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
             Chi ti segue
           </h2>
@@ -513,7 +516,7 @@ function TrustSection() {
         </div>
 
         {/* Why Trust Section */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        {/* <div className="mt-12 grid gap-6 sm:grid-cols-3">
           <TrustCard
             icon={Zap}
             title="Esperienza Pratica"
@@ -529,7 +532,7 @@ function TrustSection() {
             title="Risposta Rapida"
             description="Feedback entro 24 ore"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -651,7 +654,7 @@ function ProcessSection() {
         {/* Section Header */}
         <div className="mb-12 text-center">
           <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
-            Cosa succede
+            COSA ASPETTARSI
           </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
             Dopo aver inviato la richiesta
