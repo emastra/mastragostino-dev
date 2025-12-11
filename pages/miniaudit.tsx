@@ -37,10 +37,7 @@ const MiniAuditPage: React.FC & { hideLayout?: boolean } = () => {
         {/* <BenefitsSection /> */}
       </LayoutContainer>
       <ProcessSection />
-      <LayoutContainer>
-        <GoToCTASection />
-        <AlternativeContactsSection />
-      </LayoutContainer>
+      <FinalCTASection />
     </>
   );
 };
@@ -54,7 +51,10 @@ export default MiniAuditPage;
    ============================================================================ */
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 py-8 sm:py-20 md:py-12">
+    <section
+      id="hero-section"
+      className="relative overflow-hidden px-4 py-8 sm:py-20 md:py-12"
+    >
       {/* Grid Background - matching HeroSection style */}
       {/* <div
         className="absolute inset-0 opacity-40"
@@ -85,7 +85,7 @@ function HeroSection() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="mb-6 text-4xl font-bold text-primary-700 sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="mb-6 text-4xl font-bold text-primary-700 sm:text-5xl md:text-6xl">
           Richiedi il Mini-Audit Gratuito
           {/* <span className="bg-gradient-to-r from-primary-700 via-violet-500 to-amber-500 bg-clip-text text-transparent">
             Gratuito
@@ -99,7 +99,10 @@ function HeroSection() {
         </h1> */}
 
         {/* Subheadline */}
-        <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        <p
+          id="scroll-back-point"
+          className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 sm:text-xl"
+        >
           Una breve analisi per capire dove migliorare l'efficienza operativa
           della tua agenzia.
         </p>
@@ -226,7 +229,7 @@ function FormSection() {
   }
 
   return (
-    <section className="relative px-2 pb-8">
+    <section id="form-section" className="relative px-2 pb-8">
       <div className="container relative z-10 mx-auto max-w-4xl">
         <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900">
           {/* Background gradient */}
@@ -718,142 +721,87 @@ function ProcessSection() {
   );
 }
 
-function GoToCTASection() {
-  return (
-    <section className="relative overflow-hidden px-2 py-8 md:py-12">
-      <div className="mx-auto mt-8 max-w-3xl">
-        {/* Decorative top border */}
-        <div className="mb-8 flex items-center gap-4">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-          <Lightbulb className="h-6 w-6 text-primary-500" />
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-        </div>
+/* ============================================================================
+   FINAL CTA SECTION
+   ============================================================================ */
+function FinalCTASection() {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('scroll-back-point');
+    if (formSection) {
+      formSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
-        <div className="text-center">
-          <h3 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-3xl">
-            Inizia senza impegno
-          </h3>
+  return (
+    <section className="relative overflow-hidden px-6 py-16 sm:py-20">
+      {/* Subtle glow */}
+      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-500/5 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto max-w-3xl">
+        {/* Main CTA Card */}
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
+            Vuoi richiedere il Mini-Audit?
+          </h2>
           <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
-            Il modo migliore per scoprire il potenziale dell'automazione nel tuo
-            caso specifico è parlarne.{' '}
-            {/* <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
-                il potenziale dell'automazione
-              </strong>{' '}
-              nel tuo caso specifico. */}
+            Compila la form in alto: è questione di un minuto.
           </p>
 
-          {/* Primary CTA */}
-          <Link href="/booking" passHref>
-            <a className="group inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
-              {/* <Calendar className="h-5 w-5" /> */}
-              Richiedi la tua analisi gratuita
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Link>
-
-          {/* Trust indicators */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-success-500" />
-              <span>30 minuti</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-success-500" />
-              <span>Zero impegno</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-success-500" />
-              <span>100% gratuito</span>
-            </div>
-          </div>
+          {/* CTA Button */}
+          <button
+            onClick={scrollToForm}
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-neutral-300 bg-white px-8 py-4 font-semibold text-neutral-900 shadow-sm transition-all duration-200 hover:border-neutral-400 hover:bg-neutral-50 hover:shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:border-neutral-600 dark:hover:bg-neutral-800 sm:w-auto"
+          >
+            Torna alla form
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
-      </div>
-    </section>
-  );
-}
 
-/* ============================================================================
-   ALTERNATIVE CONTACTS SECTION
-   ============================================================================ */
-function AlternativeContactsSection() {
-  return (
-    <section className="relative overflow-hidden px-4 py-16 sm:py-20">
-      {/* Glow effect */}
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-[120px]" />
+        {/* Divider */}
+        <div className="mb-8 flex items-center gap-4">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+          <span className="text-sm text-neutral-400 dark:text-neutral-600">
+            oppure
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+        </div>
 
-      <div className="container relative z-10 mx-auto max-w-4xl">
-        <div className="overflow-hidden rounded-2xl border-2 border-accent-200 bg-white shadow-lg dark:border-accent-900/50 dark:bg-neutral-900">
-          {/* Top accent bar */}
-          <div className="h-1 bg-gradient-to-r from-accent-500 via-primary-500 to-violet-500" />
+        {/* Direct Contacts - Discrete */}
+        <div className="text-center">
+          <p className="mb-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+            Preferisci parlarmi direttamente?
+          </p>
 
-          <div className="p-8 text-center sm:p-12">
-            {/* Badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-accent-700 backdrop-blur-sm dark:border-accent-400/20 dark:bg-accent-400/10 dark:text-accent-300">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            {/* Phone */}
+            <a
+              href="tel:+39XXXXXXXXX"
+              className="group inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+            >
               <Phone className="h-4 w-4" />
-              Contatto Diretto
-            </div>
+              <span>+39 XXX XXX XXXX</span>
+            </a>
 
-            {/* Title */}
-            <h2 className="mb-6 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
-              Preferisci parlarmi direttamente?
-            </h2>
+            <span className="hidden text-neutral-300 dark:text-neutral-700 sm:inline">
+              •
+            </span>
 
-            <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
-              Puoi contattarmi anche direttamente tramite telefono o email
-            </p>
-
-            {/* Contact Methods */}
-            <div className="grid gap-6 sm:grid-cols-2">
-              {/* Phone Card */}
-              <a
-                href="tel:+39XXXXXXXXX"
-                className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-all duration-300 hover:border-accent-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-accent-600"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-accent-50/30 dark:from-neutral-800 dark:to-accent-950/10" />
-
-                <div className="relative z-10 flex flex-col items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md transition-transform duration-300 group-hover:scale-105">
-                    <Phone className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                      Telefono
-                    </div>
-                    <div className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
-                      +39 XXX XXX XXXX
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              {/* Email Card */}
-              <a
-                href="mailto:info@mastragostino.dev"
-                className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-all duration-300 hover:border-accent-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-800 dark:hover:border-accent-600"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-accent-50/30 dark:from-neutral-800 dark:to-accent-950/10" />
-
-                <div className="relative z-10 flex flex-col items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 shadow-md transition-transform duration-300 group-hover:scale-105">
-                    <Mail className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                      Email
-                    </div>
-                    <div className="break-all text-lg font-bold text-neutral-900 dark:text-neutral-50 sm:text-xl">
-                      info@mastragostino.dev
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            {/* Info text */}
-            <p className="mt-8 text-sm text-neutral-500 dark:text-neutral-400">
-              Rispondo personalmente a tutti i messaggi entro 24 ore
-            </p>
+            {/* Email */}
+            <a
+              href="mailto:info@mastragostino.dev"
+              className="group inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+            >
+              <Mail className="h-4 w-4" />
+              <span>info@mastragostino.dev</span>
+            </a>
           </div>
+
+          <p className="mt-4 text-xs text-neutral-400 dark:text-neutral-600">
+            Rispondo personalmente a tutti i messaggi entro 24 ore
+          </p>
         </div>
       </div>
     </section>
