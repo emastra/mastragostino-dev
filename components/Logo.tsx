@@ -7,10 +7,11 @@ const Logo: React.FCC = () => {
     <div>
       <Link href={'/'} passHref>
         <a className="text-foreground">
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             <SymbolSvg />
-          </div>
-          <div className="hidden md:block">
+          </div> */}
+          {/* className="hidden md:block" */}
+          <div>
             <LogoSvg />
           </div>
         </a>
