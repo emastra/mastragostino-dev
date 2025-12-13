@@ -55,7 +55,7 @@ function CTAButtons() {
   return (
     <div className="flex flex-col gap-4 sm:flex-row">
       <Link href="/booking" passHref>
-        <a className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
+        <a className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary-600 px-8 py-3 font-medium text-white shadow-xl transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600">
           Prenota un incontro gratuito
           <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </a>
