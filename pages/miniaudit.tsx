@@ -286,7 +286,7 @@ function FormSection() {
                       id="agency"
                       name="agency"
                       required
-                      value={formData.name}
+                      value={formData.agency}
                       onChange={handleChange}
                       placeholder="Tecnocasa Ostia"
                       className="w-full rounded-lg border border-neutral-300 bg-white py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
@@ -869,19 +869,18 @@ function SuccessMessage() {
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50">
             Richiesta Inviata con Successo!
           </h2>
-          <p className="mb-2 text-lg text-neutral-600 dark:text-neutral-400">
-            Grazie per la tua richiesta. Riceverai il tuo Mini-Audit
-            personalizzato entro 24 ore.
+          <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
+            Grazie per la tua richiesta. Ti contatterò entro 24 ore.
           </p>
-          <p className="mb-8 text-sm text-neutral-500 dark:text-neutral-500">
+          {/* <p className="mb-8 text-sm text-neutral-500 dark:text-neutral-500">
             Controlla la tua email (anche la cartella spam) per il mio messaggio
             📬
-          </p>
+          </p> */}
           <a
             href="/"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
           >
-            ← Torna alla home
+            Visita il mio sito →
           </a>
         </div>
       </div>
