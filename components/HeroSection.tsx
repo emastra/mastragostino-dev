@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 // Configuration
 const GRID_CONFIG = {
-  cellSize: '32px',
+  cellSize: '56px',
   lineColor: '#4f4f4f22', // 'hsl(var(--grid-bg-line))',
-  fadeRadius: '90%',
+  fadeRadius: '65%',
 };
 
 // const STATS_DATA = [
@@ -35,14 +35,9 @@ const getGridStyle = () => {
 
 function TopBadge() {
   return (
-    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-2 text-sm text-primary-600 backdrop-blur-sm dark:text-primary-100">
+    <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-1 text-[13px] font-medium text-primary-600 backdrop-blur-sm dark:text-primary-100 md:py-2 md:text-sm">
       <Sparkles className="h-4 w-4" />
-      <span className="hidden sm:inline">
-        Automazioni su misura per PMI e Professionisti
-      </span>
-      <span className="inline sm:hidden">
-        Automazioni per PMI e Professionisti
-      </span>
+      <span>Automazioni per PMI e Professionisti</span>
     </div>
   );
 }
@@ -88,18 +83,17 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center justify-center text-center">
         <TopBadge />
 
-        <h1 className="mb-6 max-w-4xl text-5xl font-bold md:text-7xl">
-          Libera il tuo tempo e
-          <span className="bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500 bg-clip-text text-transparent">
-            {' '}
-            fai crescere il tuo business
+        <h1 className="mb-8 max-w-3xl text-5xl font-bold md:text-7xl">
+          <div className="mb-2 md:mb-0">Libera tempo.</div>
+          <span className="bg-gradient-to-r from-amber-500 via-violet-500 to-primary-500 bg-clip-text text-transparent">
+            Accellera la crescita.
           </span>
         </h1>
 
-        <p className="mb-8 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
-          Creo automazioni che collegano i tuoi strumenti e gestiscono le
-          attività ripetitive al posto tuo. Così puoi concentrarti su ciò che
-          conta davvero: clienti, strategia, risultati.
+        <p className="mb-12 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
+          Trasformo i tuoi processi manuali in flussi di lavoro automatici. Un
+          sistema che lavora per te, lasciandoti la libertà di curare la
+          strategia e far crescere il business.
         </p>
 
         <CTAButtons />

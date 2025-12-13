@@ -85,7 +85,7 @@ const AboutMeSection: React.FC = () => {
                   Emiliano Mastragostino
                 </h3>
                 <p className="mb-6 text-sm font-medium text-primary-600 dark:text-primary-400">
-                  Sviluppatore & Esperto Automazioni
+                  Sviluppatore Software & Specialista Automazioni
                 </p>
 
                 {/* Social Links */}
@@ -140,28 +140,30 @@ const AboutMeSection: React.FC = () => {
                 {/* Intro */}
                 <div className="mb-8 md:mb-12">
                   <h4 className="mb-3 text-xl font-bold text-neutral-900 dark:text-neutral-50">
-                    Trasformo processi manuali in workflow automatici
+                    Efficienza operativa, progettata su misura
                   </h4>
                   <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    Esperto in automazione, offro a PMI e professionisti la
-                    possibilità di{' '}
+                    Aiuto PMI e professionisti a recuperare la risorsa più
+                    scarsa:{' '}
                     <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
-                      recuperare tempo prezioso
+                      il tempo
                     </strong>
-                    . Automatizzo attività ripetitive e integro sistemi isolati,
-                    utilizzando un mix strategico di strumenti low-code come{' '}
-                    <span className="font-semibold text-primary-600 dark:text-primary-400">
-                      n8n
+                    . Non mi limito a collegare software; progetto
+                    l'infrastruttura digitale che sostiene la tua crescita.
+                    Attraverso un mix strategico di strumenti{' '}
+                    <span className="font-semibold text-neutral-900 dark:text-neutral-50">
+                      low-code{' '}
                     </span>
-                    , linguaggi di programmazione come{' '}
-                    <span className="font-semibold text-primary-600 dark:text-primary-400">
+                    (n8n) programmazione avanzata (
+                    <span className="font-semibold text-neutral-900 dark:text-neutral-50">
                       Javascript
-                    </span>{' '}
-                    e soluzioni di{' '}
-                    <span className="font-semibold text-primary-600 dark:text-primary-400">
+                    </span>
+                    ) e{' '}
+                    <span className="font-semibold text-neutral-900 dark:text-neutral-50">
                       Intelligenza Artificiale
                     </span>
-                    .
+                    , elimino l'errore umano e rendo i tuoi sistemi
+                    interconnessi e autonomi.
                   </p>
                 </div>
 
@@ -172,13 +174,12 @@ const AboutMeSection: React.FC = () => {
                     Il mio approccio
                   </h4>
                   <p className="leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    Concreto, orientato al risultato. Analizzo, identifico le
-                    opportunità ad alto impatto e implemento soluzioni che
-                    generano{' '}
                     <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
-                      ROI immediato
-                    </strong>
-                    .
+                      Pragmatico e orientato al ROI.
+                    </strong>{' '}
+                    Analizzo i tuoi processi, identifico i colli di bottiglia e
+                    implemento soluzioni snelle che generano valore immediato.
+                    Niente complessità inutile, solo risultati misurabili.
                   </p>
                 </div>
 

@@ -26,7 +26,7 @@ const LogoSvg = () => (
   <svg
     viewBox="0 0 337 64"
     fill="none"
-    className="h-[34px] w-auto md:h-[36px]"
+    className="h-[32px] w-auto md:h-[34px]"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -52,7 +52,7 @@ export const SymbolSvg = () => (
   <svg
     viewBox="0 0 64 64"
     fill="none"
-    className="h-[34px] w-auto md:h-[36px]"
+    className="h-[32px] w-auto md:h-[34px]"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
