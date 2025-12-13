@@ -106,13 +106,13 @@ const Header: React.FC = () => {
           {/* Mobile Menu Header */}
           <div className="flex h-14 items-center justify-between border-b border-neutral-200 px-4 dark:border-neutral-800">
             <Logo />
-            <button
+            {/* <button
               onClick={() => setIsMenuOpen(false)}
               className="rounded-md p-2 text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Navigation Links */}
