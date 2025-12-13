@@ -19,7 +19,7 @@ import Link from 'next/link';
 
 const BenefitSection: React.FC = () => {
   return (
-    <section id="benefits" className="py-12 md:py-24">
+    <section id="benefits" className="px-2 py-12 md:py-24">
       <div className="container mx-auto max-w-7xl">
         <div className="animate-fade-in mb-12 text-center">
           <span

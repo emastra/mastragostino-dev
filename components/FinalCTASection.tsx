@@ -12,7 +12,7 @@ import {
 
 const FinalCTASection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden py-12 md:py-24">
+    <section className="relative overflow-hidden px-4 py-12 md:py-24">
       {/* Animated Grid Background */}
       <div
         className="absolute inset-0"
@@ -28,13 +28,13 @@ const FinalCTASection: React.FC = () => {
       />
 
       {/* Multiple Glow Effects */}
-      <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-primary-500/20 blur-[150px]" />
+      {/* <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-primary-500/20 blur-[150px]" />
       <div className="absolute bottom-1/4 right-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-violet-500/20 blur-[150px] [animation-delay:1s]" />
-      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-amber-500/15 blur-[120px] [animation-delay:2s]" />
+      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-amber-500/15 blur-[120px] [animation-delay:2s]" /> */}
 
       <div className="container relative z-10 mx-auto max-w-5xl">
         {/* Main CTA Card */}
-        <div className="group relative overflow-hidden rounded-3xl border-2 border-primary-200 bg-white shadow-2xl transition-all duration-500 hover:shadow-[0_20px_80px_-15px_rgba(0,0,0,0.3)] dark:border-primary-900/50 dark:bg-neutral-900 dark:shadow-primary-500/10 dark:hover:shadow-primary-500/20">
+        <div className="group relative overflow-hidden rounded-3xl border-2 border-primary-200 bg-white shadow-xl transition-all duration-500 hover:shadow-2xl dark:border-primary-900/50 dark:bg-neutral-900 dark:shadow-primary-500/10 dark:hover:shadow-primary-500/20 md:shadow-2xl md:hover:shadow-[0_20px_80px_-15px_rgba(0,0,0,0.3)]">
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-violet-50 to-amber-50 opacity-60 dark:from-primary-950/30 dark:via-violet-950/30 dark:to-amber-950/30" />
 

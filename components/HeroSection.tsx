@@ -73,7 +73,7 @@ function CTAButtons() {
 // Main component
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden px-4 py-12 md:py-24">
+    <section className="relative w-full overflow-hidden px-6 py-12 md:py-24">
       {/* Grid Background */}
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
