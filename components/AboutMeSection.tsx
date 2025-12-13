@@ -87,7 +87,7 @@ const AboutMeSection: React.FC = () => {
                 <h3 className="mb-1 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
                   Emiliano Mastragostino
                 </h3>
-                <p className="mb-6 text-sm font-medium text-primary-600 dark:text-primary-400">
+                <p className="mb-6 text-center text-sm font-medium text-primary-600 dark:text-primary-400">
                   Sviluppatore Software & Specialista Automazioni
                 </p>
 
