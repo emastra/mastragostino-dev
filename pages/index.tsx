@@ -18,13 +18,11 @@ const Home: NextPage = () => {
       <Meta title="Home" description="Welcome to the homepage" />
       <HeroSection />
       <LayoutContainer>
-        {/* <WhatSection /> */}
         <BenefitSection />
         <ServicesSection />
         <AboutMeSection />
-        <FinalCTASection />
-        {/* <ContactSection /> */}
       </LayoutContainer>
+      <FinalCTASection />
     </>
   );
 };

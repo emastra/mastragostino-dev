@@ -19,11 +19,11 @@ const FinalCTASection: React.FC = () => {
         style={{
           backgroundImage:
             'linear-gradient(to right, #4f4f4f22 1px, transparent 1px), linear-gradient(to bottom, #4f4f4f22 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
+          backgroundSize: '56px 56px',
           maskImage:
-            'radial-gradient(ellipse 100% 100% at 50% 50%, #000 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 70% at 50% 50%, #000 0%, transparent 80%)',
           WebkitMaskImage:
-            'radial-gradient(ellipse 100% 100% at 50% 50%, #000 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 70% at 50% 50%, #000 0%, transparent 80%)',
         }}
       />
 
