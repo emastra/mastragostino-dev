@@ -52,7 +52,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Actions */}
           <div className="hidden items-center space-x-3 md:flex">
-            <DarkModeToggle />
+            {/* <DarkModeToggle /> */}
             <Link href="/booking" passHref>
               <a className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600">
                 Inizia Gratis
