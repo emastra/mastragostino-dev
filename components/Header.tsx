@@ -62,7 +62,7 @@ const Header: React.FC = () => {
 
           {/* Mobile Actions */}
           <div className="flex items-center space-x-2 md:hidden">
-            <DarkModeToggle />
+            {/* <DarkModeToggle /> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative rounded-md p-2 text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
