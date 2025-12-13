@@ -101,7 +101,7 @@ const AboutMeSection: React.FC = () => {
                     label="GitHub"
                   />
                   <SocialButton
-                    href="mailto:emiliano.mastragostino@gmail.com"
+                    href="mailto:emiliano@mastragostino.dev"
                     icon={Mail}
                     label="Email"
                   />
