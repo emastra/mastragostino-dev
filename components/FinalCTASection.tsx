@@ -13,7 +13,7 @@ import {
 const FinalCTASection: React.FC = () => {
   return (
     <section className="relative overflow-hidden px-4 py-12 md:py-24">
-      {/* Animated Grid Background */}
+      {/* Grid Background */}
       <div
         className="absolute inset-0"
         style={{
