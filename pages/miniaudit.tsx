@@ -159,7 +159,7 @@ function FormSection() {
 
       if (!res.ok) {
         const err = await res.json();
-        console.error('Contact submission failed:', err.message || err.status);
+        console.error('Request submission failed:', err.message || err.status);
         setFormState('error');
         return;
       }
@@ -169,7 +169,7 @@ function FormSection() {
       // return to idle after a short delay if desired
       // setTimeout(() => setFormState('idle'), 6000);
     } catch (error) {
-      console.error('Contact submission error:', error);
+      console.error('Request submission error:', error);
       setFormState('error');
     }
   };
@@ -957,7 +957,7 @@ function ErrorBanner({ onClose }: { onClose: () => void }) {
         onClick={onClose}
         className="ml-4 rounded px-1 text-red-600 hover:text-red-800"
       >
-        ×
+        x
       </button>
     </div>
   );

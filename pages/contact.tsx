@@ -25,8 +25,8 @@ const ContactPage: React.FC = () => {
         title="Contact"
         description="Get in touch for automation solutions tailored to your business needs."
       />
+      <ContactHero />
       <LayoutContainer>
-        <ContactHero />
         <MainContactSection />
         <ConsultationBanner />
         <ReassuranceSection />
@@ -49,11 +49,11 @@ function ContactHero() {
         style={{
           backgroundImage:
             'linear-gradient(to right, #4f4f4f22 1px, transparent 1px), linear-gradient(to bottom, #4f4f4f22 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
+          backgroundSize: '56px 56px',
           maskImage:
-            'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
+            'radial-gradient(ellipse 65% 65% at 50% 50%, #000 0%, transparent 80%)',
           WebkitMaskImage:
-            'radial-gradient(ellipse 90% 90% at 50% 50%, #000 0%, transparent 80%)',
+            'radial-gradient(ellipse 65% 65% at 50% 50%, #000 0%, transparent 80%)',
         }}
       />
 
@@ -108,9 +108,6 @@ function ContactForm() {
   >('idle');
   const [topic, setTopic] = useState('');
 
-  const prodN8nWebhookUrl =
-    'https://n8n.mastragostino.dev/webhook/51507377-ed96-43fd-a5bf-8e28a7249953';
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('sending');
@@ -125,7 +122,7 @@ function ContactForm() {
         message: (fd.get('message') as string) || '',
       };
 
-      const res = await fetch(prodN8nWebhookUrl, {
+      const res = await fetch('/api/contact-form-submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -135,8 +132,8 @@ function ContactForm() {
 
       if (!res.ok) {
         // optionally read server error message
-        const err = await res.text();
-        console.error('Contact submission failed:', err);
+        const err = await res.json();
+        console.error('Contact submission failed:', err.message || err.status);
         setFormState('error');
         return;
       }
@@ -160,129 +157,137 @@ function ContactForm() {
     'Altro',
   ];
 
+  if (formState === 'success') {
+    return <SuccessMessage goBack={() => setFormState('idle')} />;
+  }
+
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-white dark:from-neutral-900 dark:via-primary-950/10 dark:to-neutral-900" />
 
       <div className="relative z-10 p-8">
-        {formState === 'success' ? (
-          <SuccessMessage goBack={() => setFormState('idle')} />
-        ) : (
-          <>
-            <div className="mb-8">
-              <h2 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-                Invia un Messaggio
-              </h2>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                Compila il form e ti risponderò al più presto. Tutti i campi
-                sono obbligatori.
-              </p>
+        <>
+          <div className="mb-8">
+            <h2 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+              Invia un Messaggio
+            </h2>
+            <p className="text-neutral-600 dark:text-neutral-400">
+              Compila il form e ti risponderò al più presto. Tutti i campi sono
+              obbligatori.
+            </p>
+          </div>
+
+          {formState === 'error' && (
+            <ErrorBanner
+              onClose={() => {
+                setFormState('idle');
+              }}
+            />
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Field */}
+            <div>
+              <label
+                htmlFor="name"
+                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+              >
+                Nome Completo *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Mario Rossi"
+                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
+              />
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Field */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  Nome Completo *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Mario Rossi"
-                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-                />
-              </div>
-
-              {/* Email Field */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="mario@example.com"
-                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-                />
-              </div>
-
-              {/* Topic Select (Optional) */}
-              <div>
-                <label
-                  htmlFor="topic"
-                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  Argomento{' '}
-                  <span className="font-normal text-neutral-500">
-                    (Opzionale)
-                  </span>
-                </label>
-                <select
-                  id="topic"
-                  name="topic"
-                  value={topic}
-                  onChange={(e) => setTopic(e.target.value)}
-                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
-                >
-                  <option value="">Seleziona un argomento...</option>
-                  {topics.map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Message Field */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-                >
-                  Messaggio *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  placeholder="Descrivi brevemente il tuo progetto, le tue esigenze, o le domande che hai..."
-                  className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={formState === 'sending'}
-                className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-md transition-all hover:bg-primary-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-500 dark:hover:bg-primary-600"
+            {/* Email Field */}
+            <div>
+              <label
+                htmlFor="email"
+                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
               >
-                {formState === 'sending' ? (
-                  <>
-                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                    Invio in corso...
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-5 w-5" />
-                    Invia Messaggio
-                  </>
-                )}
-              </button>
-            </form>
-          </>
-        )}
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="mario@example.com"
+                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
+              />
+            </div>
+
+            {/* Topic Select (Optional) */}
+            <div>
+              <label
+                htmlFor="topic"
+                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+              >
+                Argomento{' '}
+                <span className="font-normal text-neutral-500">
+                  (Opzionale)
+                </span>
+              </label>
+              <select
+                id="topic"
+                name="topic"
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+              >
+                <option value="">Seleziona un argomento...</option>
+                {topics.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Message Field */}
+            <div>
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+              >
+                Messaggio *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={6}
+                placeholder="Descrivi brevemente il tuo progetto, le tue esigenze, o le domande che hai..."
+                className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={formState === 'sending'}
+              className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-md transition-all hover:bg-primary-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-500 dark:hover:bg-primary-600"
+            >
+              {formState === 'sending' ? (
+                <>
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                  Invio in corso...
+                </>
+              ) : (
+                <>
+                  <Send className="h-5 w-5" />
+                  Invia Messaggio
+                </>
+              )}
+            </button>
+          </form>
+        </>
       </div>
 
       {/* Hover overlay */}
@@ -504,17 +509,12 @@ function ConsultationBanner() {
               </div>
 
               {/* CTA */}
-              <a
-                href="#consultation"
-                className="group flex-shrink-0 rounded-lg bg-accent-600 px-8 py-4 text-center font-semibold text-white shadow-lg transition-all duration-100 hover:bg-accent-700 hover:shadow-xl dark:bg-accent-500 dark:hover:bg-accent-600"
-              >
-                <Link href="/booking" passHref>
-                  <a className="flex items-center justify-center gap-2 whitespace-nowrap">
-                    Prenota Ora
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Link>
-              </a>
+              <Link href="/booking" passHref>
+                <a className="group flex flex-shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-accent-600 px-8 py-4 text-center font-semibold text-white shadow-lg transition-all duration-100 hover:bg-accent-700 hover:shadow-xl dark:bg-accent-500 dark:hover:bg-accent-600">
+                  Prenota Ora
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -616,6 +616,44 @@ function SuccessMessage({ goBack }: { goBack: () => void }) {
         className="text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
       >
         ← Invia un altro messaggio
+      </button>
+    </div>
+  );
+}
+
+/* ============================================================================
+   ERROR BANNER
+   ============================================================================ */
+function ErrorBanner({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      role="alert"
+      className="mb-4 flex items-start justify-between gap-3 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+    >
+      <div className="flex items-start gap-3">
+        <svg
+          className="h-5 w-5 flex-shrink-0 text-red-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M11.001 7h2v6h-2V7zm0 8h2v2h-2v-2z" fill="currentColor" />
+        </svg>
+        <div>
+          <p className="font-semibold">Errore nell'invio</p>
+          <p className="text-xs text-red-700">
+            Si è verificato un errore durante l'invio. Se il problema persiste
+            scrivi a emiliano@mastragostino.dev
+          </p>
+        </div>
+      </div>
+      <button
+        type="button"
+        aria-label="Chiudi"
+        onClick={onClose}
+        className="ml-4 rounded px-1 text-red-600 hover:text-red-800"
+      >
+        x
       </button>
     </div>
   );

@@ -1,5 +1,3 @@
-// https://nextjs.org/docs/pages/building-your-application/routing/api-routes
-
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type ResponseData = { ok: boolean; message?: string };
@@ -17,7 +15,7 @@ export default async function handler(
     // body will already be parsed as JSON by Next's default body parser
     const body = req.body;
 
-    const webhookUrl = process.env.N8N_MINIAUDIT_WEBHOOK_URL!;
+    const webhookUrl = process.env.N8N_CONTACT_WEBHOOK_URL!;
     const headerName = process.env.N8N_WEBHOOK_AUTH_HEADER_NAME!;
     const headerValue = process.env.N8N_WEBHOOK_AUTH_HEADER_VALUE!;
 
@@ -27,7 +25,9 @@ export default async function handler(
       !body.name ||
       typeof body.name !== 'string' ||
       !body.email ||
-      typeof body.email !== 'string'
+      typeof body.email !== 'string' ||
+      !body.message ||
+      typeof body.message !== 'string'
     ) {
       return res.status(400).json({ ok: false, message: 'Invalid payload' });
     }
@@ -44,7 +44,7 @@ export default async function handler(
     const data = await response.json();
     res.status(response.status).json(data);
   } catch (err) {
-    console.error('API /api/miniaudit-form-submit error', err);
+    console.error('API /api/contact-form-submit error', err);
     return res
       .status(500)
       .json({ ok: false, message: 'Internal Server Error' });
