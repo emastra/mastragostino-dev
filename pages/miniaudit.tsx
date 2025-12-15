@@ -455,10 +455,10 @@ function TrustSection() {
         {/* Section Header */}
         <div className="mb-12 text-center">
           <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
-            Massima Competenza
+            Profilo
           </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
-            Il Tuo Architetto dell'Automazione
+            Chi Ti Segue
           </h2>
         </div>
 
@@ -619,10 +619,10 @@ function ProcessSection() {
         {/* Section Header */}
         <div className="mb-12 text-center">
           <span className="bg-accent/10 text-accent-foreground mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider">
-            Prossimi Passaggi
+            Cosa Aspettarsi
           </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
-            Dalla Richiesta all'Audit
+            Dopo la Tua Richiesta
           </h2>
           {/* <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
             Quattro semplici step per ottenere il tuo Mini-Audit personalizzato
@@ -719,7 +719,7 @@ function FinalCTASection() {
         {/* Main CTA Card */}
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
-            Vuoi richiedere il Mini-Audit?
+            Vuoi Richiedere il Mini-Audit?
           </h2>
           <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
             Compila la form in alto: è questione di un minuto.
