@@ -129,7 +129,7 @@ function FormSection() {
     name: '',
     agency: '',
     contactType: '',
-    whatsapp: '',
+    // whatsapp: '',
     phone: '',
     email: '',
     task: '',
@@ -145,6 +145,7 @@ function FormSection() {
       const payload = {
         name: (fd.get('name') as string) || '',
         agency: (fd.get('agency') as string) || '',
+        phone: (fd.get('phone') as string) || '',
         email: (fd.get('email') as string) || '',
         task: (fd.get('task') as string) || '',
       };

@@ -26,8 +26,7 @@ export default async function handler(
       !body ||
       !body.name ||
       typeof body.name !== 'string' ||
-      !body.email ||
-      typeof body.email !== 'string'
+      (!body.phone && !body.email)
     ) {
       return res.status(400).json({ ok: false, message: 'Invalid payload' });
     }
