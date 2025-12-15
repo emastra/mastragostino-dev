@@ -139,10 +139,39 @@ function FormSection() {
     e.preventDefault();
     setFormState('sending');
 
-    // Simulate submission
-    setTimeout(() => {
+    try {
+      const form = e.currentTarget;
+      const fd = new FormData(form);
+      const payload = {
+        name: (fd.get('name') as string) || '',
+        agency: (fd.get('agency') as string) || '',
+        email: (fd.get('email') as string) || '',
+        task: (fd.get('task') as string) || '',
+      };
+
+      const res = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        console.error('Contact submission failed:', err.message || err.status);
+        setFormState('error');
+        return;
+      }
+
       setFormState('success');
-    }, 1500);
+      form.reset();
+      // return to idle after a short delay if desired
+      // setTimeout(() => setFormState('idle'), 6000);
+    } catch (error) {
+      console.error('Contact submission error:', error);
+      setFormState('error');
+    }
   };
 
   const handleChange = (
@@ -238,6 +267,14 @@ function FormSection() {
           <div className="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500" />
 
           <div className="relative z-10 p-6 sm:p-8 md:p-10">
+            {formState === 'error' && (
+              <ErrorBanner
+                onClose={() => {
+                  setFormState('idle');
+                }}
+              />
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Two-column layout on larger screens */}
               <div className="grid gap-6 md:grid-cols-2">
@@ -885,6 +922,44 @@ function SuccessMessage() {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ============================================================================
+   ERROR BANNER
+   ============================================================================ */
+function ErrorBanner({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      role="alert"
+      className="mb-4 flex items-start justify-between gap-3 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+    >
+      <div className="flex items-start gap-3">
+        <svg
+          className="h-5 w-5 flex-shrink-0 text-red-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M11.001 7h2v6h-2V7zm0 8h2v2h-2v-2z" fill="currentColor" />
+        </svg>
+        <div>
+          <p className="font-semibold">Errore nell'invio</p>
+          <p className="text-xs text-red-700">
+            Si è verificato un errore durante l'invio. Se il problema persiste
+            scrivi a emiliano@mastragostino.dev
+          </p>
+        </div>
+      </div>
+      <button
+        type="button"
+        aria-label="Chiudi"
+        onClick={onClose}
+        className="ml-4 rounded px-1 text-red-600 hover:text-red-800"
+      >
+        ×
+      </button>
+    </div>
   );
 }
 
