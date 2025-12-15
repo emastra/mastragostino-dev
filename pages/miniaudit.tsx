@@ -149,7 +149,7 @@ function FormSection() {
         task: (fd.get('task') as string) || '',
       };
 
-      const res = await fetch('/api', {
+      const res = await fetch('/api/miniaudit-form-submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
