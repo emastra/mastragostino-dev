@@ -47,7 +47,7 @@ const BlogHome: NextPage<{
             </div>
 
             <p className="mt-4 max-w-xl text-center text-sm text-gray-500">
-              Lanceremo presto il blog: vi aspettiamo presto.
+              Lanceremo presto il blog: tornaci a trovare.
             </p>
           </div>
         </div>
