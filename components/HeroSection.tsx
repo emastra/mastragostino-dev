@@ -78,7 +78,7 @@ export default function HeroSection() {
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
       {/* Glow Effect */}
-      <div className="absolute left-1/2 top-1/3  h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[120px] md:h-[500px] md:w-[500px]"></div>
+      <div className="absolute left-1/2 top-1/3  h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-primary-500/20 blur-[90px] md:h-[500px] md:w-[500px] md:blur-[120px]"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center">
         <TopBadge />
