@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 import {
@@ -28,7 +29,6 @@ const BookConsultationPage: React.FC = () => {
       <LayoutContainer>
         <CalendarSection />
         <WhatsIncludedSection />
-        {/* <TrustSection /> */}
         <ReassuranceSection />
       </LayoutContainer>
     </>
@@ -167,7 +167,7 @@ function TrustSection() {
           <ConsultantBio />
 
           {/* Testimonial */}
-          <Testimonial />
+          {/* <Testimonial /> */}
         </div>
       </div>
     </section>
@@ -182,7 +182,7 @@ function ConsultantBio() {
         <div className="relative">
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 opacity-50 blur-md" />
           <div className="relative h-20 w-20 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800">
-            <img
+            <Image
               src="/images/avatar.jpg"
               alt="Emiliano Mastragostino"
               className="h-full w-full object-cover"
@@ -219,10 +219,9 @@ function ConsultantBio() {
   );
 }
 
-function Testimonial() {
+/* function Testimonial() {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-accent-200 bg-gradient-to-br from-accent-50 to-amber-50 p-8 dark:border-accent-900/50 dark:from-neutral-900 dark:to-accent-950/20">
-      {/* Quote icon */}
       <div className="absolute right-6 top-6 text-6xl text-accent-200 dark:text-accent-900/50">
         "
       </div>
@@ -260,7 +259,7 @@ function Testimonial() {
       </div>
     </div>
   );
-}
+} */
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (

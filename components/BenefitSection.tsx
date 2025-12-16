@@ -27,7 +27,7 @@ const BenefitSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            I vantaggi dell'automazione
+            {"I vantaggi dell'automazione"}
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
             Risultati concreti, ogni giorno

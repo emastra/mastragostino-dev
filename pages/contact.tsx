@@ -71,9 +71,9 @@ function ContactHero() {
         </h1>
 
         <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-          Hai dubbi, domande o vuoi capire se l'automazione può aiutare la tua
-          attività? Compila il form o invia un messaggio: rispondo sempre entro
-          24 ore.
+          {
+            "Hai dubbi, domande o vuoi capire se l'automazione può aiutare la tua attività? Compila il form o invia un messaggio: rispondo sempre entro 24 ore."
+          }
         </p>
       </div>
     </section>
@@ -640,10 +640,11 @@ function ErrorBanner({ onClose }: { onClose: () => void }) {
           <path d="M11.001 7h2v6h-2V7zm0 8h2v2h-2v-2z" fill="currentColor" />
         </svg>
         <div>
-          <p className="font-semibold">Errore nell'invio</p>
+          <p className="font-semibold">{"Errore nell'invio"}</p>
           <p className="text-xs text-red-700">
-            Si è verificato un errore durante l'invio. Se il problema persiste
-            scrivi a emiliano@mastragostino.dev
+            {
+              "Si è verificato un errore durante l'invio. Se il problema persiste scrivi a emiliano@mastragostino.dev"
+            }
           </p>
         </div>
       </div>

@@ -14,10 +14,10 @@ const WhatSection: React.FC = () => {
             Cosa sono le automazioni
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-            Un'automazione collega i tuoi strumenti digitali e gestisce in
+            {`Un'automazione collega i tuoi strumenti digitali e gestisce in
             automatico i passaggi ripetitivi. Tu decidi la logica, io la
             costruisco: così ogni processo funziona da solo, senza errori,
-            mentre tu ti concentri su ciò che conta davvero.
+            mentre tu ti concentri su ciò che conta davvero.`}
           </p>
         </div>
 

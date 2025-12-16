@@ -3,7 +3,7 @@ import configuration from '~/configuration';
 import LayoutContainer from '~/components/LayoutContainer';
 import Meta from '~/components/Meta';
 import HeroSection from '~/components/HeroSection';
-import WhatSection from '~/components/WhatSection';
+// import WhatSection from '~/components/WhatSection';
 import BenefitSection from '~/components/BenefitSection';
 import AboutMeSection from '~/components/AboutMeSection';
 import ServicesSection from '~/components/ServicesSection';

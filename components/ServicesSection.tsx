@@ -39,13 +39,13 @@ const ServicesSection: React.FC = () => {
             Come funziona
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Dalla chiarezza all'automazione
+            {"Dalla chiarezza all'automazione"}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-            Tutto inizia con un breve incontro gratuito per capire come lavori
+            {`Tutto inizia con un breve incontro gratuito per capire come lavori
             oggi e dove puoi risparmiare tempo. Poi passo all'azione: progetto e
             realizzo automazioni su misura, pronte all'uso nel tuo ambiente di
-            lavoro.
+            lavoro.`}
           </p>
         </div>
 
@@ -73,8 +73,9 @@ const ServicesSection: React.FC = () => {
               Inizia senza impegno
             </h3>
             <p className="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
-              Il modo migliore per scoprire il potenziale dell'automazione nel
-              tuo caso specifico è parlarne.{' '}
+              {
+                "Il modo migliore per scoprire il potenziale dell'automazione nel tuo caso specifico è parlarne."
+              }{' '}
               {/* <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                 il potenziale dell'automazione
               </strong>{' '}
@@ -172,8 +173,8 @@ function StarterCard() {
 
         {/* Description */}
         <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-          Una conversazione di 30 minuti per capire come funziona la tua
-          attività e dove l'automazione può portare il maggior beneficio.
+          {`Una conversazione di 30 minuti per capire come funziona la tua
+          attività e dove l'automazione può portare il maggior beneficio.`}
         </p>
 
         {/* Features List */}
@@ -197,7 +198,7 @@ function StarterCard() {
         {/* Bottom info */}
         <div className="mt-4 rounded-lg border border-primary-200 bg-primary-50/50 p-3.5 dark:border-primary-900/30 dark:bg-primary-950/20">
           <p className="text-xs font-medium text-primary-700 dark:text-primary-300">
-            💡 Alla fine dell'incontro, saprai{' '}
+            {`💡 Alla fine dell'incontro, saprai`}{' '}
             <span className="font-semibold text-neutral-700 dark:text-neutral-200">
               se
             </span>{' '}
@@ -277,9 +278,9 @@ function GrowthCard() {
 
         {/* Description */}
         <p className="mb-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-          Se vuoi procedere, svilupperò l'automazione definita insieme. Mi
+          {`Se vuoi procedere, svilupperò l'automazione definita insieme. Mi
           occuperò di tutto, dal test all'implementazione, per renderla pronta
-          all'uso nel tuo ambiente di lavoro.
+          all'uso nel tuo ambiente di lavoro.`}
         </p>
 
         {/* Features List */}
@@ -372,9 +373,9 @@ function AuditCard() {
             Audit Gratuito
           </h3>
           <p className="mb-4 text-neutral-600 dark:text-neutral-400">
-            Analizziamo insieme i tuoi processi e identifichiamo 2-3 aree ad
+            {`Analizziamo insieme i tuoi processi e identifichiamo 2-3 aree ad
             alto impatto dove l'automazione può generare risultati immediati.
-            Nessun impegno richiesto.
+            Nessun impegno richiesto.`}
           </p>
           <button className="group/btn inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 font-semibold text-white transition-all hover:bg-accent-700 hover:shadow-lg dark:bg-accent-500 dark:hover:bg-accent-600">
             Prenota il Tuo Audit

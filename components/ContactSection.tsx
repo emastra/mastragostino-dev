@@ -152,7 +152,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
-                    Preferisci l'email?
+                    {"Preferisci l'email?"}
                   </h4>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400">
                     Scrivimi direttamente

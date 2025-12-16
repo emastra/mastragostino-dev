@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 import {
@@ -103,8 +104,9 @@ function HeroSection() {
           id="scroll-back-point"
           className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 sm:text-xl"
         >
-          Una breve analisi per capire dove migliorare l'efficienza operativa
-          della tua agenzia.
+          {
+            "Una breve analisi per capire dove migliorare l'efficienza operativa della tua agenzia."
+          }
         </p>
 
         {/* Value Props */}
@@ -414,7 +416,7 @@ function FormSection() {
                   htmlFor="task"
                   className="mb-2 ml-1 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
                 >
-                  Qual è l'attività più ripetitiva del tuo lavoro?{' '}
+                  {"Qual è l'attività più ripetitiva del tuo lavoro?"}{' '}
                   <span className="font-normal text-neutral-500">
                     (Opzionale)
                   </span>
@@ -510,7 +512,7 @@ function TrustSection() {
             <div className="relative mx-auto mb-6 inline-block">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-violet-500 opacity-40 blur-xl" />
               <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800 sm:h-40 sm:w-40">
-                <img
+                <Image
                   src="/images/avatar.jpg"
                   alt="Emiliano Mastragostino"
                   className="h-full w-full object-cover transition-transform duration-500"
@@ -914,12 +916,11 @@ function SuccessMessage() {
             Controlla la tua email (anche la cartella spam) per il mio messaggio
             📬
           </p> */}
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-          >
-            Visita il mio sito →
-          </a>
+          <Link href={'/'} passHref>
+            <a className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">
+              Visita il mio sito →
+            </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -945,10 +946,11 @@ function ErrorBanner({ onClose }: { onClose: () => void }) {
           <path d="M11.001 7h2v6h-2V7zm0 8h2v2h-2v-2z" fill="currentColor" />
         </svg>
         <div>
-          <p className="font-semibold">Errore nell'invio</p>
+          <p className="font-semibold">{"Errore nell'invio"}</p>
           <p className="text-xs text-red-700">
-            Si è verificato un errore durante l'invio. Se il problema persiste
-            scrivi a emiliano@mastragostino.dev
+            {
+              "Si è verificato un errore durante l'invio. Se il problema persiste scrivi a emiliano@mastragostino.dev"
+            }
           </p>
         </div>
       </div>

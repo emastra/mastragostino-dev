@@ -12,6 +12,7 @@ import {
   Focus,
 } from 'lucide-react';
 import Link from 'next/link'; // TODO: usare next Link per tutto il sito?
+import Image from 'next/image';
 
 const AboutMeSection: React.FC = () => {
   return (
@@ -44,14 +45,15 @@ const AboutMeSection: React.FC = () => {
             aria-hidden="false"
             role="status"
           >
-            Chi c'è dietro
+            {"Chi c'è dietro"}
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
             Piacere, sono Emiliano
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
-            Aiuto PMI e professionisti a semplificare il lavoro e a liberare
-            tempo grazie all'automazione.
+            {
+              "Aiuto PMI e professionisti a semplificare il lavoro e a liberare tempo grazie all'automazione."
+            }
           </p>
         </div>
 
@@ -69,7 +71,7 @@ const AboutMeSection: React.FC = () => {
                 <div className="relative mb-6">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-violet-500 opacity-30 blur-2xl" />
                   <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-xl dark:border-neutral-800">
-                    <img
+                    <Image
                       src="/images/avatar.jpg"
                       alt="Emiliano Mastragostino"
                       className="h-full w-full object-cover"
@@ -151,9 +153,9 @@ const AboutMeSection: React.FC = () => {
                     <strong className="font-semibold text-neutral-900 dark:text-neutral-50">
                       il tempo
                     </strong>
-                    . Non mi limito a collegare software; progetto
-                    l'infrastruttura digitale che sostiene la tua crescita.
-                    Attraverso un mix strategico di strumenti{' '}
+                    {
+                      ". Non mi limito a collegare software; progetto l'infrastruttura digitale che sostiene la tua crescita. Attraverso un mix strategico di strumenti"
+                    }{' '}
                     <span className="font-semibold text-neutral-900 dark:text-neutral-50">
                       low-code{' '}
                     </span>
@@ -165,8 +167,9 @@ const AboutMeSection: React.FC = () => {
                     <span className="font-semibold text-neutral-900 dark:text-neutral-50">
                       Intelligenza Artificiale
                     </span>
-                    , elimino l'errore umano e rendo i tuoi sistemi
-                    interconnessi e autonomi.
+                    {
+                      ", elimino l'errore umano e rendo i tuoi sistemi interconnessi e autonomi."
+                    }
                   </p>
                 </div>
 

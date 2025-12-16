@@ -58,7 +58,7 @@ For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomm
 }
 
 :global(.dark) .PostBody pre {
-    @apply bg-black-300 shadow-none;
+    @apply bg-neutral-300 shadow-none;
 }
 
 .PostBody img,
@@ -101,7 +101,7 @@ For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomm
 }
 
 :global(.dark) .PostBody code {
-    @apply bg-black-400;
+    @apply bg-neutral-800;
 }
 
 .PostBody p > code,
@@ -111,7 +111,7 @@ For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomm
 
 :global(.dark) .PostBody p > code,
 :global(.dark) .PostBody li > code {
-    @apply bg-black-300;
+    @apply bg-neutral-800;
 }
 
 .PostBody hr {

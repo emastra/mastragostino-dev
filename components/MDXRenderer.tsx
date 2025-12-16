@@ -3,7 +3,7 @@ import { runSync } from '@mdx-js/mdx';
 import MDXComponents from '~/components/MDXComponents';
 
 type MdxComponent = React.ExoticComponent<{
-  components: Record<string, React.ReactNode>;
+  components?: Record<string, React.ComponentType<any>>;
 }>;
 
 function MDXRenderer({ code }: { code: string }) {
