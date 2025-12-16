@@ -514,6 +514,7 @@ function TrustSection() {
               <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800 sm:h-40 sm:w-40">
                 <Image
                   src="/images/avatar.jpg"
+                  layout="fill"
                   alt="Emiliano Mastragostino"
                   className="h-full w-full object-cover transition-transform duration-500"
                 />

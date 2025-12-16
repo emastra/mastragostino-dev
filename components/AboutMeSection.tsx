@@ -73,6 +73,7 @@ const AboutMeSection: React.FC = () => {
                   <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-xl dark:border-neutral-800">
                     <Image
                       src="/images/avatar.jpg"
+                      layout="fill"
                       alt="Emiliano Mastragostino"
                       className="h-full w-full object-cover"
                     />

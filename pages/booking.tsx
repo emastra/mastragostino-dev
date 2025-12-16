@@ -184,6 +184,7 @@ function ConsultantBio() {
           <div className="relative h-20 w-20 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800">
             <Image
               src="/images/avatar.jpg"
+              layout="fill"
               alt="Emiliano Mastragostino"
               className="h-full w-full object-cover"
             />
