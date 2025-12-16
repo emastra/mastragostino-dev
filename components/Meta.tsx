@@ -46,36 +46,10 @@ const Meta = ({
   return (
     <Head>
       {/* Favicon and Icons */}
-      <link
-        rel="apple-touch-icon"
-        sizes="144x144"
-        href="/assets/images/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/assets/images/favicon/favicon-16x16.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/assets/images/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="150x150"
-        href="/assets/images/favicon/favicon-150x150.png"
-      />
-      <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="/assets/images/favicon/safari-pinned-tab.svg"
-        color="#000000"
-      />
-      <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
 
       {/* Preload and Prefetch Links */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
