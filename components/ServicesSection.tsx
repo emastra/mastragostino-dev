@@ -39,7 +39,7 @@ const ServicesSection: React.FC = () => {
             Come funziona
           </span>
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            Dalla chiacchierata all'automazione
+            Dalla chiarezza all'automazione
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
             Tutto inizia con un breve incontro gratuito per capire come lavori
