@@ -107,7 +107,7 @@ const features: Feature[] = [
   },
   {
     Icon: ShieldCheck,
-    name: 'Controllo e chiarezza sui processi',
+    name: 'Controllo sui processi',
     description:
       'Ogni flusso è chiaro e monitorabile: sai sempre cosa succede, dove e quando. Il tuo business funziona anche quando non sei davanti allo schermo.',
     bgColor: 'amber',
