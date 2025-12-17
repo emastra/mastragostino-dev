@@ -204,6 +204,19 @@ function FormSection() {
     }
   };
 
+  // eventually to be used as onBlur handler for phone input
+  const validatePhone = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (e.target.name === 'phone') {
+      const phoneRegex =
+        /^(?:(?:\+|00)39)?[\s.-]?3\d{2}[\s.-]?\d{3}[\s.-]?\d{3,4}$|^(?:(?:\+|00)39)?[\s.-]?0\d{1,3}[\s.-]?\d{3,4}[\s.-]?\d{3,4}$/;
+
+      // Only validate if there is a value (don't error out on empty unless required)
+      if (e.target.value && !phoneRegex.test(e.target.value)) {
+        setContactError(true);
+      }
+    }
+  };
+
   // Get the appropriate input field based on contactType
   /* case 'whatsapp':
         return (
@@ -417,6 +430,7 @@ function FormSection() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      // onBlur={validatePhone}
                       placeholder="3381234567"
                       className={`w-full rounded-lg border py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:outline-none focus:ring-2 dark:text-neutral-100 dark:placeholder-neutral-500 ${
                         contactError
