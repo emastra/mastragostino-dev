@@ -37,7 +37,10 @@ function TopBadge() {
   return (
     <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-4 py-1 text-[13px] font-medium text-primary-600 backdrop-blur-sm dark:text-primary-100 md:py-2 md:text-sm">
       <Sparkles className="h-4 w-4" />
-      <span>Automazioni per PMI e Professionisti</span>
+      <span className="hidden sm:inline">
+        Automazioni per PMI e Professionisti
+      </span>
+      <span className="inline sm:hidden">Per PMI e Professionisti</span>
     </div>
   );
 }
@@ -73,7 +76,7 @@ function CTAButtons() {
 // Main component
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden px-6 py-12 md:py-24">
+    <section className="relative w-full overflow-hidden px-2 py-8 md:py-20 xs:px-6">
       {/* Grid Background */}
       <div className="absolute inset-0" style={getGridStyle()}></div>
 
