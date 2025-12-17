@@ -31,6 +31,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        xs: '26rem', // 416px if root font-size is 16px
+      },
       colors: {
         // Brand colors with full scale (50-950)
         primary: brandColors.primary,
