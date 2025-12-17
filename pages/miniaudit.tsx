@@ -351,83 +351,94 @@ function FormSection() {
                   </div>
                 </div>
 
-                {/* §§§ --- GRUPPO CONTATTI (Grouping Logico) --- */}
-                <fieldset
-                  className={`relative space-y-4 rounded-xl border-2 p-4 transition-all md:col-span-2 ${
-                    contactError
-                      ? 'border-red-500/50 bg-red-50/50 dark:bg-red-950/10'
-                      : 'border-neutral-100 bg-neutral-50/30 dark:border-neutral-800/50 dark:bg-neutral-800/20'
-                  }`}
-                >
-                  <legend className="px-2 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-                    Lascia un contatto *
-                  </legend>
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    {/* Email Field */}
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-2 ml-1 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-                      >
-                        Email
-                      </label>
-                      <div className="relative">
-                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <Mail
-                            className={`h-5 w-5 ${
-                              contactError ? 'text-red-400' : 'text-neutral-400'
-                            }`}
-                          />
-                        </div>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="mario@esempio.com"
-                          className="w-full rounded-lg border border-neutral-300 bg-white py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Phone Field */}
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="mb-2 ml-1 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
-                      >
-                        Telefono
-                      </label>
-                      <div className="relative">
-                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <Phone
-                            className={`h-5 w-5 ${
-                              contactError ? 'text-red-400' : 'text-neutral-400'
-                            }`}
-                          />
-                        </div>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="3381234567"
-                          className="w-full rounded-lg border border-neutral-300 bg-white py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {contactError && (
-                    <p className="px-1 text-xs font-medium text-red-600 animate-in fade-in slide-in-from-top-1 dark:text-red-400">
-                      ⚠ Inserisci almeno un recapito (email o telefono) per
-                      permetterci di ricontattarti.
+                {/* §§§ --- GRUPPO CONTATTI (Minimal Grouping) --- */}
+                {/* Subtle section divider */}
+                <div className="md:col-span-2">
+                  <div className="flex items-center gap-3">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-200 to-transparent dark:via-neutral-700" />
+                    <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                      Lascia almeno un contatto *
                     </p>
-                  )}
-                </fieldset>
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-200 to-transparent dark:via-neutral-700" />
+                  </div>
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-2 ml-1 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                  >
+                    Email
+                  </label>
+                  <div className="relative">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <Mail
+                        className={`h-5 w-5 transition-colors ${
+                          contactError ? 'text-red-400' : 'text-neutral-400'
+                        }`}
+                      />
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="mario@esempio.com"
+                      className={`w-full rounded-lg border py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:outline-none focus:ring-2 dark:text-neutral-100 dark:placeholder-neutral-500 ${
+                        contactError
+                          ? 'border-red-400 bg-red-50 focus:border-red-500 focus:ring-red-500/20 dark:border-red-500 dark:bg-red-950/20 dark:focus:border-red-400'
+                          : 'border-neutral-300 bg-white focus:border-primary-500 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800'
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Field */}
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="mb-2 ml-1 block text-sm font-semibold text-neutral-700 dark:text-neutral-300"
+                  >
+                    Telefono
+                  </label>
+                  <div className="relative">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <Phone
+                        className={`h-5 w-5 transition-colors ${
+                          contactError ? 'text-red-400' : 'text-neutral-400'
+                        }`}
+                      />
+                    </div>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="3381234567"
+                      className={`w-full rounded-lg border py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:outline-none focus:ring-2 dark:text-neutral-100 dark:placeholder-neutral-500 ${
+                        contactError
+                          ? 'border-red-400 bg-red-50 focus:border-red-500 focus:ring-red-500/20 dark:border-red-500 dark:bg-red-950/20 dark:focus:border-red-400'
+                          : 'border-neutral-300 bg-white focus:border-primary-500 focus:ring-primary-500/20 dark:border-neutral-700 dark:bg-neutral-800'
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                {/* Error message spans both columns */}
+                {contactError && (
+                  <div className="md:col-span-2">
+                    <p className="flex items-start gap-2 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-600 animate-in fade-in slide-in-from-top-1 dark:bg-red-950/20 dark:text-red-400">
+                      <span className="text-base">⚠</span>
+                      <span>
+                        Inserisci almeno un recapito (email o telefono) per
+                        permetterci di ricontattarti.
+                      </span>
+                    </p>
+                  </div>
+                )}
 
                 {/* Contact Type Select */}
                 {/* <option value="whatsapp">WhatsApp</option> */}
