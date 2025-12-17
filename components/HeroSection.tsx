@@ -93,7 +93,7 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <p className="mb-12 max-w-2xl text-lg text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <p className="mb-12 max-w-2xl px-4 text-lg text-neutral-500 dark:text-neutral-400 md:text-xl xs:px-0">
           Trasformo i tuoi processi manuali in flussi di lavoro automatici. Un
           sistema che lavora per te, lasciandoti la libertà di curare la
           strategia e far crescere il business.
