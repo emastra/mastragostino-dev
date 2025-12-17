@@ -411,7 +411,7 @@ function ContactMethod({
         <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-500">
           {label}
         </div>
-        <div className="mb-1 break-words font-semibold text-neutral-900 dark:text-neutral-50">
+        <div className="mb-1 break-words text-sm font-semibold text-neutral-900 dark:text-neutral-50 sm:text-base">
           {value}
         </div>
         <div className="text-xs text-neutral-600 dark:text-neutral-400">
