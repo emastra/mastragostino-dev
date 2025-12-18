@@ -122,7 +122,7 @@ function QuickBookingSection() {
   return (
     <section className="relative px-4 py-12">
       <div className="container mx-auto max-w-3xl">
-        <div className="overflow-hidden rounded-2xl border-2 border-primary-200 bg-white shadow-lg dark:border-primary-900/50 dark:bg-neutral-900">
+        <div className="overflow-hidden rounded-2xl border-2 border-neutral-200 bg-white shadow-lg dark:border-primary-900/50 dark:bg-neutral-900">
           {/* Top accent bar */}
           {/* <div className="h-1 bg-gradient-to-r from-primary-500 via-violet-500 to-amber-500" /> */}
 
@@ -141,7 +141,8 @@ function QuickBookingSection() {
             {/* Description */}
             <p className="mb-8 text-neutral-600 dark:text-neutral-400">
               Se ti è più comodo, puoi prenotare direttamente il mini-audit dal
-              calendario. Riceverai solo un'email di conferma con tutte le
+              mio calendario.
+              <br />E riceverai solo un'email di conferma con tutte le
               informazioni.
             </p>
 
@@ -149,7 +150,7 @@ function QuickBookingSection() {
             <a
               href="https://cal.com/mastragostino/mini-audit-gratuito"
               target="_blank"
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-100 hover:bg-primary-700 hover:shadow-xl dark:bg-primary-500 dark:hover:bg-primary-600"
+              className="group inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-primary-100 px-8 py-4 text-lg font-semibold text-neutral-700 transition-all duration-100 hover:border-neutral-400 hover:bg-primary-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
             >
               <Calendar className="h-5 w-5" />
               Fissa il mini-audit ora
