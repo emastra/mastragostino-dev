@@ -785,7 +785,7 @@ function ProcessSection() {
             Cosa Aspettarsi
           </span>
           <h2 className="mb-4 text-3xl font-bold text-neutral-900 dark:text-neutral-50 sm:text-4xl">
-            Dopo la Tua Richiesta
+            Dopo la Richiesta
           </h2>
           {/* <p className="mx-auto max-w-2xl text-lg text-neutral-600 dark:text-neutral-400">
             Quattro semplici step per ottenere il tuo Mini-Audit personalizzato
