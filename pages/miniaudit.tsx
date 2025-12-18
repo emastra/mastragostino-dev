@@ -431,6 +431,9 @@ function FormSection() {
                       value={formData.phone}
                       onChange={handleChange}
                       // onBlur={validatePhone}
+                      // even simpler: ^[\+]?[0-9\s\-\.]{9,18}$ // check https://claude.ai/chat/c52c1a0c-a21a-4eff-9152-5360c6edd3d5
+                      pattern="^(\+39|0039)?[\s\-\.]?[0-9\s\-\.]{6,15}$"
+                      title="Inserisci un numero italiano valido"
                       placeholder="3381234567"
                       className={`w-full rounded-lg border py-3 pl-10 pr-4 text-neutral-900 placeholder-neutral-400 transition-all focus:outline-none focus:ring-2 dark:text-neutral-100 dark:placeholder-neutral-500 ${
                         contactError
