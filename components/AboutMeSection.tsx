@@ -87,7 +87,7 @@ const AboutMeSection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="mb-1 text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+                <h3 className="mb-1 text-center text-2xl font-bold text-neutral-900 dark:text-neutral-50">
                   Emiliano Mastragostino
                 </h3>
                 <p className="mb-6 text-center text-sm font-medium text-primary-600 dark:text-primary-400">

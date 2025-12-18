@@ -270,7 +270,7 @@ function GrowthCard() {
                 Le automazioni semplici partono da €300.
               </div>
             </QMarkTooltip>
-            <span className="text-sm text-neutral-500 dark:text-neutral-500">
+            <span className="hidden text-sm text-neutral-500 dark:text-neutral-500 sm:inline">
               su preventivo
             </span>
           </div>
