@@ -659,7 +659,7 @@ function TrustSection() {
             <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-lg">
               Trasformo il caos operativo in flussi di lavoro chiari e ordinati.
               Per PMI e professionisti: meno errori, zero frizioni e processi
-              automatizzati che liberano il tuo tempo.
+              automatizzati che liberano tempo prezioso.
             </p>
 
             {/* Social Links */}
