@@ -182,7 +182,7 @@ function FormSection() {
 
       setFormState('success');
       // form.reset();
-      setTimeout(() => router.push('/thank-you'), 500);
+      setTimeout(() => router.push('/thank-you'), 300);
     } catch (error) {
       console.error('Request submission error:', error);
       setFormState('error');

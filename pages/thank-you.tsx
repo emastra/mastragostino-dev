@@ -41,7 +41,7 @@ export default ThankYouPage;
    ============================================================================ */
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-4 py-8 sm:py-12 md:py-16">
+    <section className="relative overflow-hidden px-4 py-8 sm:py-12 md:py-16 xs:px-6">
       {/* Grid Background */}
       {/* <div
         className="absolute inset-0 opacity-40"
