@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import router from 'next/router';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 import {
@@ -180,9 +181,8 @@ function FormSection() {
       }
 
       setFormState('success');
-      form.reset();
-      // return to idle after a short delay if desired
-      // setTimeout(() => setFormState('idle'), 6000);
+      // form.reset();
+      setTimeout(() => router.push('/thank-you'), 500);
     } catch (error) {
       console.error('Request submission error:', error);
       setFormState('error');
@@ -287,9 +287,9 @@ function FormSection() {
     }
   }; */
 
-  if (formState === 'success') {
+  /* if (formState === 'success') {
     return <SuccessMessage />;
-  }
+  } */
 
   return (
     <section id="form-section" className="relative px-2 pb-8 md:pb-12">
