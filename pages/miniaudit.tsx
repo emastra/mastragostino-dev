@@ -370,7 +370,7 @@ function FormSection() {
                   <div className="flex items-center gap-3">
                     <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-200 to-transparent dark:via-neutral-700" />
                     <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                      Recapito preferito *
+                      Scegli come essere ricontattato
                     </p>
                     <div className="h-px flex-1 bg-gradient-to-r from-transparent via-neutral-200 to-transparent dark:via-neutral-700" />
                   </div>
