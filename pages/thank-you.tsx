@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Meta from '~/components/Meta';
 import LayoutContainer from '~/components/LayoutContainer';
 import {
@@ -142,14 +143,16 @@ function QuickBookingSection() {
             <p className="mb-8 text-neutral-600 dark:text-neutral-400">
               Se ti è più comodo, puoi prenotare direttamente il mini-audit dal
               mio calendario.
-              <br />E riceverai solo un'email di conferma con tutte le
-              informazioni.
+              <br />
+              {`E riceverai solo un'email di conferma con tutte le
+              informazioni.`}
             </p>
 
             {/* CTA Button */}
             <a
               href="https://cal.com/mastragostino/mini-audit-gratuito"
               target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-lg border border-neutral-300 bg-primary-100 px-8 py-4 text-lg font-semibold text-neutral-700 transition-all duration-100 hover:border-neutral-400 hover:bg-primary-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
             >
               <Calendar className="h-5 w-5" />
@@ -187,10 +190,11 @@ function SignatureSection() {
             <div className="relative flex-shrink-0">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500 to-violet-500 opacity-30 blur-xl" />
               <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-neutral-800">
-                <img
+                <Image
                   src="/images/avatar.jpg"
                   alt="Emiliano Mastragostino"
                   className="h-full w-full object-cover"
+                  layout="fill"
                 />
               </div>
             </div>
